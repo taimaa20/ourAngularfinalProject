@@ -1,0 +1,56 @@
+<form [formGroup]="registerForm" (submit)="submit()">
+    <mat-form-field class="example-full-width">
+    <mat-label>FullName</mat-label>
+    <input matInput formControlName="fullName" style="font-size: x-large;" placeholder="Full Name ">
+    <mat-error *ngIf="registerForm.controls.fullName.hasError('required')">
+    fullName is <strong>required</strong>
+    </mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" style="font-size: x-large;" placeholder="Ex. pat@example.com">
+        <mat-error
+        *ngIf="registerForm.controls.email.hasError('email') && !registerForm.controls.email.hasError('required')"
+        >
+        Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="registerForm.controls.email.hasError('required')">
+        Email is <strong>required</strong>
+        </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" style="font-size: x-large;" placeholder="Ex. WI Street">
+            <mat-error *ngIf="registerForm.controls.address.hasError('required')">
+            address is <strong>required</strong>
+            </mat-error>
+            </mat-form-field>
+            
+            <mat-form-field class="example-full-width">
+                <mat-label>Phone Number</mat-label>
+                <input matInput formControlName="phoneNumber" style="font-size: x-large;" placeholder="Ex. 077 988 9870">
+                </mat-form-field>
+                
+    
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput formControlName=
+                    "password" style="font-size: x-large;">
+                    <mat-error
+                    *ngIf="registerForm.controls.password.hasError('minlength') && !registerForm.controls.password.hasError('required')">
+                    Please enter a valid password
+                    </mat-error>
+                    <mat-error *ngIf="registerForm.controls.password.hasError('required')">
+                    password is <strong>required</strong>
+                    </mat-error>
+                    </mat-form-field>
+
+                    <button type="submit" [disabled]="!registerForm.valid"> Register</button>
+                    </form>
+
+
+
