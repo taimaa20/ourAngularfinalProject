@@ -20,7 +20,7 @@ const routes: Routes = [
       loadChildren:()=>AuthModule
     },
     {
-      path:'home',
+      path:'',
       component:HomePageComponent
     }
 
