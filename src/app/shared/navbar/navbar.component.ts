@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
   GoToAbout()
   {
-    this.router.navigate(['aboutus'])
+    this.router.navigate(['about'])
   }
 
   GoToContact()
