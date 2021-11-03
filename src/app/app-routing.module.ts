@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutusComponent } from './aboutus/aboutus.component';
+import { AboutModule } from './about/about.module';
+import { AboutusCardComponent } from './about/aboutus-card/aboutus-card.component';
+import { AboutusComponent } from './about/aboutus/aboutus.component';
 import { AuthModule } from './auth/auth.module';
 import { ClientModule } from './client/client.module';
 import { ContactusComponent } from './contactus/contactus.component';
@@ -8,8 +10,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path: 'aboutus',
-    component: AboutusComponent 
+    path: 'about',
+    loadChildren:()=>AboutModule
   },
     {
     path: 'contactus', 
@@ -23,7 +25,6 @@ const routes: Routes = [
       path:'',
       component:HomePageComponent
     }
-
 ];
 
 @NgModule({
