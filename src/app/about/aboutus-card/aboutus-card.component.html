@@ -17,6 +17,7 @@
 </mat-card> -->
 
 
+<!-- make the card loop -->
 <main class="main">
 
     <section class="card-area">
@@ -50,10 +51,10 @@
                                </svg>
 
                                 <h2 class="card-front__heading">
-                                    Who we are
+                                    {{typeLang}}
                                 </h2>
                                 <p class="card-front__text-price">
-
+                                    {{subText}}
                                 </p>
                             </div>
 
@@ -71,18 +72,17 @@
                 <div class="inside-page">
                     <div class="inside-page__container">
                         <h3 class="inside-page__heading inside-page__heading--city">
-                            For urban lovers
+
                         </h3>
                         <p class="inside-page__text">
-                            As cities never sleep, there are always something going on, no matter what time!
-                        </p>
+                            {{description}} </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Card: Ski -->
-        <section class="card-section">
+        <!-- <section class="card-section">
             <div class="card">
                 <div class="flip-card">
                     <div class="flip-card__container">
@@ -184,10 +184,10 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Card: Beach -->
-        <section class="card-section">
+        <!-- <section class="card-section">
             <div class="card">
                 <div class="flip-card">
                     <div class="flip-card__container">
@@ -235,8 +235,8 @@
             </div>
         </section>
 
-        <!-- Card: Camping -->
-        <section class="card-section">
+        Card: Camping -->
+        <!-- <section class="card-section">
             <div class="card">
                 <div class="flip-card">
                     <div class="flip-card__container">
@@ -280,5 +280,5 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </section>
