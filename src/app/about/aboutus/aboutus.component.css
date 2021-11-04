@@ -5,7 +5,7 @@
 .container {
     width: 98%;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 7%;
 }
 
 .cards {
@@ -13,5 +13,5 @@
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding-bottom: 10%;
+    padding-bottom: 4%;
 }
