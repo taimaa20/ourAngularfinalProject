@@ -1,4 +1,4 @@
-<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/banner-image-3-1920x300.jpg);">
+<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/banner-image-3-1920x300.jpg);height:70%;">
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -12,6 +12,7 @@
 </section>
 
 <main>
+    
     <section class="popular-places">
         <div class="container">
             <div class="contact-content">
@@ -19,19 +20,24 @@
                     <div class="col-md-8"> 
                         <div class="left-content">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                   <fieldset>
                                     <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
                                   </fieldset>
                                 </div>
-                                 <div class="col-md-6">
+                                 <div class="col-md-4">
                                   <fieldset>
-                                    <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject..." required="">
+                                    <input name="email" type="text" class="form-control" id="Email" placeholder="Email..." required="">
                                   </fieldset>
                                 </div>
+                                <div class="col-md-4">
+                                    <fieldset>
+                                      <input name="phone" type="text" class="form-control" id="Phone" placeholder="Phone..." required="">
+                                    </fieldset>
+                                  </div>
                                 <div class="col-md-12">
                                   <fieldset>
-                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                                    <textarea name="comment" rows="6" class="form-control" id="comment" placeholder="Your comment..." required=""></textarea>
                                   </fieldset>
                                 </div>
                                 <div class="col-md-12">
@@ -51,9 +57,9 @@
                                     <div class="content"> 
                                         <p>Etiam viverra nibh at lorem hendrerit porta non nec ligula. Donec hendrerit porttitor pretium.</p>
                                         <ul>
-                                            <li><span>Phone:</span><a href="#">+1 333 4040 5566</a></li>
-                                            <li><span>Email:</span><a href="#">contact@company.com</a></li>
-                                            <li><span>Address:</span><i class="fa fa-map-marker"></i> 212 Barrington Court New York</li>
+                                            <li><span>Phone:</span><a href="#">{{Phone}}</a></li>
+                                            <li><span>Email:</span><a href="#">{{email}}</a></li>
+                                            <li><span>Address:</span><i class="fa fa-map-marker"></i> {{Address}}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -64,6 +70,20 @@
             </div>
         </div>
     </section>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-heading">
+                <span>Team</span>
+                <h2>Lorem ipsum dolor sit amet</h2>
+            </div>
+        </div> 
+    </div> 
+    <!-- <app-contact-card ></app-contact-card> -->
+    <div class=container>
+        <div class="cards">
+    <app-contact-card *ngFor="let card of data" [typeLang]="card.typeLang" [subText]="card.subText" [description]="card.description" style="margin-top:50px;"></app-contact-card>
+</div>
+    </div>
 
     <!-- <section class="popular-places" id="popular">
         <div class="container">
