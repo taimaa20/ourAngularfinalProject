@@ -33,4 +33,30 @@
   button:hover, a:hover {
     opacity: 0.7;
   }
- 
+  .blue-button a {
+    display: inline-block;
+    background-color: #4883ff;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10
+px
+ 16
+px
+;
+    text-decoration: none;
+    border: 2
+px
+ solid #4883ff;
+    transition: all 0.5s;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
