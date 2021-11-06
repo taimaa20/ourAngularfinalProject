@@ -1,4 +1,4 @@
-<form [formGroup]="registerForm" (submit)="submit()">
+<!-- <form [formGroup]="registerForm" (submit)="submit()">
     <mat-form-field class="example-full-width">
     <mat-label>FullName</mat-label>
     <input matInput formControlName="fullName" style="font-size: x-large;" placeholder="Full Name ">
@@ -29,13 +29,13 @@
             address is <strong>required</strong>
             </mat-error>
             </mat-form-field>
-            
+
             <mat-form-field class="example-full-width">
                 <mat-label>Phone Number</mat-label>
                 <input matInput formControlName="phoneNumber" style="font-size: x-large;" placeholder="Ex. 077 988 9870">
                 </mat-form-field>
-                
-    
+
+
                 <mat-form-field class="example-full-width">
                     <mat-label>Password</mat-label>
                     <input type="password" matInput formControlName=
@@ -51,6 +51,351 @@
 
                     <button type="submit" [disabled]="!registerForm.valid"> Register</button>
                     </form>
+                    <div style="  background: url(https://kiamediacenter.com/sites/default/files/15106_2020_Stinger_GTS.jpg) no-repeat center;
+                    ">
+                    <div class="row">
+                      <div class="col-md-6 mx-auto p-0">
+                          <div class="card">
+                              <div class="login-box">
+                                  <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                                      <div class="login-space">
+                                          <form [formGroup]="registerForm" (submit)="submit()">
 
+                                            <mat-label >FullName</mat-label>
+                                            <br><br>
+                                            <div class="group"  ><label class="label">
+                                            <input   matInput formControlName="fullName" class="input" placeholder="Full Name ">
+                                          </label>
+                                          </div>
+                                          <mat-error *ngIf="registerForm.controls.fullName.hasError('required')">
+                                            fullName is <strong>required</strong>
+                                            </mat-error> -->
+
+
+<!--
+                                            <mat-form-field class="example-full-width">
+                                              <mat-label>UserImage</mat-label>
+                                              <input matInput formControlName="UserImage" style="font-size: x-large;" placeholder="UserImage ">
+                                              <mat-error *ngIf="registerForm.controls.UserImage.hasError('required')">
+                                                UserImage is <strong>required</strong>
+                                              </mat-error>
+                                            </mat-form-field>
+
+                                            <mat-form-field class="example-full-width">
+                                              <mat-label>Gender</mat-label>
+                                              <input matInput formControlName="Gender" style="font-size: x-large;" placeholder="Gender ">
+                                              <mat-error *ngIf="registerForm.controls.Gender.hasError('required')">
+                                                Gender is <strong>required</strong>
+                                              </mat-error>
+                                            </mat-form-field>
+
+                                            <mat-form-field class="example-full-width">
+                                              <mat-label>Age</mat-label>
+                                              <input matInput formControlName="Age" style="font-size: x-large;" placeholder="Age ">
+                                              <mat-error *ngIf="registerForm.controls.Age.hasError('required')">
+                                                Age is <strong>required</strong>
+                                              </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field class="example-full-width">
+                                              <mat-label>email</mat-label>
+                                              <input matInput formControlName="email" style="font-size: x-large;" placeholder="email ">
+                                              <mat-error *ngIf="registerForm.controls.email.hasError('required')">
+                                                email is <strong>required</strong>
+                                              </mat-error>
+                                            </mat-form-field>
+
+                                            <mat-form-field class="example-full-width">
+                                              <mat-label>Phone Number</mat-label>
+                                              <input matInput formControlName="phoneNumber" style="font-size: x-large;" placeholder="Ex. 077 988 9870">
+                                              </mat-form-field>
+
+                                                <mat-form-field class="example-full-width">
+                                                    <mat-label>Address</mat-label>
+                                                    <input matInput formControlName="address" style="font-size: x-large;" placeholder="Ex. WI Street">
+                                                    <mat-error *ngIf="registerForm.controls.address.hasError('required')">
+                                                    address is <strong>required</strong>
+                                                    </mat-error>
+                                                    </mat-form-field>
+
+
+
+
+                                                        <mat-form-field class="example-full-width">
+                                                            <mat-label>Password</mat-label>
+                                                            <input type="password" matInput formControlName=
+                                                            "password" style="font-size: x-large;">
+                                                            <mat-error
+                                                            *ngIf="registerForm.controls.password.hasError('minlength') && !registerForm.controls.password.hasError('required')">
+                                                            Please enter a valid password
+                                                            </mat-error>
+
+                                                            <mat-error *ngIf="registerForm.controls.password.hasError('required')">
+                                                            password is <strong>required</strong>
+                                                            </mat-error>
+                                                            </mat-form-field>
+                                                            <div class="hr"></div>
+
+                                                            <button   type="submit" [disabled]="!registerForm.valid"> Register</button>
+                                                            </form>
+                                                                 <div class="foot"> <label for="tab-1">Already Member?</label> </div>
+
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                  <br> -->
+
+                  <!-- <html>
+                    <head>
+
+                      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+                      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+                      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+
+                    </head>
+                    <body>
+
+                        <div id="booking" class="section" style="margin-top:150px;">
+                            <div class="section-center">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="booking-form">
+                                            <div class="form-header">
+                                                <h1>Make your reservation </h1>
+                                            </div>
+                                            <form asp-action="Create">
+                                                @*<div class="form-group">
+                                                        <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                                                    </div>*@
+
+                                                <div class="form-group">
+                                                    <input asp-for="CustomerId" value="" class="form-control" type="text" placeholder="Enter Your ID">
+
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group"> <input asp-for="BookingFrom" class="form-control" type="date" required> <span class="form-label">Check In</span> </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group"> <input asp-for="BookingTo" class="form-control" type="date" required> <span class="form-label">Check out</span> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <select asp-for="Roomid" class="form-control" required asp-items="ViewBag.Roomid">
+                                                                <option value="" selected hidden># of Rooms</option>
+                                                            </select>
+                                                            <span class="select-arrow"></span> <span class="form-label">Rooms</span>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input asp-for="NoOfMembers" value="" class="form-control" type="text" placeholder="Number Of parson">
+
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input asp-for="DaysRange" class="form-control" type="text" placeholder="Total Days" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input asp-for="TotalAmount" class="form-control" type="text" placeholder="Total Price" />
+
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <select asp-for="BookingStatusid" class="form-control" asp-items="ViewBag.BookingStatusid"></select>                                            <option value="" selected hidden>no of rooms</option>
+
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <select asp-for="PaymentTypeid" class="form-control" asp-items="ViewBag.PaymentTypeid"></select>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+
+                                                            <input asp-for="PaymentAmount" class="form-control" type="text" placeholder="Payment Amount">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group"> <input asp-for="PaymentDate" class="form-control" type="datetime-local" required> <span class="form-label"> Payment Date</span> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-btn"> <button id="submitForm" type="submit" class="submit-btn">Book Now</button> </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </body>
+                    </html> -->
+
+                    <div id="booking" class="section">
+                      <img src="https://www.annahar.com/library/old/storage/attachments/722/porsche_726233.jpg" style="width:100%;height: 100%;">
+                      <div class="section-center">
+                          <div class="container">
+                              <div class="row">
+                                  <div class="booking-form">
+<h1 style="text-align: center; font-size: 60px; padding-bottom: 30px;color: white; font-family: cursive;">Registeration</h1>
+                                     <form>
+
+                                      <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+
+                                              <input class="form-control"  type="text"  matInput  formControlName="fullName"  placeholder="full Name">
+                                              <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="registerForm.controls.fullName.hasError('required')">Please enter  full Name</mat-error>
+
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input class="form-control"  type="text"  matInput  formControlName="UserImage"  placeholder="User Image">
+                                            <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="registerForm.controls.UserImage.hasError('required')">Please enter  User Image</mat-error>
+
+                                         </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <input class="form-control"  type="text"  matInput  formControlName="Gender"  placeholder="Gender">
+                                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="registerForm.controls.Gender.hasError('required')">Please enter  Gender</mat-error>
+
+                                       </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <input class="form-control"  type="text"  matInput  formControlName="email"  placeholder="Email">
+                                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="registerForm.controls.email.hasError('required')">Please enter a valid email</mat-error>
+
+                                       </div>
+                                      </div>
+                                  </div>
+
+
+                                   <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <input class="form-control"  type="text"  matInput  formControlName="Age"  placeholder="Age">
+                                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="registerForm.controls.Age.hasError('required')">Please enter Age</mat-error>
+
+                                     </div>
+                                    </div>
+                                    <div class="col-md-6">
+
+                                      <div class="form-group">
+                                        <input class="form-control"  type="text"  matInput  formControlName="address"  placeholder="Address">
+                                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="registerForm.controls.address.hasError('required')">Please enter  Address</mat-error>
+
+                                     </div>
+                                    </div>
+                                </div>
+
+
+                               <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <input class="form-control"  type="text"  matInput  formControlName="phoneNumber"  placeholder="phone Number">
+                                    <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="registerForm.controls.phoneNumber.hasError('required')">Please enter phone Number</mat-error>
+
+                                 </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <input class="form-control" type="password" matInput formControlName="password" placeholder="Password">
+                                    <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="registerForm.controls.password.hasError('minlength')">Password must be more than 8 char</mat-error>
+                               </div>
+                            </div>
+                            </div>
+
+
+
+
+
+
+
+
+                                          <div class="form-btn">
+                                            <button id="submitForm" type="submit" class="submit-btn"   >Register</button>
+                                          </div>
+
+                                          <br><br>
+
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-btn">
+                                                <button id="submitForm" type="submit" class="submit-btn" routerLink="/security/login">Login</button>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-btn">
+                                                <button id="submitForm" type="submit" class="submit-btn " routerLink="">Home</button>
+                                              </div>
+                                            </div>
+                                         </div>
+
+                                     </form>
+                                 </div>
+
+                             </div>
+                         </div>
+                     </div>
+                    </div>
 
 

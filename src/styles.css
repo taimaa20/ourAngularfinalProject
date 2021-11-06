@@ -6,9 +6,9 @@
 @import '~bootstrap/dist/css/bootstrap-theme.css';
 
 @import '~bootstrap/dist/css/datepicker.css';
-@import '~bootstrap/dist/css/fontAwesome.css'; 
+@import '~bootstrap/dist/css/fontAwesome.css';
 @import '~bootstrap/dist/css/hero-slider.css';
-@import '~bootstrap/dist/css/style.css'; 
+@import '~bootstrap/dist/css/style.css';
 /* @import '~bootstrap/dist/css/owl-carousel.css';  */
 
 html, body { height: 100%; }
@@ -16,3 +16,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+
