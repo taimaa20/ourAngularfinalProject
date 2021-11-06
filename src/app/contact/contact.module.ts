@@ -5,16 +5,20 @@ import { ContactRoutingModule } from './contact-routing.module';
 import { ContactCardComponent } from './contact-card/contact-card.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormGroup } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ContactCardComponent,
-    ContactusComponent
+    ContactusComponent,
+ 
   ],
   imports: [
     CommonModule,
     ContactRoutingModule,
-    SharedModule
+    SharedModule,  
+
+    
   ]
 })
 export class ContactModule { }

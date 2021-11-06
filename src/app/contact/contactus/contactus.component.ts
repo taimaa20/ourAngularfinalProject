@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contactus',
@@ -6,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
-  email:string="undefined";
+  // registerForm: FormGroup = new FormGroup({
+  //   fullName: new FormControl('', [Validators.required]),
+  //   email: new FormControl('', [Validators.required, 
+  //   Validators.email]),
+  //   phoneNumber: new FormControl('',Validators.required,),
+  //   Img: new FormControl('',Validators.required,),
+  //   comment: new FormControl('', [Validators.required, 
+  //   Validators.minLength(10)])
+  //   });
+email:string="undefined";
   Phone:string="undefined";
   Address:string="undefined";
   data :any =[{
@@ -40,6 +50,10 @@ export class ContactusComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+  submitForm(){
+    
+    //console.log(this.registerForm.controls);
   }
 
 }
