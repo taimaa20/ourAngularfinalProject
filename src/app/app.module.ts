@@ -17,10 +17,10 @@ import { AboutusCardComponent } from './about/aboutus-card/aboutus-card.componen
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    // NavbarComponent,
  
     
-    FooterComponent,
+    // FooterComponent,
     HomePageComponent,
     
 
