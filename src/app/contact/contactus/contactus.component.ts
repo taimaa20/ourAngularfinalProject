@@ -16,9 +16,9 @@ export class ContactusComponent implements OnInit {
   //   comment: new FormControl('', [Validators.required, 
   //   Validators.minLength(10)])
   //   });
-email:string="undefined";
-  Phone:string="undefined";
-  Address:string="undefined";
+webemail:string="undefined";
+webPhone:string="undefined";
+  webAddress:string="undefined";
   data :any =[{
     typeLang:"Back End",
       subText:"C#" ,
@@ -44,9 +44,9 @@ email:string="undefined";
   ]
   constructor() {
 
-    this.email="MyVehicle@Company.com"
-    this.Phone="+9627777777777"
-    this.Address="PQCR+WHF, Madaba"
+    this.webemail="MyVehicle@Company.com"
+    this.webPhone="+9627777777777"
+    this.webAddress="PQCR+WHF, Madaba"
    }
 
   ngOnInit(): void {
