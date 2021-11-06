@@ -15,8 +15,13 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ClientRoutingModule } from '../client/client-routing.module';
+import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
-  declarations: [],
+  declarations: [
+    FooterComponent,
+    NavbarComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -50,7 +55,9 @@ import { ClientRoutingModule } from '../client/client-routing.module';
     MatCheckboxModule,
     MatSliderModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    FooterComponent,
+    NavbarComponent,
   
   
   ]
