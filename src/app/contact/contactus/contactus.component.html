@@ -1,0 +1,89 @@
+<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/Contact-us.png);height:70%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="banner-caption">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main>
+    
+    <section class="popular-places">
+        <div class="container">
+            <div class="contact-content">
+                <div class="row">
+                    <div class="col-md-8"> 
+                        <div class="left-content">
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <fieldset>
+                                    <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                                  </fieldset>
+                                </div>
+                                 <div class="col-md-4">
+                                  <fieldset>
+                                    <input name="email" type="text" class="form-control" id="Email" placeholder="Email..." required="">
+                                  </fieldset>
+                                </div>
+                                <div class="col-md-4">
+                                    <fieldset>
+                                      <input name="phone" type="text" class="form-control" id="Phone" placeholder="Phone..." required="">
+                                    </fieldset>
+                                  </div>
+                                <div class="col-md-12">
+                                  <fieldset>
+                                    <textarea name="comment" rows="6" class="form-control" id="comment" placeholder="Your comment..." required=""></textarea>
+                                  </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                  <fieldset>
+                                    <div class="blue-button">
+                                        <a href="#" id="form-submit" class="btn">Send Message</a>
+                                    </div>
+                                  </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="right-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="content"> 
+                                        <p>Etiam viverra nibh at lorem hendrerit porta non nec ligula. Donec hendrerit porttitor pretium.</p>
+                                        <ul>
+                                            <li><span>Phone:</span><a href="#">{{webPhone}}</a></li>
+                                            <li><span>Email:</span><a href="#">{{webemail}}</a></li>
+                                            <li><span>Address:</span><i class="fa fa-map-marker"></i> {{webAddress}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+        </div>
+    </section>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-heading">
+                <span>Team</span>
+                <h2>Lorem ipsum dolor sit amet</h2>
+            </div>
+        </div> 
+    </div> 
+    <!-- <app-contact-card ></app-contact-card> -->
+    <div class=container>
+        <div class="cards">
+    <app-contact-card *ngFor="let card of data" [typeLang]="card.typeLang" [subText]="card.subText" [description]="card.description" style="margin-top:50px;"></app-contact-card>
+</div>
+    </div>
+
+   
+</main>
+

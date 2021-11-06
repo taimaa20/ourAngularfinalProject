@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AboutusComponent } from './about/aboutus/aboutus.component';
-import { ContactusComponent } from './contactus/contactus.component';
+
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -19,7 +19,7 @@ import { AboutusCardComponent } from './about/aboutus-card/aboutus-card.componen
     AppComponent,
     NavbarComponent,
  
-    ContactusComponent,
+    
     FooterComponent,
     HomePageComponent,
     

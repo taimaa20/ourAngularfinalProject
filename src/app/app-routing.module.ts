@@ -5,7 +5,8 @@ import { AboutusCardComponent } from './about/aboutus-card/aboutus-card.componen
 import { AboutusComponent } from './about/aboutus/aboutus.component';
 import { AuthModule } from './auth/auth.module';
 import { ClientModule } from './client/client.module';
-import { ContactusComponent } from './contactus/contactus.component';
+import { ContactModule } from './contact/contact.module';
+
 import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
@@ -15,7 +16,7 @@ const routes: Routes = [
   },
     {
     path: 'contactus', 
-    component: ContactusComponent
+    loadChildren:()=>ContactModule
     },
     {
       path:'security',

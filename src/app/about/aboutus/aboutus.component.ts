@@ -8,19 +8,24 @@ import { Router } from '@angular/router';
 })
 export class AboutusComponent implements OnInit {
   data :any =[{
+    img:"who we are",
     typeLang:"who we are",
       subText:"C#" ,
       description:"C# See Sharp is a modern, object-oriented, and type-safe programming language. "  },
   {
-    typeLang:"our polices" ,
+    img:"who we are",
+    typeLang:"why MyVhiecle" ,
      subText:"Angular" ,
      description:"C# See Sharp is a modern, object-oriented, and type-safe programming language. "
   },
   {
-    typeLang:"team work",
+    img:"who we are",
+    typeLang:"team work value ",
     subText:"OOP",
-    description:"C# See Sharp is a modern, object-oriented, and type-safe programming language. "  },  {
-    typeLang:"Back End",
+    description:"C# See Sharp is a modern, object-oriented, and type-safe programming language. "  },
+      {
+        img:"who we are",
+    typeLang:" our values",
     subText:"OOP",
     description:"C# See Sharp is a modern, object-oriented, and type-safe programming language. "  }
   
