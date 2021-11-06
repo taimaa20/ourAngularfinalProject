@@ -1,51 +1,55 @@
-<div class="container">
-    <div class="loginCard">
-        <div class="form">
-            <form class="example-form">
-                <mat-form-field class="example-full-width" appearance="fill">
-                  <mat-label>Email</mat-label>
-                  <input type="email" matInput [formControl]="email" placeholder="Ex. pat@example.com">
-                  <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
-                    Please enter a valid email address
-                  </mat-error> 
-                   <mat-error *ngIf="email.hasError('required')">
-                    Email is <strong>required</strong>
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Password</mat-label>
-                    <input type="password"  matInput [formControl]="password" >
-                    <mat-error *ngIf="password.hasError('minlength') && !password.hasError('required')">
-                     Please Enter Strong Password 
-                    </mat-error> 
-                    <mat-error *ngIf="password.hasError('required')">
-                      Password is <strong>required</strong>
-                    </mat-error> 
-                  </mat-form-field>
+<div id="booking" class="section">
+  <img src="..\assets\img\kia2.jpg" style="width:100%;height: 100%;">
+  <div class="section-center">
+      <div class="container">
+          <div class="row">
+              <div class="booking-form">  
+                
+                 <form>
+                     <div class="form-group">
+                        <input class="form-control"  type="text"  matInput  [formControl]="usernameControl"  placeholder="Username">
+                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="usernameControl.hasError('email')">Please enter a valid Username</mat-error>
+                     </div>
 
-                <button (click)="submit()" style="flex:1;width:100%" [disabled]=!email.valid||!password.valid>
-                <ng-container *ngIf="showLoader"> <mat-progress-spinner
-                  class="example-margin"
-                  [color]="color"
-                  [mode]="mode"
-                  [value]="value">
-              </mat-progress-spinner></ng-container>
+                     <div class="form-group">
+                          <input class="form-control" type="password" matInput [formControl]="passwordControl" placeholder="Password">
+                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="passwordControl.hasError('minlength')">Password must be more than 8 char</mat-error>
+                     </div>
 
-              <ng-container *ngIf="!showLoader">Login</ng-container>
-
-             
-
-                </button>
-                <br>
-                <section class="example-section">
-                  <mat-checkbox (click)="Remember()" class="example-margin">Remember me!</mat-checkbox>
                   
-                </section>
-               <!-- <p (click)="goToRegister()" style="cursor: pointer; text-align: center;font-size: 1.7em;margin-top: 40px; ">Create New Account</p> -->
+                     <label style="color:white; font-size: 15px;"><input style="width: 30px;"  type="checkbox"  checked="checked" >Remember Me</label>
+                     <br>
+                 
+                      <label>
+                      <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="passwordControl.hasError('required')&&usernameControl.hasError('required')">Password and Username is required</mat-error>
+                     </label>
 
-<!-- <p (click)="goTonavbar()">About us page </p>            -->
-   </form>
-<!-- <h2>{{homeservice.message}}</h2> -->
-  </div>
+                      <div class="form-btn">
+                        <button id="submitForm" type="submit" class="submit-btn"  [disabled]="!usernameControl.valid||!passwordControl.valid"  (click)="Login()">Login</button>
+                      </div>
+                      
+                       <br><br>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-btn">
+                            <button id="submitForm" type="submit" class="submit-btn" routerLink="/security/register">Register</button>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-btn">
+                            <button id="submitForm" type="submit" class="submit-btn " routerLink="">Home</button>
+                          </div>
+                        </div>
+                     </div>
+
+                 </form>
+             </div>
+         </div>
+     </div>
+ </div>
 </div>
-</div>
+
+
+
+
