@@ -7,13 +7,13 @@
                 
                  <form>
                      <div class="form-group">
-                        <input class="form-control"  type="text"  matInput  [formControl]="usernameControl"  placeholder="Username">
-                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="usernameControl.hasError('email')">Please enter a valid Username</mat-error>
+                        <input class="form-control"  type="text"  matInput  [formControl]="authService.usernameControl"  placeholder="Username">
+                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.usernameControl.hasError('email')">Please enter a valid Username</mat-error>
                      </div>
 
                      <div class="form-group">
-                          <input class="form-control" type="password" matInput [formControl]="passwordControl" placeholder="Password">
-                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="passwordControl.hasError('minlength')">Password must be more than 8 char</mat-error>
+                          <input class="form-control" type="password" matInput [formControl]="authService.passwordControl" placeholder="Password">
+                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('minlength')">Password must be more than 8 char</mat-error>
                      </div>
 
                   
@@ -21,11 +21,11 @@
                      <br>
                  
                       <label>
-                      <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="passwordControl.hasError('required')&&usernameControl.hasError('required')">Password and Username is required</mat-error>
+                      <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('required')&&authService.usernameControl.hasError('required')">Password and Username is required</mat-error>
                      </label>
 
                       <div class="form-btn">
-                        <button id="submitForm" type="submit" class="submit-btn"  [disabled]="!usernameControl.valid||!passwordControl.valid"  (click)="Login()">Login</button>
+                        <button id="submitForm" type="submit" class="submit-btn"  [disabled]="!authService.usernameControl.valid||!authService.passwordControl.valid"  (click)="authService.submit()">Login</button>
                       </div>
                       
                        <br><br>
