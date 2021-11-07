@@ -17,6 +17,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { ClientRoutingModule } from '../client/client-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -37,7 +38,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatCheckboxModule,
     MatSliderModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
     
     
   ],
@@ -58,6 +60,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatGridListModule,
     FooterComponent,
     NavbarComponent,
+    HttpClientModule
   
   
   ]
