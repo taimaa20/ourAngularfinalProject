@@ -29,12 +29,12 @@ export class AuthService {
     const requestOptions={
       headers:new HttpHeaders(headerDict)
     }
-    console.log(body);
+    
        this.spinner.show();
-      debugger
+     
       this.http.post('https://localhost:44373/api/Jwt',body,requestOptions).subscribe((res:any)=>{
-        //  this.spinner.show();
-        this.spinner.hide()
+        
+        //  this.spinner.hide()
         responce1=res;
         const responce={
           token:responce1.toString()};
@@ -55,8 +55,9 @@ export class AuthService {
          {
            this.router.navigate(['accountant/accountant']);
          }
-        })
-        this.spinner.hide();
+        }
+        )
+          this.spinner.hide();
     }
 
 
