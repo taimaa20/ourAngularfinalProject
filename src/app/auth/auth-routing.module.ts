@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AutheraizationGuard } from '../autheraization.guard';
 import { ClientModule } from '../client/client.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -15,7 +16,8 @@ const routes: Routes = [{
     },
 {
   path:'client',
-  loadChildren:()=>ClientModule
+  loadChildren:()=>ClientModule,
+  canActivate :[AutheraizationGuard]
 }
 
 

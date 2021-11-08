@@ -36,16 +36,22 @@ export class AuthService {
       headers:new HttpHeaders(headerDict)
     }
     console.log(body);
-      this.spinner.show();
+       this.spinner.show();
       debugger
       this.http.post('https://localhost:44373/api/Jwt',body,requestOptions).subscribe((res:any)=>{
+        //  this.spinner.show();
         this.spinner.hide()
         responce1=res;
         const responce={
           token:responce1.toString()};
           localStorage.setItem('token',responce.token);
           let data:any=jwtDecode(responce.token);//username: rolename
+UpdateRegister
 
+
+        
+        
+ main
           //var str=JSON.stringify({...data});
        localStorage.setItem('user',JSON.stringify({...data}));
 
