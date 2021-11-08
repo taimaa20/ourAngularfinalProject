@@ -11,12 +11,18 @@ import jwtDecode from 'jwt-decode';
 export class AuthService {
 
   constructor(private spinner: NgxSpinnerService,private router:Router,public homeService:HomeService,private http:HttpClient) { }
-  
+  fullNameControl= new FormControl('', [Validators.required]);
+  UserImageControl=new FormControl('',[Validators.required]);
+  GenderControl= new FormControl('', [Validators.required]);
+  emailControl= new FormControl('', [Validators.required,Validators.email]);
+  AgeControl= new FormControl('', [Validators.required]);
+  addressControl= new FormControl('', [Validators.required]);
+  phoneNumberControl = new FormControl('',[Validators.required]);
   usernameControl = new FormControl('', [Validators.required]);
   passwordControl = new FormControl('', [Validators.required,Validators.minLength(10)]);
 
   submit(){
-    
+
     var responce1:any;
     var body={
       Username:this.usernameControl.value.toString(),
@@ -39,10 +45,10 @@ export class AuthService {
           token:responce1.toString()};
           localStorage.setItem('token',responce.token);
           let data:any=jwtDecode(responce.token);//username: rolename
-        
+
           //var str=JSON.stringify({...data});
        localStorage.setItem('user',JSON.stringify({...data}));
-      
+
          if(data.role=='Admin'){
            this.router.navigate(['admin/admin']);
          }

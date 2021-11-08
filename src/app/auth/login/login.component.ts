@@ -15,11 +15,11 @@ export class LoginComponent implements OnInit {
   // usernameControl = new FormControl('', [Validators.required]);
   // passwordControl = new FormControl('', [Validators.required,Validators.minLength(10)]);
 
-  constructor(private spinner: NgxSpinnerService,private router:Router,public homeservice:HomeService, public authService :AuthService) { }
+  constructor(private spinner: NgxSpinnerService,private router:Router, public authService :AuthService) { }
 
   ngOnInit(): void {
   }
- 
+
   // Login(){
   //   const usernameValue=this.usernameControl.value;
   //   const passwordValue = this.passwordControl.value;
