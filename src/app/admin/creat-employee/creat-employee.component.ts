@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-creat-employee',
+  templateUrl: './creat-employee.component.html',
+  styleUrls: ['./creat-employee.component.css']
 })
-export class AdminComponent implements OnInit {
+export class CreatEmployeeComponent implements OnInit {
 
-  
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
@@ -18,6 +17,7 @@ export class AdminComponent implements OnInit {
     
     
    }
+
   ngOnInit(): void {
   }
   logout()

@@ -40,7 +40,7 @@ export class AuthService {
      
       this.http.post('https://localhost:44373/api/Jwt',body,requestOptions).subscribe((res:any)=>{
         
-        //  this.spinner.hide()
+       this.spinner.hide()
         responce1=res;
         const responce={
           token:responce1.toString()};
