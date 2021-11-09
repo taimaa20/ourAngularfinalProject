@@ -1,77 +1,81 @@
 
 
-                    <div id="booking" class="section">
-                      <img src="https://www.annahar.com/library/old/storage/attachments/722/porsche_726233.jpg" style="width:100%;height: 100%;">
+                    <div id="booking" class="section" >
+                      <img src="..\assets\img\kia2.jpg" style="width:100%;height: 100%;">
                       <div class="section-center">
                           <div class="container">
                               <div class="row">
-                                  <div class="booking-form">
+                                  <div class="booking-form" style="margin-top: -140px;">
                                     <h1 style="text-align: center; font-size: 60px; padding-bottom: 30px;color: white; font-family: cursive;">Registeration</h1>
-                                     <form>
+                                     <form style="height: 500px ; " >
 
                                       <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
 
                                               <input class="form-control"  type="text"  matInput  [formControl]="authService.fullNameControl"  placeholder="full Name">
-                                              <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.fullNameControl.hasError('required')">Please enter  full Name</mat-error>
+                                              <mat-error style="color: rgb(255, 6, 6); font-size: 14px; " *ngIf="authService.fullNameControl.hasError('required')">Please enter  full Name</mat-error>
 
                                             </div>
 
+
+
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                           <div class="form-group">
                                             <input class="form-control"  type="text"  matInput  [formControl]="authService.UserImageControl"  placeholder="User Image">
                                             <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.UserImageControl.hasError('required')">Please enter  User Image</mat-error>
 
                                          </div>
                                         </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <input class="form-control"  type="text"  matInput  [formControl]="authService.GenderControl"  placeholder="Gender">
+                                            <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.GenderControl.hasError('required')">Please enter  Gender</mat-error>
+
+                                         </div>
+                                        </div>
                                     </div>
                                     <div class="row">
-                                      <div class="col-md-6">
+                                      <div class="col-md-4">
                                         <div class="form-group">
-                                          <input class="form-control"  type="text"  matInput  [formControl]="authService.GenderControl"  placeholder="Gender">
-                                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.GenderControl.hasError('required')">Please enter  Gender</mat-error>
+                                          <input class="form-control"  type="text"  matInput  [formControl]="authService.AgeControl"  placeholder="Age">
+                                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.AgeControl.hasError('required')">Please enter Age</mat-error>
 
                                        </div>
                                       </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <input class="form-control"  type="text"  matInput  [formControl]="authService.emailControl"  placeholder="Email">
-                                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.emailControl.hasError('required')">Please enter a valid email</mat-error>
 
+                                      <div class="col-md-4">
+
+                                       <div class="form-group">
+                                        <input class="form-control"  type="text"  matInput  [formControl]="authService.emailControl"  placeholder="Email">
+                                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.emailControl.hasError('required')">Please enter a valid email</mat-error>
+
+                                     </div>
                                        </div>
+
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                          <input class="form-control"   type="text"  matInput   [formControl]="authService.phoneNumberControl"  placeholder="phone Number">
+                                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.phoneNumberControl.hasError('required')">Please enter phone Number</mat-error>
+
+                                        </div>
                                       </div>
                                   </div>
 
 
-                                   <div class="row">
-                                    <div class="col-md-6">
-                                      <div class="form-group">
-                                        <input class="form-control"  type="text"  matInput  [formControl]="authService.AgeControl"  placeholder="Age">
-                                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.AgeControl.hasError('required')">Please enter Age</mat-error>
 
-                                     </div>
-                                    </div>
-                                    <div class="col-md-6">
-
-                                      <div class="form-group">
-                                        <input class="form-control"  type="text"  matInput  [formControl]="authService.addressControl"   placeholder="Address">
-                                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.addressControl.hasError('required')">Please enter  Address</mat-error>
-
-                                     </div>
-                                    </div>
-                                </div>
 
 
                                <div class="row">
                                 <div class="col-md-12">
-                                  <div class="form-group">
-                                    <input class="form-control"  type="text"  matInput   [formControl]="authService.phoneNumberControl"  placeholder="phone Number">
-                                    <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.phoneNumberControl.hasError('required')">Please enter phone Number</mat-error>
 
-                                  </div>
+                                  <div class="form-group">
+                                    <input class="form-control"  type="text"  matInput  [formControl]="authService.addressControl"   placeholder="Address">
+                                    <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.addressControl.hasError('required')">Please enter  Address</mat-error>
+
+                                 </div>
                                 </div>
                               </div>
 
