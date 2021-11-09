@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-report',
+  templateUrl: './report.component.html',
+  styleUrls: ['./report.component.css']
 })
-export class AdminComponent implements OnInit {
+export class ReportComponent implements OnInit {
 
-  
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
@@ -18,8 +17,10 @@ export class AdminComponent implements OnInit {
     
     
    }
+
   ngOnInit(): void {
   }
+  
   logout()
   {
     localStorage.clear();
