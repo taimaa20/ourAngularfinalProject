@@ -46,12 +46,7 @@ export class AuthService {
           token:responce1.toString()};
           localStorage.setItem('token',responce.token);
           let data:any=jwtDecode(responce.token);//username: rolename
-UpdateRegister
 
-
-        
-        
- main
           //var str=JSON.stringify({...data});
        localStorage.setItem('user',JSON.stringify({...data}));
 
