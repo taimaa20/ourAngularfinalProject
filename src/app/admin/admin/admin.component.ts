@@ -12,9 +12,8 @@ import { HomeService } from 'src/app/Service/home.service';
 export class AdminComponent implements OnInit {
 
   @Input () number_Of_Users:number|undefined;
-  constructor(private router:Router,public homeService : HomeService,
-    public tostr:ToastrService,
-    private spiner:NgxSpinnerService) { }
+  @Input () number_Of_Employees:number|undefined;
+  
 
 
 
@@ -22,7 +21,9 @@ export class AdminComponent implements OnInit {
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
-  constructor(private router:Router)  {
+  constructor(private router:Router,public homeService : HomeService,
+    public tostr:ToastrService,
+    private spiner:NgxSpinnerService)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
@@ -30,8 +31,13 @@ export class AdminComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
     this.GetNumberOfCustomer();
+     this.GetNumberOfEmployee()
+    
+    
   }
+  
   logout()
   {
     localStorage.clear();
@@ -44,7 +50,34 @@ export class AdminComponent implements OnInit {
 
 this.homeService.GetNumberOfCustomer().subscribe((res:any)=>{
   this.homeService.data=res;
-  console.log(this.homeService.data.number_Of_Users)
+ 
+  this.spiner.hide();
+  // this.tostr.success('Data Retrived !!!')
+},err=>{
+  this.spiner.hide();
+  // this.tostr.error('something want worring!!')
+})
+
+ 
+  }
+
+  GetNumberOfEmployee()
+  {
+    this.spiner.show();
+
+this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
+  this.homeService.data=res;
+ console.log(this.homeService.data)
+  this.spiner.hide();
+  this.tostr.success('Data Retrived !!!')
+},err=>{
+  this.spiner.hide();
+  this.tostr.error('something want worring!!')
+});
+
+this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
+  this.homeService.data=res;
+ console.log(this.homeService.data)
   this.spiner.hide();
   this.tostr.success('Data Retrived !!!')
 },err=>{
@@ -52,7 +85,7 @@ this.homeService.GetNumberOfCustomer().subscribe((res:any)=>{
   this.tostr.error('something want worring!!')
 })
 
- 
+  }
 
   GoToAbout()
   {
@@ -71,3 +104,4 @@ this.homeService.GetNumberOfCustomer().subscribe((res:any)=>{
 
   }
 }
+
