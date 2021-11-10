@@ -10,10 +10,24 @@ import { HomeService } from 'src/app/Service/home.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+
   @Input () number_Of_Users:number|undefined;
   constructor(private router:Router,public homeService : HomeService,
     public tostr:ToastrService,
     private spiner:NgxSpinnerService) { }
+
+
+
+  
+  Name:string="undefined";
+  
+  currentYear:Date|any = undefined;
+  constructor(private router:Router)  {
+    this.currentYear = new Date().getFullYear();
+    this.Name="MyVehicle Team"
+    
+    
+   }
 
   ngOnInit(): void {
     this.GetNumberOfCustomer();
@@ -23,6 +37,7 @@ export class AdminComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['security/login']);
   }
+
   GetNumberOfCustomer()
   {
     this.spiner.show();
@@ -36,5 +51,23 @@ this.homeService.GetNumberOfCustomer().subscribe((res:any)=>{
   this.spiner.hide();
   this.tostr.error('something want worring!!')
 })
+
+ 
+
+  GoToAbout()
+  {
+    this.router.navigate(['about'])
+  }
+
+  GoToContact()
+  {
+    this.router.navigate(['contactus'])
+  }
+  
+  GoToHome()
+  {
+    
+    this.router.navigate([''])
+
   }
 }

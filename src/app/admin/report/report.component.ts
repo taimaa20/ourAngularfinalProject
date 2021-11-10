@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-accountant',
-  templateUrl: './accountant.component.html',
-  styleUrls: ['./accountant.component.css']
+  selector: 'app-report',
+  templateUrl: './report.component.html',
+  styleUrls: ['./report.component.css']
 })
-export class AccountantComponent implements OnInit {
+export class ReportComponent implements OnInit {
 
   Name:string="undefined";
   
@@ -17,8 +17,10 @@ export class AccountantComponent implements OnInit {
     
     
    }
+
   ngOnInit(): void {
   }
+  
   logout()
   {
     localStorage.clear();
