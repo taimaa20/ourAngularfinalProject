@@ -35,7 +35,7 @@ export class AdminComponent implements OnInit {
     this.GetNumberOfCustomer();
      this.GetNumberOfEmployee()
      this.GetListOfEmployees();
-    //this.GetNumberOfAllUser();
+    this.GetNumberOfAllUser();
     
     
   }
