@@ -21,4 +21,17 @@ data :any =[{}];
   GetNumberOfEmployee(){
     return this.http.get('https://localhost:44373/api/Users/NumberOfEmployees/')
   }
+
+  VehicleSystemReport(){
+    return this.http.get('https://localhost:44373/api/Vehicle/VehicleSystemReport')
+  }
+  ObtainFinancialReports(){
+    return this.http.get('https://localhost:44373/api/Users/ObtainFinancialReports')
+  }
+  GetListOfEmployees(){
+    return this.http.get('https://localhost:44373/api/Users/GetListOfEmployees')
+  }
+  GetNumberOfAllUser(){  
+      return this.http.get('https://localhost:44373/api/Users/NumberOfUsers')
+}
 }
