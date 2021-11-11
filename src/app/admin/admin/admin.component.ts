@@ -32,8 +32,15 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     
+
     // this.GetNumberOfCustomer()
     //  this.GetNumberOfEmployee()
+
+    this.GetNumberOfCustomer();
+     this.GetNumberOfEmployee()
+     this.GetListOfEmployees();
+    this.GetNumberOfAllUser();
+
     
     
   }
@@ -102,6 +109,33 @@ this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
     
     this.router.navigate([''])
 
+  }
+  GetListOfEmployees(){
+    this.homeService.GetListOfEmployees().subscribe((res:any)=>{
+      this.homeService.data=res;
+     console.log(this.homeService.data)
+     
+    },err=>{
+      console.log("err")
+    });
+    
+
+  }
+  GetNumberOfAllUser()
+  {
+    this.spiner.show();
+
+this.homeService.GetNumberOfAllUser().subscribe((res:any)=>{
+  this.homeService.data=res;
+  console.log(this.homeService.data)
+  this.spiner.hide();
+  // this.tostr.success('Data Retrived !!!')
+},err=>{
+  this.spiner.hide();
+  // this.tostr.error('something want worring!!')
+})
+
+ 
   }
 }
 
