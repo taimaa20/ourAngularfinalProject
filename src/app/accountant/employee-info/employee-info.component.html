@@ -119,12 +119,8 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
-
-                    
-
 <!--                     
                     <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
-
                     <!-- <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -135,20 +131,20 @@
                                 
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" routerLink="/admin/admin" ><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
+                                <a class="nav-link active" routerLink="/accountant/accountant" ><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
                                 
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" routerLink="/admin/creat-employee" ><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a>
-                                
+                                 -->
                             <li class="nav-item">
                                 
-                                <a class="nav-link" routerLink="/admin/chart" ><i  class="fa fa-bar-chart"></i>Chart</a>
+                                <a class="nav-link" routerLink="/accountant/report" ><i  class="fa fa-bar-chart"></i>Reports</a>
                                 
                             <li class="nav-item ">
-                                <a class="nav-link" routerLink="/admin/report" ><i class="fa fa-file-pdf-o"></i>Reports</a>
+                                <a class="nav-link" routerLink="/accountant/customer-info" ><i class="fa fa-file-pdf-o"></i>Customers Information</a>
                                 
                             <li class="nav-item">
-                                <a class="nav-link" routerLink="/admin/financial-report" ><i class="fa fa-file-o" ></i>Financial Reports</a>
+                                <a class="nav-link" routerLink="/accountant/employee-info" ><i class="fa fa-file-o" ></i>Employees Information </a>
                                 
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="#" ><i class="fas fa-fw fa-file"></i> Pages </a>
@@ -187,7 +183,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Admin Dashboard Template </h2>
+                                <h2 class="pageheader-title">Accountant Dashboard Template </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
@@ -211,41 +207,31 @@
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted" (click)="GetNumberOfCustomer()">Number Of Customers</h5>
+                                        <h5 class="text-muted">Total Revenue</h5>
                                         <div class="metric-value d-inline-block">
-                                           
-                                            <h1>{{homeService.data[0].number_Of_Users}}</h1>
+                                            <h1 class="mb-1">$12099</h1>
                                         </div>
-                                        
+                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                            <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
+                                        </div>
                                     </div>
-                                    
+                                    <div id="sparkline-revenue"></div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted" (click)="GetNumberOfEmployee()">Number Of Employee</h5>
+                                        <h5 class="text-muted">Affiliate Revenue</h5>
                                         <div class="metric-value d-inline-block">
-                                            
-                                            <h1>{{homeService.data[0].number_Of_Employees}}</h1>
+                                            <h1 class="mb-1">$12099</h1>
                                         </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted" (click)="GetNumberOfEmployee()">Number Of Employee</h5>
-                                        <div class="metric-value d-inline-block">
-                                             <h1 class="mb-1">{{homeService.data[0].number_Of_Employees}}</h1> 
+                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                            <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
                                         </div>
-                                        
                                     </div>
                                     <div id="sparkline-revenue2"></div>
                                 </div>
-                            </div> -->
+                            </div>
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
@@ -308,3 +294,4 @@
 </body>
  
 </html>
+
