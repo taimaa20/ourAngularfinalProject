@@ -14,7 +14,7 @@ export class AdminComponent implements OnInit {
   @Input () number_Of_Users:number|undefined;
   @Input () number_Of_Employees:number|undefined;
   
-
+  @Input () usersCount:number|undefined;
 
 
   
@@ -36,10 +36,10 @@ export class AdminComponent implements OnInit {
     // this.GetNumberOfCustomer()
     //  this.GetNumberOfEmployee()
 
-    this.GetNumberOfCustomer();
-     this.GetNumberOfEmployee()
+    // this.GetNumberOfCustomer();
+    //  this.GetNumberOfEmployee()
      this.GetListOfEmployees();
-    this.GetNumberOfAllUser();
+    // this.GetNumberOfAllUser();
 
     
     
@@ -59,10 +59,10 @@ this.homeService.GetNumberOfCustomer().subscribe((res:any)=>{
   this.homeService.data=res;
  
   this.spiner.hide();
-  // this.tostr.success('Data Retrived !!!')
+  this.tostr.success('Data Retrived !!!')
 },err=>{
   this.spiner.hide();
-  // this.tostr.error('something want worring!!')
+   this.tostr.error('something want worring!!')
 })
 
  
@@ -82,15 +82,7 @@ this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
   this.tostr.error('something want worring!!')
 });
 
-// this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
-//   this.homeService.data=res;
-//  console.log(this.homeService.data)
-//   this.spiner.hide();
-//   this.tostr.success('Data Retrived !!!')
-// },err=>{
-//   this.spiner.hide();
-//   this.tostr.error('something want worring!!')
-// })
+
 
   }
 
@@ -129,10 +121,10 @@ this.homeService.GetNumberOfAllUser().subscribe((res:any)=>{
   this.homeService.data=res;
   console.log(this.homeService.data)
   this.spiner.hide();
-  // this.tostr.success('Data Retrived !!!')
+  this.tostr.success('Data Retrived !!!')
 },err=>{
   this.spiner.hide();
-  // this.tostr.error('something want worring!!')
+  this.tostr.error('something want worring!!')
 })
 
  
