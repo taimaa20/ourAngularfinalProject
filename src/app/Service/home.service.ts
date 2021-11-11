@@ -26,7 +26,7 @@ data :any =[{}];
   CreateEmployee(data:any){
     this.spiner.show();
     debugger
-    this.http.post('https://localhost:44373/api/UserRegistration/',data).subscribe((res:any)=>{
+    this.http.post('https://localhost:44373/api/UserRegistration',data).subscribe((res:any)=>{
       this.toastr.success('Created');
       this.spiner.hide();
  
@@ -48,7 +48,7 @@ data :any =[{}];
     return this.http.get('https://localhost:44373/api/Users/GetListOfEmployees')
   }
   GetNumberOfAllUser(){  
-      return this.http.get('https://localhost:44373/api/Users/NumberOfUsers')
+      return this.http.get('https://localhost:44373/api/Users/GetNumberOfAllUser')
 }
 
 }
