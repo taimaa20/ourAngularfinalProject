@@ -1,56 +1,135 @@
-<form [formGroup]="registerForm" (submit)="submit()">
-    <mat-form-field class="example-full-width">
-    <mat-label>FullName</mat-label>
-    <input matInput formControlName="fullName" style="font-size: x-large;" placeholder="Full Name ">
-    <mat-error *ngIf="registerForm.controls.fullName.hasError('required')">
-    fullName is <strong>required</strong>
-    </mat-error>
-
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email" style="font-size: x-large;" placeholder="Ex. pat@example.com">
-        <mat-error
-        *ngIf="registerForm.controls.email.hasError('email') && !registerForm.controls.email.hasError('required')"
-        >
-        Please enter a valid email address
-        </mat-error>
-        <mat-error *ngIf="registerForm.controls.email.hasError('required')">
-        Email is <strong>required</strong>
-        </mat-error>
-        </mat-form-field>
 
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Address</mat-label>
-            <input matInput formControlName="address" style="font-size: x-large;" placeholder="Ex. WI Street">
-            <mat-error *ngIf="registerForm.controls.address.hasError('required')">
-            address is <strong>required</strong>
-            </mat-error>
-            </mat-form-field>
-            
-            <mat-form-field class="example-full-width">
-                <mat-label>Phone Number</mat-label>
-                <input matInput formControlName="phoneNumber" style="font-size: x-large;" placeholder="Ex. 077 988 9870">
-                </mat-form-field>
-                
-    
-                <mat-form-field class="example-full-width">
-                    <mat-label>Password</mat-label>
-                    <input type="password" matInput formControlName=
-                    "password" style="font-size: x-large;">
-                    <mat-error
-                    *ngIf="registerForm.controls.password.hasError('minlength') && !registerForm.controls.password.hasError('required')">
-                    Please enter a valid password
-                    </mat-error>
-                    <mat-error *ngIf="registerForm.controls.password.hasError('required')">
-                    password is <strong>required</strong>
-                    </mat-error>
-                    </mat-form-field>
+                    <div id="booking" class="section" >
+                      <img src="..\assets\img\kia2.jpg" style="width:100%;height: 100%;">
+                      <div class="section-center">
+                          <div class="container">
+                              <div class="row">
+                                  <div class="booking-form" style="margin-top: -140px;">
+                                    <h1 style="text-align: center; font-size: 60px; padding-bottom: 30px;color: white; font-family: cursive;">Registeration</h1>
+                                     <form style="height: 500px ; " >
 
-                    <button type="submit" [disabled]="!registerForm.valid"> Register</button>
-                    </form>
+                                      <div class="row">
+                                        <div class="col-md-4">
 
+                                            <div class="form-group">
+
+                                              <input class="form-control"  type="text"  matInput  [formControl]="authService.fullNameControl"  placeholder="full Name">
+                                              <mat-error style="color: rgb(255, 6, 6); font-size: 14px; " *ngIf="authService.fullNameControl.hasError('required')">Please enter  full Name</mat-error>
+
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <input class="form-control"  type="text"  matInput  [formControl]="authService.UserImageControl"  placeholder="User Image">
+                                            <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.UserImageControl.hasError('required')">Please enter  User Image</mat-error>
+
+                                         </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="form-group">
+                                            <input class="form-control"  type="text"  matInput  [formControl]="authService.GenderControl"  placeholder="Gender">
+                                            <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.GenderControl.hasError('required')">Please enter  Gender</mat-error>
+
+                                         </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                          <input class="form-control"  type="text"  matInput  [formControl]="authService.AgeControl"  placeholder="Age">
+                                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.AgeControl.hasError('required')">Please enter Age</mat-error>
+
+                                       </div>
+                                      </div>
+
+                                      <div class="col-md-4">
+
+                                       <div class="form-group">
+                                        <input class="form-control"  type="text"  matInput  [formControl]="authService.emailControl"  placeholder="Email">
+                                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.emailControl.hasError('required')">Please enter a valid email</mat-error>
+
+                                     </div>
+                                       </div>
+
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                          <input class="form-control"   type="text"  matInput   [formControl]="authService.phoneNumberControl"  placeholder="phone Number">
+                                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.phoneNumberControl.hasError('required')">Please enter phone Number</mat-error>
+
+                                        </div>
+                                      </div>
+                                  </div>
+
+
+
+
+
+                               <div class="row">
+                                <div class="col-md-12">
+
+                                  <div class="form-group">
+                                    <input class="form-control"  type="text"  matInput  [formControl]="authService.addressControl"   placeholder="Address">
+                                    <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.addressControl.hasError('required')">Please enter  Address</mat-error>
+
+                                 </div>
+                                </div>
+                              </div>
+
+                                <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <input class="form-control"  type="text"  matInput  [formControl]="authService.usernameControl"  placeholder="Username">
+                                            <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.usernameControl.hasError('required')">Please enter a valid Username</mat-error>
+                                        </div>
+                                      </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <input class="form-control" type="password" matInput [formControl]="authService.passwordControl" placeholder="Password">
+                                              <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf=" authService.passwordControl.hasError('minlength')&& authService.usernameControl.hasError('required')">Password must be more than 8 char</mat-error>
+
+                                        </div>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+
+
+
+                                          <div class="form-btn">
+                                            <button id="submitForm" type="submit" class="submit-btn"   >Register</button>
+                                          </div>
+
+                                          <br><br>
+
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <div class="form-btn">
+                                                <button id="submitForm" type="submit" class="submit-btn" routerLink="/security/login">Login</button>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-btn">
+                                                <button id="submitForm" type="submit" class="submit-btn " routerLink="">Home</button>
+                                              </div>
+                                            </div>
+                                         </div>
+
+                                     </form>
+                                 </div>
+
+                             </div>
+                         </div>
+                     </div>
+                    </div>
 
 

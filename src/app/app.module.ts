@@ -10,17 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutusCardComponent } from './about/aboutus-card/aboutus-card.component';
-
+import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
- 
-    
-    FooterComponent,
     HomePageComponent,
     
 
@@ -34,6 +30,8 @@ import { AboutusCardComponent } from './about/aboutus-card/aboutus-card.componen
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    ToastrModule.forRoot(),
+    ToastNoAnimationModule.forRoot()
     
     
 

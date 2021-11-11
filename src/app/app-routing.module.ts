@@ -3,7 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutModule } from './about/about.module';
 import { AboutusCardComponent } from './about/aboutus-card/aboutus-card.component';
 import { AboutusComponent } from './about/aboutus/aboutus.component';
+import { AccountantModule } from './accountant/accountant.module';
+import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
+import { AutheraizationGuard } from './autheraization.guard';
 import { ClientModule } from './client/client.module';
 import { ContactModule } from './contact/contact.module';
 
@@ -25,7 +28,18 @@ const routes: Routes = [
     {
       path:'',
       component:HomePageComponent
-    }
+    },
+    {
+    path:'admin',
+    loadChildren:()=>AdminModule ,
+    canActivate :[AutheraizationGuard]
+    },
+    {
+      path:'accountant',
+      loadChildren:()=>AccountantModule ,
+      canActivate :[AutheraizationGuard]
+      }
+
 ];
 
 @NgModule({
