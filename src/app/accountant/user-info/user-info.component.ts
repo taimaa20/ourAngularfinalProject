@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { DialogComponent } from '../dialog/dialog.component';
-import {  MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 @Component({
-  selector: 'app-creat-employee',
-  templateUrl: './creat-employee.component.html',
-  styleUrls: ['./creat-employee.component.css']
+  selector: 'app-user-info',
+  templateUrl: './user-info.component.html',
+  styleUrls: ['./user-info.component.css']
 })
-export class CreatEmployeeComponent implements OnInit {
-    
+export class UserInfoComponent implements OnInit {
+
   Name:string="undefined";
+  
   currentYear:Date|any = undefined;
-  constructor(private router:Router,private dialog:MatDialog)  {
+  constructor(private router:Router)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
@@ -44,11 +42,4 @@ export class CreatEmployeeComponent implements OnInit {
     
     this.router.navigate([''])
   }
-
-  createEmployee()
-  {
-this.dialog.open(DialogComponent)
-  }
-
-  
 }

@@ -18,6 +18,8 @@ import { ClientRoutingModule } from '../client/client-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     FooterComponent,
@@ -39,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSliderModule,
     MatListModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
     
     
   ],
@@ -60,7 +63,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatGridListModule,
     FooterComponent,
     NavbarComponent,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   
   
   ]

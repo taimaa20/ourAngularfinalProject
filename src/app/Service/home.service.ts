@@ -22,6 +22,22 @@ data :any =[{}];
     return this.http.get('https://localhost:44373/api/Users/NumberOfEmployees/')
   }
 
+
+  CreateEmployee(data:any){
+    this.spiner.show();
+    debugger
+    this.http.post('https://localhost:44373/api/UserRegistration/',data).subscribe((res:any)=>{
+      this.toastr.success('Created');
+      this.spiner.hide();
+ 
+    },err=>{
+     this.spiner.hide();
+     this.toastr.error(' Not Created');
+  
+    })
+ 
+  }
+
   VehicleSystemReport(){
     return this.http.get('https://localhost:44373/api/Vehicle/VehicleSystemReport')
   }
@@ -34,4 +50,5 @@ data :any =[{}];
   GetNumberOfAllUser(){  
       return this.http.get('https://localhost:44373/api/Users/NumberOfUsers')
 }
+
 }
