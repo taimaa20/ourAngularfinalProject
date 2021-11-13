@@ -13,10 +13,10 @@ import { HomeService } from 'src/app/Service/home.service';
 export class AdminComponent implements OnInit {
  
   @Input () number_Of_Users:number|undefined;
-  @Input () number_Of_Employees:number|undefined;
-  
+  @Input () number_Of_Employees:number|undefined; 
   @Input () usersCount:number|undefined;
 
+  
 
   
   Name:string="undefined";

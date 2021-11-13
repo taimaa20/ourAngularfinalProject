@@ -15,6 +15,10 @@ data1 :any =[{}];
 card1 :any =[{}];
 number_Of_Employees:any =[{}];
 number_Of_Users:any =[{}];
+
+total_month_salaries:any=[{}];
+total_payment:any=[{}];
+
 users:any =[{}];
 vehicle:any =[{}];
 financial_report:any =[{}];
@@ -23,6 +27,7 @@ fullReport:any =[{}];
 payment:any =[{}];
 employee_info:any =[{}];
 paymentCount:any =[{}];
+
 
   constructor(private http:HttpClient,private spiner :NgxSpinnerService,private toastr:ToastrService,private router:Router) {
 
@@ -92,6 +97,45 @@ SearchByVehicleCategory(category:any)
   })
 
 }
+TotalMonthSalaries(month:any)
+
+{
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/Salary/TotalMonthSalaries',month).subscribe((res:any)=>{
+    this.total_month_salaries=res;
+    console.log(this.total_month_salaries);
+    this.toastr.success('TotalMonthSalaries Success');
+    this.router.navigate(['admin/total-month-salaries'])
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error('Search Error');
+
+  })
+
+}
+GetTotalPaymentInDay(day:any)
+
+{
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/Payment/GetTotalPaymentInDay',day).subscribe((res:any)=>{
+    this.total_payment=res;
+    console.log(this.total_payment);
+    this.toastr.success('GetTotalPaymentInDay Success');
+    this.router.navigate(['admin/total-payment'])
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error('Search Error');
+
+  })
+
+}
+
 
 SearchingForVehiclesLicenseExpiry(dateFromTo:any)
 
@@ -101,7 +145,7 @@ SearchingForVehiclesLicenseExpiry(dateFromTo:any)
   this.http.post('https://localhost:44373/api/Vehicle/SearchingForVehiclesLicenseExpiry',dateFromTo).subscribe((res:any)=>{
     this.data=res;
     this.toastr.success('SearchingForVehiclesLicenseExpiry Success');
-    this.router.navigate(['admin/search-by-vehicle-category'])
+    this.router.navigate(['admin/searching-for-vehicles-license-expiry'])
     this.spiner.hide();
 
   },err=>{

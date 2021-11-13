@@ -5,8 +5,11 @@ import { ChartComponent } from './chart/chart.component';
 import { CreatEmployeeComponent } from './creat-employee/creat-employee.component';
 import { FinancialReportComponent } from './financial-report/financial-report.component';
 import { GetAttendanceComponent } from './get-attendance/get-attendance.component';
+import { GetTotalPaymentComponent } from './get-total-payment/get-total-payment.component';
 import { ReportComponent } from './report/report.component';
 import { SearchByVehicleCategoryComponent } from './search-by-vehicle-category/search-by-vehicle-category.component';
+import { SearchingForVehiclesLicenseExpiryComponent } from './searching-for-vehicles-license-expiry/searching-for-vehicles-license-expiry.component';
+import { TotalMonthSalariesComponent } from './total-month-salaries/total-month-salaries.component';
 
 export const routes: Routes = [
   {
@@ -37,6 +40,24 @@ export const routes: Routes = [
     path:'get-attendance',
     component:GetAttendanceComponent
   },
+  {
+    path:'searching-for-vehicles-license-expiry',
+    component:SearchingForVehiclesLicenseExpiryComponent
+  },
+  {
+    path:'total-month-salaries',
+    component:TotalMonthSalariesComponent
+  },
+  {
+    path:'total-payment',
+    component:GetTotalPaymentComponent
+  },
+  
+  { path: '', redirectTo: '/total-payment', pathMatch: 'full'},
+  
+  { path: '', redirectTo: '/total-month-salaries', pathMatch: 'full'},
+  
+  { path: '', redirectTo: '/searching-for-vehicles-license-expiry', pathMatch: 'full'},
   
   { path: '', redirectTo: '/get-attendance', pathMatch: 'full'},
   { path: '', redirectTo: '/admin', pathMatch: 'full'},

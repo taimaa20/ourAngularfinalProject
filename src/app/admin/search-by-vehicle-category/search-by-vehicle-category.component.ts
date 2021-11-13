@@ -9,11 +9,7 @@ import { HomeService } from 'src/app/Service/home.service';
   styleUrls: ['./search-by-vehicle-category.component.css']
 })
 export class SearchByVehicleCategoryComponent implements OnInit {
-  formGroup =new FormGroup({
-    DateFrom: new FormControl(''),
-    DateTo: new FormControl(''),
-  })
-
+  
   formGroupCategory =new FormGroup({
     VehicleCategory: new FormControl(''),
     
@@ -34,15 +30,7 @@ export class SearchByVehicleCategoryComponent implements OnInit {
     console.log(data)
     this.homeService.SearchByVehicleCategory(data);
   }
-from:any;
-to:any;
-  GetData1(){
-    this.from=this.formGroup.value.DateFrom;
-    this.to=this.formGroup.value.DateTo;
-    const data={DateFrom:this.from.toString(),DateTo:this.to.toString()}
-    console.log(data)
-    this.homeService.SearchingForVehiclesLicenseExpiry(data);
-  }
+
   logout()
   {
     localStorage.clear();

@@ -4,19 +4,16 @@ import { Router } from '@angular/router';
 import { HomeService } from 'src/app/Service/home.service';
 
 @Component({
-  selector: 'app-searching-for-vehicles-license-expiry',
-  templateUrl: './searching-for-vehicles-license-expiry.component.html',
-  styleUrls: ['./searching-for-vehicles-license-expiry.component.css']
+  selector: 'app-get-total-payment',
+  templateUrl: './get-total-payment.component.html',
+  styleUrls: ['./get-total-payment.component.css']
 })
-export class SearchingForVehiclesLicenseExpiryComponent implements OnInit {
+export class GetTotalPaymentComponent implements OnInit {
 
- 
   formGroup =new FormGroup({
-    DateFrom: new FormControl(''),
-    DateTo: new FormControl(''),
+    PaymantDate: new FormControl(''),
+    
   })
-
-  
   Name:string="undefined";
   currentYear:Date|any = undefined;
   constructor(private router:Router,public homeService : HomeService)  {
@@ -26,16 +23,15 @@ export class SearchingForVehiclesLicenseExpiryComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  
-from:any;
-to:any;
+  start:Date|any = undefined;
   GetData(){
-    this.from=this.formGroup.value.DateFrom;
-    this.to=this.formGroup.value.DateTo;
-    const data={DateFrom:this.from.toString(),DateTo:this.to.toString()}
+    debugger
+    this.start=this.formGroup.value.PaymantDate
+    const data={PaymantDate:this.start.toString()}
     console.log(data)
-    this.homeService.SearchingForVehiclesLicenseExpiry(data);
+    this.homeService.GetTotalPaymentInDay(data);
   }
+
   logout()
   {
     localStorage.clear();
