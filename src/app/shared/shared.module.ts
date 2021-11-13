@@ -19,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatListModule,
     MatGridListModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
     
     
   ],
@@ -64,7 +66,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     FooterComponent,
     NavbarComponent,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   
   
   ]

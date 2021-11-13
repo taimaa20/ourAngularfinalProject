@@ -189,77 +189,29 @@
                             </div>
                         </div>
                     </div>
-                    <form [formGroup]="formGroupCategory" >
-                        <input   type="text" matInput formControlName="VehicleCategory" style="font-size:large;margin-left: 14px" placeholder="Vehicle Category">
+                    <form [formGroup]="formGroup" >
+                        <input   type="datetime" matInput formControlName="StartDate" style="font-size:large;margin-left: 14px" placeholder="Enter Month">
                     <button  (click)="GetData()" style="margin-right: 15px;margin-left: 10px;font-size:large;color: #0e0c28;">Search</button>
                     </form>
                     
                     
                     <br><br>
-                    <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
-                        <div class="card">
-                            <h5 class="card-header">Vehicle</h5>
-                            <div class="card-body p-0">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="bg-light">
-                                            <tr class="border-0">
-                                               
-                                            
-                                                <th class="border-0">vehicleImage</th>
-                                                <th class="border-0">vehicleName</th>
-                                                <th class="border-0">vehicleModel </th>
-                                                <th class="border-0">vehicleColor</th>
-                                                <th class="border-0">vehicleCategory</th>
-                                                <th class="border-0">useType</th>
-                                                <th class="border-0">registerType</th>
-                                                <th class="border-0">licenseNumber</th>
-                    
-                                                <th class="border-0">licenseExpiry</th>
-                                                <th class="border-0">engineCapacity</th>
-                                                <th class="border-0">engineType </th>
-                                                <th class="border-0">madeYear</th>
-                                                <th class="border-0">licensingCenter</th>
-                                                <th class="border-0">chassisNumber</th>
-                                                <th class="border-0">engineNumber</th>
-                                                <th class="border-0">address</th>
-                                                <th class="border-0">fullName</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr *ngFor="let user of homeService.data">
-                    
-                                                <td>
-                                                    <div class="m-r-10"><img src="{{user.vehicleImage}}"  class="rounded" width="45"></div>
-                                                </td>
-                                                <td>{{user.vehicleName}} </td>
-                                                <td>{{user.vehicleModel}} </td>
-                                                <td>{{user.vehicleColor}}</td>
-                                                <td>{{user.vehicleCategory}}</td>
-                                                <td>{{user.useType}}</td>
-                                                <td>{{user.registerType}} </td>
-                                                <td>{{user.licenseNumber}} </td>
-                    
-                                                <td>{{user.licenseExpiry}} </td>
-                                                <td>{{user.engineCapacity}} </td>
-                                                <td>{{user.engineType}}</td>
-                                                <td>{{user.madeYear}}</td>
-                                                <td>{{user.licensingCenter}}</td>
-                                                <td>{{user.chassisNumber}} </td>
-                                                <td>{{user.engineNumber}} </td>
-                                                <td>{{user.address}} </td>
-                                                <td>{{user.fullName}} </td>
-                    
-                    
-                                            </tr>
-                    
-                                            <tr>
-                                                <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card-box bg-blue">
+                                    <div class="inner" >
+                                        <h3> {{homeService.total_month_salaries[0].total_Salaries}} </h3>
+                                        <p> Total Salaries </p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-money" aria-hidden="true"></i>
+                                    </div>
                                 </div>
                             </div>
+                            
+                            
+                            
                         </div>
                     </div>
                     
@@ -295,5 +247,6 @@
 </body>
  
 </html>
+
 
 

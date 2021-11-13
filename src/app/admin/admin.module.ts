@@ -13,6 +13,8 @@ import { FinancialReportComponent } from './financial-report/financial-report.co
 import { SearchByVehicleCategoryComponent } from './search-by-vehicle-category/search-by-vehicle-category.component';
 import { GetAttendanceComponent } from './get-attendance/get-attendance.component';
 import { SearchingForVehiclesLicenseExpiryComponent } from './searching-for-vehicles-license-expiry/searching-for-vehicles-license-expiry.component';
+import { TotalMonthSalariesComponent } from './total-month-salaries/total-month-salaries.component';
+import { GetTotalPaymentComponent } from './get-total-payment/get-total-payment.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { SearchingForVehiclesLicenseExpiryComponent } from './searching-for-vehi
     DialogComponent,
     SearchByVehicleCategoryComponent,
     GetAttendanceComponent,
-    SearchingForVehiclesLicenseExpiryComponent
+    SearchingForVehiclesLicenseExpiryComponent,
+    TotalMonthSalariesComponent,
+    GetTotalPaymentComponent
   ],
   imports: [
     CommonModule,
