@@ -6,11 +6,12 @@ import { HomeService } from 'src/app/Service/home.service';
 
 @Component({
   selector: 'app-admin',
+  
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
+ 
   @Input () number_Of_Users:number|undefined;
   @Input () number_Of_Employees:number|undefined;
   

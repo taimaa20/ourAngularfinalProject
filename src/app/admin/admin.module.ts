@@ -10,6 +10,9 @@ import { CreatEmployeeComponent } from './creat-employee/creat-employee.componen
 import { ChartComponent } from './chart/chart.component';
 import { ReportComponent } from './report/report.component';
 import { FinancialReportComponent } from './financial-report/financial-report.component';
+import { SearchByVehicleCategoryComponent } from './search-by-vehicle-category/search-by-vehicle-category.component';
+import { GetAttendanceComponent } from './get-attendance/get-attendance.component';
+import { SearchingForVehiclesLicenseExpiryComponent } from './searching-for-vehicles-license-expiry/searching-for-vehicles-license-expiry.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { FinancialReportComponent } from './financial-report/financial-report.co
     ChartComponent,
     ReportComponent,
     FinancialReportComponent,
-    DialogComponent
+    DialogComponent,
+    SearchByVehicleCategoryComponent,
+    GetAttendanceComponent,
+    SearchingForVehiclesLicenseExpiryComponent
   ],
   imports: [
     CommonModule,

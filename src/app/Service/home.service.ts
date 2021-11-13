@@ -65,8 +65,67 @@ GetAllVehicles(){
 }GetAllSalary(){  
   return this.http.get('https://localhost:44373/api/salary/GetAllSalary')
 
+SearchByVehicleCategory(category:any)
+
+{
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/Vehicle/SearchByVehicleCategory',category).subscribe((res:any)=>{
+    this.data=res;
+    this.toastr.success('SearchByVehicleCategory Success');
+    this.router.navigate(['admin/search-by-vehicle-category'])
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error('Search Error');
+
+  })
+
 }
+
+SearchingForVehiclesLicenseExpiry(dateFromTo:any)
+
+{
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/Vehicle/SearchingForVehiclesLicenseExpiry',dateFromTo).subscribe((res:any)=>{
+    this.data=res;
+    this.toastr.success('SearchingForVehiclesLicenseExpiry Success');
+    this.router.navigate(['admin/search-by-vehicle-category'])
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error('Search Error');
+
+  })
+
+}
+
+
+Createattendance(data:any){
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/Attendance',data).subscribe((res:any)=>{
+    this.toastr.success('Created');
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error(' Not Created');
+
+  })
+
+}
+GetAllAttendance(){
+  return this.http.get('https://localhost:44373/api/Attendance/GetAllAttendance')
+}
+}
+
+
 GetAllPayments(){  
   return this.http.get('https://localhost:44373/api/Payment/GetAllPayments')
 }
 }
+
