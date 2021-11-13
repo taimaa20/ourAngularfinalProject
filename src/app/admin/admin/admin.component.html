@@ -205,7 +205,55 @@
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-                    <div class="ecommerce-widget">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card-box bg-blue">
+                                    <div class="inner" (click)="GetNumberOfCustomer()">
+                                        <h3>. {{homeService.number_Of_Users[0].number_Of_Users}} </h3>
+                                        <p> number Of Users </p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class=" fa fa-user-circle-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card-box bg-green">
+                                    <div class="inner" (click)="GetNumberOfEmployee()">
+                                        <h3> . {{homeService.number_Of_Employees[0].number_Of_Employees}} </h3>
+                                        <p>Number Of Employee</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-user-secret" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card-box bg-orange">
+                                    <div class="inner">
+                                        <h3>. {{homeService.card1[0].usersCount}} </h3>
+                                        <p> Number Of All Users</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-users" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card-box bg-red">
+                                    <div class="inner" (load)="GetNumberOfCustomer()">
+                                        <h3>. {{homeService.data[0].number_Of_Users}} </h3>
+                                        <p> number Of Users </p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-users"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="ecommerce-widget">
 
                         <div class="row">
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -213,7 +261,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted" (click)="GetNumberOfCustomer()">Number Of Customers</h5>
                                         <div class="metric-value d-inline-block">
-                                           
+
                                             <h1>{{homeService.data[0].number_Of_Users}}</h1>
                                         </div>
 
@@ -226,12 +274,12 @@
                                     <div class="card-body">
                                         <h5 class="text-muted" (click)="GetNumberOfEmployee()">Number Of Employee</h5>
                                         <div class="metric-value d-inline-block">
-                                            
+
                                             <h1>{{homeService.data[0].number_Of_Employees}}</h1>
                                         </div>
-                                        
+
                                     </div>
-                                    
+
                                 </div>
                             </div>
 
@@ -240,15 +288,15 @@
                                     <div class="card-body">
                                         <h5 class="text-muted" (click)="GetNumberOfAllUser()">Number Of All Users</h5>
                                         <div class="metric-value d-inline-block">
-                                            
+
                                             <h1>{{homeService.data[0].usersCount}}</h1>
                                         </div>
-                                        
+
                                     </div>
-                                    
+
                                 </div>
-                            </div>
-                            <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            </div> -->
+                    <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="text-muted" (click)="GetNumberOfEmployee()">Number Of Employee</h5>
@@ -260,7 +308,7 @@
                                     <div id="sparkline-revenue2"></div>
                                 </div>
                             </div> -->
-                            <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="text-muted">NumberOfAllUser</h5>
@@ -274,7 +322,7 @@
                                     <div id="sparkline-revenue3"></div>
                                 </div>
                             </div> -->
-                            <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="text-muted">Avg. Revenue Per User</h5>
@@ -288,13 +336,13 @@
                                     <div id="sparkline-revenue4"></div>
                                 </div>
                             </div> -->
-                        </div>
-                    </div>
+                    <!-- </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
                 <div class="card">
-                    <h5 class="card-header">Employee</h5>
+                    <h5 class="card-header">users</h5>
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table">
@@ -324,6 +372,69 @@
                                         <td>{{user.phoneNumber}}</td>
                                         <td>{{user.address}} </td>
                                         <td>{{user.roleName}} </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">All vehicle</h5>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="bg-light">
+                                    <tr class="border-0">
+
+                                        <th class="border-0">vehicleId</th>
+                                        <th class="border-0">vehicleName</th>
+                                        <th class="border-0">vehicleModel </th>
+                                        <th class="border-0">vehicleColor</th>
+                                        <th class="border-0">vehicleCategory</th>
+                                        <th class="border-0">registerType</th>
+                                        <th class="border-0">licenseNumber</th>
+                                        <th class="border-0">licenseExpiry</th>
+                                        <th class="border-0">engineCapacity</th>
+                                        <th class="border-0">engineType </th>
+                                        <th class="border-0">madeYear</th>
+                                        <th class="border-0">licensingCenter</th>
+                                        <th class="border-0">chassisNumber</th>
+                                        <th class="border-0">address</th>
+                                        <th class="border-0">vehicleImage</th>
+                                        <th class="border-0">userId</th>
+                                        <th class="border-0">licensingAndInsurance</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of homeService.data">
+
+                                        <td>{{user.vehicleId}} </td>
+                                        <td>{{user.vehicleName}} </td>
+                                        <td>{{user.vehicleModel}} </td>
+                                        <td>{{user.vehicleColor}}</td>
+                                        <td>{{user.vehicleCategory}}</td>
+                                        <td>{{user.useType}}</td>
+                                        <td>{{user.registerType}} </td>
+                                        <td>{{user.licenseNumber}} </td>
+                                        <td>{{user.licenseExpiry}}</td>
+                                        <td>{{user.engineCapacity}} </td>
+                                        <td>{{user.engineType}} </td>
+                                        <td>{{user.madeYear}} </td>
+                                        <td>{{user.licensingCenter}}</td>
+                                        <td>{{user.chassisNumber}} </td>
+                                        <td>{{user.engineNumber}} </td>
+                                        <td>{{user.address}} </td>
+                                        <td>{{user.vehicleImage}}</td>
+                                        <td>{{user.userId}} </td>
+                                        <td>{{user.licensingAndInsurance}} </td>
 
                                     </tr>
 

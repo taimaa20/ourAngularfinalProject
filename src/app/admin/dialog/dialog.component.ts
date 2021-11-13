@@ -56,7 +56,7 @@ export class DialogComponent implements OnInit {
       RoleId:this.roleIddata,
       FullName:this.namedata,
       UserImage:this.imagedata,
-      Gender:this.genderdata,
+      Gender:Boolean(this.genderdata),
       Age: this.agedata,
       Email: this.emaildata,
       Address: this.addressdata,

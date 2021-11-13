@@ -7,7 +7,8 @@ import * as pdfMake from "pdfmake/build/pdfmake";
 import * as pdfFonts from "pdfmake/build/vfs_fonts";
 const htmlToPdfmake = require("html-to-pdfmake");
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
-import * as XLSX from 'xlsx'; 
+import * as XLSX from 'xlsx';
+import { TDocumentDefinitions } from 'pdfmake/interfaces';
 
 @Component({
   selector: 'app-financial-report',
@@ -85,7 +86,14 @@ export class FinancialReportComponent implements OnInit {
       public downloadAsPDF() {
         const pdfTable = this.pdfTable.nativeElement;
         var html = htmlToPdfmake(pdfTable.innerHTML);
-        const documentDefinition = { content: html };
+        const documentDefinition: TDocumentDefinitions = { 
+          content: html,
+          pageOrientation: 'landscape',
+          pageSize: {
+            width:1400, 
+            height: 700
+          }
+         };
         pdfMake.createPdf(documentDefinition).download(); 
     
       }

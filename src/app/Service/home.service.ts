@@ -11,6 +11,10 @@ export class HomeService {
 message:string='This is home service!!'
 selectCourse:any={};
 data :any =[{}];
+data1 :any =[{}];
+card1 :any =[{}];
+number_Of_Employees:any =[{}];
+number_Of_Users:any =[{}];
   constructor(private http:HttpClient,private spiner :NgxSpinnerService,private toastr:ToastrService,private router:Router) {
 
     
@@ -50,5 +54,19 @@ data :any =[{}];
   GetNumberOfAllUser(){  
       return this.http.get('https://localhost:44373/api/Users/GetNumberOfAllUser')
 }
+GetEmployeesSalaries(){  
+  return this.http.get('https://localhost:44373/api/Users/EmployeesSalaries')
+}
+GetCountPayment(){  
+  return this.http.get('https://localhost:44373/api/Payment/GetCountPayment')
+}
+GetAllVehicles(){  
+  return this.http.get('https://localhost:44373/api/Vehicle/GetAllVehicles')
+}GetAllSalary(){  
+  return this.http.get('https://localhost:44373/api/salary/GetAllSalary')
 
+}
+GetAllPayments(){  
+  return this.http.get('https://localhost:44373/api/Payment/GetAllPayments')
+}
 }
