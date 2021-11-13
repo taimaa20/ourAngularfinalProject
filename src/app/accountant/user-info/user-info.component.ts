@@ -43,7 +43,7 @@ export class UserInfoComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.ObtainFinancialReports();
+    this.VehicleSystemReport();
   }
   logout()
   {
@@ -67,17 +67,17 @@ export class UserInfoComponent implements OnInit {
     
     this.router.navigate([''])
   }
-  ObtainFinancialReports(){
+  VehicleSystemReport(){
     
-    this.home.ObtainFinancialReports().subscribe((res:any)=>{
-      this.home.data=res;
-     console.log(this.home.data)
-     
-    },err=>{
-      console.log("err")
-    });
-    
-      }
+this.home.VehicleSystemReport().subscribe((res:any)=>{
+  this.home.fullReport=res;
+ console.log(this.home.fullReport)
+ 
+},err=>{
+  console.log("err")
+});
+
+  }
       @ViewChild('pdfTable')
       pdfTable!: ElementRef;
       

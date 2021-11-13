@@ -146,7 +146,7 @@
 
                                         <li class="nav-item ">
                                             <a class="nav-link" routerLink="/admin/report"><i class="fa fa-file-pdf-o"></i>Reports</a>
-                                       
+
                                             <li class="nav-item">
                                                 <a class="nav-link" routerLink="/admin/financial-report"><i class="fa fa-file-o" ></i>Financial Reports</a>
 
@@ -163,15 +163,15 @@
                                                             </option>
                                                             </select>
                                                     </a> -->
-    
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" routerLink="/admin/get-attendance" ><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
-                                                       
+
                                                 <li class="nav-item">
+                                                    <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
 
-                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                    <li class="nav-item">
 
-                                                </li>
+                                                        <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+
+                                                    </li>
                         </ul>
                     </div>
                 </nav>
@@ -197,10 +197,7 @@
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <!-- <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                            
-                                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
-                                         -->
+
                                         </ol>
                                     </nav>
                                 </div>
@@ -214,8 +211,8 @@
                         <div class="row">
                             <div class="col-lg-3 col-sm-6">
                                 <div class="card-box bg-blue">
-                                    <div class="inner" (click)="GetNumberOfCustomer()">
-                                        <h3>. {{homeService.number_Of_Users[0].number_Of_Users}} </h3>
+                                    <div class="inner">
+                                        <h3>{{homeService.number_Of_Users[0].number_Of_Users}} </h3>
                                         <p> number Of Users </p>
                                     </div>
                                     <div class="icon">
@@ -225,8 +222,8 @@
                             </div>
                             <div class="col-lg-3 col-sm-6">
                                 <div class="card-box bg-green">
-                                    <div class="inner" (click)="GetNumberOfEmployee()">
-                                        <h3> . {{homeService.number_Of_Employees[0].number_Of_Employees}} </h3>
+                                    <div class="inner">
+                                        <h3>{{homeService.number_Of_Employees[0].number_Of_Employees}} </h3>
                                         <p>Number Of Employee</p>
                                     </div>
                                     <div class="icon">
@@ -237,7 +234,7 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="card-box bg-orange">
                                     <div class="inner">
-                                        <h3>. {{homeService.card1[0].usersCount}} </h3>
+                                        <h3>{{homeService.card1[0].usersCount}} </h3>
                                         <p> Number Of All Users</p>
                                     </div>
                                     <div class="icon">
@@ -247,8 +244,8 @@
                             </div>
                             <div class="col-lg-3 col-sm-6">
                                 <div class="card-box bg-red">
-                                    <div class="inner" (load)="GetNumberOfCustomer()">
-                                        <h3>. {{homeService.data[0].number_Of_Users}} </h3>
+                                    <div class="inner">
+                                        <h3>{{homeService.number_Of_Users[0].number_Of_Users}} </h3>
                                         <p> number Of Users </p>
                                     </div>
                                     <div class="icon">
@@ -258,91 +255,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="ecommerce-widget">
 
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted" (click)="GetNumberOfCustomer()">Number Of Customers</h5>
-                                        <div class="metric-value d-inline-block">
-
-                                            <h1>{{homeService.data[0].number_Of_Users}}</h1>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted" (click)="GetNumberOfEmployee()">Number Of Employee</h5>
-                                        <div class="metric-value d-inline-block">
-
-                                            <h1>{{homeService.data[0].number_Of_Employees}}</h1>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted" (click)="GetNumberOfAllUser()">Number Of All Users</h5>
-                                        <div class="metric-value d-inline-block">
-
-                                            <h1>{{homeService.data[0].usersCount}}</h1>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div> -->
-                    <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted" (click)="GetNumberOfEmployee()">Number Of Employee</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">{{homeService.data[0].number_Of_Employees}}</h1>
-                                        </div>
-
-                                    </div>
-                                    <div id="sparkline-revenue2"></div>
-                                </div>
-                            </div> -->
-                    <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">NumberOfAllUser</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">{{homeService.data[0].GetNumberOfAllUser}}</h1>
-                                        </div>
-                                        <div class="metric-label d-inline-block float-right text-primary font-weight-bold">
-                                            <span>N/A</span>
-                                        </div>
-                                    </div>
-                                    <div id="sparkline-revenue3"></div>
-                                </div>
-                            </div> -->
-                    <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Avg. Revenue Per User</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$28000</h1>
-                                        </div>
-                                        <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
-                                            <span>-2.00%</span>
-                                        </div>
-                                    </div>
-                                    <div id="sparkline-revenue4"></div>
-                                </div>
-                            </div> -->
-                    <!-- </div>
-                    </div> -->
                 </div>
             </div>
             <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
@@ -365,7 +278,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let user of homeService.data">
+                                    <tr *ngFor="let user of homeService.users">
 
                                         <td>
                                             <div class="m-r-10"><img src="{{user.userImage}}" alt="user" class="rounded" width="45"></div>
@@ -390,10 +303,10 @@
                 </div>
             </div>
 
-           
 
-     
-    
+
+
+
 
             <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
                 <div class="card">
@@ -409,6 +322,7 @@
                                         <th class="border-0">vehicleModel </th>
                                         <th class="border-0">vehicleColor</th>
                                         <th class="border-0">vehicleCategory</th>
+                                        <th class="border-0">useType</th>
                                         <th class="border-0">registerType</th>
                                         <th class="border-0">licenseNumber</th>
                                         <th class="border-0">licenseExpiry</th>
@@ -417,6 +331,7 @@
                                         <th class="border-0">madeYear</th>
                                         <th class="border-0">licensingCenter</th>
                                         <th class="border-0">chassisNumber</th>
+                                        <th class="border-0">engineNumber</th>
                                         <th class="border-0">address</th>
                                         <th class="border-0">vehicleImage</th>
                                         <th class="border-0">userId</th>
@@ -425,7 +340,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let user of homeService.data">
+                                    <tr *ngFor="let user of homeService.vehicle">
 
                                         <td>{{user.vehicleId}} </td>
                                         <td>{{user.vehicleName}} </td>

@@ -72,8 +72,8 @@ export class FinancialReportComponent implements OnInit {
   ObtainFinancialReports(){
     
     this.home.ObtainFinancialReports().subscribe((res:any)=>{
-      this.home.data=res;
-     console.log(this.home.data)
+      this.home.financial_report=res;
+     console.log(this.home.financial_report)
      
     },err=>{
       console.log("err")

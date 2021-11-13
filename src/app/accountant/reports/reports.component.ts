@@ -46,7 +46,7 @@ export class ReportsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.VehicleSystemReport();
+    this.ObtainFinancialReports();
   }
   logout()
   {
@@ -69,12 +69,11 @@ export class ReportsComponent implements OnInit {
   {
     
     this.router.navigate([''])
-  }
-  VehicleSystemReport(){
+  }ObtainFinancialReports(){
     
-    this.home.VehicleSystemReport().subscribe((res:any)=>{
-      this.home.data=res;
-     console.log(this.home.data)
+    this.home.ObtainFinancialReports().subscribe((res:any)=>{
+      this.home.financial_report=res;
+     console.log(this.home.financial_report)
      
     },err=>{
       console.log("err")

@@ -34,3 +34,18 @@
     font-weight: bold;
     color: #2177c7;
 }
+
+.tableFixHead {
+    overflow-y: auto;
+    height: 170px;
+}
+
+.tableFixHead tbody th {
+    position: sticky;
+    top: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}

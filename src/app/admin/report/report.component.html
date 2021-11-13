@@ -146,16 +146,16 @@
                                             <li class="nav-item">
                                                 <a class="nav-link" routerLink="/admin/financial-report"><i class="fa fa-file-o" ></i>Financial Reports</a>
 
-                                  
 
-                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/admin/get-attendance" ><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
-                                   
+
                                                 <li class="nav-item">
+                                                    <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
 
-                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                    <li class="nav-item">
 
-                                                </li>
+                                                        <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+
+                                                    </li>
                         </ul>
                     </div>
                 </nav>
@@ -183,12 +183,12 @@
 
                 </div>
             </div>
-            <button  style="font-size: large;">Date From</button>
-            <button  style="font-size: large;">Date To</button>
-                    
+            <button style="font-size: large;">Date From</button>
+            <button style="font-size: large;">Date To</button>
+
             <br><br>
             <div class="container">
-                <div id="pdfTable" #pdfTable>
+                <div id="pdfTable" #pdfTable class="tableFixHead ">
                     <table class="styled-table" id="excel-table">
                         <thead>
 
@@ -212,7 +212,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of home.data">
+                            <tr *ngFor="let user of home.fullReport">
                                 <td>{{ user.fullName }}</td>
                                 <td>{{ user.email }}</td>
                                 <td>{{ user.phoneNumber }}</td>

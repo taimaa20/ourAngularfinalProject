@@ -147,13 +147,13 @@
                                                 <a class="nav-link" routerLink="/admin/financial-report"><i class="fa fa-file-o" ></i>Financial Reports</a>
 
                                                 <li class="nav-item">
-                                                    <a class="nav-link" routerLink="/admin/get-attendance" ><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
-                                               
-                                                <li class="nav-item">
+                                                    <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
 
-                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                    <li class="nav-item">
 
-                                                </li>
+                                                        <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+
+                                                    </li>
                         </ul>
                     </div>
                 </nav>
@@ -181,9 +181,10 @@
 
                 </div>
             </div>
-            <div class="container">
-                <div id="pdfTable" #pdfTable>
-                    <table class="styled-table" id="excel-table">
+            <div class="container ">
+                <div id="pdfTable" #pdfTable class="tableFixHead ">
+
+                    <table class="styled-table  " id="excel-table ">
                         <thead>
 
                             <tr>
@@ -207,7 +208,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of home.data">
+                            <tr *ngFor="let user of home.financial_report ">
                                 <td>{{ user.fullName }}</td>
                                 <td>{{ user.userImage }}</td>
                                 <td>{{ user.phoneNumber }}</td>
@@ -231,8 +232,8 @@
                     </table>
                 </div>
 
-                <button class="btn btn-primary" (click)="downloadAsPDF();">Export To PDF</button>
-                <button class="btn btn-primary" (click)="exportexcel();">Export To exl</button>
+                <button class="btn btn-primary " (click)="downloadAsPDF(); ">Export To PDF</button>
+                <button class="btn btn-primary " (click)="exportexcel(); ">Export To exl</button>
 
 
             </div>
@@ -240,17 +241,17 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <div class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="footer ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                             <p>Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="text-md-right footer-links d-none d-sm-block">
-                                <a (click)="GoToHome()">Home</a>
-                                <a (click)="GoToAbout()">About</a>
-                                <a (click)="GoToContact()">Contact Us</a>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                            <div class="text-md-right footer-links d-none d-sm-block ">
+                                <a (click)="GoToHome() ">Home</a>
+                                <a (click)="GoToAbout() ">About</a>
+                                <a (click)="GoToContact() ">Contact Us</a>
                             </div>
                         </div>
                     </div>
