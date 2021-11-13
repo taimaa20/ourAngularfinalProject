@@ -79,8 +79,8 @@ export class ReportComponent implements OnInit {
   VehicleSystemReport(){
     
 this.home.VehicleSystemReport().subscribe((res:any)=>{
-  this.home.data=res;
- console.log(this.home.data)
+  this.home.fullReport=res;
+ console.log(this.home.fullReport)
  
 },err=>{
   console.log("err")

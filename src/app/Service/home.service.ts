@@ -15,6 +15,15 @@ data1 :any =[{}];
 card1 :any =[{}];
 number_Of_Employees:any =[{}];
 number_Of_Users:any =[{}];
+users:any =[{}];
+vehicle:any =[{}];
+financial_report:any =[{}];
+Attendance:any =[{}];
+fullReport:any =[{}];
+payment:any =[{}];
+employee_info:any =[{}];
+paymentCount:any =[{}];
+
   constructor(private http:HttpClient,private spiner :NgxSpinnerService,private toastr:ToastrService,private router:Router) {
 
     

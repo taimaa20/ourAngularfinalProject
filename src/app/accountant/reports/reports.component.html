@@ -132,24 +132,25 @@
                             </li>
                             <li class="nav-item ">
 
-                                <a class="nav-link active" routerLink="/accountant/accountant" ><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
-                                
-                            <!-- <li class="nav-item">
+                                <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
+
+                                <!-- <li class="nav-item">
                                 <a class="nav-link" routerLink="/admin/creat-employee" ><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a>
                                  -->
-                            <li class="nav-item">
-                                
-                                <a class="nav-link" routerLink="/accountant/report" ><i  class="fa fa-bar-chart"></i>Reports</a>
-                                
-                            <li class="nav-item ">
-                                <a class="nav-link" routerLink="/accountant/customer-info" ><i class="fa fa-file-pdf-o"></i>Customers Information</a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" routerLink="/accountant/employee-info" ><i class="fa fa-file-o" ></i>Employees Information </a>
                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/accountant/attendance" ><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Insert Attendance </a>
-                                     
-                            <!-- <li class="nav-item">
+
+                                    <a class="nav-link" routerLink="/accountant/report"><i  class="fa fa-bar-chart"></i>Reports</a>
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link" routerLink="/accountant/customer-info"><i class="fa fa-male" aria-hidden="true"></i>Customers Information</a>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" routerLink="/accountant/attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Insert Attendance </a>
+
+                                                <!-- <li class="nav-item">
 
                                 <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
@@ -177,17 +178,16 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
                                  -->
-                                            <li class="nav-item">
+                                                <li class="nav-item">
 
-                                                <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
 
-                                            </li>
+                                                </li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
-
         <!-- ============================================================== -->
         <!-- end left sidebar -->
         <!-- ============================================================== -->
@@ -204,53 +204,70 @@
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Accountant Dashboard Template </h2>
+                                <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <!-- <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                            
+                                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
+                                         -->
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
             <div class="container">
-                <div id="pdfTable" #pdfTable>
+                <div id="pdfTable" #pdfTable class="tableFixHead ">
                     <table class="styled-table" id="excel-table">
                         <thead>
 
                             <tr>
-                                <th>fullName</th>
-                                <th>email</th>
-                                <th>phoneNumber</th>
-                                <th>age</th>
-                                <th>gender</th>
-                                <th>vehicleName</th>
-                                <th>vehicleModel</th>
-                                <th>vehicleColor</th>
-                                <th>vehicleCategory</th>
-                                <th>useType</th>
-                                <th>registerType</th>
-                                <th>licenseNumber</th>
-                                <th>licenseExpiry</th>
-                                <th>paymentDate</th>
-                                <th>paymentAmount</th>
+                                <td>fullName </td>
+                                <td>userImage </td>
+                                <td>phoneNumber </td>
+                                <td>gender</td>
+                                <td>age </td>
+                                <td>email </td>
+                                <td>phoneNumber </td>
+                                <td>address</td>
+                                <td>salary </td>
+                                <td>tracks </td>
+                                <td>incentives </td>
+                                <td>monthSalary </td>
+                                <td>totalSalary</td>
+                                <td>atStartDate </td>
+                                <td>atEndDate </td>
+                                <td>atStatus </td>
 
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of home.data">
+                            <tr *ngFor="let user of home.financial_report">
                                 <td>{{ user.fullName }}</td>
+                                <td>{{ user.userImage }}</td>
+                                <td>{{ user.phoneNumber }}</td>
+                                <td>{{ user.gender}}</td>
+                                <td>{{ user.age }}</td>
                                 <td>{{ user.email }}</td>
                                 <td>{{ user.phoneNumber }}</td>
-                                <td>{{ user.age}}</td>
-                                <td>{{ user.gender }}</td>
-                                <td>{{ user.vehicleName }}</td>
-                                <td>{{ user.vehicleModel }}</td>
-                                <td>{{ user.vehicleColor}}</td>
-                                <td>{{ user.vehicleCategory }}</td>
-                                <td>{{ user.useType }}</td>
-                                <td>{{ user.registerType }}</td>
-                                <td>{{ user.licenseNumber }}</td>
-                                <td>{{ user.licenseExpiry}}</td>
-                                <td>{{ user.paymentDate }}</td>
-                                <td>{{ user.paymentAmount }}</td>
-
-
+                                <td>{{ user.address}}</td>
+                                <td>{{ user.salary }}</td>
+                                <td>{{ user.tracks }}</td>
+                                <td>{{ user.incentives }}</td>
+                                <td>{{ user.monthSalary }}</td>
+                                <td>{{ user.totalSalary}}</td>
+                                <td>{{ user.atStartDate }}</td>
+                                <td>{{ user.atEndDate }}</td>
+                                <td>{{ user.atStatus }}</td>
 
 
                                 <!-- and so on... -->
