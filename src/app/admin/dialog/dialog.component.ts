@@ -52,6 +52,7 @@ export class DialogComponent implements OnInit {
     this.phonedata=this.formGroup.value.phoneNumber;
     this.settingIddata=this.settingIddata;
     const data2={
+
       username:this.userNamedata.toString(),
       password:this.passworddata.toString(),
       roleId:this.roleIddata,
@@ -63,6 +64,19 @@ export class DialogComponent implements OnInit {
       address: this.addressdata.toString(),
       phoneNumber:parseInt( this.phonedata),
       settingId:this.settingIddata,
+
+      Username:this.userNamedata,
+      Password:this.passworddata,
+      RoleId:this.roleIddata,
+      FullName:this.namedata,
+      UserImage:this.imagedata,
+      Gender:Boolean(this.genderdata),
+      Age: this.agedata,
+      Email: this.emaildata,
+      Address: this.addressdata,
+      PhoneNumber:this.phonedata,
+      SettingId:this.settingIddata,
+
 
     }
     console.log(data2)
