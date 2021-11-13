@@ -103,8 +103,8 @@ this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
   }
   GetListOfEmployees(){
     this.homeService.GetListOfEmployees().subscribe((res:any)=>{
-      this.homeService.data=res;
-     console.log(this.homeService.data)
+      this.homeService.users=res;
+     console.log(this.homeService.users)
      
     },err=>{
       console.log("err")
@@ -129,8 +129,8 @@ this.homeService.GetNumberOfAllUser().subscribe((res:any)=>{
   }
   GetAllVehicles(){
     this.homeService.GetAllVehicles().subscribe((res:any)=>{
-      this.homeService.data=res;
-     console.log(this.homeService.data)
+      this.homeService.vehicle=res;
+     console.log(this.homeService.vehicle)
      
     },err=>{
       console.log("err")

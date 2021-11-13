@@ -52,8 +52,8 @@ export class GetAttendanceComponent implements OnInit {
     this.spiner.show();
 
     this.homeService.GetAllAttendance().subscribe((res:any)=>{
-      this.homeService.data=res;
-      console.log(this.homeService.data)
+      this.homeService.Attendance=res;
+      console.log(this.homeService.Attendance)
       this.spiner.hide();
       this.tostr.success('Data Retrived !!!')
     },err=>{

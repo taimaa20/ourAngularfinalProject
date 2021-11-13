@@ -49,7 +49,7 @@ export class AccountantComponent implements OnInit {
   }
   GetCountPayment(){
     this.homeService.GetCountPayment().subscribe((res:any)=>{
-      this.homeService.data=res;
+      this.homeService.paymentCount=res;
 
       this.tostr.success('Data Retrived !!!')
     },err=>{
@@ -71,8 +71,8 @@ export class AccountantComponent implements OnInit {
 
   }
   GetAllPayments(){ this.homeService.GetAllPayments().subscribe((res:any)=>{
-    this.homeService.data=res;
-   console.log(this.homeService.data)
+    this.homeService.payment=res;
+   console.log(this.homeService.payment)
    
   },err=>{
     console.log("err")

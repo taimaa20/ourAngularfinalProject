@@ -68,8 +68,8 @@ export class EmployeeInfoComponent implements OnInit {
   }
   GetEmployeesSalaries(){
     this.home.GetEmployeesSalaries().subscribe((res:any)=>{
-      this.home.data=res;
-     console.log(this.home.data)
+      this.home.employee_info=res;
+     console.log(this.home.employee_info)
      
     },err=>{
       console.log("err")
