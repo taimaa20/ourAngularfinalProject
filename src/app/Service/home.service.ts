@@ -64,7 +64,7 @@ GetAllVehicles(){
   return this.http.get('https://localhost:44373/api/Vehicle/GetAllVehicles')
 }GetAllSalary(){  
   return this.http.get('https://localhost:44373/api/salary/GetAllSalary')
-
+}
 SearchByVehicleCategory(category:any)
 
 {
@@ -121,11 +121,10 @@ Createattendance(data:any){
 GetAllAttendance(){
   return this.http.get('https://localhost:44373/api/Attendance/GetAllAttendance')
 }
-}
 
 
 GetAllPayments(){  
   return this.http.get('https://localhost:44373/api/Payment/GetAllPayments')
 }
-}
 
+}
