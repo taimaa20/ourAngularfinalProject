@@ -36,8 +36,10 @@
 }
 
 .tableFixHead {
-    overflow-y: auto;
-    height: 170px;
+    overflow-y: visible;
+    overflow-x: auto;
+    height: 100%;
+    width: 100%;
 }
 
 .tableFixHead tbody th {

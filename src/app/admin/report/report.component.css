@@ -36,18 +36,19 @@
 }
 
 .tableFixHead {
-    overflow-y: auto;
-    height: 170px;
+    overflow-y: visible;
+    overflow-x: auto;
+    height: 100%;
+    width: 100%;
 }
 
 .tableFixHead tbody th {
-    position: sticky;
+    position: absolute;
     top: 0;
 }
 
 table {
     border-collapse: collapse;
-    width: 100%;
 }
 
 .edit {
