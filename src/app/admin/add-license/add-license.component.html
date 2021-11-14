@@ -119,8 +119,12 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
+
+
+
                     <!--                     
                     <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
+
                     <!-- <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -131,56 +135,68 @@
 
                             </li>
                             <li class="nav-item ">
-
-                                <a class="nav-link active" routerLink="/client/client"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
-
-                                
-                                <li class="nav-item">
-
-                                    <a class="nav-link" routerLink="/client/get-driving-license"><i  class="fa fa-bar-chart"></i>Driving License</a>
-
-                                    <li class="nav-item ">
-                                        <a class="nav-link" routerLink="/client/get-technecal-report"><i class="fa fa-male" aria-hidden="true"></i>Technecal Report</a>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" routerLink="/client/get-message"><i class="fa fa-file-o" ></i>Message </a>
-
-                                            <li class="nav-item">
-                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>New Car Licensing</a>
-
-                                                <!-- <li class="nav-item">
-
-                                <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
-
+                                <a class="nav-link active" routerLink="/admin/admin"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/accountant/report"><i  class="fa fa-bar-chart"></i>Reports</a>
-
+                                    <a class="nav-link" routerLink="/admin/creat-employee"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a>
 
                                     <li class="nav-item">
 
-                                        <a class="nav-link" routerLink="/accountant/customer-info"><i class="fa fa-male" aria-hidden="true"></i>Customers Information</a>
+                                        <a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart"></i>Chart</a>
+
                                         <li class="nav-item ">
-                                            <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
+                                            <a class="nav-link" routerLink="/admin/report"><i class="fa fa-file-pdf-o"></i>Reports</a>
 
-                                            <!-- <li class="nav-item">
+                                            <li class="nav-item">
+                                                <a class="nav-link" routerLink="/admin/financial-report"><i class="fa fa-file-o" ></i>Financial Reports</a>
 
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-file"></i> Pages </a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-inbox"></i>Apps </a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-columns"></i>Icons</a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
-                                 -->
+                                                <!-- <li class="nav-item">
+                                                    <a class="nav-link" ><i class="fa fa-search" aria-hidden="true" ></i> 
+                                                        <select>
+                                                            
+                                                            <option ><a class="nav-link" ><i class="fa fa-search" aria-hidden="true"></i>Search </a></option>
+                                                            <option ><a class="nav-link" routerLink="/admin/report"><i  class="fa fa-file-pdf-o"></i>Search By Category Name</a>
+                                                            </option>
+                                                            <br>
+                                                            <option ><a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart">Search 2</i></a>
+                                                            </option>
+                                                            </select>
+
+                                                    </a> 
+     -->
+                                                <!-- <mat-form-field>
+        <mat-select class="fa fa-search" aria-hidden="true" placeholder="Search" style="color:white;font-size: 10px;">
+          
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/search-by-vehicle-category"><i class="fa fa-search" aria-hidden="true" >Search By Vehicle Category</i></a>
+          </mat-option>
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/searching-for-vehicles-license-expiry"><i class="fa fa-search" aria-hidden="true"  >Search 2</i></a>
+          </mat-option>
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/total-month-salaries"><i  class="fa fa-search" aria-hidden="true">Total Salaries</i></a>
+          </mat-option>
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/total-payment"><i  class="fa fa-search" aria-hidden="true">Total Payment</i></a>
+          </mat-option>
+          
+        </mat-select>
+      </mat-form-field> -->
+                                                <!-- <li class="nav-item">
+                                                    <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
+
+
+                                                    </a> -->
+
+
                                                 <li class="nav-item">
+                                                    <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
 
-                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                    <li class="nav-item">
 
-                                                </li>
+                                                        <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+
+                                                    </li>
                         </ul>
                     </div>
                 </nav>
@@ -201,15 +217,12 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">User Dashboard Template </h2>
+                                <h2 class="pageheader-title">Admin Dashboard Template </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <!-- <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                            
-                                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
-                                         -->
+
                                         </ol>
                                     </nav>
                                 </div>
@@ -219,12 +232,13 @@
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-
-                   
                 </div>
             </div>
+
+            <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
+
         </div>
         <div class="footer">
             <div class="container-fluid">
@@ -250,3 +264,4 @@
 </body>
 
 </html>
+

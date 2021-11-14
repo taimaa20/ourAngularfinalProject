@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-add-car-licence',
+  templateUrl: './add-car-licence.component.html',
+  styleUrls: ['./add-car-licence.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class AddCarLicenceComponent implements OnInit {
 
   Name:string="undefined";
   
@@ -41,5 +41,4 @@ export class ProfileComponent implements OnInit {
     
     this.router.navigate([''])
   }
-
 }

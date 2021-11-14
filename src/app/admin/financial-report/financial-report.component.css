@@ -36,12 +36,12 @@
 }
 
 .tableFixHead {
-    overflow-y: auto;
+    overflow-y: hidden;
     height: 170px;
 }
 
 .tableFixHead tbody th {
-    position: sticky;
+    position: absolute;
     top: 0;
 }
 

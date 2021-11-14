@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddInsuranceComponent } from './add-insurance/add-insurance.component';
+import { AddLicenseComponent } from './add-license/add-license.component';
+import { AddTaskJobComponent } from './add-task-job/add-task-job.component';
 import { AdminComponent } from './admin/admin.component';
 import { ChartComponent } from './chart/chart.component';
 import { CreatEmployeeComponent } from './creat-employee/creat-employee.component';
 import { FinancialReportComponent } from './financial-report/financial-report.component';
 import { GetAttendanceComponent } from './get-attendance/get-attendance.component';
 import { GetTotalPaymentComponent } from './get-total-payment/get-total-payment.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ReportComponent } from './report/report.component';
 import { SearchByVehicleCategoryComponent } from './search-by-vehicle-category/search-by-vehicle-category.component';
 import { SearchingForVehiclesLicenseExpiryComponent } from './searching-for-vehicles-license-expiry/searching-for-vehicles-license-expiry.component';
@@ -52,6 +56,30 @@ export const routes: Routes = [
     path:'total-payment',
     component:GetTotalPaymentComponent
   },
+  {
+    path:'add-task-job',
+    component:AddTaskJobComponent
+  },
+  {
+    path:'profile',
+    component:ProfileComponent
+  },
+
+  {
+    path:'add-insurance',
+    component:AddInsuranceComponent
+  },
+  {
+    path:'add-license',
+    component:AddLicenseComponent
+  },
+  
+  { path: '', redirectTo: '/add-license', pathMatch: 'full'},
+  
+  { path: '', redirectTo: '/add-insurance', pathMatch: 'full'},
+  
+  { path: '', redirectTo: '/profile', pathMatch: 'full'},
+  { path: '', redirectTo: '/add-task-job', pathMatch: 'full'},
   
   { path: '', redirectTo: '/total-payment', pathMatch: 'full'},
   
