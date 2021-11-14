@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-client',
+  templateUrl: './client.component.html',
+  styleUrls: ['./client.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ClientComponent implements OnInit {
 
   Name:string="undefined";
   
