@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-get-technecal-report',
+  templateUrl: './get-technecal-report.component.html',
+  styleUrls: ['./get-technecal-report.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class GetTechnecalReportComponent implements OnInit {
 
   Name:string="undefined";
   

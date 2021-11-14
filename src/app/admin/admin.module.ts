@@ -15,6 +15,13 @@ import { GetAttendanceComponent } from './get-attendance/get-attendance.componen
 import { SearchingForVehiclesLicenseExpiryComponent } from './searching-for-vehicles-license-expiry/searching-for-vehicles-license-expiry.component';
 import { TotalMonthSalariesComponent } from './total-month-salaries/total-month-salaries.component';
 import { GetTotalPaymentComponent } from './get-total-payment/get-total-payment.component';
+import { AddTaskJobComponent } from './add-task-job/add-task-job.component';
+import { TaskJobDialogComponent } from './task-job-dialog/task-job-dialog.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AddLicenseComponent } from './add-license/add-license.component';
+import { LicenseDialogComponent } from './license-dialog/license-dialog.component';
+import { AddInsuranceComponent } from './add-insurance/add-insurance.component';
+import { InsuranceDialogComponent } from './insurance-dialog/insurance-dialog.component';
 
 
 @NgModule({
@@ -29,7 +36,14 @@ import { GetTotalPaymentComponent } from './get-total-payment/get-total-payment.
     GetAttendanceComponent,
     SearchingForVehiclesLicenseExpiryComponent,
     TotalMonthSalariesComponent,
-    GetTotalPaymentComponent
+    GetTotalPaymentComponent,
+    AddTaskJobComponent,
+    TaskJobDialogComponent,
+    ProfileComponent,
+    AddLicenseComponent,
+    LicenseDialogComponent,
+    AddInsuranceComponent,
+    InsuranceDialogComponent
   ],
   imports: [
     CommonModule,
