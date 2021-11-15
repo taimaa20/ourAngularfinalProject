@@ -9,6 +9,9 @@ const htmlToPdfmake = require("html-to-pdfmake");
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 import * as XLSX from 'xlsx';
 
+import { TDocumentDefinitions } from 'pdfmake/interfaces';
+
+
 @Component({
   selector: 'app-financial-report',
   templateUrl: './financial-report.component.html',
@@ -71,8 +74,10 @@ export class FinancialReportComponent implements OnInit {
   ObtainFinancialReports(){
 
     this.home.ObtainFinancialReports().subscribe((res:any)=>{
-      this.home.data=res;
-     console.log(this.home.data)
+
+      this.home.financial_report=res;
+     console.log(this.home.financial_report)
+     
 
     },err=>{
       console.log("err")
@@ -85,8 +90,17 @@ export class FinancialReportComponent implements OnInit {
       public downloadAsPDF() {
         const pdfTable = this.pdfTable.nativeElement;
         var html = htmlToPdfmake(pdfTable.innerHTML);
-        const documentDefinition = { content: html };
-        pdfMake.createPdf(documentDefinition).download();
+
+        const documentDefinition: TDocumentDefinitions = { 
+          content: html,
+          pageOrientation: 'landscape',
+          pageSize: {
+            width:1400, 
+            height: 700
+          }
+         };
+        pdfMake.createPdf(documentDefinition).download(); 
+    
 
       }
 
