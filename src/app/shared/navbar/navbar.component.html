@@ -4,20 +4,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <!-- <button id="primary-nav-button" type="button">Menu</button> -->
-                    <!-- (click)="GoToHome()" -->
-                
-                        <span class="logo">
-                            <img src="assets/img/MyVehicle -logos.jpeg"  width="70" height="112" style="padding:10px; border-radius: 20px;" alt="Venue Logo">
-                        </span>
-            
-                 
+
+                    <button id="primary-nav-button" type="button">Menu</button>
+                    <a (click)="GoToHome()">
+                        <div class="logo">
+                            <img src="assets/img/MyVehicle -logos.jpeg" width="70" height="112" style="padding:10px; " alt="Venue Logo">
+                        </div>
+                    </a>
+
                     <nav id="primary-nav" class="dropdown cf">
                         <ul class="dropdown menu">
+                          <div style="padding-right: 975px;">
                             <li class='active'><a (click)="GoToHome()">Home</a></li>
 
-                            <li><a href="cars.html">Cars</a>
-                            </li>
+                            <!-- <li><a href="cars.html">Cars</a>
+                            </li> -->
 
                             <li>
                                 <a (click)="GoToAbout()">About
@@ -30,16 +31,24 @@
                                     <li><a href="#">Terms</a></li>
                                 </ul>
                             </li>
-
+                          </div>
                             <li><a class="nav-link" (click)="GoToContact()">Contact Us</a></li>
-                            <li><a class="nav-link" (click)="GoToLogin()"> Login</a></li>
+
+
+                              <li style="float:right" ><a class="nav-link" (click)="GoToLogin()"> Login</a></li>
+                              <li style="float:right" ><a class="nav-link" (click)="GoToRegister()"> Register</a></li>
+
+
 
                         </ul>
+
                     </nav>
-               
-                    </div>
+
+
+
                 </div>
            
         </div>
     </header>
+
 </div>

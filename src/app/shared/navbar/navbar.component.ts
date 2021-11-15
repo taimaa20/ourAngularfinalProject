@@ -28,7 +28,10 @@ export class NavbarComponent implements OnInit {
   }
   GoToHome()
   {
-    
+
     this.router.navigate([''])
+  }
+  GoToRegister(){
+    this.router.navigate(['security/register'])
   }
 }
