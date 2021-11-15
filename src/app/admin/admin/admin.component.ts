@@ -6,39 +6,38 @@ import { HomeService } from 'src/app/Service/home.service';
 
 @Component({
   selector: 'app-admin',
+  
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
+ 
   @Input () number_Of_Users:number|undefined;
-  @Input () number_Of_Employees:number|undefined;
+  @Input () number_Of_Employees:number|undefined; 
+  @Input () usersCount:number|undefined;
+
   
-
-
 
   
   Name:string="undefined";
-  
+  tuser:any;
+
   currentYear:Date|any = undefined;
   constructor(private router:Router,public homeService : HomeService,
     public tostr:ToastrService,
     private spiner:NgxSpinnerService)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
-    
-    
+     
    }
 
   ngOnInit(): void {
     
+     this.GetNumberOfCustomer()
+      this.GetNumberOfEmployee()
 
-    // this.GetNumberOfCustomer()
-    //  this.GetNumberOfEmployee()
-
-    this.GetNumberOfCustomer();
-     this.GetNumberOfEmployee()
      this.GetListOfEmployees();
+     this.GetAllVehicles();
     this.GetNumberOfAllUser();
 
     
@@ -56,13 +55,13 @@ export class AdminComponent implements OnInit {
     this.spiner.show();
 
 this.homeService.GetNumberOfCustomer().subscribe((res:any)=>{
-  this.homeService.data=res;
+  this.homeService.number_Of_Users=res;
  
   this.spiner.hide();
-  // this.tostr.success('Data Retrived !!!')
+  this.tostr.success('Data Retrived !!!')
 },err=>{
   this.spiner.hide();
-  // this.tostr.error('something want worring!!')
+   this.tostr.error('something want worring!!')
 })
 
  
@@ -73,7 +72,7 @@ this.homeService.GetNumberOfCustomer().subscribe((res:any)=>{
     this.spiner.show();
 
 this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
-  this.homeService.data=res;
+  this.homeService.number_Of_Employees=res;
  console.log(this.homeService.data)
   this.spiner.hide();
   this.tostr.success('Data Retrived !!!')
@@ -82,15 +81,7 @@ this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
   this.tostr.error('something want worring!!')
 });
 
-// this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
-//   this.homeService.data=res;
-//  console.log(this.homeService.data)
-//   this.spiner.hide();
-//   this.tostr.success('Data Retrived !!!')
-// },err=>{
-//   this.spiner.hide();
-//   this.tostr.error('something want worring!!')
-// })
+
 
   }
 
@@ -112,8 +103,8 @@ this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
   }
   GetListOfEmployees(){
     this.homeService.GetListOfEmployees().subscribe((res:any)=>{
-      this.homeService.data=res;
-     console.log(this.homeService.data)
+      this.homeService.users=res;
+     console.log(this.homeService.users)
      
     },err=>{
       console.log("err")
@@ -123,19 +114,30 @@ this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
   }
   GetNumberOfAllUser()
   {
-    this.spiner.show();
 
 this.homeService.GetNumberOfAllUser().subscribe((res:any)=>{
-  this.homeService.data=res;
-  console.log(this.homeService.data)
-  this.spiner.hide();
-  // this.tostr.success('Data Retrived !!!')
+  this.homeService.card1=res;
+  console.log(this.homeService.card1)
+
+  this.tostr.success('Data Retrived !!!')
 },err=>{
-  this.spiner.hide();
-  // this.tostr.error('something want worring!!')
+
+  this.tostr.error('something want worring!!')
 })
 
  
   }
+  GetAllVehicles(){
+    this.homeService.GetAllVehicles().subscribe((res:any)=>{
+      this.homeService.vehicle=res;
+     console.log(this.homeService.vehicle)
+     
+    },err=>{
+      console.log("err")
+    });
+    
+
+  }
+  
 }
 

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { HomeService } from 'src/app/Service/home.service';
 
 @Component({
   selector: 'app-accountant',
@@ -7,17 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./accountant.component.css']
 })
 export class AccountantComponent implements OnInit {
-
+  @Input () paymentCount:number|undefined;
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
-  constructor(private router:Router)  {
+  constructor(private router:Router,public homeService:HomeService ,
+    public tostr:ToastrService)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
     
    }
   ngOnInit(): void {
+    this.GetCountPayment();
+    this.GetAllSalary();
+    this.GetAllPayments();
   }
   logout()
   {
@@ -40,5 +46,38 @@ export class AccountantComponent implements OnInit {
   {
     
     this.router.navigate([''])
+  }
+  GetCountPayment(){
+    this.homeService.GetCountPayment().subscribe((res:any)=>{
+      this.homeService.paymentCount=res;
+
+      this.tostr.success('Data Retrived !!!')
+    },err=>{
+
+       this.tostr.error('something want worring!!')
+    });
+    
+
+  }
+  GetAllSalary(){
+    this.homeService.GetAllSalary().subscribe((res:any)=>{
+      this.homeService.data1=res;
+     console.log(this.homeService.data)
+     
+    },err=>{
+      console.log("err")
+    });
+    
+
+  }
+  GetAllPayments(){ this.homeService.GetAllPayments().subscribe((res:any)=>{
+    this.homeService.payment=res;
+   console.log(this.homeService.payment)
+   
+  },err=>{
+    console.log("err")
+  });
+  
+
   }
 }
