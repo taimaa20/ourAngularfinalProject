@@ -34,3 +34,43 @@
     font-weight: bold;
     color: #2177c7;
 }
+
+.tableFixHead {
+    overflow-y: visible;
+    overflow-x: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.tableFixHead tbody th {
+    position: absolute;
+    top: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.edit {
+    margin-left: 25rem;
+}
+
+
+/* .nav-link.active {
+    margin-top: 10px;
+    margin-left: 0%;
+    padding-left: 5px;
+} */
+
+.img {
+    padding: 5px;
+    margin-left: 50px;
+}
+
+.colorbtn {
+    background-color: #352e2e;
+    color: gainsboro;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-left: 15px;
+}

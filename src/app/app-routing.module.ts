@@ -38,7 +38,12 @@ const routes: Routes = [
       path:'accountant',
       loadChildren:()=>AccountantModule ,
       canActivate :[AutheraizationGuard]
-      }
+      },
+      {
+        path:'client',
+        loadChildren:()=>ClientModule ,
+        canActivate :[AutheraizationGuard]
+        }
 
 ];
 

@@ -1,9 +1,17 @@
 
 <app-navbar></app-navbar>
+
 <video autoplay muted loop style="width: 100%; margin-top:0.12% ;">
     <source src="..\assets\video\promo1.mp4" type="video/mp4">
     
+
+<div class="container-fluid"   >
+<video autoplay muted loop style="height: 20cm;" >
+    <source src="..\assets\video\promo1.mp4" type="video/mp4"  >
+
+
   </video>
+</div>
 <main>
     <section class="our-services">
         <div class="container">
@@ -37,61 +45,24 @@
                           <hr>
                             <div >
                                  <table id="customers" >
+                                   <thead>
                                           <tr>
-                                            <th>Engine Capacity CC</th>
+                                            <th>Engine Capacity CC (MIN)</th>
+                                            <th>Engine Capacity CC (MAX)</th>
                                               <th>Engine Type</th>
                                              <th>Fees in JD</th>
                                             </tr>
-                                        <tr>
-                                            <td>Alfreds Futterkiste</td>
-                                            <td>Maria Anders</td>
-                                            <td>Germany</td>
+                                          </thead>
+                                          <tbody>
+                                        <tr *ngFor="let Licens of homeService.License">
+                                          <td>{{Licens.minValue}}</td>
+                                          <td>{{Licens.maxValue}}</td>
+                                            <td>{{ Licens.engineType }}</td>
+
+
+                                            <td>{{Licens.cost}} JD</td>
                                         </tr>
-                                        <tr>
-                                            <td>Berglunds snabbköp</td>
-                                            <td>Christina Berglund</td>
-                                            <td>Sweden</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Centro comercial Moctezuma</td>
-                                            <td>Francisco Chang</td>
-                                            <td>Mexico</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ernst Handel</td>
-                                            <td>Roland Mendel</td>
-                                            <td>Austria</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Island Trading</td>
-                                            <td>Helen Bennett</td>
-                                            <td>UK</td>  
-                                        </tr>
-                                        <tr>
-                                            <td>Königlich Essen</td>
-                                            <td>Philip Cramer</td>
-                                            <td>Germany</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Laughing Bacchus Winecellars</td>
-                                            <td>Yoshi Tannamuri</td>
-                                            <td>Canada</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Magazzini Alimentari Riuniti</td>
-                                            <td>Giovanni Rovelli</td>
-                                            <td>Italy</td>
-                                        </tr>
-                                        <tr>
-                                            <td>North/South</td>
-                                            <td>Simon Crowther</td>
-                                            <td>UK</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Paris spécialités</td>
-                                            <td>Marie Bertrand</td>
-                                            <td>France</td>
-                                        </tr>
+                                      </tbody>
                                     </table>
                                 <br>
                                 <hr style="color: blue;">
@@ -104,46 +75,12 @@
                                                 <th>Insurance  Type</th>
                                                   <th>Fees in JD</th>
                                                 </tr>
-                                            <tr>
-                                                <td>Alfreds Futterkiste</td>
-                                                <td>Maria Anders</td>
+                                            <tr *ngFor="let Insurance of homeService.Insurance">
+                                              <td>{{Insurance.insuranceType}}</td>
+
+                                              <td>{{Insurance.insuranceValues}}</td>
                                             </tr>
-                                            <tr>
-                                                <td>Berglunds snabbköp</td>
-                                                <td>Christina Berglund</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Centro comercial Moctezuma</td>
-                                                <td>Francisco Chang</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ernst Handel</td>
-                                                <td>Roland Mendel</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Island Trading</td>
-                                                <td>Helen Bennett</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Königlich Essen</td>
-                                                <td>Philip Cramer</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Laughing Bacchus Winecellars</td>
-                                                <td>Yoshi Tannamuri</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Magazzini Alimentari Riuniti</td>
-                                                <td>Giovanni Rovelli</td>
-                                            </tr>
-                                            <tr>
-                                                <td>North/South</td>
-                                                <td>Simon Crowther</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Paris spécialités</td>
-                                                <td>Marie Bertrand</td>
-                                            </tr>
+
                                         </table>
                                     </div>
                                 </div>
@@ -152,7 +89,7 @@
                   </div>
                            </div>
                             </div>
-                       
+
 
         </section>
     <section id="video-container" style="background-image: url(assets/img/contact-image-1-1920x700.jpg);">
@@ -163,7 +100,7 @@
                       <span>Contact Us</span>
                       <h2>Contact with MyVehicle Team</h2>
                   </div>
-                
+
 
                   <div class="blue-button">
                     <a routerLink="contactus" >Contact Us</a>

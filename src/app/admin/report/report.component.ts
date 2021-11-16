@@ -8,7 +8,10 @@ import * as pdfMake from "pdfmake/build/pdfmake";
 import * as pdfFonts from "pdfmake/build/vfs_fonts";
 const htmlToPdfmake = require("html-to-pdfmake");
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
+
 import * as XLSX from 'xlsx'; 
+import { TDocumentDefinitions } from 'pdfmake/interfaces';
+
 
 
 
@@ -39,25 +42,25 @@ export class ReportComponent implements OnInit {
 
 
   Name:string="undefined";
-  
+
   currentYear:Date|any = undefined;
   constructor(private router:Router ,public home:HomeService)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
-    
-    
+
+
    }
 
   ngOnInit(): void {
     this.VehicleSystemReport();
   }
-  
+
   logout()
   {
     localStorage.clear();
     this.router.navigate(['security/login']);
   }
- 
+
 
   GoToAbout()
   {
@@ -68,42 +71,53 @@ export class ReportComponent implements OnInit {
   {
     this.router.navigate(['contactus'])
   }
-  
+
   GoToHome()
   {
-    
+
     this.router.navigate([''])
   }
-  
+
   VehicleSystemReport(){
-    
+
 this.home.VehicleSystemReport().subscribe((res:any)=>{
-  this.home.data=res;
- console.log(this.home.data)
+
+  this.home.fullReport=res;
+ console.log(this.home.fullReport)
  
+
 },err=>{
   console.log("err")
 });
 
   }
-  
+
   @ViewChild('pdfTable')
   pdfTable!: ElementRef;
-  
+
   public downloadAsPDF() {
     const pdfTable = this.pdfTable.nativeElement;
     var html = htmlToPdfmake(pdfTable.innerHTML);
-    const documentDefinition = { content: html };
+
+    const documentDefinition: TDocumentDefinitions = { 
+      content: html,
+      pageOrientation: 'landscape',
+      pageSize: {
+        width:1400, 
+        height: 700
+      }
+     };
     pdfMake.createPdf(documentDefinition).download(); 
 
-  }
-  
-    fileName= 'ExcelSheet.xlsx';  
 
-exportexcel(): void 
+  }
+
+    fileName= 'ExcelSheet.xlsx';
+
+exportexcel(): void
     {
-       /* table id is passed over here */   
-       let element = document.getElementById('excel-table'); 
+       /* table id is passed over here */
+       let element = document.getElementById('excel-table');
        const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
 
        /* generate workbook and add the worksheet */
@@ -112,9 +126,9 @@ exportexcel(): void
 
        /* save to file */
        XLSX.writeFile(wb, this.fileName);
-			
+
     }
-    
+
 }
 
 

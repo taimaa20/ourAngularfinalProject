@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/css/c3.css">
     <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/style.css">  
+    <!-- <link rel="stylesheet" href="/assets/css/style.css">
      <link rel="stylesheet" href="/assets/css/bootstrap-icons.css">  -->
     <title> Admin Dashboard </title>
 </head>
@@ -119,7 +119,7 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <!--                     
+                    <!--
                     <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
                     <!-- <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -146,23 +146,15 @@
                                             <li class="nav-item">
                                                 <a class="nav-link" routerLink="/admin/financial-report"><i class="fa fa-file-o" ></i>Financial Reports</a>
 
-                                                <!-- <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-file"></i> Pages </a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-inbox"></i>Apps </a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-columns"></i>Icons</a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
-                                 -->
+
                                                 <li class="nav-item">
+                                                    <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
 
-                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                    <li class="nav-item">
 
-                                                </li>
+                                                        <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+
+                                                    </li>
                         </ul>
                     </div>
                 </nav>
@@ -186,13 +178,32 @@
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Admin Dashboard Template </h2>
+                                <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <!-- <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                            
+                                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
+                                         -->
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
                 </div>
             </div>
-            <div class="container">
-                <div id="pdfTable" #pdfTable>
-                    <table class="styled-table" id="excel-table">
+            <div class="container ">
+                <div id="pdfTable" #pdfTable class="tableFixHead ">
+
+                    <table class="styled-table  " id="excel-table ">
                         <thead>
 
                             <tr>
@@ -216,7 +227,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of home.data">
+                            <tr *ngFor="let user of home.financial_report ">
                                 <td>{{ user.fullName }}</td>
                                 <td>{{ user.userImage }}</td>
                                 <td>{{ user.phoneNumber }}</td>
@@ -237,38 +248,39 @@
 
                                 <!-- and so on... -->
                         </tbody>
+
                     </table>
                 </div>
 
-                <button class="btn btn-primary" (click)="downloadAsPDF();">Export To PDF</button>
-                <button class="btn btn-primary" (click)="exportexcel();">Export To exl</button>
-
 
             </div>
+
+
+
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <div class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <p>Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="text-md-right footer-links d-none d-sm-block">
-                                <a (click)="GoToHome()">Home</a>
-                                <a (click)="GoToAbout()">About</a>
-                                <a (click)="GoToContact()">Contact Us</a>
-                            </div>
+        </div> <button class="btn btn-primary edit" (click)="downloadAsPDF(); ">Export To PDF</button>
+        <button class="btn btn-primary " (click)="exportexcel(); ">Export To exl</button>
+        <div class="footer ">
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                        <p class="edit">Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                        <div class="text-md-right footer-links d-none d-sm-block ">
+                            <a (click)="GoToHome() ">Home</a>
+                            <a (click)="GoToAbout() ">About</a>
+                            <a (click)="GoToContact() ">Contact Us</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
+
+
+
     </div>
 
 </body>

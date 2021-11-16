@@ -9,10 +9,28 @@ import { AuthService } from 'src/app/Service/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
   Role:number=3;
   Setting:number=1;
   gender:boolean=true;
   genderName:string="Male"
+
+
+  // formGroup =new FormGroup({
+  //   username: new FormControl('', [Validators.required]),
+  //   password:new FormControl('',[Validators.required]),
+  //   // roleId: new FormControl('',[Validators.required]),
+  //   fullName: new FormControl('', [Validators.required]),
+  //   userImage:new FormControl('',[Validators.required]),
+  //   gender: new FormControl('', [Validators.required]),
+  //   age: new FormControl('', [Validators.required]),
+  //   email: new FormControl('', [Validators.required,Validators.email]),
+  //   address: new FormControl('', [Validators.required]),
+  //   phoneNumber: new FormControl('',[Validators.required]),
+  //   // settingId: new FormControl('',[Validators.required]),
+
+  //
+
   formGroup =new FormGroup({
     fullNameControl: new FormControl('', [Validators.required]),
     UserImageControl:new FormControl('',[Validators.required]),
