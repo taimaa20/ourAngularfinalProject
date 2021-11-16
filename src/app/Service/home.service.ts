@@ -179,5 +179,62 @@ GetAllAttendance(){
 GetAllPayments(){  
   return this.http.get('https://localhost:44373/api/Payment/GetAllPayments')
 }
+InsertNewCarLicensing(data:any){
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/NewCarLicensing',data).subscribe((res:any)=>{
+    this.toastr.success('Created');
+    console.log(this.data);
+    this.spiner.hide();
 
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error(' Not Created');
+
+  })
+
+
+}
+InsertTaskJob(data:any){
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/TaskJob/InsertTaskJob',data).subscribe((res:any)=>{
+    this.toastr.success('Created');
+    console.log(this.data);
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error(' Not Created');
+
+  });
+}
+  InsertLicensing(data:any){
+    this.spiner.show();
+    debugger
+    this.http.post('https://localhost:44373/api/Licensing',data).subscribe((res:any)=>{
+      this.toastr.success('Created');
+      console.log(this.data);
+      this.spiner.hide();
+  
+    },err=>{
+     this.spiner.hide();
+     this.toastr.error(' Not Created');
+  
+    })
+  }
+  InsertMessage(data:any){
+    this.spiner.show();
+    debugger
+    this.http.post('https://localhost:44373/api/Message/InsertMessage',data).subscribe((res:any)=>{
+      this.toastr.success('Created');
+      console.log(this.data);
+      this.spiner.hide();
+  
+    },err=>{
+     this.spiner.hide();
+     this.toastr.error(' Not Created');
+  
+    })
+  }
 }

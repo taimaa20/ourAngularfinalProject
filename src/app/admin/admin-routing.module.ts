@@ -94,6 +94,10 @@ export const routes: Routes = [
   { path: '', redirectTo: '/report', pathMatch: 'full'},
   { path: '', redirectTo: '/financial-report', pathMatch: 'full'},
   { path: '', redirectTo: '/search-by-vehicle-category', pathMatch: 'full'},
+  {
+    path :'licing',
+    component:AddLicenseComponent
+  }
 ];
 
 @NgModule({
