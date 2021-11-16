@@ -13,6 +13,7 @@ import { GetDrivingLicenseComponent } from './get-driving-license/get-driving-li
 import { GetTechnecalReportComponent } from './get-technecal-report/get-technecal-report.component';
 import { GetMessageComponent } from './get-message/get-message.component';
 import { AddCarLicenceComponent } from './add-car-licence/add-car-licence.component';
+import { NewCarDialogComponent } from './new-car-dialog/new-car-dialog.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AddCarLicenceComponent } from './add-car-licence/add-car-licence.compon
           GetDrivingLicenseComponent,
           GetTechnecalReportComponent,
           GetMessageComponent,
-          AddCarLicenceComponent
+          AddCarLicenceComponent,
+          NewCarDialogComponent
   ],
   imports: [
     CommonModule,
