@@ -27,11 +27,15 @@ fullReport:any =[{}];
 payment:any =[{}];
 employee_info:any =[{}];
 paymentCount:any =[{}];
+Insurance:any =[{}];
+License:any =[{}];
+About:any =[{}];
+
 
 
   constructor(private http:HttpClient,private spiner :NgxSpinnerService,private toastr:ToastrService,private router:Router) {
 
-    
+
    }
    GetNumberOfCustomer(){
     return this.http.get('https://localhost:44373/api/Users/NumberOfUsers/')
@@ -47,13 +51,13 @@ paymentCount:any =[{}];
     this.http.post('https://localhost:44373/api/UserRegistration',data).subscribe((res:any)=>{
       this.toastr.success('Created');
       this.spiner.hide();
- 
+
     },err=>{
      this.spiner.hide();
      this.toastr.error(' Not Created');
-  
+
     })
- 
+
   }
 
   VehicleSystemReport(){
@@ -65,18 +69,18 @@ paymentCount:any =[{}];
   GetListOfEmployees(){
     return this.http.get('https://localhost:44373/api/Users/GetListOfEmployees')
   }
-  GetNumberOfAllUser(){  
+  GetNumberOfAllUser(){
       return this.http.get('https://localhost:44373/api/Users/GetNumberOfAllUser')
 }
-GetEmployeesSalaries(){  
+GetEmployeesSalaries(){
   return this.http.get('https://localhost:44373/api/Users/EmployeesSalaries')
 }
-GetCountPayment(){  
+GetCountPayment(){
   return this.http.get('https://localhost:44373/api/Payment/GetCountPayment')
 }
-GetAllVehicles(){  
+GetAllVehicles(){
   return this.http.get('https://localhost:44373/api/Vehicle/GetAllVehicles')
-}GetAllSalary(){  
+}GetAllSalary(){
   return this.http.get('https://localhost:44373/api/salary/GetAllSalary')
 }
 SearchByVehicleCategory(category:any)
@@ -176,8 +180,17 @@ GetAllAttendance(){
 }
 
 
-GetAllPayments(){  
+GetAllPayments(){
   return this.http.get('https://localhost:44373/api/Payment/GetAllPayments')
+}
+GetAllLicense(){
+  return this.http.get('https://localhost:44373/api/Licensing/GetAllLicensing')
+}
+GetAllInsurance(){
+  return this.http.get('https://localhost:44373/api/Insurance/GetAllInsurance')
+}
+GetAllAbout(){
+  return this.http.get('https://localhost:44373/api/About/GetAllAbout')
 }
 
 }
