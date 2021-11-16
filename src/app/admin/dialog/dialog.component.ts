@@ -65,18 +65,7 @@ export class DialogComponent implements OnInit {
       phoneNumber:parseInt( this.phonedata),
       settingId:this.settingIddata,
 
-      Username:this.userNamedata,
-      Password:this.passworddata,
-      RoleId:this.roleIddata,
-      FullName:this.namedata,
-      UserImage:this.imagedata,
-      Gender:Boolean(this.genderdata),
-      Age: this.agedata,
-      Email: this.emaildata,
-      Address: this.addressdata,
-      PhoneNumber:this.phonedata,
-      SettingId:this.settingIddata,
-
+      
 
     }
     console.log(data2)

@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { HomeService } from 'src/app/Service/home.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-admin',
@@ -16,7 +18,7 @@ export class AdminComponent implements OnInit {
   @Input () number_Of_Employees:number|undefined; 
   @Input () usersCount:number|undefined;
 
-  @Input () userId:number=1;
+  @Input () userId:number|undefined;
 
   
   Name:string="undefined";
@@ -25,7 +27,7 @@ export class AdminComponent implements OnInit {
   currentYear:Date|any = undefined;
   constructor(private router:Router,public homeService : HomeService,
     public tostr:ToastrService,
-    private spiner:NgxSpinnerService)  {
+    private spiner:NgxSpinnerService,private dialog:MatDialog)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
      
@@ -36,13 +38,13 @@ export class AdminComponent implements OnInit {
      this.GetNumberOfCustomer()
       this.GetNumberOfEmployee()
 
-     this.GetListOfEmployees();
+    
      this.GetAllVehicles();
     this.GetNumberOfAllUser();
-
     
-    
-  }
+     this.GetListOfEmployees();
+}
+  
   
   logout()
   {
@@ -75,6 +77,7 @@ this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
   this.homeService.number_Of_Employees=res;
  console.log(this.homeService.data)
   this.spiner.hide();
+  
   this.tostr.success('Data Retrived !!!')
 },err=>{
   this.spiner.hide();
@@ -102,16 +105,20 @@ this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
 
   }
   GetListOfEmployees(){
+    
+    
+    
     this.homeService.GetListOfEmployees().subscribe((res:any)=>{
       this.homeService.users=res;
+      
      console.log(this.homeService.users)
      
     },err=>{
       console.log("err")
     });
     
-
   }
+  
   GetNumberOfAllUser()
   {
 
@@ -138,13 +145,37 @@ this.homeService.GetNumberOfAllUser().subscribe((res:any)=>{
     
 
   }
+  
   showProfile()
   {
-    if(this.userId==1)
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
     {
-      this.homeService.GetUserById(this.userId)
+       
+      this.homeService.GetUserById(id)
     }
   }
+  createEmployee()
+  {
+this.dialog.open(DialogComponent)
+  }
+
+  Delete(){
+    if(this.userId){
+     
+      this.homeService.DeleteUserbyID(this.userId);
+      this.tostr.success('Deleted item');
   
+    }
+    else {
+      this.tostr.warning('This item cannot be deleted')
+    }
+    window.location.reload();
+  }
 }
 

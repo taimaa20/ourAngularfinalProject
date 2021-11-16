@@ -212,5 +212,22 @@ GetUserById(id:number)
       })
     }
 
+    DeleteUserbyID(id:number){
+      this.spiner.show();
+      debugger
+      this.http.delete('https://localhost:44373/api/Users/delete/'+id)
+      .subscribe((date:any)=>{
+        this.spiner.hide();
+        this.toastr.success(' The User Deleted ');
+      
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error('Not Deleted');
+      
+      })
+      
+      
+        }
+
 
 }
