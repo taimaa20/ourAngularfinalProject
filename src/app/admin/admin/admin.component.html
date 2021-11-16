@@ -95,7 +95,7 @@
 
 
                         <li class="nav-item dropdown nav-user" style="margin-bottom: 15px;margin-left: 15px;margin-right: 15px;">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img"  id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle" (click)="showProfile()"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -139,7 +139,7 @@
                                 <a class="nav-link active" routerLink="/admin/admin"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/admin/creat-employee"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a>
+                                    <a class="nav-link" (click)="createEmployee()"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a>
 
                                     <li class="nav-item">
 
@@ -305,7 +305,7 @@
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let user of homeService.users">
-
+                                       
                                         <td>
                                             <div class="m-r-10"><img src="{{user.userImage}}" alt="user" class="rounded" width="45"></div>
                                         </td>
@@ -316,9 +316,8 @@
                                         <td>{{user.phoneNumber}}</td>
                                         <td>{{user.address}} </td>
                                         <td>{{user.roleName}} </td>
-
+<!-- <td><button mat-button (click)="Delete()">Delete</button></td> -->
                                     </tr>
-
 
                                 </tbody>
                             </table>
