@@ -22,7 +22,7 @@ export class DialogComponent implements OnInit {
     // settingId: new FormControl('',[Validators.required]),
     
   }) 
-  names = [0, 1];
+  
   constructor(private home:HomeService) { }
 
   ngOnInit(): void {

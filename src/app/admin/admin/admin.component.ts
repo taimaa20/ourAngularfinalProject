@@ -16,7 +16,7 @@ export class AdminComponent implements OnInit {
   @Input () number_Of_Employees:number|undefined; 
   @Input () usersCount:number|undefined;
 
-  
+  @Input () userId:number=1;
 
   
   Name:string="undefined";
@@ -137,6 +137,13 @@ this.homeService.GetNumberOfAllUser().subscribe((res:any)=>{
     });
     
 
+  }
+  showProfile()
+  {
+    if(this.userId==1)
+    {
+      this.homeService.GetUserById(this.userId)
+    }
   }
   
 }

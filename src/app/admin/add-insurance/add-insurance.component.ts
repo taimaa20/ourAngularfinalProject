@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { HomeService } from 'src/app/Service/home.service';
+import { InsuranceDialogComponent } from '../insurance-dialog/insurance-dialog.component';
 
 @Component({
   selector: 'app-add-insurance',
@@ -17,7 +19,7 @@ export class AddInsuranceComponent implements OnInit {
   currentYear:Date|any = undefined;
   constructor(private router:Router,public homeService : HomeService,
     public tostr:ToastrService,
-    private spiner:NgxSpinnerService)  {
+    private spiner:NgxSpinnerService,private dialog:MatDialog)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
      
@@ -53,6 +55,11 @@ export class AddInsuranceComponent implements OnInit {
     
     this.router.navigate([''])
 
+  }
+
+  createInsurance()
+  {
+this.dialog.open(InsuranceDialogComponent)
   }
 
 }
