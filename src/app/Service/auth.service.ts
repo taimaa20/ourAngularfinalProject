@@ -56,7 +56,7 @@ export class AuthService {
          else if(data.role=='User'){
            this.router.navigate(['client/client']);
          }
-         else if(data.role=='Employee')
+         else if(data.role=='Accountant')
          {
            this.router.navigate(['accountant/accountant']);
          }

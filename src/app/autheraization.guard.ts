@@ -28,7 +28,7 @@ export class AutheraizationGuard implements CanActivate {
             user=JSON.parse(user);
         //extract the role from the user and check if the role name is admin . it will retuen true , its mean the user can go to this page 
 
-            if(user.role=='Employee'){
+            if(user.role=='Accountant'){
               return true;
             }
        //if not the admin user it will return false and show toastr
