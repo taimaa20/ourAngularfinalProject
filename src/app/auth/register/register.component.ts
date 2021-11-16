@@ -10,6 +10,12 @@ import { AuthService } from 'src/app/Service/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
+  Role:number=3;
+  Setting:number=1;
+  gender:boolean=true;
+  genderName:string="Male"
+
+
   // formGroup =new FormGroup({
   //   username: new FormControl('', [Validators.required]),
   //   password:new FormControl('',[Validators.required]),
@@ -24,6 +30,7 @@ export class RegisterComponent implements OnInit {
   //   // settingId: new FormControl('',[Validators.required]),
 
   //
+
   formGroup =new FormGroup({
     fullNameControl: new FormControl('', [Validators.required]),
     UserImageControl:new FormControl('',[Validators.required]),
@@ -37,8 +44,33 @@ export class RegisterComponent implements OnInit {
 })
   constructor(private router:Router,public authService :AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  saveregister(){
+    const User={
+    fullName:this.formGroup.value.fullNameControl.toString(),
+    userImage:this.formGroup.value.UserImageControl.toString(),
+    // gender:this.formGroup.value.GenderControl,
+    gender:this.gender,
+    age:parseInt(this.formGroup.value.AgeControl),
+    email:this.formGroup.value.emailControl.toString(),
+    phoneNumber:parseInt(this.formGroup.value.phoneNumberControl),
+    address:this.formGroup.value.addressControl.toString(),
+    username:this.formGroup.value.usernameControl.toString(),
+    password:this.formGroup.value.passwordControl.toString(),
+    roleId:this.Role,
+    settingId:this.Setting
+    }
+    this.authService.register(User);
   }
+ 
+
+
+
+
+
+
+
   submit(){
     // console.log(this.registerForm.controls);
   }

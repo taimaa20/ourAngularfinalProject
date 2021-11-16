@@ -73,6 +73,26 @@ admin_profile:any=[{}];
   GetListOfEmployees(){
     return this.http.get('https://localhost:44373/api/Users/GetListOfEmployees')
   }
+
+  GetNumberOfAllUser(){  
+      return this.http.get('https://localhost:44373/api/Users/NumberOfUsers')
+  }
+
+
+  Testimonial(data:any)
+   {
+     this.spiner.show();
+     this.http.post('https://localhost:44373/api/Testimonial',data).subscribe(
+     (result:any)=>{
+     this.toastr.success('Sent');
+     this.spiner.hide();
+   },
+    err=>{
+    this.spiner.hide();
+    this.toastr.error('Not Send');
+ 
+   })
+
   GetNumberOfAllUser(){
       return this.http.get('https://localhost:44373/api/Users/GetNumberOfAllUser')
 }
@@ -305,5 +325,6 @@ InsertTaskJob(data:any){
      this.toastr.error(' Not Created');
   
     })
+
   }
 }
