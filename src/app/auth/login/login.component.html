@@ -13,7 +13,7 @@
 
                      <div class="form-group">
                           <input class="form-control" type="password" matInput [formControl]="authService.passwordControl" placeholder="Password">
-                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('minlength')">Password must be more than 8 char</mat-error>
+                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('minlength')">Password must be more than 10 char</mat-error>
                      </div>
 
                   
@@ -25,9 +25,9 @@
                      </label>
 
                       <div class="form-btn">
-                        <button id="submitForm" type="submit" class="submit-btn"  [disabled]="!authService.usernameControl.valid||!authService.passwordControl.valid"  (click)="authService.submit()">Login</button>
+                        <button id="submitForm" type="submit" class="submit-btn" [disabled]="!authService.usernameControl.valid||!authService.passwordControl.valid"  (click)="authService.submit()">Login</button>
                       </div>
-                      
+                     
                        <br><br>
 
                       <div class="row">

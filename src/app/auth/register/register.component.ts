@@ -9,33 +9,50 @@ import { AuthService } from 'src/app/Service/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
-  // registerForm: FormGroup = new FormGroup({
-  //   fullName: new FormControl('', [Validators.required]),
-  //   UserImage:new FormControl('',[Validators.required]),
-  //   Gender: new FormControl('', [Validators.required]),
-  //   email: new FormControl('', [Validators.required,Validators.email]),
-  //   Age: new FormControl('', [Validators.required]),
-  //   address: new FormControl('', [Validators.required]),
-  //   phoneNumber: new FormControl('',[Validators.required]),
-  //   password: new FormControl('', [Validators.required,
-  //   Validators.minLength(8)]),
-
-
-  //   })
-    fullNameControl= new FormControl('', [Validators.required]);
-    UserImageControl=new FormControl('',[Validators.required]);
-    GenderControl= new FormControl('', [Validators.required]);
-    emailControl= new FormControl('', [Validators.required,Validators.email]);
-    AgeControl= new FormControl('', [Validators.required]);
-    addressControl= new FormControl('', [Validators.required]);
-    phoneNumberControl = new FormControl('',[Validators.required]);
-    usernameControl = new FormControl('', [Validators.required]);
-  passwordControl = new FormControl('', [Validators.required,Validators.minLength(10)]);
+  Role:number=3;
+  Setting:number=1;
+  gender:boolean=true;
+  genderName:string="Male"
+  formGroup =new FormGroup({
+    fullNameControl: new FormControl('', [Validators.required]),
+    UserImageControl:new FormControl('',[Validators.required]),
+    GenderControl: new FormControl('', [Validators.required]),
+    emailControl:new FormControl('', [Validators.required,Validators.email]),
+    AgeControl: new FormControl('', [Validators.required]),
+    addressControl: new FormControl('', [Validators.required]),
+    phoneNumberControl : new FormControl('',[Validators.required]),
+    usernameControl :new FormControl('', [Validators.required]),
+  passwordControl : new FormControl('', [Validators.required,Validators.minLength(10)])
+})
   constructor(private router:Router,public authService :AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  saveregister(){
+    const User={
+    fullName:this.formGroup.value.fullNameControl.toString(),
+    userImage:this.formGroup.value.UserImageControl.toString(),
+    // gender:this.formGroup.value.GenderControl,
+    gender:this.gender,
+    age:parseInt(this.formGroup.value.AgeControl),
+    email:this.formGroup.value.emailControl.toString(),
+    phoneNumber:parseInt(this.formGroup.value.phoneNumberControl),
+    address:this.formGroup.value.addressControl.toString(),
+    username:this.formGroup.value.usernameControl.toString(),
+    password:this.formGroup.value.passwordControl.toString(),
+    roleId:this.Role,
+    settingId:this.Setting
+    }
+    this.authService.register(User);
   }
+ 
+
+
+
+
+
+
+
   submit(){
     // console.log(this.registerForm.controls);
   }

@@ -49,6 +49,21 @@ data :any =[{}];
   }
   GetNumberOfAllUser(){  
       return this.http.get('https://localhost:44373/api/Users/NumberOfUsers')
-}
+  }
 
+
+  Testimonial(data:any)
+   {
+     this.spiner.show();
+     this.http.post('https://localhost:44373/api/Testimonial',data).subscribe(
+     (result:any)=>{
+     this.toastr.success('Sent');
+     this.spiner.hide();
+   },
+    err=>{
+    this.spiner.hide();
+    this.toastr.error('Not Send');
+ 
+   })
+  }
 }
