@@ -27,6 +27,7 @@ fullReport:any =[{}];
 payment:any =[{}];
 employee_info:any =[{}];
 paymentCount:any =[{}];
+admin_profile:any=[{}];
 
 
   constructor(private http:HttpClient,private spiner :NgxSpinnerService,private toastr:ToastrService,private router:Router) {
@@ -179,5 +180,37 @@ GetAllAttendance(){
 GetAllPayments(){  
   return this.http.get('https://localhost:44373/api/Payment/GetAllPayments')
 }
+
+CreateInsurance(data:any){
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/Insurance',data).subscribe((res:any)=>{
+    this.toastr.success(' Insurance Created');
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error('Insurance Not Created');
+
+  })
+
+}
+
+GetUserById(id:number)
+    {
+      this.spiner.show();
+      
+      this.http.get('https://localhost:44373/api/Users/GetAllUsersById/'+id).subscribe((res:any)=>{
+        
+        this.admin_profile=res;
+        this.spiner.hide();
+        this.router.navigate(['admin/profile']);
+        this.toastr.success("Data return success")
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error("Data not return")
+      })
+    }
+
 
 }
