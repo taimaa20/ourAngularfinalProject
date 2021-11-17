@@ -137,16 +137,16 @@
                                 
                                 <li class="nav-item">
 
-                                    <a class="nav-link" routerLink="/client/get-driving-license"><i  class="fa fa-bar-chart"></i>Driving License</a>
+                                    <a class="nav-link" (click)="DrivingLicense()"><i  class="fa fa-id-card-o" aria-hidden="true"></i>Driving License</a>
 
                                     <li class="nav-item ">
-                                        <a class="nav-link" routerLink="/client/get-technecal-report"><i class="fa fa-male" aria-hidden="true"></i>Technecal Report</a>
+                                        <a class="nav-link" (click)="TechnecalReportUser()"><i class="fa fa-file-pdf-o"></i>Technecal Report</a>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" routerLink="/client/get-message"><i class="fa fa-file-o" ></i>Message </a>
+                                            <a class="nav-link" (click)="showMessage()"><i class="fa fa-commenting" aria-hidden="true" ></i>Message </a>
 
                                             <li class="nav-item">
-                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>New Car Licensing</a>
+                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a>
 
                                                 <!-- <li class="nav-item">
 
@@ -215,17 +215,97 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
+                </div>
+            </div>
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
 
                    
-                </div>
+               
+                    <div class="container ">
+                        <div id="pdfTable" #pdfTable class="tableFixHead ">
+        
+                            <table class="styled-table  " id="excel-table ">
+                                <thead>
+        
+                                    <tr>
+                                        <td>fullName </td>
+                                       
+                                        <td>vehicleName </td>
+                                        <td>vehicleColor</td>
+                                        <td>vehicleCategory </td>
+                                        <td>useType </td>
+                                        <td>registerType </td>
+                                        <td>licenseNumber</td>
+                                        <td>licenseExpiry </td>
+                                        <td>engineCapacity </td>
+                                        <td>engineType </td>
+                                        <td>madeYear </td>
+                                        <td>licensingCenter</td>
+                                        <td>chassisNumber </td>
+                                        <td>engineNumber </td>
+                                        <td>address </td>
+                                        <td>cost</td>
+                                        <td>insuranceType </td>
+                                        <td>insuranceValues </td>
+                                        <td>value </td>
+
+        
+                                    </tr>
+                                </thead>
+                                
+                
+                                
+                                
+                               
+                                
+                                <tbody>
+                                    <tr *ngFor="let user of homeService.reportuser">
+                                        <td>{{user.fullName}}</td>
+                                    
+                                        <td>{{user.vehicleName}}</td>
+                                        <td>{{ user.vehicleColor}}</td>
+                                        <td>{{ user.vehicleCategory }}</td>
+                                        <td>{{ user.useType }}</td>
+                                        <td>{{ user.registerType }}</td>
+                                        <td>{{ user.licenseNumber}}</td>
+                                        <td>{{ user.licenseExpiry }}</td>
+                                        <td>{{ user.engineCapacity }}</td>
+                                        <td>{{ user.engineType }}</td>
+                                        <td>{{ user.madeYear }}</td>
+                                        <td>{{ user.licensingCenter}}</td>
+                                        <td>{{ user.chassisNumber }}</td>
+                                        <td>{{ user.engineNumber }}</td>
+                                        <td>{{ user.address }}</td> 
+                                        <td>{{ user.cost}}</td>
+                                        <td>{{ user.insuranceType }}</td>
+                                        <td>{{user.insuranceValues}}</td>
+                                        <td>{{user.value}}</td> 
+        
+        
+                                        
+                                    </tr>
+                                </tbody>
+        
+                            </table>
+                        </div>
+        
+        
+                    </div>
+        
+        
+                    
+                 <button class="btn btn-primary edit" (click)="downloadAsPDF(); ">Export To PDF</button>
+                <button class="btn btn-primary " (click)="exportexcel(); ">Export To exl</button>
+                 </div>  
+               
             </div>
-            <!-- footer -->
-            <!-- ============================================================== -->
-        </div>
+                    
+                
+                 
+        
         <div class="footer">
             <div class="container-fluid">
                 <div class="row">
@@ -245,8 +325,8 @@
 
 
 
-    </div>
-
+    
+   
 </body>
 
 </html>

@@ -249,11 +249,49 @@
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
 
+
                     <h1>The Name is: {{home.admin_profile.fullName}}</h1>
                     <h1>The Age is: {{home.admin_profile.age}}</h1>
                     <h1>The Email is : {{home.admin_profile.email}}</h1>
                     <h1>The Phone of is : {{home.admin_profile.phoneNumber}}</h1>
                     <h1>The Address is : {{home.admin_profile.address}}</h1>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="bg-light">
+                                <tr class="border-0">
+
+                                    <th class="border-0">UserImage</th>
+                                    <th class="border-0">FullName</th>
+                                    <th class="border-0">Gender </th>
+                                    <th class="border-0">Age</th>
+                                    <th class="border-0">Email</th>
+                                    <th class="border-0">PhoneNumber</th>
+                                    <th class="border-0">Address</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr >
+                                   
+                                    <td>
+                                        <div class="m-r-10"><img src="assets/img/admin.jpg"  class="rounded" width="45"></div>
+                                    </td>
+                                    <td>{{homeService.admin_profile.fullName}} </td>
+                                    <td>{{homeService.admin_profile.gender}} </td>
+                                    <td>{{homeService.admin_profile.age}}</td>
+                                    <td>{{homeService.admin_profile.email}}</td>
+                                    <td>{{homeService.admin_profile.phoneNumber}}</td>
+                                    <td>{{homeService.admin_profile.address}} </td>
+                                   
+<td><button mat-button (click)="UpdateAdminProfile()">Update</button></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    
+
                 </div>
             </div>
 

@@ -1,6 +1,12 @@
+
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/Service/home.service';
+import { UpdateProfileDialogComponent } from '../update-profile-dialog/update-profile-dialog.component';
 
 declare var require: any;
 
@@ -31,7 +37,9 @@ export class ProfileComponent implements OnInit {
   tuser:any;
 
   currentYear:Date|any = undefined;
+
   constructor(private router:Router ,public home:HomeService ,  public tostr:ToastrService,
+
     private spiner:NgxSpinnerService,private dialog:MatDialog)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
@@ -44,6 +52,7 @@ export class ProfileComponent implements OnInit {
     
     
   }
+
   showProfile()
   {
     //I will get the user from the local storge 
@@ -58,6 +67,13 @@ export class ProfileComponent implements OnInit {
       this.home.GetUserById(id)
     }
   }
+
+  UpdateAdminProfile()
+  {
+    this.dialog.open(UpdateProfileDialogComponent)
+  }
+  
+
   logout()
   {
     localStorage.clear();

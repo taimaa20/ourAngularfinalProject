@@ -137,16 +137,16 @@
                                 
                                 <li class="nav-item">
 
-                                    <a class="nav-link" routerLink="/client/get-driving-license"><i  class="fa fa-bar-chart"></i>Driving License</a>
+                                    <a class="nav-link" (click)="DrivingLicense()"><i  class="fa fa-id-card-o" aria-hidden="true"></i>Driving License</a>
 
                                     <li class="nav-item ">
-                                        <a class="nav-link" routerLink="/client/get-technecal-report"><i class="fa fa-male" aria-hidden="true"></i>Technecal Report</a>
+                                        <a class="nav-link" (click)="TechnecalReportUser()"><i class="fa fa-file-pdf-o"></i>Technecal Report</a>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" routerLink="/client/get-message"><i class="fa fa-file-o" ></i>Message </a>
+                                            <a class="nav-link" (click)="showMessage()"><i class="fa fa-commenting" aria-hidden="true" ></i>Message </a>
 
                                             <li class="nav-item">
-                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>New Car Licensing</a>
+                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a>
 
                                                 <!-- <li class="nav-item">
 
@@ -216,10 +216,34 @@
                             </div>
                         </div>
                     </div>
+                    <form [formGroup]="formGroup">
+                        <input type="number" matInput formControlName="engineCapasty" style="font-size:large;margin-left: 14px" placeholder=" Enter Engine Capasty">
+                        <button (click)="GetData()" style="margin-right: 15px;margin-left: 10px;font-size:large;color: #0e0c28;">Search</button>
+                    </form>
+
+
+                    <br><br>
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="card-box bg-blue">
+                                    <div class="inner">
+                                        <h3> {{homeService.engine_capasty.cost}} </h3>
+                                        <p> Total Cost </p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-money" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
 
+
+
+                        </div>
+                    </div>
                    
                 </div>
             </div>

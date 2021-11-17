@@ -3,10 +3,17 @@
 
 
 
-<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/banner-image-1-1920x300.jpg);">
+
+<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/banner-image-1-1920x300.jpg); margin-top: 0.12%;">
 
 
-<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/about-us.png);  height: 70%;">
+<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/about-us.png); margin-top: 0.12%; height: 70%;">
+
+<!-- <section class="banner banner-secondary" id="top" style="background-image: url(assets/img/banner-image-1-1920x300.jpg);"> -->
+
+
+<section class="banner banner-secondary" id="top" style="margin-top: -100px; background-image: url(assets/img/about-us.png);  height: 70%;">
+
 
     <div class="container">
         <div class="row">
@@ -27,28 +34,37 @@
                 <div class="col-md-7">
                     <div class="left-content">
                         <br>
-                        <h4>About us</h4>
-                        <p>Aenean hendrerit metus leo, quis viverra purus condimentum nec. Pellentesque a sem semper, lobortis mauris non, varius urna. Quisque sodales purus eu tellus fringilla.<br><br>Mauris sit amet quam congue, pulvinar urna et, congue
-                            diam. Suspendisse eu lorem massa. Integer sit amet posuere tellus, id efficitur leo. In hac habitasse platea dictumst. Vel sequi odit similique repudiandae ipsum iste, quidem tenetur id impedit, eaque et, aliquam quod.</p>
+                        <h4>About Us</h4>
+                        <div  *ngFor="let about of homeService.About">
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure cupiditate id unde quis ut maxime, accusantium aperiam consectetur saepe delectus ducimus accusamus, ad doloremque ea. Quam, suscipit quidem perspiciatis asperiores,
-                            libero cum saepe hic pariatur eos deleniti illum minima minus.</p>
+                          <p>{{about.description}}</p>
+                        </div>
+
+
+
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <img src="assets/img/about-1-720x480.jpg" class="img-fluid" alt="">
+
+                    <img src="..\assets\img\myvehicleplate.jpg" class="img-fluid" alt="">
+
+                    <img src="assets\img\myvehicleplate.jpg" class="img-fluid" alt="">
+
                 </div>
             </div>
         </div>
     </section>
     <div class=container>
         <div class="cards">
-            <app-aboutus-card *ngFor="let card of data" [typeLang]="card.typeLang" [subText]="card.subText" [description]="card.description"></app-aboutus-card>
+            <app-aboutus-card *ngFor="let card of homeService.About" [typeLang]="card.aboutImage" [subText]="card.subText" [description]="card.description"></app-aboutus-card>
         </div>
-    </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.8156769217826!2d35.79240745013478!3d31.720929694294394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s!5e0!3m2!1sen!2sjo!4v1635955062072!5m2!1sen!2sjo" width="1300"
-        height="450" style="border-radius: 10px;border: 3px solid #0c73a3; margin:20px;text-align: center;display:block;" allowfullscreen="" loading="lazy">
+    <div class="row">
+      <div class="col-md-12">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.8156769217826!2d35.79240745013478!3d31.720929694294394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s!5e0!3m2!1sen!2sjo!4v1635955062072!5m2!1sen!2sjo" width="1100"
+       height="450" style="border-radius: 10px;border: 3px solid #0c73a3; margin:20px;text-align: center;display:block; " allowfullscreen="" loading="lazy" >
 </iframe>
+</div></div>
+</div>
     <!-- <app-aboutus-card></app-aboutus-card> -->
     <!-- <section id="video-container" style="background-image: url(assets/img/contact-image-1-1920x700.jpg);">
         <div class="video-overlay"></div>

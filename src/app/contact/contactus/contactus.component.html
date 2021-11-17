@@ -2,7 +2,11 @@
 
 <app-navbar></app-navbar>
 
-<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/Contact-us.png);height:70%;">
+
+<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/Contact-us.png);height:70%;margin-top: 0;">
+
+<section class="banner banner-secondary" id="top" style="margin-top: -35px; background-image: url(assets/img/Contact-us.png);height:70%;">
+
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -22,31 +26,31 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="left-content">
-                            <div class="row">
+                            <div class="row"  [formGroup]="formGroup">
                                 <div class="col-md-4">
                                     <fieldset>
-                                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                                        <input name="name" type="text" class="form-control" id="name" formControlName="fullNameControl" placeholder="Your name..." required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-md-4">
                                     <fieldset>
-                                        <input name="email" type="text" class="form-control" id="Email" placeholder="Email..." required="">
+                                        <input name="email" type="text" class="form-control" id="Email" formControlName="emailControl" placeholder="Email..." required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-md-4">
                                     <fieldset>
-                                        <input name="phone" type="text" class="form-control" id="Phone" placeholder="Phone..." required="">
+                                        <input name="phone" type="text" class="form-control" id="Phone" formControlName="phoneNumberControl" placeholder="Phone..." required="">
                                     </fieldset>
                                 </div>
                                 <div class="col-md-12">
                                     <fieldset>
-                                        <textarea name="comment" rows="6" class="form-control" id="comment" placeholder="Your comment..." required=""></textarea>
+                                        <textarea name="comment" rows="6" class="form-control" id="comment" formControlName="commentControl" placeholder="Your comment..." required=""></textarea>
                                     </fieldset>
                                 </div>
                                 <div class="col-md-12">
                                     <fieldset>
                                         <div class="blue-button">
-                                            <a href="#" id="form-submit" class="btn">Send Message</a>
+                                            <a (click)="sendTestimonial()" id="form-submit" class="btn">Send Message</a>
                                         </div>
                                     </fieldset>
                                 </div>
@@ -59,7 +63,11 @@
                                 <div class="col-md-12">
                                     <div class="content">
 
+
+                                        
+
                                         <!-- <p>Etiam viverra nibh at lorem hendrerit porta non nec ligula. Donec hendrerit porttitor pretium.</p> -->
+
 
                                         <p>Contact and visit us ,we will be happy to see you and hear from you</p>
 
@@ -88,9 +96,13 @@
     <!-- <app-contact-card ></app-contact-card> -->
     <div class=container>
         <div class="cards">
-            <app-contact-card *ngFor="let card of data" [typeLang]="card.typeLang" [subText]="card.subText" [description]="card.description" style="margin-top:50px;"></app-contact-card>
+            <app-contact-card *ngFor="let item of carddata" [name]="item.name" [subText]="item.subText" [description]="item.description" style="margin-top:50px;"></app-contact-card>
         </div>
     </div>
+
+</main>
+
+
 
 
 
@@ -158,6 +170,7 @@
 </main>
 
 <!-- </main> -->
+
 
 <app-footer></app-footer>
 

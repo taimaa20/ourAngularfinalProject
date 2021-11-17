@@ -6,12 +6,38 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./contact-card.component.css']
 })
 export class ContactCardComponent implements OnInit {
-  @Input () typeLang:string|undefined;
+  @Input () name:any|undefined;
+ 
   @Input () subText:string|undefined;
+  @Input () imag:string|undefined;
   @Input () description:string|undefined;
-  constructor() { }
+  @Input () typeLang:string|undefined;
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
   }
+
+  // carddata :any =[{
+  //   name:"Hamza Al-Omary",
+  //     subText:"Developer" ,
+  //    imag:""
+  // },
+  // {
+  //   name:"Qussi Al-Dogham " ,
+  //    subText:"Developer" ,
+  //    imag:""
+  // },
+  // {
+  //   name:"Back End",
+  //   subText:"Developer",
+  //   imag:""
+  // },
+  // {
+  //   name:"Back End",
+  //   subText:"Developer",
+  //   imag:""
+  // }]
 
 }

@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root'
 })
 export class HomeService {
-message:string='This is home service!!'
+
 selectCourse:any={};
 data :any =[{}];
 data1 :any =[{}];
@@ -27,13 +27,29 @@ fullReport:any =[{}];
 payment:any =[{}];
 employee_info:any =[{}];
 paymentCount:any =[{}];
+
 admin_profile:any=[{}];
 TaskJoB:any=[{}];
 searchlic:any=[{}];
 acc_profile:any=[{}]
+
+technecal_report=[{}];
+Insurance:any =[{}];
+License:any =[{}];
+About:any =[{}];
+
+
+admin_profile:any=[{}];
+
+searchlicenseexpiry:any=[{}];
+message_user:any=[{}];
+reportuser:any=[{}];
+driverlicense:any=[{}];
+engine_capasty:any=[{}];
+
   constructor(private http:HttpClient,private spiner :NgxSpinnerService,private toastr:ToastrService,private router:Router) {
 
-    
+
    }
    GetNumberOfCustomer(){
     return this.http.get('https://localhost:44373/api/Users/NumberOfUsers/')
@@ -49,13 +65,13 @@ acc_profile:any=[{}]
     this.http.post('https://localhost:44373/api/UserRegistration',data).subscribe((res:any)=>{
       this.toastr.success('Created');
       this.spiner.hide();
- 
+
     },err=>{
      this.spiner.hide();
      this.toastr.error(' Not Created');
-  
+
     })
- 
+
   }
 
   VehicleSystemReport(){
@@ -67,18 +83,39 @@ acc_profile:any=[{}]
   GetListOfEmployees(){
     return this.http.get('https://localhost:44373/api/Users/GetListOfEmployees')
   }
-  GetNumberOfAllUser(){  
+
+  // GetNumberOfAllUser(){  
+  //     return this.http.get('https://localhost:44373/api/Users/NumberOfUsers')
+  // }
+
+
+  Testimonial(data:any)
+   {
+     this.spiner.show();
+     this.http.post('https://localhost:44373/api/Testimonial',data).subscribe(
+     (result:any)=>{
+     this.toastr.success('Sent');
+     this.spiner.hide();
+   },
+    err=>{
+    this.spiner.hide();
+    this.toastr.error('Not Send');
+ 
+   })
+  }
+  GetNumberOfAllUser()
+  {
       return this.http.get('https://localhost:44373/api/Users/GetNumberOfAllUser')
 }
-GetEmployeesSalaries(){  
+GetEmployeesSalaries(){
   return this.http.get('https://localhost:44373/api/Users/EmployeesSalaries')
 }
-GetCountPayment(){  
+GetCountPayment(){
   return this.http.get('https://localhost:44373/api/Payment/GetCountPayment')
 }
-GetAllVehicles(){  
+GetAllVehicles(){
   return this.http.get('https://localhost:44373/api/Vehicle/GetAllVehicles')
-}GetAllSalary(){  
+}GetAllSalary(){
   return this.http.get('https://localhost:44373/api/salary/GetAllSalary')
 }
 SearchByVehicleCategory(category:any)
@@ -145,7 +182,9 @@ SearchingForVehiclesLicenseExpiry(dateFromTo:any)
   this.spiner.show();
   debugger
   this.http.post('https://localhost:44373/api/Vehicle/SearchingForVehiclesLicenseExpiry',dateFromTo).subscribe((res:any)=>{
+<
     this.searchlic=res;
+
     this.toastr.success('SearchingForVehiclesLicenseExpiry Success');
     this.router.navigate(['admin/searching-for-vehicles-license-expiry'])
     this.spiner.hide();
@@ -178,9 +217,20 @@ GetAllAttendance(){
 }
 
 
-GetAllPayments(){  
+GetAllPayments(){
   return this.http.get('https://localhost:44373/api/Payment/GetAllPayments')
 }
+
+GetAllLicense(){
+  return this.http.get('https://localhost:44373/api/Licensing/GetAllLicensing')
+}
+GetAllInsurance(){
+  return this.http.get('https://localhost:44373/api/Insurance/GetAllInsurance')
+}
+GetAllAbout(){
+  return this.http.get('https://localhost:44373/api/About/GetAllAbout')
+}
+
 InsertNewCarLicensing(data:any){
   this.spiner.show();
   debugger
@@ -194,7 +244,7 @@ InsertNewCarLicensing(data:any){
    this.toastr.error(' Not Created');
 
   })
-
+}
 
 
 }
@@ -204,6 +254,7 @@ CreateInsurance(data:any){
   this.http.post('https://localhost:44373/api/Insurance',data).subscribe((res:any)=>{
     this.toastr.success(' Insurance Created');
     this.spiner.hide();
+
 
   },err=>{
    this.spiner.hide();
@@ -262,6 +313,7 @@ GetUserById(id:number)
         }
 
 
+
 InsertTaskJob(data:any){
   this.spiner.show();
   debugger
@@ -303,7 +355,24 @@ InsertTaskJob(data:any){
      this.toastr.error(' Not Created');
   
     })
+
   }
+
+  UpdateProfile(data:any){
+    this.spiner.show();
+    debugger
+    this.http.put('https://localhost:44373/api/Users',data).subscribe((res:any)=>{
+      this.toastr.success('Update Success');
+      console.log(this.data);
+      this.spiner.hide();
+  
+    },err=>{
+     this.spiner.hide();
+     this.toastr.error(' Not Updated');
+  
+    });
+  }
+
   
 GetTaskJobById(id:number)
 {
@@ -339,4 +408,80 @@ VehicleSystemReportBetween(dateFromTo:any)
   })
 
 }
+
+
+  GetMessageByUsrId(id:number)
+    {
+      this.spiner.show();
+      
+      this.http.get('https://localhost:44373/api/Message/GetMessageByUserId/'+id).subscribe((res:any)=>{
+        
+        this.message_user=res;
+        this.spiner.hide();
+        this.router.navigate(['client/get-message']);
+        
+        this.toastr.success("get-message return success")
+        
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error("get-message not return")
+      })
+    }
+
+    TechnecalReport(id:number)
+    {
+      this.spiner.show();
+      
+      this.http.get('https://localhost:44373/api/Vehicle/TechnecalReport/'+id).subscribe((res:any)=>{
+        
+        this.reportuser=res;
+        this.spiner.hide();
+        this.router.navigate(['client/get-technecal-report']);
+        
+        this.toastr.success("get-technecal-report return success")
+        
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error("get-technecal-report not return")
+      })
+    }
+
+    GetDrivingLicense(id:number)
+    {
+      this.spiner.show();
+      
+      this.http.get('https://localhost:44373/api/Users/GetDrivingLicense/'+id).subscribe((res:any)=>{
+        
+        this.driverlicense=res;
+        this.spiner.hide();
+        this.router.navigate(['client/get-driving-license']);
+        
+        this.toastr.success("get-driving-license return success")
+        
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error("get-driving-license not return")
+      })
+    }
+    TotalCost(EngineCapasty:any)
+
+    {
+      this.spiner.show();
+      debugger
+      this.http.post('https://localhost:44373/api/Licensing/SearchLicensingCost',EngineCapasty).subscribe((res:any)=>{
+        this.engine_capasty=res;
+        console.log(this.engine_capasty);
+        this.toastr.success(' Success');
+        this.router.navigate(['client/client'])
+        this.spiner.hide();
+    
+      },err=>{
+       this.spiner.hide();
+       this.toastr.error('Search Error');
+    
+      })
+    
+    }
+
+
 }
