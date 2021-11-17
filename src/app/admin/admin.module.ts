@@ -25,6 +25,7 @@ import { AddInsuranceComponent } from './add-insurance/add-insurance.component';
 import { VehicleSystemReportBetweenComponent } from './vehicle-system-report-between/vehicle-system-report-between.component';
 
 import { UpdateProfileDialogComponent } from './update-profile-dialog/update-profile-dialog.component';
+import { InsuranceDialogComponent } from './insurance-dialog/insurance-dialog.component';
 
 
 
@@ -49,7 +50,7 @@ import { UpdateProfileDialogComponent } from './update-profile-dialog/update-pro
     AddInsuranceComponent,
     InsuranceDialogComponent,
 
-    VehicleSystemReportBetweenComponent
+    VehicleSystemReportBetweenComponent,
 
     UpdateProfileDialogComponent
 
