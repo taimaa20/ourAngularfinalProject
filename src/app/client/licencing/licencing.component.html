@@ -216,35 +216,12 @@
                             </div>
                         </div>
                     </div>
-                    <form [formGroup]="formGroup">
-                        <input type="number" matInput formControlName="engineCapasty" style="font-size:large;margin-left: 14px" placeholder=" Enter Engine Capasty">
-                        <button (click)="GetData()" style="margin-right: 15px;margin-left: 10px;font-size:large;color: #0e0c28;">Search</button>
-                    </form>
-
-
-                    <br><br>
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="card-box bg-blue">
-                                    <div class="inner">
-                                        <h3> {{homeService.engine_capasty.cost}} </h3>
-                                        <p> Total Cost </p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa fa-money" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
 
+                    <button (click)="AddLicensing()" style="font-size: large;">Add Licensing</button>
 
-
-                        </div>
-                    </div>
-                   
                 </div>
             </div>
             <!-- footer -->
@@ -274,3 +251,4 @@
 </body>
 
 </html>
+

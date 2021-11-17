@@ -5,6 +5,7 @@ import { ClientComponent } from './client/client.component';
 import { GetDrivingLicenseComponent } from './get-driving-license/get-driving-license.component';
 import { GetMessageComponent } from './get-message/get-message.component';
 import { GetTechnecalReportComponent } from './get-technecal-report/get-technecal-report.component';
+import { LicencingComponent } from './licencing/licencing.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
@@ -32,6 +33,12 @@ const routes: Routes = [
     path:'add-car-licence',
     component:AddCarLicenceComponent
   },
+  {
+    path:'licencing',
+    component:LicencingComponent
+  },
+
+  { path: '', redirectTo: '/add-car-licence', pathMatch: 'full'},
 
   { path: '', redirectTo: '/add-car-licence', pathMatch: 'full'},
 
