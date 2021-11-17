@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { LicenseDialogComponent } from 'src/app/admin/license-dialog/license-dialog.component';
 import { HomeService } from 'src/app/Service/home.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-licencing',
+  templateUrl: './licencing.component.html',
+  styleUrls: ['./licencing.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class LicencingComponent implements OnInit {
 
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
-  constructor(private router:Router,public homeService : HomeService)  {
+  constructor(private router:Router,public homeService : HomeService,private dialog:MatDialog)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
@@ -86,5 +88,10 @@ export class ProfileComponent implements OnInit {
        
       this.homeService.GetDrivingLicense(id)
     }
+  }
+
+  AddLicensing()
+  {
+this.dialog.open(LicenseDialogComponent)
   }
 }
