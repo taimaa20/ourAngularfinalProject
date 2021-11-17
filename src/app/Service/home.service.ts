@@ -39,7 +39,7 @@ License:any =[{}];
 About:any =[{}];
 
 
-admin_profile:any=[{}];
+//admin_profile:any=[{}];
 
 searchlicenseexpiry:any=[{}];
 message_user:any=[{}];
@@ -182,7 +182,6 @@ SearchingForVehiclesLicenseExpiry(dateFromTo:any)
   this.spiner.show();
   debugger
   this.http.post('https://localhost:44373/api/Vehicle/SearchingForVehiclesLicenseExpiry',dateFromTo).subscribe((res:any)=>{
-<
     this.searchlic=res;
 
     this.toastr.success('SearchingForVehiclesLicenseExpiry Success');
@@ -247,7 +246,7 @@ InsertNewCarLicensing(data:any){
 }
 
 
-}
+
 CreateInsurance(data:any){
   this.spiner.show();
   debugger

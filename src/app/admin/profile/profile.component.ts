@@ -1,5 +1,4 @@
 
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -18,7 +17,6 @@ const htmlToPdfmake = require("html-to-pdfmake");
 import * as XLSX from 'xlsx'; 
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import { ToastrService } from 'ngx-toastr';
-import { MatDialog } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TaskJobDialogComponent } from '../task-job-dialog/task-job-dialog.component';
 import { LicenseDialogComponent } from '../license-dialog/license-dialog.component';

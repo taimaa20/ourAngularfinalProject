@@ -18,7 +18,7 @@ import { TaskJobDialogComponent } from '../task-job-dialog/task-job-dialog.compo
 import { LicenseDialogComponent } from '../license-dialog/license-dialog.component';
 import { InsuranceDialogComponent } from '../insurance-dialog/insurance-dialog.component';
 import { DialogComponent } from '../dialog/dialog.component';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl,FormGroup } from '@angular/forms';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 @Component({
   selector: 'app-searching-for-vehicles-license-expiry',
