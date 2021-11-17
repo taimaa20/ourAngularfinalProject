@@ -14,6 +14,7 @@ import { ReportComponent } from './report/report.component';
 import { SearchByVehicleCategoryComponent } from './search-by-vehicle-category/search-by-vehicle-category.component';
 import { SearchingForVehiclesLicenseExpiryComponent } from './searching-for-vehicles-license-expiry/searching-for-vehicles-license-expiry.component';
 import { TotalMonthSalariesComponent } from './total-month-salaries/total-month-salaries.component';
+import { VehicleSystemReportBetweenComponent } from './vehicle-system-report-between/vehicle-system-report-between.component';
 
 export const routes: Routes = [
   {
@@ -94,6 +95,10 @@ export const routes: Routes = [
   { path: '', redirectTo: '/report', pathMatch: 'full'},
   { path: '', redirectTo: '/financial-report', pathMatch: 'full'},
   { path: '', redirectTo: '/search-by-vehicle-category', pathMatch: 'full'},
+  {
+    path:'vehicle-system-report-between',
+    component:VehicleSystemReportBetweenComponent
+  },
   {
     path :'licing',
     component:AddLicenseComponent

@@ -30,10 +30,10 @@
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <!-- <a class="navbar-brand" href="index.html">Concept</a> -->
                 <div class="logo">
-                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:10px;margin-left: 15px;" alt="Venue Logo">
+                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:7px;margin-left: 50px; border-radius: 15px;" alt="Venue Logo">
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -95,7 +95,7 @@
 
 
                         <li class="nav-item dropdown nav-user" style="margin-bottom: 15px;margin-left: 15px;margin-right: 15px;">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle" (click)="showProfile()"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -110,12 +110,12 @@
                 </div>
             </nav>
         </div>
+
         <!-- ============================================================== -->
         <!-- end navbar -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- left sidebar -->
-        <!-- ============================================================== -->
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -127,30 +127,39 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
+
                             <li class="nav-divider">
+                                <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-dashboard"></i>my vehicle </a>
 
                             </li>
                             <li class="nav-item ">
 
                                 <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
-                                <!-- <li class="nav-item">
-                                <a class="nav-link" routerLink="/admin/creat-employee" ><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a>
-                                 -->
+
                                 <li class="nav-item">
 
-                                    <a class="nav-link" routerLink="/accountant/report"><i  class="fa fa-bar-chart"></i>Reports</a>
+                                    <a mat-button [matMenuTriggerFor]="menu" class="nav-link" style="float: left; padding-right:18rem;"><i class="icon fa fa-wrench fa-fw " aria-hidden="true"></i>preferences</a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item (click)="InsertMessage()"><i class="fa fa-envelope" aria-hidden="true"></i>Insert Message</button>
+                                        <button mat-menu-item (click)="createAttendance()"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>Attendance</button>
+                                        <button mat-menu-item (click)="GetTaskJob()"><i class="fa fa-tasks" aria-hidden="true"></i>Your Task</button>
 
-                                    <li class="nav-item ">
-                                        <a class="nav-link" routerLink="/accountant/customer-info"><i class="fa fa-male" aria-hidden="true"></i>Customers Information</a>
+                                    </mat-menu>
+                                    <li class="nav-item">
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
+                                        <a class="nav-link" routerLink="/accountant/report"><i  class="fa fa-bar-chart"></i>Reports</a>
+
+                                        <li class="nav-item ">
+                                            <a class="nav-link" routerLink="/accountant/customer-info"><i class="fa fa-male" aria-hidden="true"></i>Customers Information</a>
 
                                             <li class="nav-item">
-                                                <a class="nav-link" routerLink="/accountant/attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Insert Attendance </a>
+                                                <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
 
-                                                <!-- <li class="nav-item">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" routerLink="/accountant/attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Insert Attendance </a>
+
+                                                    <!-- <li class="nav-item">
 
                                 <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
@@ -178,11 +187,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
                                  -->
-                                                <li class="nav-item">
+                                                    <li class="nav-item">
 
-                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                        <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
 
-                                                </li>
+                                                    </li>
                         </ul>
                     </div>
                 </nav>
@@ -222,10 +231,16 @@
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
 
-                   
+
                 </div>
             </div>
             <!-- footer -->
+            <h1>The Name is: {{home.acc_profile.fullName}}</h1>
+            <h1>The Age is: {{home.acc_profile.age}}</h1>
+            <h1>The Email is : {{home.acc_profile.email}}</h1>
+            <h1>The Phone of is : {{home.acc_profile.phoneNumber}}</h1>
+            <h1>The Address is : {{home.acc_profile.address}}</h1>
+
             <!-- ============================================================== -->
         </div>
         <div class="footer">

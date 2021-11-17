@@ -9,6 +9,9 @@ const htmlToPdfmake = require("html-to-pdfmake");
 import * as XLSX from 'xlsx';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import { HomeService } from 'src/app/Service/home.service';
+import { MessageDialogComponent } from '../message-dialog/message-dialog.component';
+import { AttendanceDialogComponent } from '../attendance-dialog/attendance-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-info',
@@ -35,7 +38,7 @@ export class UserInfoComponent implements OnInit {
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
-  constructor(private router:Router,public home:HomeService)  {
+  constructor(private router:Router,public home:HomeService,private dialog:MatDialog)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
@@ -112,5 +115,40 @@ this.home.VehicleSystemReport().subscribe((res:any)=>{
            XLSX.writeFile(wb, this.fileName);
           
         }
-        
+        showProfile()
+        {
+          //I will get the user from the local storge 
+          let user:any=localStorage.getItem('user');
+          user=JSON.parse(user);
+          
+           const id=parseInt(user.email)
+           console.log(id)
+          if(id)
+          {
+             
+            this.home.GetUserByIdAcc(id)
+          }
+        }
+        InsertMessage()
+        {
+      this.dialog.open(MessageDialogComponent)
+        }
+        createAttendance()
+        {
+          this.dialog.open(AttendanceDialogComponent)
+        }
+        GetTaskJob()
+        {
+          //I will get the user from the local storge 
+          let user:any=localStorage.getItem('user');
+          user=JSON.parse(user);
+          
+           const id=parseInt(user.email)
+           console.log(id)
+          if(id)
+          {
+             
+            this.home.GetTaskJobById(id)
+          }
+        }
 }

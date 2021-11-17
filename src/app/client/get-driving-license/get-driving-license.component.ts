@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
 import { NewCarDialogComponent } from '../new-car-dialog/new-car-dialog.component';
 declare var require: any;
 
@@ -13,6 +14,7 @@ import * as XLSX from 'xlsx';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 
 import { HomeService } from 'src/app/Service/home.service';
+
 
 @Component({
   selector: 'app-get-driving-license',

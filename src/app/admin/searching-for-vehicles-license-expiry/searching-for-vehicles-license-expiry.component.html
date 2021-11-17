@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 
 <head>
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="/assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/css/c3.css">
     <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/style.css">  
+    <!-- <link rel="stylesheet" href="/assets/css/style.css">
      <link rel="stylesheet" href="/assets/css/bootstrap-icons.css">  -->
     <title> Admin Dashboard </title>
 </head>
@@ -31,10 +30,10 @@
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <!-- <a class="navbar-brand" href="index.html">Concept</a> -->
                 <div class="logo">
-                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:10px;margin-left: 15px;" alt="Venue Logo">
+                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:7px;margin-left: 50px; border-radius: 15px;" alt="Venue Logo">
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -96,7 +95,7 @@
 
 
                         <li class="nav-item dropdown nav-user" style="margin-bottom: 15px;margin-left: 15px;margin-right: 15px;">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle" (click)="showProfile()"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -120,8 +119,12 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
+
+
+
                     <!--                     
                     <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
+
                     <!-- <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -129,23 +132,76 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
+                                <a class="nav-link active" routerLink="/admin/admin"><i class="fa fa-dashboard"></i>my vehicle </a>
 
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link active" routerLink="/admin/admin"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/admin/creat-employee"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a>
 
-                                    <li class="nav-item">
+                                    <a mat-button [matMenuTriggerFor]="menu" class="nav-link" style="float: left; padding-right:18rem;"><i class="icon fa fa-wrench fa-fw " aria-hidden="true"></i>preferences</a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item (click)="createEmployee()"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</button>
+                                        <button mat-menu-item (click)="InsertTaskJob()"><i class="fa fa-thumb-tack" aria-hidden="true"></i>Add TaskJoB</button>
+                                        <button mat-menu-item (click)="InsertLicensing()"><i class="fa fa-th-list" aria-hidden="true"></i>Add Licensing</button>
+                                        <button mat-menu-item (click)="createInsurance()"><i class="fa fa-th-list" aria-hidden="true"></i>Add Insurance</button>
+                                        <button mat-menu-item (click)="GoTosearchvehiclecategory()"><i class="fa fa-search" aria-hidden="true"></i>searching vehiclecategory </button>
+                                        <button mat-menu-item (click)="GoTosearchlicenseexpiry()"><i class="fa fa-clock-o" aria-hidden="true"></i>searching licenseexpiry </button>
 
-                                        <a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart"></i>Chart</a>
+                                    </mat-menu>
+                                    <!-- 
+                                    <a class="nav-link" (click)="createInsurance()"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a> -->
+
+                                    <!-- <li class="nav-item">
+
+                                        <a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart"></i>Chart</a> -->
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link" routerLink="/admin/report"><i class="fa fa-file-pdf-o"></i>Reports</a>
 
                                         <li class="nav-item ">
-                                            <a class="nav-link" routerLink="/admin/report"><i class="fa fa-file-pdf-o"></i>Reports</a>
-
+                                            <a class="nav-link" routerLink="/admin/vehicle-system-report-between"><i class="fa fa-file-pdf-o"></i>searching Reports</a>
                                             <li class="nav-item">
                                                 <a class="nav-link" routerLink="/admin/financial-report"><i class="fa fa-file-o" ></i>Financial Reports</a>
+
+                                                <!-- <li class="nav-item">
+                                                    <a class="nav-link" ><i class="fa fa-search" aria-hidden="true" ></i> 
+                                                        <select>
+                                                            
+                                                            <option ><a class="nav-link" ><i class="fa fa-search" aria-hidden="true"></i>Search </a></option>
+                                                            <option ><a class="nav-link" routerLink="/admin/report"><i  class="fa fa-file-pdf-o"></i>Search By Category Name</a>
+                                                            </option>
+                                                            <br>
+                                                            <option ><a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart">Search 2</i></a>
+                                                            </option>
+                                                            </select>
+
+                                                    </a> 
+     -->
+                                                <!-- <mat-form-field>
+        <mat-select class="fa fa-search" aria-hidden="true" placeholder="Search" style="color:white;font-size: 10px;">
+          
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/search-by-vehicle-category"><i class="fa fa-search" aria-hidden="true" >Search By Vehicle Category</i></a>
+          </mat-option>
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/searching-for-vehicles-license-expiry"><i class="fa fa-search" aria-hidden="true"  >Search 2</i></a>
+          </mat-option>
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/total-month-salaries"><i  class="fa fa-search" aria-hidden="true">Total Salaries</i></a>
+          </mat-option>
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/total-payment"><i  class="fa fa-search" aria-hidden="true">Total Payment</i></a>
+          </mat-option>
+          
+        </mat-select>
+      </mat-form-field> -->
+                                                <!-- <li class="nav-item">
+                                                    <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
+
+
+                                                    </a> -->
 
 
                                                 <li class="nav-item">
@@ -161,6 +217,8 @@
                 </nav>
             </div>
         </div>
+
+
         <!-- ============================================================== -->
         <!-- end left sidebar -->
         <!-- ============================================================== -->
@@ -181,7 +239,10 @@
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-
+                                            <!-- <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                            
+                                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
+                                         -->
                                         </ol>
                                     </nav>
                                 </div>
@@ -189,88 +250,92 @@
                         </div>
                     </div>
 
-                    <form [formGroup]="formGroup">
-                        <input type="text" matInput formControlName="DateFrom" style="font-size:large;margin-left: 14px;" placeholder="Date From">
 
-                        <input type="text" matInput formControlName="DateTo" style="font-size:large;margin-left: 14px;" placeholder="Date To">
-                        <button (click)="GetData()" style="margin-right: 15px;margin-left: 10px;font-size:large;">Search</button>
-                    </form>
-
-                    <br><br>
-                    <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
-                        <div class="card">
-                            <h5 class="card-header">Vehicle</h5>
-                            <div class="card-body p-0">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="bg-light">
-                                            <tr class="border-0">
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
 
 
-                                                <th class="border-0">vehicleImage</th>
-                                                <th class="border-0">vehicleName</th>
-                                                <th class="border-0">vehicleModel </th>
-                                                <th class="border-0">vehicleColor</th>
-                                                <th class="border-0">vehicleCategory</th>
-                                                <th class="border-0">useType</th>
-                                                <th class="border-0">registerType</th>
-                                                <th class="border-0">licenseNumber</th>
+                </div>
+            </div>
+            <form [formGroup]="formGroup">
+                <input type="datetime-local" matInput formControlName="DateFrom" style="font-size:large;margin-left: 14px;" placeholder="Date From">
 
-                                                <th class="border-0">licenseExpiry</th>
-                                                <th class="border-0">engineCapacity</th>
-                                                <th class="border-0">engineType </th>
-                                                <th class="border-0">madeYear</th>
-                                                <th class="border-0">licensingCenter</th>
-                                                <th class="border-0">chassisNumber</th>
-                                                <th class="border-0">engineNumber</th>
-                                                <th class="border-0">address</th>
-                                                <th class="border-0">fullName</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr *ngFor="let user of homeService.searchlicenseexpiry">
+                <input type="datetime-local" matInput formControlName="DateTo" style="font-size:large;margin-left: 14px;" placeholder="Date To">
+                <button (click)="GetData()" class="colorbtn" style="margin-right: 15px;margin-left: 10px;font-size:large;">Search</button>
+            </form>
+            <!-- <mat-form-field color="accent" appearance="fill">
+                <mat-label>Inherited calendar color</mat-label>
+                <input matInput formControlName="DateFrom">
 
-                                                <td>
-                                                    <div class="m-r-10"><img src="{{user.vehicleImage}}" class="rounded" width="45"></div>
-                                                </td>
-                                                <td>{{user.vehicleName}} </td>
-                                                <td>{{user.vehicleModel}} </td>
-                                                <td>{{user.vehicleColor}}</td>
-                                                <td>{{user.vehicleCategory}}</td>
-                                                <td>{{user.useType}}</td>
-                                                <td>{{user.registerType}} </td>
-                                                <td>{{user.licenseNumber}} </td>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
 
-                                                <td>{{user.licenseExpiry}} </td>
-                                                <td>{{user.engineCapacity}} </td>
-                                                <td>{{user.engineType}}</td>
-                                                <td>{{user.madeYear}}</td>
-                                                <td>{{user.licensingCenter}}</td>
-                                                <td>{{user.chassisNumber}} </td>
-                                                <td>{{user.engineNumber}} </td>
-                                                <td>{{user.address}} </td>
-                                                <td>{{user.fullName}} </td>
+            <mat-form-field color="accent" appearance="fill">
+                <mat-label>Custom calendar color</mat-label>
+                <input matInput formControlName="DateTo">
+
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            </mat-form-field> -->
+            <!-- </form> -->
+            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                <div class="card tableFixHead" id="pdfTable" #pdfTable>
+                    <h5 class="card-header">System Reports</h5>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="styled-table" id="excel-table">
+                                <thead class="bg-light">
+                                    <tr class="border-0">
 
 
-                                            </tr>
+                                        <th class="border-0">vehicleName</th>
+                                        <th class="border-0">vehicleModel </th>
+                                        <th class="border-0">vehicleCategory</th>
+                                        <th class="border-0">licenseNumber</th>
+                                        <th class="border-0">licenseExpiry</th>
+                                        <th class="border-0">fullName</th>
+                                        <th class="border-0">phoneNumber</th>
+                                        <th class="border-0">address</th>
 
-                                            <tr>
-                                                <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of home.searchlic">
+
+
+                                        <td>{{user.vehicleName}} </td>
+                                        <td>{{user.vehicleModel}} </td>
+                                        <td>{{user.vehicleCategory}}</td>
+                                        <td>{{user.licenseNumber}} </td>
+                                        <td>{{user.licenseExpiry}} </td>
+                                        <td>{{user.address}} </td>
+                                        <td>{{user.fullName}} </td>
+                                        <td>{{user.phoneNumber}} </td>
+
+
+
+
+
+                                </tbody>
+
+                            </table>
+
                         </div>
                     </div>
 
                 </div>
-            </div>
 
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+                <button class="btn colorbtn" (click)="downloadAsPDF();">Export To PDF</button>
+                <button class="btn colorbtn" (click)="exportexcel();">Export To Excel</button>
+
+
+
+                <!-- footer -->
+                <!-- ============================================================== -->
+            </div>
         </div>
+
+
         <div class="footer">
             <div class="container-fluid">
                 <div class="row">

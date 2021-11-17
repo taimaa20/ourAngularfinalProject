@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { HomeService } from 'src/app/Service/home.service';
+import { AttendanceDialogComponent } from '../attendance-dialog/attendance-dialog.component';
+import { MessageDialogComponent } from '../message-dialog/message-dialog.component';
 
 @Component({
   selector: 'app-accountant',
@@ -14,7 +17,7 @@ export class AccountantComponent implements OnInit {
   
   currentYear:Date|any = undefined;
   constructor(private router:Router,public homeService:HomeService ,
-    public tostr:ToastrService)  {
+    public tostr:ToastrService,private dialog:MatDialog)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
@@ -79,5 +82,41 @@ export class AccountantComponent implements OnInit {
   });
   
 
+  }
+  showProfile()
+    {
+      //I will get the user from the local storge 
+      let user:any=localStorage.getItem('user');
+      user=JSON.parse(user);
+      
+       const id=parseInt(user.email)
+       console.log(id)
+      if(id)
+      {
+         
+        this.homeService.GetUserByIdAcc(id)
+      }
+    }
+  InsertMessage()
+  {
+this.dialog.open(MessageDialogComponent)
+  }
+  createAttendance()
+  {
+    this.dialog.open(AttendanceDialogComponent)
+  }
+  GetTaskJob()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetTaskJobById(id)
+    }
   }
 }
