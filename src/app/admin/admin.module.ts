@@ -22,6 +22,7 @@ import { AddLicenseComponent } from './add-license/add-license.component';
 import { LicenseDialogComponent } from './license-dialog/license-dialog.component';
 import { AddInsuranceComponent } from './add-insurance/add-insurance.component';
 import { InsuranceDialogComponent } from './insurance-dialog/insurance-dialog.component';
+import { UpdateProfileDialogComponent } from './update-profile-dialog/update-profile-dialog.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { InsuranceDialogComponent } from './insurance-dialog/insurance-dialog.co
     AddLicenseComponent,
     LicenseDialogComponent,
     AddInsuranceComponent,
-    InsuranceDialogComponent
+    InsuranceDialogComponent,
+    UpdateProfileDialogComponent
   ],
   imports: [
     CommonModule,

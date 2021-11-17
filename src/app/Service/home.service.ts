@@ -193,7 +193,7 @@ InsertNewCarLicensing(data:any){
    this.toastr.error(' Not Created');
 
   })
-
+}
 
 CreateInsurance(data:any){
   this.spiner.show();
@@ -244,7 +244,7 @@ GetUserById(id:number)
         }
 
 
-}
+
 InsertTaskJob(data:any){
   this.spiner.show();
   debugger
@@ -286,5 +286,20 @@ InsertTaskJob(data:any){
      this.toastr.error(' Not Created');
   
     })
+  }
+
+  UpdateProfile(data:any){
+    this.spiner.show();
+    debugger
+    this.http.put('https://localhost:44373/api/Users',data).subscribe((res:any)=>{
+      this.toastr.success('Update Success');
+      console.log(this.data);
+      this.spiner.hide();
+  
+    },err=>{
+     this.spiner.hide();
+     this.toastr.error(' Not Updated');
+  
+    });
   }
 }
