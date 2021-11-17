@@ -22,6 +22,7 @@ import { AddLicenseComponent } from './add-license/add-license.component';
 import { LicenseDialogComponent } from './license-dialog/license-dialog.component';
 import { AddInsuranceComponent } from './add-insurance/add-insurance.component';
 import { InsuranceDialogComponent } from './insurance-dialog/insurance-dialog.component';
+import { VehicleSystemReportBetweenComponent } from './vehicle-system-report-between/vehicle-system-report-between.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { InsuranceDialogComponent } from './insurance-dialog/insurance-dialog.co
     AddLicenseComponent,
     LicenseDialogComponent,
     AddInsuranceComponent,
-    InsuranceDialogComponent
+    InsuranceDialogComponent,
+    VehicleSystemReportBetweenComponent
   ],
   imports: [
     CommonModule,

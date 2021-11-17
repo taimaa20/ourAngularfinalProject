@@ -28,8 +28,9 @@ payment:any =[{}];
 employee_info:any =[{}];
 paymentCount:any =[{}];
 admin_profile:any=[{}];
-
-
+TaskJoB:any=[{}];
+searchlic:any=[{}];
+acc_profile:any=[{}]
   constructor(private http:HttpClient,private spiner :NgxSpinnerService,private toastr:ToastrService,private router:Router) {
 
     
@@ -107,7 +108,7 @@ TotalMonthSalaries(month:any)
     this.total_month_salaries=res;
     console.log(this.total_month_salaries);
     this.toastr.success('TotalMonthSalaries Success');
-    this.router.navigate(['admin/total-month-salaries'])
+    // this.router.navigate(['admin/total-month-salaries'])
     this.spiner.hide();
 
   },err=>{
@@ -126,7 +127,7 @@ GetTotalPaymentInDay(day:any)
     this.total_payment=res;
     console.log(this.total_payment);
     this.toastr.success('GetTotalPaymentInDay Success');
-    this.router.navigate(['admin/total-payment'])
+   // this.router.navigate(['admin/total-payment'])
     this.spiner.hide();
 
   },err=>{
@@ -144,7 +145,7 @@ SearchingForVehiclesLicenseExpiry(dateFromTo:any)
   this.spiner.show();
   debugger
   this.http.post('https://localhost:44373/api/Vehicle/SearchingForVehiclesLicenseExpiry',dateFromTo).subscribe((res:any)=>{
-    this.data=res;
+    this.searchlic=res;
     this.toastr.success('SearchingForVehiclesLicenseExpiry Success');
     this.router.navigate(['admin/searching-for-vehicles-license-expiry'])
     this.spiner.hide();
@@ -195,6 +196,8 @@ InsertNewCarLicensing(data:any){
   })
 
 
+
+}
 CreateInsurance(data:any){
   this.spiner.show();
   debugger
@@ -225,6 +228,21 @@ GetUserById(id:number)
         this.toastr.error("Data not return")
       })
     }
+    GetUserByIdAcc(id:number)
+    {
+      this.spiner.show();
+      
+      this.http.get('https://localhost:44373/api/Users/GetAllUsersById/'+id).subscribe((res:any)=>{
+        
+        this.acc_profile=res;
+        this.spiner.hide();
+        this.router.navigate(['accountant/profile']);
+        this.toastr.success("Data return success")
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error("Data not return")
+      })
+    }
 
     DeleteUserbyID(id:number){
       this.spiner.show();
@@ -244,7 +262,6 @@ GetUserById(id:number)
         }
 
 
-}
 InsertTaskJob(data:any){
   this.spiner.show();
   debugger
@@ -287,4 +304,39 @@ InsertTaskJob(data:any){
   
     })
   }
+  
+GetTaskJobById(id:number)
+{
+  this.spiner.show();
+  
+  this.http.get('https://localhost:44373/api/TaskJob/TaskJobById/'+id).subscribe((res:any)=>{
+    
+    this.TaskJoB=res;
+    this.spiner.hide();
+    this.router.navigate(['accountant/get-task-job']);
+    this.toastr.success("Data return success")
+  },err=>{
+    this.spiner.hide();
+    this.toastr.error("Data not return")
+  })
+}
+
+VehicleSystemReportBetween(dateFromTo:any)
+
+{
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/Vehicle/VehicleSystemReportBetween',dateFromTo).subscribe((res:any)=>{
+    this.searchlic=res;
+    this.toastr.success('VehicleSystemRepor Success');
+    this.router.navigate(['admin/vehicle-system-report-between'])
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error('Search Error');
+
+  })
+
+}
 }
