@@ -30,10 +30,10 @@
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <!-- <a class="navbar-brand" href="index.html">Concept</a> -->
                 <div class="logo">
-                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:10px;margin-left: 15px;" alt="Venue Logo">
+                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:7px;margin-left: 50px; border-radius: 15px;" alt="Venue Logo">
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -95,7 +95,7 @@
 
 
                         <li class="nav-item dropdown nav-user" style="margin-bottom: 15px;margin-left: 15px;margin-right: 15px;">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle" (click)="showProfile()"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -110,12 +110,12 @@
                 </div>
             </nav>
         </div>
+
         <!-- ============================================================== -->
         <!-- end navbar -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- left sidebar -->
-        <!-- ============================================================== -->
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -127,34 +127,41 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
+
                             <li class="nav-divider">
+                                <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-dashboard"></i>my vehicle </a>
 
                             </li>
                             <li class="nav-item ">
 
-                                <a class="nav-link active" routerLink="/client/client"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
+                                <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
-                                
+
                                 <li class="nav-item">
 
-                                    <a class="nav-link" (click)="DrivingLicense()"><i  class="fa fa-id-card-o" aria-hidden="true"></i>Driving License</a>
+                                    <a mat-button [matMenuTriggerFor]="menu" class="nav-link" style="float: left; padding-right:18rem;"><i class="icon fa fa-wrench fa-fw " aria-hidden="true"></i>preferences</a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item (click)="InsertMessage()"><i class="fa fa-envelope" aria-hidden="true"></i>Insert Message</button>
+                                        <button mat-menu-item (click)="createAttendance()"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>Attendance</button>
+                                        <button mat-menu-item (click)="GetTaskJob()"><i class="fa fa-tasks" aria-hidden="true"></i>Your Task</button>
 
-                                    <li class="nav-item ">
-                                        <a class="nav-link" (click)="TechnecalReportUser()"><i class="fa fa-file-pdf-o"></i>Technecal Report</a>
+                                    </mat-menu>
+                                    <li class="nav-item">
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" (click)="showMessage()"><i class="fa fa-commenting" aria-hidden="true" ></i>Message </a>
+                                        <a class="nav-link" routerLink="/accountant/report"><i  class="fa fa-bar-chart"></i>Reports</a>
+                                        <li class="nav-item ">
+                                            <a class="nav-link" routerLink="/accountant/vehicle-system-report-between"><i class="fa fa-file-pdf-o"></i>searching Reports</a>
 
-                                            <li class="nav-item">
-                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a>
+                                            <li class="nav-item ">
+                                                <a class="nav-link" routerLink="/accountant/customer-info"><i class="fa fa-male" aria-hidden="true"></i>Customers Information</a>
 
                                                 <li class="nav-item">
-                                                    <a class="nav-link" (click)="GetBankcardByUserId()"><i class="fa fa-credit-card-alt" aria-hidden="true" ></i>View Credit-Card</a>
-    
+                                                    <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
+
                                                     <li class="nav-item">
-                                                        <a class="nav-link" (click)="AddPayment()"><i class="fa fa-money" aria-hidden="true" ></i>Payment</a>
-        
-                                                <!-- <li class="nav-item">
+                                                        <a class="nav-link" routerLink="/accountant/attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Insert Attendance </a>
+
+                                                        <!-- <li class="nav-item">
 
                                 <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
@@ -182,16 +189,17 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
                                  -->
-                                                <li class="nav-item">
+                                                        <li class="nav-item">
 
-                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                            <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
 
-                                                </li>
+                                                        </li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
+
         <!-- ============================================================== -->
         <!-- end left sidebar -->
         <!-- ============================================================== -->
@@ -207,7 +215,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">User Dashboard Template </h2>
+                                <h2 class="pageheader-title">Admin Dashboard Template </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
@@ -222,108 +230,78 @@
                             </div>
                         </div>
                     </div>
-                    <form [formGroup]="formGroup">
-                        <input type="number" matInput formControlName="engineCapasty" style="font-size:large;margin-left: 14px" placeholder=" Enter Engine Capasty">
-                        <button (click)="GetData()" style="margin-right: 15px;margin-left: 10px;font-size:large;color: #0e0c28;">Search</button>
-                    </form>
 
-                
-                    <br><br>
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="card-box bg-blue">
-                                    <div class="inner">
-                                        <h3> {{homeService.engine_capasty.cost}} </h3>
-                                        <p> Total Cost </p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa fa-money" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-sm-6" style="margin-left: 100px;">
-                                <div class="card-box bg-green">
-                                    <div class="inner">
-                                        <h3>{{homeService.countcars[0].count_User_Cars}} </h3>
-                                        <p>Number Of Cars</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fa fa-car" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
 
 
-                        </div>
-                    </div>
-                    <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
-                        <div class="card">
-                            <h5 class="card-header">All vehicle</h5>
-        
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead class="bg-light">
-                                        <tr class="border-0">
-                                            
-                                            <th class="border-0">VehicleName</th>
-                                            <th class="border-0">VehicleModel </th>
-                                            <th class="border-0">VehicleColor</th>
-                                            <th class="border-0">VehicleCategory</th>
-                                            <th class="border-0">UseType</th>
-                                            <th class="border-0">RegisterType</th>
-                                            <th class="border-0">LicenseNumber</th>
-                                            <th class="border-0">LicenseExpiry</th>
-                                            <th class="border-0">EngineCapacity</th>
-                                            <th class="border-0">EngineType </th>
-                                            <th class="border-0">MadeYear</th>
-                                            <th class="border-0">LicensingCenter</th>
-                                            <th class="border-0">ChassisNumber</th>
-                                            <th class="border-0">EngineNumber</th>
-                                            <th class="border-0">Address</th>
-        
-                                            
-        
-        
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let user of homeService.usercar">
-        
-                                            
-                                            <td>{{user.vehicleName}} </td>
-                                            <td>{{user.vehicleModel}} </td>
-                                            <td>{{user.vehicleColor}}</td>
-                                            <td>{{user.vehicleCategory}}</td>
-                                            <td>{{user.useType}}</td>
-                                            <td>{{user.registerType}} </td>
-                                            <td>{{user.licenseNumber}} </td>
-                                            <td>{{user.licenseExpiry}}</td>
-                                            <td>{{user.engineCapacity}} </td>
-                                            <td>{{user.engineType}} </td>
-                                            <td>{{user.madeYear}} </td>
-                                            <td>{{user.licensingCenter}}</td>
-                                            <td>{{user.chassisNumber}} </td>
-                                            <td>{{user.engineNumber}} </td>
-                                            <td>{{user.address}} </td>
-        
-                                            
-        
-        
-                                        </tr>
-        
-        
-                                    </tbody>
-                                </table>
-        
-                            </div>
-                        </div>
-                    </div>
                 </div>
+            </div>
+
+            <br><br>
+            <form [formGroup]="formGroup" style="margin:25px;">
+                <input type="datetime-local" matInput formControlName="dateFrom" style="font-size:large;margin-left: 14px;" placeholder="Date From">
+
+                <input type="datetime-local" matInput formControlName="dateTo" style="font-size:large;margin-left: 14px;" placeholder="Date To">
+                <button (click)="GetData()" class="colorbtn" style="margin-right: 15px;margin-left: 10px;font-size:large;">Search</button>
+            </form>
+            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                <div class="card tableFixHead" id="pdfTable" #pdfTable>
+                    <h5 class="card-header">User Contact Information</h5>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="styled-table" id="excel-table">
+                                <thead class="bg-light">
+                                    <tr class="border-0">
+
+                                        <th class="upleft">userId</th>
+                                        <th>fullName</th>
+                                        <th>email</th>
+                                        <th>phoneNumber</th>
+                                        <th>age</th>
+                                        <th>gender</th>
+                                        <th>vehicleName</th>
+                                        
+                                        <th>licenseNumber</th>
+                                        
+                                        <th>paymentDate</th>
+                                        <th class="upright">paymentAmount</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr *ngFor="let user of home.contactinfo">
+                                        
+                                         <td>{{ user.userId}}</td>
+                                        <td>{{ user.fullName }}</td>
+                                        <td>{{ user.email }}</td>
+                                        <td>{{ user.phoneNumber }}</td>
+                                        <td>{{ user.age}}</td>
+                                        <td>{{ user.gender }}</td>
+                                        <td>{{ user.vehicleName }}</td>
+                                        
+                                        <td>{{ user.licenseNumber }}</td>
+                                       
+                                        <td>{{ user.paymentDate }}</td>
+                                        <td>{{ user.paymentAmount }}</td>
+
+
+
+
+                                        <!-- and so on... -->
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn colorbtn" (click)="downloadAsPDF();">Export To PDF</button>
+                <button class="btn colorbtn" (click)="exportexcel();">Export To Excel</button>
+
+
             </div>
             <!-- footer -->
             <!-- ============================================================== -->
@@ -348,6 +326,7 @@
 
 
     </div>
+
 
 </body>
 

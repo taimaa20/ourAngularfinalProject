@@ -3,14 +3,15 @@
 
 <mat-dialog-content class="mat-typography">
     <form [formGroup]="formGroup">
-        <mat-form-field class="example-full-width">
+        <!-- <mat-form-field class="example-full-width">
 
             <mat-label>PaymentAmount</mat-label>
-            <input type="text" matInput formControlName="paymentAmount" style="font-size:large;">
+            <p  formControlName="paymentAmount"  style="font-size:large;">{{home.payment_value[0].value}}
+            </p>
             <mat-error *ngIf="formGroup.controls.paymentAmount.hasError('required')">
                 PaymentAmount is <strong>required</strong>
             </mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <mat-form-field class="example-full-width">
             <mat-label>PaymentDate</mat-label>
