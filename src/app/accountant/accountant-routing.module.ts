@@ -8,6 +8,7 @@ import { AttendanceComponent } from './attendance/attendance.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GetTaskJobComponent } from './get-task-job/get-task-job.component';
 import { AddMessageComponent } from './add-message/add-message.component';
+import { VehicleSystemReportBetweenComponent } from './vehicle-system-report-between/vehicle-system-report-between.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
   { path: '', redirectTo: '/customer-info', pathMatch: 'full'},
   { path: '', redirectTo: '/report', pathMatch: 'full'},
   { path: '', redirectTo: '/employee-info', pathMatch: 'full'},
+  {
+    path:'vehicle-system-report-between',
+    component:VehicleSystemReportBetweenComponent
+  },
 ];
 
 @NgModule({

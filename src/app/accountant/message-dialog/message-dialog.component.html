@@ -1,65 +1,65 @@
 <h2 mat-dialog-title>
-    Insert Message/h2>
+    Insert Message</h2>
 
-    <mat-dialog-content class="mat-typography">
-        <form [formGroup]="formGroup">
-            <mat-form-field class="example-full-width">
-
-
-
-                <mat-label>messageText</mat-label>
-                <input type="text" matInput formControlName="messageText" style="font-size:large;">
-                <mat-error *ngIf="formGroup.controls.messageText.hasError('required')">
-                    messageText is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-                <mat-label>messageStatus</mat-label>
-                <input type="text" matInput formControlName="messageStatus" style="font-size:large;">
-                <mat-error *ngIf="formGroup.controls.messageStatus.hasError('required')">
-                    messageStatus is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>
-
-            <div></div>
-            <mat-form-field class="example-full-width">
-                <mat-label>senderName</mat-label>
-                <input type="text" matInput formControlName="senderName" style="font-size:large;">
-                <mat-error *ngIf="formGroup.controls.senderName.hasError('required')">
-                    senderName is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>messageTitle</mat-label>
-                <input type="text" matInput formControlName="messageTitle" style="font-size:large;">
-                <mat-error *ngIf="formGroup.controls.messageTitle.hasError('required')">
-                    messageTitle is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>
-            <div></div>
-            <mat-form-field class="example-full-width">
-                <mat-label>messageDate</mat-label>
-                <input type="text" matInput formControlName="messageDate" style="font-size:large;">
-                <mat-error *ngIf="formGroup.controls.messageDate.hasError('required')">
-                    messageDate is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="formGroup">
+        <mat-form-field class="example-full-width">
 
 
 
-            <mat-form-field class="example-full-width">
-                <mat-label>userId</mat-label>
-                <input type="text" matInput formControlName="userId" style="font-size:large;">
-                <mat-error *ngIf="formGroup.controls.userId.hasError('required')">
-                    userId is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>
+            <mat-label>messageText</mat-label>
+            <input type="text" matInput formControlName="messageText" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.messageText.hasError('required')">
+                messageText is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>messageStatus</mat-label>
+            <input type="text" matInput formControlName="messageStatus" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.messageStatus.hasError('required')">
+                messageStatus is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <div></div>
+        <mat-form-field class="example-full-width">
+            <mat-label>senderName</mat-label>
+            <input type="text" matInput formControlName="senderName" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.senderName.hasError('required')">
+                senderName is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>messageTitle</mat-label>
+            <input type="text" matInput formControlName="messageTitle" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.messageTitle.hasError('required')">
+                messageTitle is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <div></div>
+        <mat-form-field class="example-full-width">
+            <mat-label>messageDate</mat-label>
+            <input type="text" matInput formControlName="messageDate" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.messageDate.hasError('required')">
+                messageDate is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
 
 
-        </form>
-    </mat-dialog-content>
-    <mat-dialog-actions align="end">
-        <button mat-button mat-dialog-close>Cancel</button>
-        <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="saveItem()">Save</button>
-    </mat-dialog-actions>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>userId</mat-label>
+            <input type="text" matInput formControlName="userId" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.userId.hasError('required')">
+                userId is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="saveItem()">Save</button>
+</mat-dialog-actions>
