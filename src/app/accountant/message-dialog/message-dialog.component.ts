@@ -16,22 +16,22 @@ export class MessageDialogComponent implements OnInit {
   // MesParameter.Add("@UserId", Mes.UserId, dbType: DbType.Int32, direction: ParameterDirection.Input);
   formGroup =new FormGroup({
     messageText: new FormControl('', [Validators.required]),
-    messageStatus:new FormControl('',[Validators.required]),
+    // messageStatus:new FormControl('',[Validators.required]),
     senderName: new FormControl('', [Validators.required]),
     messageTitle: new FormControl('', [Validators.required]),
     messageDate:new FormControl('',[Validators.required]),
-    userId: new FormControl('', [Validators.required]),
-
+    
+    userId:new FormControl('',[Validators.required]),
    
     
   }) 
-
-  constructor(private home:HomeService) { }
+  
+  constructor(public home:HomeService) { }
 
   ngOnInit(): void {
   }
   messageTextdata:any;
-  messageStatusdata:any;
+  messageStatusdata:number=1;
      senderNamedata:any;
    messageTitledata:any;
     messageDatedata:any;
@@ -40,7 +40,7 @@ export class MessageDialogComponent implements OnInit {
   saveItem(){
     debugger
     this.messageTextdata=this.formGroup.value.messageText;
-    this.messageStatusdata=this.formGroup.value.messageStatus;
+    this.messageStatusdata=this.messageStatusdata;
     this.senderNamedata=this.formGroup.value.senderName;
     this.messageTitledata=this.formGroup.value.messageTitle;
     this.messageDatedata=this.formGroup.value.messageDate;

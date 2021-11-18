@@ -13,19 +13,20 @@ export class PaymentComponent implements OnInit {
  
   
   formGroup =new FormGroup({
-    paymentAmount: new FormControl('', [Validators.required]),
+    // paymentAmount: new FormControl('', [Validators.required]),
     paymentDate:new FormControl('',[Validators.required]),
     
    
     
   }) 
 
-  constructor(private home:HomeService) { }
+  constructor(public home:HomeService) { }
 
   ngOnInit(): void {
   }
   paydata:any;
-  payamount:any;
+  payamount:number=this.home.payment_value[0].value
+
    user:any=localStorage.getItem('user');
    user1=JSON.parse(this.user);
           
@@ -35,12 +36,12 @@ export class PaymentComponent implements OnInit {
   saveItem(){
     debugger
     this.paydata=this.formGroup.value.paymentDate;
-    this.payamount=this.formGroup.value.paymentAmount;
+    this.payamount=this.payamount;
     this.id=this.id;
     const data2={
 
       paymentDate:this.paydata.toString(),
-      paymentAmount:parseFloat(this.payamount),
+      paymentAmount:this.payamount,
       userId:this.id,
       
 

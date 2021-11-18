@@ -26,6 +26,9 @@ export class ClientComponent implements OnInit {
     
    }
   ngOnInit(): void {
+
+    this.CountUserCar();
+    this.SearchByUser();
   }
   logout()
   {
@@ -122,5 +125,35 @@ export class ClientComponent implements OnInit {
   AddPayment()
   {
    this.dialog.open(PaymentComponent)
+  }
+
+  CountUserCar()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.CountUserCars(id)
+    }
+  }
+
+  SearchByUser()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.SearchByUserId(id)
+    }
   }
 }

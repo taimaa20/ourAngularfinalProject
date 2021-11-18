@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   Setting:number=1;
   gender:boolean=true;
   genderName:string="Male"
+  
   formGroup =new FormGroup({
     fullNameControl: new FormControl('', [Validators.required]),
     UserImageControl:new FormControl('',[Validators.required]),

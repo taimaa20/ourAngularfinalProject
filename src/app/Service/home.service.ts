@@ -38,7 +38,8 @@ Insurance:any =[{}];
 License:any =[{}];
 About:any =[{}];
 bankcard:any=[{}];
-
+countcars:any=[{}];
+usercar:any=[{}];
 //admin_profile:any=[{}];
 
 searchlicenseexpiry:any=[{}];
@@ -46,7 +47,8 @@ message_user:any=[{}];
 reportuser:any=[{}];
 driverlicense:any=[{}];
 engine_capasty:any=[{}];
-
+contactinfo:any=[{}];
+payment_value:any=[{}];
   constructor(private http:HttpClient,private spiner :NgxSpinnerService,private toastr:ToastrService,private router:Router) {
 
 
@@ -102,7 +104,9 @@ engine_capasty:any=[{}];
     this.toastr.error('Not Send');
 
 
+
    })}
+
 
   
   GetNumberOfAllUser()
@@ -237,8 +241,9 @@ InsertNewCarLicensing(data:any){
   this.spiner.show();
   debugger
   this.http.post('https://localhost:44373/api/NewCarLicensing',data).subscribe((res:any)=>{
+    this.payment_value=res;
     this.toastr.success('Created');
-    console.log(this.data);
+    console.log(this.payment_value);
     this.spiner.hide();
 
   },err=>{
@@ -533,6 +538,61 @@ VehicleSystemReportBetweenAcc(dateFromTo:any)
 
       })
 
+    }
+
+    CountUserCars(id:number)
+    {
+      this.spiner.show();
+      
+      this.http.get('https://localhost:44373/api/Users/CountUserCars/'+id).subscribe((res:any)=>{
+        
+        this.countcars=res;
+        this.spiner.hide();
+        this.router.navigate(['client/client']);
+        console.log(this.bankcard)
+        this.toastr.success("CountUserCars success")
+        
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error("CountUserCars not return")
+      })
+    }
+
+    SearchByUserId(id:number)
+    {
+      this.spiner.show();
+      
+      this.http.get('https://localhost:44373/api/Users/SearchByUserId/'+id).subscribe((res:any)=>{
+        
+        this.usercar=res;
+        this.spiner.hide();
+        this.router.navigate(['client/client']);
+        console.log(this.bankcard)
+        this.toastr.success("SearchByUserId success")
+        
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error("SearchByUserId not return")
+      })
+    }
+    ViewUserContactInformation(dateFromTo:any)
+
+    {
+      this.spiner.show();
+      debugger
+      this.http.post('https://localhost:44373/api/Users/ViewUserContactInformation',dateFromTo).subscribe((res:any)=>{
+        this.contactinfo=res;
+    
+        this.toastr.success('UserContactInformation Success');
+        this.router.navigate(['accountant/user-contact-info'])
+        this.spiner.hide();
+    
+      },err=>{
+       this.spiner.hide();
+       this.toastr.error('Search Error');
+    
+      })
+    
     }
 
 }
