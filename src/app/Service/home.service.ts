@@ -84,7 +84,7 @@ engine_capasty:any=[{}];
     return this.http.get('https://localhost:44373/api/Users/GetListOfEmployees')
   }
 
-  // GetNumberOfAllUser(){  
+  // GetNumberOfAllUser(){
   //     return this.http.get('https://localhost:44373/api/Users/NumberOfUsers')
   // }
 
@@ -100,14 +100,11 @@ engine_capasty:any=[{}];
     err=>{
     this.spiner.hide();
     this.toastr.error('Not Send');
- 
+
 
    })}
 
-  GetNumberOfAllUser(){
-
-   })
-  }
+  
   GetNumberOfAllUser()
   {
 
@@ -272,9 +269,9 @@ CreateInsurance(data:any){
 GetUserById(id:number)
     {
       this.spiner.show();
-      
+
       this.http.get('https://localhost:44373/api/Users/GetAllUsersById/'+id).subscribe((res:any)=>{
-        
+
         this.admin_profile=res;
         this.spiner.hide();
         this.router.navigate(['admin/profile']);
@@ -287,9 +284,9 @@ GetUserById(id:number)
     GetUserByIdAcc(id:number)
     {
       this.spiner.show();
-      
+
       this.http.get('https://localhost:44373/api/Users/GetAllUsersById/'+id).subscribe((res:any)=>{
-        
+
         this.acc_profile=res;
         this.spiner.hide();
         this.router.navigate(['accountant/profile']);
@@ -307,14 +304,14 @@ GetUserById(id:number)
       .subscribe((date:any)=>{
         this.spiner.hide();
         this.toastr.success(' The User Deleted ');
-      
+
       },err=>{
         this.spiner.hide();
         this.toastr.error('Not Deleted');
-      
+
       })
-      
-      
+
+
         }
 
 
@@ -340,11 +337,11 @@ InsertTaskJob(data:any){
       this.toastr.success('Created');
       console.log(this.data);
       this.spiner.hide();
-  
+
     },err=>{
      this.spiner.hide();
      this.toastr.error(' Not Created');
-  
+
     })
   }
   InsertMessage(data:any){
@@ -354,11 +351,11 @@ InsertTaskJob(data:any){
       this.toastr.success('Created');
       console.log(this.data);
       this.spiner.hide();
-  
+
     },err=>{
      this.spiner.hide();
      this.toastr.error(' Not Created');
-  
+
     })
 
   }
@@ -370,21 +367,21 @@ InsertTaskJob(data:any){
       this.toastr.success('Update Success');
       console.log(this.data);
       this.spiner.hide();
-  
+
     },err=>{
      this.spiner.hide();
      this.toastr.error(' Not Updated');
-  
+
     });
   }
 
-  
+
 GetTaskJobById(id:number)
 {
   this.spiner.show();
-  
+
   this.http.get('https://localhost:44373/api/TaskJob/TaskJobById/'+id).subscribe((res:any)=>{
-    
+
     this.TaskJoB=res;
     this.spiner.hide();
     this.router.navigate(['accountant/get-task-job']);
@@ -435,15 +432,15 @@ VehicleSystemReportBetweenAcc(dateFromTo:any)
   GetMessageByUsrId(id:number)
     {
       this.spiner.show();
-      
+
       this.http.get('https://localhost:44373/api/Message/GetMessageByUserId/'+id).subscribe((res:any)=>{
-        
+
         this.message_user=res;
         this.spiner.hide();
         this.router.navigate(['client/get-message']);
-        
+
         this.toastr.success("get-message return success")
-        
+
       },err=>{
         this.spiner.hide();
         this.toastr.error("get-message not return")
@@ -453,15 +450,15 @@ VehicleSystemReportBetweenAcc(dateFromTo:any)
     TechnecalReport(id:number)
     {
       this.spiner.show();
-      
+
       this.http.get('https://localhost:44373/api/Vehicle/TechnecalReport/'+id).subscribe((res:any)=>{
-        
+
         this.reportuser=res;
         this.spiner.hide();
         this.router.navigate(['client/get-technecal-report']);
-        
+
         this.toastr.success("get-technecal-report return success")
-        
+
       },err=>{
         this.spiner.hide();
         this.toastr.error("get-technecal-report not return")
@@ -471,15 +468,15 @@ VehicleSystemReportBetweenAcc(dateFromTo:any)
     GetDrivingLicense(id:number)
     {
       this.spiner.show();
-      
+
       this.http.get('https://localhost:44373/api/Users/GetDrivingLicense/'+id).subscribe((res:any)=>{
-        
+
         this.driverlicense=res;
         this.spiner.hide();
         this.router.navigate(['client/get-driving-license']);
-        
+
         this.toastr.success("get-driving-license return success")
-        
+
       },err=>{
         this.spiner.hide();
         this.toastr.error("get-driving-license not return")
@@ -496,26 +493,26 @@ VehicleSystemReportBetweenAcc(dateFromTo:any)
         this.toastr.success(' Success');
         this.router.navigate(['client/client'])
         this.spiner.hide();
-    
+
       },err=>{
        this.spiner.hide();
        this.toastr.error('Search Error');
-    
+
       })
-    
+
     }
     GetBankcard(id:number)
     {
       this.spiner.show();
-      
+
       this.http.get('https://localhost:44373/api/Cards/GetCardById/'+id).subscribe((res:any)=>{
-        
+
         this.bankcard=res;
         this.spiner.hide();
         this.router.navigate(['client/view-bankcard']);
         console.log(this.bankcard)
         this.toastr.success("view-bankcard return success")
-        
+
       },err=>{
         this.spiner.hide();
         this.toastr.error("view-bankcard not return")
@@ -529,13 +526,13 @@ VehicleSystemReportBetweenAcc(dateFromTo:any)
         this.toastr.success('Payment Completed Successfully');
         console.log(this.data);
         this.spiner.hide();
-    
+
       },err=>{
        this.spiner.hide();
        this.toastr.error(' Not Created');
-    
+
       })
-  
+
     }
 
 }
