@@ -6,7 +6,9 @@ import { GetDrivingLicenseComponent } from './get-driving-license/get-driving-li
 import { GetMessageComponent } from './get-message/get-message.component';
 import { GetTechnecalReportComponent } from './get-technecal-report/get-technecal-report.component';
 import { LicencingComponent } from './licencing/licencing.component';
+import { PaymentComponent } from './payment/payment.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ViewBankcardComponent } from './view-bankcard/view-bankcard.component';
 
 const routes: Routes = [
   {
@@ -38,6 +40,18 @@ const routes: Routes = [
     component:LicencingComponent
   },
 
+  {
+    path:'view-bankcard',
+    component:ViewBankcardComponent
+  },
+  {
+    path:'payment',
+    component:PaymentComponent
+  },
+
+  { path: '', redirectTo: '/payment', pathMatch: 'full'},
+
+  { path: '', redirectTo: '/view-bankcard', pathMatch: 'full'},
   { path: '', redirectTo: '/add-car-licence', pathMatch: 'full'},
 
   { path: '', redirectTo: '/add-car-licence', pathMatch: 'full'},

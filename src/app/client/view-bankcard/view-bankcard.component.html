@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -150,9 +151,7 @@
 
                                                 <li class="nav-item">
                                                     <a class="nav-link" (click)="GetBankcardByUserId()"><i class="fa fa-credit-card-alt" aria-hidden="true" ></i>View Credit-Card</a>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" (click)="AddPayment()"><i class="fa fa-money" aria-hidden="true" ></i>Payment</a>
-        
+    
                                                 <!-- <li class="nav-item">
 
                                 <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
@@ -220,97 +219,51 @@
                                 </div>
                             </div>
                         </div>
-                    </div> 
-                </div>
-            </div>
+                    </div>
+                    
+
+                    
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
+                    
+                    <h1 class="title">Hover Me!</h1>
 
-                   
-               
-                    <div class="container ">
-                        <div id="pdfTable" #pdfTable class="tableFixHead ">
-        
-                            <table class="styled-table  " id="excel-table ">
-                                <thead>
-        
-                                    <tr>
-                                        <td>fullName </td>
-                                       
-                                        <td>vehicleName </td>
-                                        <td>vehicleColor</td>
-                                        <td>vehicleCategory </td>
-                                        <td>useType </td>
-                                        <td>registerType </td>
-                                        <td>licenseNumber</td>
-                                        <td>licenseExpiry </td>
-                                        <td>engineCapacity </td>
-                                        <td>engineType </td>
-                                        <td>madeYear </td>
-                                        <td>licensingCenter</td>
-                                        <td>chassisNumber </td>
-                                        <td>engineNumber </td>
-                                        <td>address </td>
-                                        <td>cost</td>
-                                        <td>insuranceType </td>
-                                        <td>insuranceValues </td>
-                                        <td>value </td>
 
-        
-                                    </tr>
-                                </thead>
-                                
-                
-                                
-                                
-                               
-                                
-                                <tbody>
-                                    <tr *ngFor="let user of homeService.reportuser">
-                                        <td>{{user.fullName}}</td>
-                                    
-                                        <td>{{user.vehicleName}}</td>
-                                        <td>{{ user.vehicleColor}}</td>
-                                        <td>{{ user.vehicleCategory }}</td>
-                                        <td>{{ user.useType }}</td>
-                                        <td>{{ user.registerType }}</td>
-                                        <td>{{ user.licenseNumber}}</td>
-                                        <td>{{ user.licenseExpiry }}</td>
-                                        <td>{{ user.engineCapacity }}</td>
-                                        <td>{{ user.engineType }}</td>
-                                        <td>{{ user.madeYear }}</td>
-                                        <td>{{ user.licensingCenter}}</td>
-                                        <td>{{ user.chassisNumber }}</td>
-                                        <td>{{ user.engineNumber }}</td>
-                                        <td>{{ user.address }}</td> 
-                                        <td>{{ user.cost}}</td>
-                                        <td>{{ user.insuranceType }}</td>
-                                        <td>{{user.insuranceValues}}</td>
-                                        <td>{{user.value}}</td> 
-        
-        
-                                        
-                                    </tr>
-                                </tbody>
-        
-                            </table>
+                    <div class="card" *ngFor="let card of homeService.bankcard" >
+                      <div class="card__front card__part">
+                        <!-- <img class="card__front-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
+                        <img class="card__front-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png"> -->
+                        <p class="card_numer">{{card.cardNumber}}</p>
+                        <div class="card__space-75">
+                          <span class="card__label">Card holder</span>
+                          <p class="card__info" >{{card.cardName}}</p>
                         </div>
-        
-        
+                        <div class="card__space-25">
+                          <span class="card__label">Expires</span>
+                                <p class="card__info">{{card.cardDate}}</p>
+                        </div>
+                      </div>
+                      
+                      <div class="card__back card__part">
+                        <div class="card__black-line"></div>
+                        <div class="card__back-content">
+                          <div class="card__secret">
+                            <p class="card__secret--last">420</p>
+                          </div>
+                          <!-- <img class="card__back-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
+                          <img class="card__back-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
+                           -->
+                        </div>
+                      </div>
+                      
                     </div>
-        
-        
-                    
-                 <button class="btn btn-primary edit" (click)="downloadAsPDF(); ">Export To PDF</button>
-                <button class="btn btn-primary " (click)="exportexcel(); ">Export To exl</button>
-                 </div>  
-               
+                   
+                </div>
             </div>
-                    
-                
-                 
-        
+            <!-- footer -->
+            <!-- ============================================================== -->
+        </div>
         <div class="footer">
             <div class="container-fluid">
                 <div class="row">
@@ -330,8 +283,8 @@
 
 
 
-    
-   
+    </div>
+
 </body>
 
 </html>

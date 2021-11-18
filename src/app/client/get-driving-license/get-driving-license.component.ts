@@ -14,6 +14,7 @@ import * as XLSX from 'xlsx';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 
 import { HomeService } from 'src/app/Service/home.service';
+import { PaymentComponent } from '../payment/payment.component';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class GetDrivingLicenseComponent implements OnInit {
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
-  constructor(private router:Router,public homeService : HomeService)  {
+  constructor(private router:Router,public homeService : HomeService,private dialog:MatDialog)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
@@ -138,6 +139,26 @@ export class GetDrivingLicenseComponent implements OnInit {
            XLSX.writeFile(wb, this.fileName);
 
         }
+
+        GetBankcardByUserId()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetBankcard(id)
+    }
+  }
+
+  AddPayment()
+  {
+   this.dialog.open(PaymentComponent)
+  }
 
 }
 

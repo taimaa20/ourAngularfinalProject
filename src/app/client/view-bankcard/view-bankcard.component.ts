@@ -1,25 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/Service/home.service';
-import { PaymentComponent } from '../payment/payment.component';
 
 @Component({
-  selector: 'app-client',
-  templateUrl: './client.component.html',
-  styleUrls: ['./client.component.css']
+  selector: 'app-view-bankcard',
+  templateUrl: './view-bankcard.component.html',
+  styleUrls: ['./view-bankcard.component.css']
 })
-export class ClientComponent implements OnInit {
+export class ViewBankcardComponent implements OnInit {
 
-  formGroup =new FormGroup({
-    engineCapasty: new FormControl(''),
-    
-  })
+  
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
-  constructor(private router:Router,public homeService : HomeService,private dialog:MatDialog)  {
+  constructor(private router:Router,public homeService : HomeService)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
@@ -95,15 +89,7 @@ export class ClientComponent implements OnInit {
     }
   }
 
-  engin:number |undefined;
-  GetData(){
-    this.engin=this.formGroup.value.engineCapasty
-    const data={engineCapasty:this.engin}
-    console.log(data)
-    
-    this.homeService.TotalCost(data);
-    
-  }
+  
 
   GetBankcardByUserId()
   {
@@ -119,8 +105,5 @@ export class ClientComponent implements OnInit {
       this.homeService.GetBankcard(id)
     }
   }
-  AddPayment()
-  {
-   this.dialog.open(PaymentComponent)
-  }
+
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/Service/home.service';
+import { PaymentComponent } from '../payment/payment.component';
 
 @Component({
   selector: 'app-profile',
@@ -12,13 +14,28 @@ export class ProfileComponent implements OnInit {
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
-  constructor(private router:Router,public homeService : HomeService)  {
+  constructor(private router:Router,public homeService : HomeService,private dialog:MatDialog)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
     
    }
   ngOnInit(): void {
+  }
+
+  GetBankcardByUserId()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetBankcard(id)
+    }
   }
   logout()
   {
@@ -86,5 +103,10 @@ export class ProfileComponent implements OnInit {
        
       this.homeService.GetDrivingLicense(id)
     }
+  }
+
+  AddPayment()
+  {
+   this.dialog.open(PaymentComponent)
   }
 }
