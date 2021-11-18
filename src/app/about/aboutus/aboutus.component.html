@@ -1,21 +1,12 @@
-
 <app-navbar></app-navbar>
 
 
 
 
-<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/banner-image-1-1920x300.jpg); margin-top: 0.12%;">
-
-
-<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/about-us.png); margin-top: 0.12%; height: 70%;">
-
-<!-- <section class="banner banner-secondary" id="top" style="background-image: url(assets/img/banner-image-1-1920x300.jpg);"> -->
-
 
 <section class="banner banner-secondary" id="top" style="margin-top: -100px; background-image: url(assets/img/about-us.png);  height: 70%;">
 
-
-    <div class="container">
+       <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="banner-caption">
@@ -24,7 +15,7 @@
                 </div>
             </div>
         </div>
-    </div>
+         </div>
 </section>
 
 <main>
@@ -36,134 +27,31 @@
                         <br>
                         <h4>About Us</h4>
                         <div  *ngFor="let about of homeService.About">
-
                           <p>{{about.description}}</p>
                         </div>
-
-
-
                     </div>
                 </div>
+               
                 <div class="col-md-5">
-
-                    <img src="..\assets\img\myvehicleplate.jpg" class="img-fluid" alt="">
-
                     <img src="assets\img\myvehicleplate.jpg" class="img-fluid" alt="">
-
                 </div>
+               
             </div>
         </div>
     </section>
     <div class=container>
+        <div class="row">
         <div class="cards">
             <app-aboutus-card *ngFor="let card of homeService.About" [typeLang]="card.aboutImage" [subText]="card.subText" [description]="card.description"></app-aboutus-card>
         </div>
-    <div class="row">
+  
       <div class="col-md-12">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.8156769217826!2d35.79240745013478!3d31.720929694294394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s!5e0!3m2!1sen!2sjo!4v1635955062072!5m2!1sen!2sjo" width="1100"
        height="450" style="border-radius: 10px;border: 3px solid #0c73a3; margin:20px;text-align: center;display:block; " allowfullscreen="" loading="lazy" >
 </iframe>
 </div></div>
 </div>
-    <!-- <app-aboutus-card></app-aboutus-card> -->
-    <!-- <section id="video-container" style="background-image: url(assets/img/contact-image-1-1920x700.jpg);">
-        <div class="video-overlay"></div>
-        <div class="video-content">
-            <div class="inner">
-                <div class="section-heading">
-                    <span>Lorem ipsum dolor.</span>
-                    <h2>Vivamus nec vehicula felis</h2>
-                </div>
 
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 col-lg-offset-1">
-                            <p class="lead" style="line-height: 2;font-size: medium;font-weight:100;text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi blanditiis, esse deserunt assumenda! Tempora nulla natus illum soluta quasi, nisi, in quaerat cumque corrupti ipsum impedit necessitatibus expedita minus harum,
-                                fuga id aperiam autem architecto odio. Perferendis eius possimus ex itaque tenetur saepe id quis dicta voluptas, corrupti sapiente hic!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </section> -->
-
-    <!-- <app-course-cards *ngFor="let card of data" [typeLang]="card.typeLang" [subText]="card.subText" [description]="card.description"></app-course-cards> -->
-
-
-    <!-- <section class="popular-places" id="popular">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-heading">
-                        <span>Team</span>
-                        <h2>Lorem ipsum dolor sit amet</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="owl-carousel owl-theme">
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <div class="thumb-img">
-                            <img src="assets/img/team-image-1-646x680.jpg" alt="">
-                        </div>
-                        <div class="text-content">
-                            <h4>John Doe</h4>
-                            <span>CEO</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="team.html"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <div class="thumb-img">
-                            <img src="assets/img/team-image-2-646x680.jpg" alt="">
-                        </div>
-                        <div class="text-content">
-                            <h4>Jane Doe</h4>
-                            <span>Marketing Manager</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="team.html"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <div class="thumb-img">
-                            <img src="assets/img/team-image-3-646x680.jpg" alt="">
-                        </div>
-                        <div class="text-content">
-                            <h4>Paula Jeorge</h4>
-                            <span>Customer Service</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="team.html"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <div class="thumb-img">
-                            <img src="assets/img/team-image-4-646x680.jpg" alt="">
-                        </div>
-                        <div class="text-content">
-                            <h4>Dan Blatan</h4>
-                            <span>Customer Service</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="team.html"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </section> -->
 </main>
 
 <app-footer></app-footer>
-
-

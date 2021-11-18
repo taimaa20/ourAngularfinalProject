@@ -74,9 +74,9 @@ admin_profile:any=[{}];
     return this.http.get('https://localhost:44373/api/Users/GetListOfEmployees')
   }
 
-  GetNumberOfAllUser(){  
-      return this.http.get('https://localhost:44373/api/Users/NumberOfUsers')
-  }
+  // GetNumberOfAllUser(){  
+  //     return this.http.get('https://localhost:44373/api/Users/NumberOfUsers')
+  // }
 
 
   Testimonial(data:any)
@@ -91,7 +91,7 @@ admin_profile:any=[{}];
     this.spiner.hide();
     this.toastr.error('Not Send');
  
-   })
+   })}
 
   GetNumberOfAllUser(){
       return this.http.get('https://localhost:44373/api/Users/GetNumberOfAllUser')

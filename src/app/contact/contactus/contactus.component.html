@@ -1,11 +1,8 @@
 
 
 <app-navbar></app-navbar>
-
-
-<section class="banner banner-secondary" id="top" style="background-image: url(assets/img/Contact-us.png);height:70%;margin-top: 0;">
-
-<section class="banner banner-secondary" id="top" style="margin-top: -35px; background-image: url(assets/img/Contact-us.png);height:70%;">
+ 
+  <section class="banner banner-secondary" id="top" style="margin-top: 1px; background-image: url(assets/img/Contact-us.png);height:70%; ">
 
     <div class="container">
         <div class="row">
@@ -16,9 +13,9 @@
             </div>
         </div>
     </div>
-</section>
+   </section>
 
-<main>
+  <main>
 
     <section class="popular-places">
         <div class="container">
@@ -62,17 +59,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="content">
-
-
-                                        
-
-                                        <!-- <p>Etiam viverra nibh at lorem hendrerit porta non nec ligula. Donec hendrerit porttitor pretium.</p> -->
-
-
                                         <p>Contact and visit us ,we will be happy to see you and hear from you</p>
 
                                         <ul>
-                                            <li><span>Phone:</span><a href="#">{{webPhone}}</a></li>
+                                            <li><span>Phone1:</span><a href="#">{{webPhone1}}</a></li>
+                                            <li><span>Phone2:</span><a href="#">{{webPhone2}}</a></li>
                                             <li><span>Email:</span><a href="#">{{webemail}}</a></li>
                                             <li><span>Address:</span><i class="fa fa-map-marker"></i> {{webAddress}}</li>
                                         </ul>
@@ -82,94 +73,28 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="section-heading">
+             </div>
+               </div>
+              </section>
+              <div class="row">
+              <div class="col-md-12">
+              <div class="section-heading">
                 <span>Meet our team</span>
                 <h2>Happy to talk to you</h2>
-            </div>
-        </div>
-    </div>
-    <!-- <app-contact-card ></app-contact-card> -->
-    <div class=container>
-        <div class="cards">
-            <app-contact-card *ngFor="let item of carddata" [name]="item.name" [subText]="item.subText" [description]="item.description" style="margin-top:50px;"></app-contact-card>
-        </div>
-    </div>
+             </div>
+              </div>
+               </div>
+             <!-- <app-contact-card ></app-contact-card> -->
+             <div class=container>
+               <div class="cards">
+                 <app-contact-card *ngFor="let item of carddata" [name]="item.name" [subText]="item.subText" [description]="item.description" style="margin-top:50px;"></app-contact-card>
+               </div>
+             </div>
 
 </main>
 
 
 
-
-
-            <!-- <div class="owl-carousel owl-theme">
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <div class="thumb-img">
-                            <img src="assets/img/team-image-1-646x680.jpg" alt="">
-                        </div>
-                        <div class="text-content">
-                            <h4>John Doe</h4>
-                            <span>CEO</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="team.html"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <div class="thumb-img">
-                            <img src="assets/img/team-image-2-646x680.jpg" alt="">
-                        </div>
-                        <div class="text-content">
-                            <h4>Jane Doe</h4>
-                            <span>Marketing Manager</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="team.html"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <div class="thumb-img">
-                            <img src="assets/img/team-image-3-646x680.jpg" alt="">
-                        </div>
-                        <div class="text-content">
-                            <h4>Paula Jeorge</h4>
-                            <span>Customer Service</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="team.html"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <div class="thumb-img">
-                            <img src="assets/img/team-image-4-646x680.jpg" alt="">
-                        </div>
-                        <div class="text-content">
-                            <h4>Dan Blatan</h4>
-                            <span>Customer Service</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="team.html"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div> -->
-    <!-- </section>  -->
-</main>
-
-<!-- </main> -->
 
 
 <app-footer></app-footer>

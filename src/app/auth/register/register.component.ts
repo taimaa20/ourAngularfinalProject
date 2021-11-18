@@ -14,23 +14,6 @@ export class RegisterComponent implements OnInit {
   Setting:number=1;
   gender:boolean=true;
   genderName:string="Male"
-
-
-  // formGroup =new FormGroup({
-  //   username: new FormControl('', [Validators.required]),
-  //   password:new FormControl('',[Validators.required]),
-  //   // roleId: new FormControl('',[Validators.required]),
-  //   fullName: new FormControl('', [Validators.required]),
-  //   userImage:new FormControl('',[Validators.required]),
-  //   gender: new FormControl('', [Validators.required]),
-  //   age: new FormControl('', [Validators.required]),
-  //   email: new FormControl('', [Validators.required,Validators.email]),
-  //   address: new FormControl('', [Validators.required]),
-  //   phoneNumber: new FormControl('',[Validators.required]),
-  //   // settingId: new FormControl('',[Validators.required]),
-
-  //
-
   formGroup =new FormGroup({
     fullNameControl: new FormControl('', [Validators.required]),
     UserImageControl:new FormControl('',[Validators.required]),
@@ -50,7 +33,6 @@ export class RegisterComponent implements OnInit {
     const User={
     fullName:this.formGroup.value.fullNameControl.toString(),
     userImage:this.formGroup.value.UserImageControl.toString(),
-    // gender:this.formGroup.value.GenderControl,
     gender:this.gender,
     age:parseInt(this.formGroup.value.AgeControl),
     email:this.formGroup.value.emailControl.toString(),
@@ -72,7 +54,7 @@ export class RegisterComponent implements OnInit {
 
 
   submit(){
-    // console.log(this.registerForm.controls);
+    
   }
 
 }

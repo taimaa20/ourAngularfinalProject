@@ -24,7 +24,8 @@ export class ContactusComponent implements OnInit {
 
 
 webemail:string="undefined";
-webPhone:string="undefined";
+webPhone1:string="undefined";
+webPhone2:string="undefined"
   webAddress:string="undefined";
   
   
@@ -39,12 +40,12 @@ webPhone:string="undefined";
      imag:""
   },
   {
-    name:"Back End",
+    name:"Thraya Bani-Yaseen",
     subText:"Developer",
     imag:""
   },
   {
-    name:"Back End",
+    name:"Taimaa Al-Hamarneh",
     subText:"Developer",
     imag:""
   }]
@@ -55,8 +56,9 @@ webPhone:string="undefined";
   constructor(public homeService:HomeService) {
 
     this.webemail="MyVehicle@Company.com"
-    this.webPhone="+9627777777777"
-    this.webAddress="PQCR+WHF, Madaba"
+    this.webPhone1="+962-798562481"
+    this.webPhone2="+962-797525063"
+    this.webAddress="PQCR+WHF,Amman"
    }
 
   ngOnInit(): void {

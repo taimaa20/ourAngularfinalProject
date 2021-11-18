@@ -9,20 +9,29 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
 
+  webemail:string="undefined";
+  webPhone1:string="undefined";
+  webPhone2:string="undefined"
+    webAddress:string="undefined";
+
+
+
   Name:string="undefined";
   email:string="undefined";
   Phone:string="undefined";
-  Location:string="undefined";
+ 
   currentYear:Date|any = undefined;
   constructor(private router:Router)  {
     this.currentYear = new Date().getFullYear();
-    this.Name="MyVehicle Team"
-    this.email="MyVehicle@Company.com"
-    this.Phone="+9627777777777"
-    this.Location="PQCR+WHF, Madaba"
+    this.webemail="MyVehicle@Company.com"
+    this.webPhone1="+962-798562481"
+    this.webPhone2="+962-797525063"
+    this.webAddress="PQCR+WHF,Amman"
     
    }
   ngOnInit(): void {
   }
+
+
 
 }
