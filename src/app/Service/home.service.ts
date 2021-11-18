@@ -101,10 +101,16 @@ engine_capasty:any=[{}];
     this.spiner.hide();
     this.toastr.error('Not Send');
  
+
+   })}
+
+  GetNumberOfAllUser(){
+
    })
   }
   GetNumberOfAllUser()
   {
+
       return this.http.get('https://localhost:44373/api/Users/GetNumberOfAllUser')
 }
 GetEmployeesSalaries(){

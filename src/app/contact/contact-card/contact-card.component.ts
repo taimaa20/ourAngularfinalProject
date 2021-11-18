@@ -19,25 +19,5 @@ export class ContactCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // carddata :any =[{
-  //   name:"Hamza Al-Omary",
-  //     subText:"Developer" ,
-  //    imag:""
-  // },
-  // {
-  //   name:"Qussi Al-Dogham " ,
-  //    subText:"Developer" ,
-  //    imag:""
-  // },
-  // {
-  //   name:"Back End",
-  //   subText:"Developer",
-  //   imag:""
-  // },
-  // {
-  //   name:"Back End",
-  //   subText:"Developer",
-  //   imag:""
-  // }]
 
 }
