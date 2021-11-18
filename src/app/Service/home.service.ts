@@ -407,7 +407,24 @@ VehicleSystemReportBetween(dateFromTo:any)
   })
 
 }
+VehicleSystemReportBetweenAcc(dateFromTo:any)
 
+{
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/Vehicle/VehicleSystemReportBetween',dateFromTo).subscribe((res:any)=>{
+    this.searchlic=res;
+    this.toastr.success('VehicleSystemRepor Success');
+    this.router.navigate(['accountant/vehicle-system-report-between'])
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error('Search Error');
+
+  })
+
+}
 
   GetMessageByUsrId(id:number)
     {

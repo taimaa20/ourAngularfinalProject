@@ -146,21 +146,22 @@
                                         <button mat-menu-item (click)="GetTaskJob()"><i class="fa fa-tasks" aria-hidden="true"></i>Your Task</button>
 
                                     </mat-menu>
+                                    <li class="nav-item">
 
-                                    <a class="nav-link" routerLink="/accountant/report"><i  class="fa fa-bar-chart"></i>Reports</a>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" routerLink="/accountant/vehicle-system-report-between"><i class="fa fa-file-pdf-o"></i>searching Reports</a>
-
+                                        <a class="nav-link" routerLink="/accountant/report"><i  class="fa fa-bar-chart"></i>Reports</a>
                                         <li class="nav-item ">
-                                            <a class="nav-link" routerLink="/accountant/customer-info"><i class="fa fa-male" aria-hidden="true"></i>Customers Information</a>
+                                            <a class="nav-link" routerLink="/accountant/vehicle-system-report-between"><i class="fa fa-file-pdf-o"></i>searching Reports</a>
 
-                                            <li class="nav-item">
-                                                <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
+                                            <li class="nav-item ">
+                                                <a class="nav-link" routerLink="/accountant/customer-info"><i class="fa fa-male" aria-hidden="true"></i>Customers Information</a>
 
                                                 <li class="nav-item">
-                                                    <a class="nav-link" routerLink="/accountant/attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Insert Attendance </a>
+                                                    <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
 
-                                                    <!-- <li class="nav-item">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" routerLink="/accountant/attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Insert Attendance </a>
+
+                                                        <!-- <li class="nav-item">
 
                                 <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
@@ -175,7 +176,7 @@
                                         <li class="nav-item ">
                                             <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
 
-                                           <li class="nav-item">
+                                            <!-- <li class="nav-item">
 
                                 <a class="nav-link" href="#" ><i class="fas fa-fw fa-file"></i> Pages </a>
                                 
@@ -188,16 +189,17 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
                                  -->
-                                                    <li class="nav-item">
+                                                        <li class="nav-item">
 
-                                                        <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                            <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
 
-                                                    </li>
+                                                        </li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
+
         <!-- ============================================================== -->
         <!-- end left sidebar -->
         <!-- ============================================================== -->
@@ -213,7 +215,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Accountant Dashboard Template </h2>
+                                <h2 class="pageheader-title">Admin Dashboard Template </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
@@ -228,41 +230,83 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-                    <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
-                        <div class="card tableFixHead" id="pdfTable" #pdfTable>
-                            <h5 class="card-header">Your Tasks</h5>
-                            <div class="card-body p-0">
-                                <div class="table-responsive">
-                                    <table class="styled-table" id="excel-table">
-                                        <thead class="bg-light">
-                                            <tr class="border-0">
 
-                                                <th class="border-0">taskId</th>
-                                                <th class="border-0">taskDescription</th>
-                                                <th class="border-0">taskDate </th>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr *ngFor="let user of home.TaskJoB">
+                </div>
+            </div>
 
-                                                <td>{{user.taskId}} </td>
-                                                <td>{{user.taskDescription}} </td>
-                                                <td>{{user.taskDate}} </td>
+            <br><br>
+            <form [formGroup]="formGroup" style="margin:25px;">
+                <input type="datetime-local" matInput formControlName="startPaymentDate" style="font-size:large;margin-left: 14px;" placeholder="Date From">
 
-                                            </tr>
+                <input type="datetime-local" matInput formControlName="endPaymentDate" style="font-size:large;margin-left: 14px;" placeholder="Date To">
+                <button (click)="GetData()" class="colorbtn" style="margin-right: 15px;margin-left: 10px;font-size:large;">Search</button>
+            </form>
+            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                <div class="card tableFixHead" id="pdfTable" #pdfTable>
+                    <h5 class="card-header">System Reports</h5>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="styled-table" id="excel-table">
+                                <thead class="bg-light">
+                                    <tr class="border-0">
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                        <th class="upleft">fullName</th>
+                                        <th>email</th>
+                                        <th>phoneNumber</th>
+                                        <th>age</th>
+                                        <th>gender</th>
+                                        <th>vehicleName</th>
+                                        <th>vehicleModel</th>
+                                        <th>vehicleColor</th>
+                                        <th>vehicleCategory</th>
+                                        <th>useType</th>
+                                        <th>registerType</th>
+                                        <th>licenseNumber</th>
+                                        <th>licenseExpiry</th>
+                                        <th>paymentDate</th>
+                                        <th class="upright">paymentAmount</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr *ngFor="let user of home.searchlic">
+                                        <td>{{ user.fullName }}</td>
+                                        <td>{{ user.email }}</td>
+                                        <td>{{ user.phoneNumber }}</td>
+                                        <td>{{ user.age}}</td>
+                                        <td>{{ user.gender }}</td>
+                                        <td>{{ user.vehicleName }}</td>
+                                        <td>{{ user.vehicleModel }}</td>
+                                        <td>{{ user.vehicleColor}}</td>
+                                        <td>{{ user.vehicleCategory }}</td>
+                                        <td>{{ user.useType }}</td>
+                                        <td>{{ user.registerType }}</td>
+                                        <td>{{ user.licenseNumber }}</td>
+                                        <td>{{ user.licenseExpiry}}</td>
+                                        <td>{{ user.paymentDate }}</td>
+                                        <td>{{ user.paymentAmount }}</td>
+
+
+
+
+                                        <!-- and so on... -->
+                                </tbody>
+
+                            </table>
                         </div>
                     </div>
 
                 </div>
+                <button class="btn colorbtn" (click)="downloadAsPDF();">Export To PDF</button>
+                <button class="btn colorbtn" (click)="exportexcel();">Export To Excel</button>
+
+
             </div>
             <!-- footer -->
             <!-- ============================================================== -->
@@ -287,6 +331,7 @@
 
 
     </div>
+
 
 </body>
 

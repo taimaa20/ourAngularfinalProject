@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { GetTaskJobComponent } from './get-task-job/get-task-job.component';
 import { AddMessageComponent } from './add-message/add-message.component';
 import { MessageDialogComponent } from './message-dialog/message-dialog.component';
+import { VehicleSystemReportBetweenComponent } from './vehicle-system-report-between/vehicle-system-report-between.component';
 
 
 @NgModule({
@@ -26,7 +27,9 @@ import { MessageDialogComponent } from './message-dialog/message-dialog.componen
     ProfileComponent,
     GetTaskJobComponent,
     AddMessageComponent,
-    MessageDialogComponent
+    MessageDialogComponent,
+    VehicleSystemReportBetweenComponent,
+    
   ],
   imports: [
     CommonModule,

@@ -33,4 +33,5 @@ body {
 
 .dashboard-wrapper {
     background-color: rgb(202, 226, 235);
+    padding-bottom: 30px;
 }

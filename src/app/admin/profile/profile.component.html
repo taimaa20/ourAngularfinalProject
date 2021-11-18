@@ -250,48 +250,95 @@
                     <!-- ============================================================== -->
 
 
-                    <h1>The Name is: {{home.admin_profile.fullName}}</h1>
+                    <!-- <h1>The Name is: {{home.admin_profile.fullName}}</h1>
                     <h1>The Age is: {{home.admin_profile.age}}</h1>
                     <h1>The Email is : {{home.admin_profile.email}}</h1>
                     <h1>The Phone of is : {{home.admin_profile.phoneNumber}}</h1>
-                    <h1>The Address is : {{home.admin_profile.address}}</h1>
+                    <h1>The Address is : {{home.admin_profile.address}}</h1> -->
 
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead class="bg-light">
-                                <tr class="border-0">
+                    <div class="container">
+                        <div class="row gutters">
+                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="account-settings">
+                                            <div class="user-profile">
+                                                <div class="user-avatar">
+                                                    <img src="assets/img/admin.jpg" alt="Maxwell Admin">
+                                                </div>
+                                                <h5 class="user-name">{{home.admin_profile.fullName}}</h5>
+                                                <h6 class="user-email">{{home.admin_profile.email}}</h6>
+                                            </div>
 
-                                    <th class="border-0">UserImage</th>
-                                    <th class="border-0">FullName</th>
-                                    <th class="border-0">Gender </th>
-                                    <th class="border-0">Age</th>
-                                    <th class="border-0">Email</th>
-                                    <th class="border-0">PhoneNumber</th>
-                                    <th class="border-0">Address</th>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <h6 class="mb-2 text-primary">Personal Details</h6>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="fullName">Full Name</label>
+                                                    <input type="text" class="form-control" id="fullName" value="{{home.admin_profile.fullName}}" placeholder="{{home.admin_profile.fullName}}">
+                                                </div>
+                                            </div>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
+                                            <div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+                                                <div class="form-group ">
+                                                    <label for="phone ">Phone</label>
+                                                    <input type="text " class="form-control " id="phone " value="{{home.admin_profile.phoneNumber}}" placeholder="{{home.admin_profile.phoneNumber}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+                                                <div class="form-group ">
+                                                    <label for="website ">Age</label>
+                                                    <input type="url " class="form-control " id="website " value="{{home.admin_profile.age}}" placeholder="{{home.admin_profile.age}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="eMail">Email</label>
+                                                    <input type="email" class="form-control" id="eMail" value="{{home.admin_profile.email}}" placeholder="{{home.admin_profile.email}}">
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    <td>
-                                        <div class="m-r-10"><img src="assets/img/admin.jpg" class="rounded" width="45"></div>
-                                    </td>
-                                    <td>{{home.admin_profile.fullName}} </td>
-                                    <td>{{home.admin_profile.gender}} </td>
-                                    <td>{{home.admin_profile.age}}</td>
-                                    <td>{{home.admin_profile.email}}</td>
-                                    <td>{{home.admin_profile.phoneNumber}}</td>
-                                    <td>{{home.admin_profile.address}} </td>
+                                        <div class="row gutters ">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <h6 class="mt-3 mb-2 text-primary ">Address</h6>
+                                            </div>
 
-                                    <td><button mat-button (click)="UpdateAdminProfile()">Update</button></td>
-                                </tr>
-
-                            </tbody>
-                        </table>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+                                                <div class="form-group ">
+                                                    <label for="Street ">Address</label>
+                                                    <input type="name " class="form-control " id="Street " value="{{home.admin_profile.address}}" placeholder="{{home.admin_profile.address}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+                                                <div class="form-group ">
+                                                    <label for="zIp ">Zip Code</label>
+                                                    <input type="text " class="form-control " id="zIp " value="+962" placeholder="Zip Code ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row gutters ">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <div class="text-right ">
+                                                    <button type="button " id="submit " name="submit " class="btn btn-secondary ">Cancel</button>
+                                                    <button type="button " id="submit " name="submit " class="btn btn-primary ">Update</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
                 </div>
             </div>
 
