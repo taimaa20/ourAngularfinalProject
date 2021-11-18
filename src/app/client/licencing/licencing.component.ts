@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LicenseDialogComponent } from 'src/app/admin/license-dialog/license-dialog.component';
 import { HomeService } from 'src/app/Service/home.service';
+import { PaymentComponent } from '../payment/payment.component';
 
 @Component({
   selector: 'app-licencing',
@@ -58,7 +59,20 @@ export class LicencingComponent implements OnInit {
       this.homeService.GetMessageByUsrId(id)
     }
   }
-
+  GetBankcardByUserId()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetBankcard(id)
+    }
+  }
   TechnecalReportUser()
   {
     //I will get the user from the local storge 
@@ -93,5 +107,10 @@ export class LicencingComponent implements OnInit {
   AddLicensing()
   {
 this.dialog.open(LicenseDialogComponent)
+  }
+
+  AddPayment()
+  {
+   this.dialog.open(PaymentComponent)
   }
 }

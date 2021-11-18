@@ -16,6 +16,8 @@ import { AddCarLicenceComponent } from './add-car-licence/add-car-licence.compon
 import { NewCarDialogComponent } from './new-car-dialog/new-car-dialog.component';
 import { LicencingComponent } from './licencing/licencing.component';
 import { LicenseDialogComponent } from './license-dialog/license-dialog.component';
+import { ViewBankcardComponent } from './view-bankcard/view-bankcard.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { LicenseDialogComponent } from './license-dialog/license-dialog.componen
           AddCarLicenceComponent,
           NewCarDialogComponent,
           LicencingComponent,
-          LicenseDialogComponent
+          LicenseDialogComponent,
+          ViewBankcardComponent,
+          PaymentComponent
   ],
   imports: [
     CommonModule,

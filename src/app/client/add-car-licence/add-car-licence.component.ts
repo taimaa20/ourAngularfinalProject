@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/Service/home.service';
 import { NewCarDialogComponent } from '../new-car-dialog/new-car-dialog.component';
+import { PaymentComponent } from '../payment/payment.component';
 
 @Component({
   selector: 'app-add-car-licence',
@@ -94,5 +95,22 @@ export class AddCarLicenceComponent implements OnInit {
   {
 this.dialog.open(NewCarDialogComponent)
   }
-
+  GetBankcardByUserId()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetBankcard(id)
+    }
+  }
+  AddPayment()
+  {
+   this.dialog.open(PaymentComponent)
+  }
 }

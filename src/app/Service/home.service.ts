@@ -37,7 +37,7 @@ technecal_report=[{}];
 Insurance:any =[{}];
 License:any =[{}];
 About:any =[{}];
-
+bankcard:any=[{}];
 
 //admin_profile:any=[{}];
 
@@ -487,6 +487,38 @@ VehicleSystemReportBetween(dateFromTo:any)
       })
     
     }
+    GetBankcard(id:number)
+    {
+      this.spiner.show();
+      
+      this.http.get('https://localhost:44373/api/Cards/GetCardById/'+id).subscribe((res:any)=>{
+        
+        this.bankcard=res;
+        this.spiner.hide();
+        this.router.navigate(['client/view-bankcard']);
+        console.log(this.bankcard)
+        this.toastr.success("view-bankcard return success")
+        
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error("view-bankcard not return")
+      })
+    }
 
+    InsertPayment(data:any){
+      this.spiner.show();
+      debugger
+      this.http.post('https://localhost:44373/api/Payment',data).subscribe((res:any)=>{
+        this.toastr.success('Payment Completed Successfully');
+        console.log(this.data);
+        this.spiner.hide();
+    
+      },err=>{
+       this.spiner.hide();
+       this.toastr.error(' Not Created');
+    
+      })
+  
+    }
 
 }

@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>
+    Add Payment</h2>
+
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="formGroup">
+        <mat-form-field class="example-full-width">
+
+            <mat-label>PaymentAmount</mat-label>
+            <input type="text" matInput formControlName="paymentAmount" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.paymentAmount.hasError('required')">
+                PaymentAmount is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>PaymentDate</mat-label>
+            <input type="datetime-local" matInput formControlName="paymentDate" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.paymentDate.hasError('required')">
+                PaymentDate is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <div></div>
+        
+
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="saveItem()">Save</button>
+</mat-dialog-actions>
