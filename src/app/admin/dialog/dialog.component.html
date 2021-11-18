@@ -1,109 +1,108 @@
-
-<h2 mat-dialog-title>Create Employee</h2>
-<mat-dialog-content class="mat-typography" >
-    <form [formGroup]="formGroup" >
-        <mat-form-field class="example-full-width" >
+<h2 mat-dialog-title>
+    Create Employee</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="formGroup">
+        <mat-form-field class="example-full-width">
             <mat-label>UserName</mat-label>
-            <input  type="text" matInput formControlName="username" style="font-size:large;" >
+            <input type="text" matInput formControlName="username" style="font-size:large;">
             <mat-error *ngIf="formGroup.controls.username.hasError('required')">
                 username is <strong>required</strong>
             </mat-error>
-            </mat-form-field> 
-            
-            <mat-form-field class="example-full-width">
-                <mat-label>Password</mat-label>
-                <input  type="password" matInput formControlName="password" style="font-size:large;" >
-                <mat-error *ngIf="formGroup.controls.password.hasError('required')">
-                    password is <strong>required</strong>
-                </mat-error>
-                </mat-form-field>
-                
-                <!-- <mat-form-field class="example-full-width">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.password.hasError('required')">
+                password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <div></div>
+        <!-- <mat-form-field class="example-full-width">
                     <mat-label>RoleId</mat-label>
                     <input  type="number" matInput formControlName="roleId" style="font-size:large;" >
                     <mat-error *ngIf="formGroup.controls.roleId.hasError('required')">
                         roleId is <strong>required</strong>
                     </mat-error>
                     </mat-form-field> -->
-                    <div></div>
+
         <mat-form-field class="example-full-width">
-        <mat-label>Name</mat-label>
-        <input  type="text" matInput formControlName="fullName" style="font-size:large;" >
-        <mat-error *ngIf="formGroup.controls.fullName.hasError('required')">
-        Name is <strong>required</strong>
-        </mat-error>
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="fullName" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.fullName.hasError('required')">
+                Name is <strong>required</strong>
+            </mat-error>
         </mat-form-field>
-       
+
         <mat-form-field class="example-full-width">
             <mat-label>Image</mat-label>
-            <input type="text" matInput formControlName="userImage" style="font-size: large;" >
+            <input type="text" matInput formControlName="userImage" style="font-size: large;">
             <mat-error *ngIf="formGroup.controls.userImage.hasError('required')">
                 Image is <strong>required</strong>
             </mat-error>
-            </mat-form-field>
-    
-            
-            <mat-form-field class="example-full-width">
-                <mat-label>Gender</mat-label>
-                <input  matInput formControlName="gender" style="font-size: large;" >
-                
-                
- 
-                    
-                
-                    
-                    <!-- <mat-select formControlName="gender">
+        </mat-form-field>
+        <div></div>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Gender</mat-label>
+            <input matInput formControlName="gender" style="font-size: large;">
+
+
+
+
+
+
+            <!-- <mat-select formControlName="gender">
                       <mat-option *ngFor="let fram of frameworks" [value]="fram">
                       {{ fram }}
                      </mat-option>
                     </mat-select> -->
-                  
-                <mat-error *ngIf="formGroup.controls.gender.hasError('required')">
 
-                    gender is <strong>required</strong>
-                </mat-error>
-                </mat-form-field>
-                
-                <div></div>
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Age</mat-label>
-                        <input  matInput formControlName="age" style="font-size: large;">
-                        <mat-error *ngIf="formGroup.controls.age.hasError('required')">
-                            age is <strong>required</strong>
-                        </mat-error>
-                        </mat-form-field>
+            <mat-error *ngIf="formGroup.controls.gender.hasError('required')">
 
-                        
-                            <mat-form-field class="example-full-width">
-                                <mat-label>Email</mat-label>
-                                <input type="text" matInput formControlName="email" style="font-size: large;">
-                                <mat-error
-                               *ngIf="formGroup.controls.email.hasError('email') && !formGroup.controls.email.hasError('required')">
-                                Please enter a valid email address
-                               </mat-error>
-                                <mat-error *ngIf="formGroup.controls.email.hasError('required')">
-                                    email is <strong>required</strong>
-                                </mat-error>
+                gender is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
 
-                                </mat-form-field>
-                               
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Address</mat-label>
-                                    <input type="text" matInput formControlName="address" style="font-size: large;">
-                                    <mat-error *ngIf="formGroup.controls.address.hasError('required')">
-                                        address is <strong>required</strong>
-                                    </mat-error>
-                                    </mat-form-field>
-                                    <div></div>
-                                    <mat-form-field class="example-full-width">
-                                        <mat-label>PhoneNumber</mat-label>
-                                        <input type="number" matInput formControlName="phoneNumber" style="font-size: large;">
-                                        <mat-error *ngIf="formGroup.controls.phoneNumber.hasError('required')">
-                                            phoneNumber is <strong>required</strong>
-                                        </mat-error>
-                                        </mat-form-field>
-                                        
-                                        <!-- <mat-form-field class="example-full-width">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Age</mat-label>
+            <input matInput formControlName="age" style="font-size: large;">
+            <mat-error *ngIf="formGroup.controls.age.hasError('required')">
+                age is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <div></div>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput formControlName="email" style="font-size: large;">
+            <mat-error *ngIf="formGroup.controls.email.hasError('email') && !formGroup.controls.email.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="formGroup.controls.email.hasError('required')">
+                email is <strong>required</strong>
+            </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Address</mat-label>
+            <input type="text" matInput formControlName="address" style="font-size: large;">
+            <mat-error *ngIf="formGroup.controls.address.hasError('required')">
+                address is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <div></div>
+        <mat-form-field class="example-full-width">
+            <mat-label>PhoneNumber</mat-label>
+            <input type="number" matInput formControlName="phoneNumber" style="font-size: large;">
+            <mat-error *ngIf="formGroup.controls.phoneNumber.hasError('required')">
+                phoneNumber is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <!-- <mat-form-field class="example-full-width">
                                             <mat-label>SettingId</mat-label>
                                             <input type="number" matInput formControlName="settingId" style="font-size: large;">
                                             <mat-error *ngIf="formGroup.controls.settingId.hasError('required')">
@@ -111,7 +110,7 @@
                                             </mat-error>
                                             </mat-form-field> -->
 
-                                            <!-- <mat-form-field class="example-full-width">
+        <!-- <mat-form-field class="example-full-width">
                                                 <mat-label>LoginId</mat-label>
                                                 <input type="text" matInput formControlName="loginId" style="font-size: medium;">
                                                 <mat-error *ngIf="formGroup.controls.loginId.hasError('required')">
@@ -119,9 +118,9 @@
                                                 </mat-error>
                                                 </mat-form-field>
          -->
-                        </form>
+    </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="saveItem()">Save</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="saveItem()">Save</button>
 </mat-dialog-actions>

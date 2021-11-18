@@ -20,6 +20,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatGridListModule,
     HttpClientModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule,
+    MatDatepickerModule
     
     
   ],
@@ -67,8 +71,9 @@ import {MatSelectModule} from '@angular/material/select';
     NavbarComponent,
     HttpClientModule,
     MatDialogModule,
-    MatSelectModule
-  
+    MatSelectModule,
+    MatMenuModule,
+    MatDatepickerModule
   
   ]
 })

@@ -83,3 +83,46 @@ p {
 .edit {
     margin-left: 25rem;
 }
+
+.table-responsive {
+    padding-top: 0%;
+}
+
+.container {
+    margin-left: 0%;
+}
+
+.card {
+    font-size: 12px;
+    margin-left: 20px;
+    border-radius: 7px;
+    color: ghostwhite;
+    border-color: rgba(0, 0, 0, 0.15);
+    border-width: 3px;
+}
+
+.card-header:first-child {
+    margin-bottom: 0%;
+    border-radius: 4px;
+    background-color: #345B63;
+}
+
+.border-0 {
+    font-size: 15px;
+    background-color: rgb(130, 202, 202);
+}
+
+.card-header {
+    font-size: 17px;
+}
+
+.nav-link.active {
+    margin-top: 10px;
+    margin-left: 0%;
+    padding-left: 5px;
+}
+
+.img {
+    padding: 5px;
+    margin-left: 50px;
+}

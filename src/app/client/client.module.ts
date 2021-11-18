@@ -14,6 +14,8 @@ import { GetTechnecalReportComponent } from './get-technecal-report/get-techneca
 import { GetMessageComponent } from './get-message/get-message.component';
 import { AddCarLicenceComponent } from './add-car-licence/add-car-licence.component';
 import { NewCarDialogComponent } from './new-car-dialog/new-car-dialog.component';
+import { LicencingComponent } from './licencing/licencing.component';
+import { LicenseDialogComponent } from './license-dialog/license-dialog.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { NewCarDialogComponent } from './new-car-dialog/new-car-dialog.component
           GetTechnecalReportComponent,
           GetMessageComponent,
           AddCarLicenceComponent,
-          NewCarDialogComponent
+          NewCarDialogComponent,
+          LicencingComponent,
+          LicenseDialogComponent
   ],
   imports: [
     CommonModule,

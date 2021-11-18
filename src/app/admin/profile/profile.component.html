@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/css/c3.css">
     <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/style.css">  
+    <!-- <link rel="stylesheet" href="/assets/css/style.css">
      <link rel="stylesheet" href="/assets/css/bootstrap-icons.css">  -->
     <title> Admin Dashboard </title>
 </head>
@@ -30,10 +30,10 @@
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <!-- <a class="navbar-brand" href="index.html">Concept</a> -->
                 <div class="logo">
-                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:10px;margin-left: 15px;" alt="Venue Logo">
+                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:7px;margin-left: 50px; border-radius: 15px;" alt="Venue Logo">
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -95,7 +95,7 @@
 
 
                         <li class="nav-item dropdown nav-user" style="margin-bottom: 15px;margin-left: 15px;margin-right: 15px;">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle" (click)="showProfile()"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -132,20 +132,36 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
+                                <a class="nav-link active" routerLink="/admin/admin"><i class="fa fa-dashboard"></i>my vehicle </a>
 
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link active" routerLink="/admin/admin"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/admin/creat-employee"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a>
 
-                                    <li class="nav-item">
+                                    <a mat-button [matMenuTriggerFor]="menu" class="nav-link" style="float: left; padding-right:18rem;"><i class="icon fa fa-wrench fa-fw " aria-hidden="true"></i>preferences</a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item (click)="createEmployee()"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</button>
+                                        <button mat-menu-item (click)="InsertTaskJob()"><i class="fa fa-thumb-tack" aria-hidden="true"></i>Add TaskJoB</button>
+                                        <button mat-menu-item (click)="InsertLicensing()"><i class="fa fa-th-list" aria-hidden="true"></i>Add Licensing</button>
+                                        <button mat-menu-item (click)="createInsurance()"><i class="fa fa-th-list" aria-hidden="true"></i>Add Insurance</button>
+                                        <button mat-menu-item (click)="GoTosearchvehiclecategory()"><i class="fa fa-search" aria-hidden="true"></i>searching vehiclecategory </button>
+                                        <button mat-menu-item (click)="GoTosearchlicenseexpiry()"><i class="fa fa-clock-o" aria-hidden="true"></i>searching licenseexpiry </button>
 
-                                        <a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart"></i>Chart</a>
+                                    </mat-menu>
+                                    <!-- 
+                                    <a class="nav-link" (click)="createInsurance()"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a> -->
+
+                                    <!-- <li class="nav-item">
+
+                                        <a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart"></i>Chart</a> -->
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link" routerLink="/admin/report"><i class="fa fa-file-pdf-o"></i>static Reports</a>
 
                                         <li class="nav-item ">
-                                            <a class="nav-link" routerLink="/admin/report"><i class="fa fa-file-pdf-o"></i>Reports</a>
+                                            <a class="nav-link" routerLink="/admin/vehicle-system-report-between"><i class="fa fa-file-pdf-o"></i>searching Reports</a>
 
                                             <li class="nav-item">
                                                 <a class="nav-link" routerLink="/admin/financial-report"><i class="fa fa-file-o" ></i>Financial Reports</a>
@@ -232,6 +248,14 @@
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
+
+
+                    <h1>The Name is: {{home.admin_profile.fullName}}</h1>
+                    <h1>The Age is: {{home.admin_profile.age}}</h1>
+                    <h1>The Email is : {{home.admin_profile.email}}</h1>
+                    <h1>The Phone of is : {{home.admin_profile.phoneNumber}}</h1>
+                    <h1>The Address is : {{home.admin_profile.address}}</h1>
+
                     <div class="table-responsive">
                         <table class="table">
                             <thead class="bg-light">
@@ -244,29 +268,30 @@
                                     <th class="border-0">Email</th>
                                     <th class="border-0">PhoneNumber</th>
                                     <th class="border-0">Address</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr >
-                                   
+                                <tr>
+
                                     <td>
-                                        <div class="m-r-10"><img src="assets/img/admin.jpg"  class="rounded" width="45"></div>
+                                        <div class="m-r-10"><img src="assets/img/admin.jpg" class="rounded" width="45"></div>
                                     </td>
-                                    <td>{{homeService.admin_profile.fullName}} </td>
-                                    <td>{{homeService.admin_profile.gender}} </td>
-                                    <td>{{homeService.admin_profile.age}}</td>
-                                    <td>{{homeService.admin_profile.email}}</td>
-                                    <td>{{homeService.admin_profile.phoneNumber}}</td>
-                                    <td>{{homeService.admin_profile.address}} </td>
-                                   
-<td><button mat-button (click)="UpdateAdminProfile()">Update</button></td>
+                                    <td>{{home.admin_profile.fullName}} </td>
+                                    <td>{{home.admin_profile.gender}} </td>
+                                    <td>{{home.admin_profile.age}}</td>
+                                    <td>{{home.admin_profile.email}}</td>
+                                    <td>{{home.admin_profile.phoneNumber}}</td>
+                                    <td>{{home.admin_profile.address}} </td>
+
+                                    <td><button mat-button (click)="UpdateAdminProfile()">Update</button></td>
                                 </tr>
 
                             </tbody>
                         </table>
                     </div>
-                    
+
+
                 </div>
             </div>
 
@@ -299,4 +324,3 @@
 </body>
 
 </html>
-

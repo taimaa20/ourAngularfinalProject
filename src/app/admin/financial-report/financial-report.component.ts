@@ -10,6 +10,14 @@ const htmlToPdfmake = require("html-to-pdfmake");
 import * as XLSX from 'xlsx';
 
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
+import { TaskJobDialogComponent } from '../task-job-dialog/task-job-dialog.component';
+import { LicenseDialogComponent } from '../license-dialog/license-dialog.component';
+import { InsuranceDialogComponent } from '../insurance-dialog/insurance-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
+import { DialogComponent } from '../dialog/dialog.component';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -36,9 +44,13 @@ export class FinancialReportComponent implements OnInit {
 
 
   Name:string="undefined";
-
+  formGroup =new FormGroup({
+    StartDate: new FormControl(''),
+    
+  })
   currentYear:Date|any = undefined;
-  constructor(private router:Router ,public home:HomeService)  {
+  constructor(private router:Router ,public home:HomeService ,  public tostr:ToastrService,
+    private spiner:NgxSpinnerService,private dialog:MatDialog)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
 
@@ -47,6 +59,13 @@ export class FinancialReportComponent implements OnInit {
 
   ngOnInit(): void {
     this.ObtainFinancialReports();
+  }
+  start:Date|any = undefined;
+  GetData(){
+    this.start=this.formGroup.value.StartDate
+   const data={StartDate:this.start.toString()}
+    console.log(data)
+    this.home.TotalMonthSalaries(data); 
   }
   logout()
   {
@@ -120,5 +139,55 @@ export class FinancialReportComponent implements OnInit {
            XLSX.writeFile(wb, this.fileName);
 
         }
-
+        createEmployee()
+        {
+      this.dialog.open(DialogComponent)
+        }
+      
+        // Delete(){
+        //   if(this.userId){
+           
+        //     this.home.DeleteUserbyID(this.userId);
+        //     this.tostr.success('Deleted item');
+        
+        //   }
+        //   else {
+        //     this.tostr.warning('This item cannot be deleted')
+        //   }
+        //   window.location.reload();
+        // }
+        InsertTaskJob()
+        {
+      this.dialog.open(TaskJobDialogComponent)
+        }
+        InsertLicensing()
+        {
+      this.dialog.open(LicenseDialogComponent)
+        }
+        createInsurance()
+        {
+      this.dialog.open(InsuranceDialogComponent)
+        }
+        GoTosearchvehiclecategory()
+  {
+    this.router.navigate(['admin/search-by-vehicle-category'])
+  }
+  GoTosearchlicenseexpiry()
+  {
+    this.router.navigate(['admin/searching-for-vehicles-license-expiry'])
+  }
+  showProfile()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.home.GetUserByIdAcc(id)
+    }
+  }
 }

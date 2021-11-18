@@ -5,6 +5,9 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { HomeService } from 'src/app/Service/home.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import { InsuranceDialogComponent } from '../insurance-dialog/insurance-dialog.component';
+import { LicenseDialogComponent } from '../license-dialog/license-dialog.component';
+import { TaskJobDialogComponent } from '../task-job-dialog/task-job-dialog.component';
 
 @Component({
   selector: 'app-admin',
@@ -176,6 +179,26 @@ this.dialog.open(DialogComponent)
       this.tostr.warning('This item cannot be deleted')
     }
     window.location.reload();
+  }
+  InsertTaskJob()
+  {
+this.dialog.open(TaskJobDialogComponent)
+  }
+  InsertLicensing()
+  {
+this.dialog.open(LicenseDialogComponent)
+  }
+  createInsurance()
+  {
+this.dialog.open(InsuranceDialogComponent)
+  }
+  GoTosearchvehiclecategory()
+  {
+    this.router.navigate(['admin/search-by-vehicle-category'])
+  }
+  GoTosearchlicenseexpiry()
+  {
+    this.router.navigate(['admin/searching-for-vehicles-license-expiry'])
   }
 }
 
