@@ -27,7 +27,7 @@ fullReport:any =[{}];
 payment:any =[{}];
 employee_info:any =[{}];
 paymentCount:any =[{}];
-
+User_profile:any=[{}]
 admin_profile:any=[{}];
 TaskJoB:any=[{}];
 searchlic:any=[{}];
@@ -104,10 +104,6 @@ engine_capasty:any=[{}];
 
    })}
 
-  GetNumberOfAllUser(){
-
-   })
-  }
   GetNumberOfAllUser()
   {
 
@@ -299,7 +295,21 @@ GetUserById(id:number)
         this.toastr.error("Data not return")
       })
     }
-
+    GetUserByIdUser(id:number)
+    {
+      this.spiner.show();
+      
+      this.http.get('https://localhost:44373/api/Users/GetAllUsersById/'+id).subscribe((res:any)=>{
+        
+        this.User_profile=res;
+        this.spiner.hide();
+        this.router.navigate(['client/profile']);
+        this.toastr.success("Data return success")
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error("Data not return")
+      })
+    }
     DeleteUserbyID(id:number){
       this.spiner.show();
       debugger

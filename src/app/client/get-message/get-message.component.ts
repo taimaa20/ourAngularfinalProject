@@ -28,7 +28,20 @@ export class GetMessageComponent implements OnInit {
     this.router.navigate(['security/login']);
   }
  
-
+  showProfile()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetUserByIdUser(id)
+    }
+  }
   GoToAbout()
   {
     this.router.navigate(['about'])

@@ -40,7 +40,20 @@ export class AddCarLicenceComponent implements OnInit {
   {
     this.router.navigate(['contactus'])
   }
-  
+  showProfile()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetUserByIdUser(id)
+    }
+  }
   GoToHome()
   {
     

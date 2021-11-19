@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/css/c3.css">
     <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/style.css">  
+    <!-- <link rel="stylesheet" href="/assets/css/style.css">
      <link rel="stylesheet" href="/assets/css/bootstrap-icons.css">  -->
     <title> Admin Dashboard </title>
 </head>
@@ -30,10 +30,10 @@
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <!-- <a class="navbar-brand" href="index.html">Concept</a> -->
                 <div class="logo">
-                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:10px;margin-left: 15px;" alt="Venue Logo">
+                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:7px;margin-left: 50px; border-radius: 15px;" alt="Venue Logo">
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -95,7 +95,7 @@
 
 
                         <li class="nav-item dropdown nav-user" style="margin-bottom: 15px;margin-left: 15px;margin-right: 15px;">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -119,8 +119,12 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
+
+
+
                     <!--                     
                     <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
+
                     <!-- <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -128,23 +132,68 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
+                                <a class="nav-link active" routerLink="/admin/admin"><i class="fa fa-dashboard"></i>my vehicle </a>
 
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link active" routerLink="/admin/admin"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/admin/creat-employee"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a>
 
-                                    <li class="nav-item">
 
-                                        <a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart"></i>Chart</a>
+                                    <!-- 
+                                    <a class="nav-link" (click)="createInsurance()"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a> -->
+
+                                    <!-- <li class="nav-item">
+
+                                        <a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart"></i>Chart</a> -->
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link" routerLink="/admin/report"><i class="fa fa-file-pdf-o"></i>Reports</a>
 
                                         <li class="nav-item ">
-                                            <a class="nav-link" routerLink="/admin/report"><i class="fa fa-file-pdf-o"></i>Reports</a>
-
+                                            <a class="nav-link" routerLink="/admin/vehicle-system-report-between"><i class="fa fa-file-pdf-o"></i>searching Reports</a>
                                             <li class="nav-item">
                                                 <a class="nav-link" routerLink="/admin/financial-report"><i class="fa fa-file-o" ></i>Financial Reports</a>
+
+                                                <!-- <li class="nav-item">
+                                                    <a class="nav-link" ><i class="fa fa-search" aria-hidden="true" ></i> 
+                                                        <select>
+                                                            
+                                                            <option ><a class="nav-link" ><i class="fa fa-search" aria-hidden="true"></i>Search </a></option>
+                                                            <option ><a class="nav-link" routerLink="/admin/report"><i  class="fa fa-file-pdf-o"></i>Search By Category Name</a>
+                                                            </option>
+                                                            <br>
+                                                            <option ><a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart">Search 2</i></a>
+                                                            </option>
+                                                            </select>
+
+                                                    </a> 
+     -->
+                                                <!-- <mat-form-field>
+        <mat-select class="fa fa-search" aria-hidden="true" placeholder="Search" style="color:white;font-size: 10px;">
+          
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/search-by-vehicle-category"><i class="fa fa-search" aria-hidden="true" >Search By Vehicle Category</i></a>
+          </mat-option>
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/searching-for-vehicles-license-expiry"><i class="fa fa-search" aria-hidden="true"  >Search 2</i></a>
+          </mat-option>
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/total-month-salaries"><i  class="fa fa-search" aria-hidden="true">Total Salaries</i></a>
+          </mat-option>
+          <mat-option>
+            <a class="nav-link" routerLink="/admin/total-payment"><i  class="fa fa-search" aria-hidden="true">Total Payment</i></a>
+          </mat-option>
+          
+        </mat-select>
+      </mat-form-field> -->
+                                                <!-- <li class="nav-item">
+                                                    <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
+
+
+                                                    </a> -->
+
 
                                                 <li class="nav-item">
                                                     <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
@@ -192,80 +241,28 @@
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-                    <div class="ecommerce-widget">
 
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Total Revenue</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$12099</h1>
-                                        </div>
-                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                            <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
-                                        </div>
-                                    </div>
-                                    <div id="sparkline-revenue"></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Affiliate Revenue</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$12099</h1>
-                                        </div>
-                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                            <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
-                                        </div>
-                                    </div>
-                                    <div id="sparkline-revenue2"></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Refunds</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">0.00</h1>
-                                        </div>
-                                        <div class="metric-label d-inline-block float-right text-primary font-weight-bold">
-                                            <span>N/A</span>
-                                        </div>
-                                    </div>
-                                    <div id="sparkline-revenue3"></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Avg. Revenue Per User</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$28000</h1>
-                                        </div>
-                                        <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
-                                            <span>-2.00%</span>
-                                        </div>
-                                    </div>
-                                    <div id="sparkline-revenue4"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a mat-button [matMenuTriggerFor]="menu" class="nav-link" style="float: left; padding-right:18rem;"><i class="icon fa fa-wrench fa-fw " aria-hidden="true"></i>preferences</a>
+                    <mat-menu #menu="matMenu">
+                        <a mat-menu-item><i class="fa fa-user-plus" aria-hidden="true"></i>{{home.financial_report.fullName}}</a>
+                        <a mat-menu-item><i class="fa fa-thumb-tack" aria-hidden="true"></i>Add TaskJoB</a>
+                        <a mat-menu-item><i class="fa fa-th-list" aria-hidden="true"></i>Add Licensing</a>
+                        <button mat-menu-item><i class="fa fa-th-list" aria-hidden="true"></i>Add Insurance</button>
+                        <button mat-menu-item><i class="fa fa-search" aria-hidden="true"></i>searching vehiclecategory </button>
+                        <button mat-menu-item><i class="fa fa-clock-o" aria-hidden="true"></i>searching licenseexpiry </button>
+
+                    </mat-menu>
+                    <!-- ============================================================== -->
+                    <!-- footer -->
+                    <!-- ============================================================== -->
+                    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+                    <!-- <app-add-task-job></app-add-task-job> -->
+                    <!-- <app-get-total-payment></app-get-total-payment> -->
+
                 </div>
             </div>
-
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br> -->
-
-            <!-- <app-add-task-job></app-add-task-job> -->
-            <!-- <app-get-total-payment></app-get-total-payment> -->
-            <app-add-license></app-add-license>
         </div>
-
         <div class="footer">
             <div class="container-fluid ">
                 <div class="row">

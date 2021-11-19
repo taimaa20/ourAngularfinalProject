@@ -43,6 +43,7 @@ export class ViewBankcardComponent implements OnInit {
     
     this.router.navigate([''])
   }
+  
   showMessage()
   {
     //I will get the user from the local storge 
@@ -105,5 +106,18 @@ export class ViewBankcardComponent implements OnInit {
       this.homeService.GetBankcard(id)
     }
   }
-
+  showProfile()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetUserByIdUser(id)
+    }
+  }
 }

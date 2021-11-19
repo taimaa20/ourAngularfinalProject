@@ -27,6 +27,7 @@ export class FooterComponent implements OnInit {
     this.webPhone1="+962-798562481"
     this.webPhone2="+962-797525063"
     this.webAddress="PQCR+WHF,Amman"
+   this.Name="My Vheicle Team"
     
    }
   ngOnInit(): void {
