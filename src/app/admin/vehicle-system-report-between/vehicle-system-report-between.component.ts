@@ -48,9 +48,9 @@ export class VehicleSystemReportBetweenComponent implements OnInit {
     GetData(){
       this.from=this.formGroup.value.startPaymentDate;
       this.to=this.formGroup.value.endPaymentDate;
-      const searchlic={startPaymentDate:this.from.toString(),endPaymentDate:this.to.toString()}
-      console.log(searchlic)
-      this.home.VehicleSystemReportBetween(searchlic);
+      const systembetween={startPaymentDate:this.from.toString(),endPaymentDate:this.to.toString()}
+      console.log(systembetween)
+      this.home.VehicleSystemReportBetween(systembetween);
     }
     logout()
     {

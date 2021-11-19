@@ -115,3 +115,39 @@ table {
 td {
     padding: 15rem;
 }
+
+body {
+    background-color: #E6EAF5;
+    font-family: 'Roboto', sans-serif
+}
+
+
+/* .card {
+    width: 350px;
+    border: none;
+    border-radius: 20px;
+    background-color: #597AFD;
+    size: 50px;
+} */
+
+h6 {
+    color: #E5F3FF;
+    font-size: 15px;
+}
+
+.text {
+    color: #B2C9FF
+}
+
+.card {
+    width: 50rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #23ad63;
+    size: 50px;
+    font-size: 25px;
+}
+
+a {
+    color: blanchedalmond;
+}

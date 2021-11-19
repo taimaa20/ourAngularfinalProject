@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { HomeService } from 'src/app/Service/home.service';
 import { PaymentComponent } from '../payment/payment.component';
 
@@ -19,7 +20,7 @@ export class ClientComponent implements OnInit {
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
-  constructor(private router:Router,public homeService : HomeService,private dialog:MatDialog)  {
+  constructor(private router:Router,public homeService : HomeService,private dialog:MatDialog, public tostr:ToastrService)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
@@ -29,6 +30,8 @@ export class ClientComponent implements OnInit {
 
     this.CountUserCar();
     this.SearchByUser();
+    this.GetAllLicense();
+    this.GetAllInsurance();
   }
   logout()
   {
@@ -169,4 +172,27 @@ export class ClientComponent implements OnInit {
       this.homeService.SearchByUserId(id)
     }
   }
+  GetAllLicense(){ this.homeService.GetAllLicense().subscribe((res:any)=>{
+    this.homeService.License=res;
+    this.tostr.success('Data Retrived !!!')
+   console.log(this.homeService.License)
+
+  },err=>{
+    this.tostr.error('something want worring!!')
+    console.log("err")
+  });
+
+
+
+  }
+  GetAllInsurance(){ this.homeService.GetAllInsurance().subscribe((reas:any)=>{
+    this.homeService.Insurance=reas;
+    this.tostr.success('Data Retrived !!!')
+   console.log("homeService.Insurance")
+
+  },err=>{
+    this.tostr.error('something want worring!!')
+    console.log("err")
+  });
+}
 }

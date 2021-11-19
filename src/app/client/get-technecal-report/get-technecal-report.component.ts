@@ -88,6 +88,7 @@ export class GetTechnecalReportComponent implements OnInit {
 
   TechnecalReportUser()
   {
+
     //I will get the user from the local storge 
     let user:any=localStorage.getItem('user');
     user=JSON.parse(user);
@@ -96,8 +97,9 @@ export class GetTechnecalReportComponent implements OnInit {
      console.log(id)
     if(id)
     {
-       
+    
       this.homeService.TechnecalReport(id)
+      window.location.reload();
     }
 
   }
@@ -112,7 +114,7 @@ export class GetTechnecalReportComponent implements OnInit {
      console.log(id)
     if(id)
     {
-       
+     
       this.homeService.GetDrivingLicense(id)
     }
   }
@@ -122,18 +124,8 @@ export class GetTechnecalReportComponent implements OnInit {
       public downloadAsPDF() {
         const pdfTable = this.pdfTable.nativeElement;
         var html = htmlToPdfmake(pdfTable.innerHTML);
-
-        const documentDefinition: TDocumentDefinitions = { 
-          content: html,
-          pageOrientation: 'landscape',
-          pageSize: {
-            width:1400, 
-            height: 700
-          }
-         };
-        pdfMake.createPdf(documentDefinition).download(); 
-    
-
+        const documentDefinition = { content: html };
+        pdfMake.createPdf(documentDefinition).download();
       }
 
         fileName= 'ExcelSheet.xlsx';

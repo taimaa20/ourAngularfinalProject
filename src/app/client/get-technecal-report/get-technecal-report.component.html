@@ -229,7 +229,7 @@
             <!-- ============================================================== -->
 
 
-
+            <!-- 
             <div class="container ">
                 <div id="pdfTable" #pdfTable class="tableFixHead ">
 
@@ -308,10 +308,179 @@
         </div>
 
     </div>
+ -->
 
 
+            <div *ngFor="let user of homeService.reportuser">
+                <div style="padding-bottom: 7px;" id="pdfTable" #pdfTable>
+                    <div class="card" style="margin-left: 1em; position:relative;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text-center lh-1 mb-2">
+                                    <h3 class="fw-bold " style="margin:15px;">Technechal Report</h3> <span class="fw-normal"></span>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h5 class="fw-bolder">EMP Code :39124</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h5 class="fw-bolder">EMP Name:{{user.fullName}}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h5 class="fw-bolder">PF No.:101523065714</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h5 class="fw-bolder">NOD:28</h5> <small class="ms-3"></small> </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h5 class="fw-bolder">ESI No.:100</h5> <small class="ms-3"></small> </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div>
+
+                                        <table class="mt-4 table table-bordered " style="position:static;">
+                                            <thead class="bg-dark text-white">
+                                                <tr>
+                                                    <th style="color: #63b1ff;" scope="col">Earnings</th>
+                                                    <th style="color: #63b1ff;" scope="col">Amount</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Name</th>
+                                                    <td>{{user.fullName}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">vehicleName</th>
+                                                    <td>{{user.vehicleName}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">vehicleColor</th>
+                                                    <td>{{user.vehicleColor}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">vehicleCategory</th>
+                                                    <td>{{user.vehicleCategory}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">useType</th>
+                                                    <td>{{user.useType}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">registerType</th>
+                                                    <td>{{user.registerType}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">licenseNumber</th>
+                                                    <td>{{user.licenseNumber}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">licenseExpiry</th>
+                                                    <td>{{user.licenseExpiry}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">engineCapacity</th>
+                                                    <td>{{user.engineCapacity}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">engineType</th>
+                                                    <td>{{user.engineType}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">madeYear</th>
+                                                    <td>{{user.madeYear}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">licensingCenter</th>
+                                                    <td>{{user.licensingCenter}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">chassisNumber</th>
+                                                    <td>{{user.chassisNumber}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">engineNumber</th>
+                                                    <td>{{user.engineNumber}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">address</th>
+                                                    <td>{{user.address}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">cost</th>
+                                                    <td>{{user.cost}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">insuranceType</th>
+                                                    <td>{{user.insuranceType}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">insuranceValues</th>
+                                                    <td>{{user.insuranceValues}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Total value</th>
+                                                    <td>{{user.value}}</td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <button class=" colorbtn edit" style="margin-bottom: 7px;" (click)="downloadAsPDF(); ">Export To PDF</button>
+
+            </div>
+        </div>
 
 
+        <!-- <button class="btn btn-primary " (click)="exportexcel(); ">Export To exl</button> -->
+    </div>
+
+    <!-- </div> -->
     <div class="footer">
         <div class="container-fluid">
             <div class="row">

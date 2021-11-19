@@ -208,7 +208,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">User Dashboard Template </h2>
+                                <h2 class="pageheader-title">User Dashboard </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
@@ -223,19 +223,19 @@
                             </div>
                         </div>
                     </div>
-                    <form [formGroup]="formGroup">
+                    <!-- <form [formGroup]="formGroup">
                         <input type="number" matInput formControlName="engineCapasty" style="font-size:large;margin-left: 14px" placeholder=" Enter Engine Capasty">
                         <button (click)="GetData()" style="margin-right: 15px;margin-left: 10px;font-size:large;color: #0e0c28;">Search</button>
-                    </form>
+                    </form> -->
 
-                
+
                     <br><br>
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-3 col-sm-6">
+                            <!-- <div class="col-lg-3 col-sm-6">
                                 <div class="card-box bg-blue">
                                     <div class="inner">
                                         <h3> {{homeService.engine_capasty.cost}} </h3>
@@ -245,10 +245,10 @@
                                         <i class="fa fa-money" aria-hidden="true"></i>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="col-lg-3 col-sm-6" style="margin-left: 100px;">
-                                <div class="card-box bg-green">
+                            <div class="col-lg-3 col-sm-6" style="margin-left: 25px;">
+                                <div class="card-box bg-blue">
                                     <div class="inner">
                                         <h3>{{homeService.countcars[0].count_User_Cars}} </h3>
                                         <p>Number Of Cars</p>
@@ -262,16 +262,16 @@
 
                         </div>
                     </div>
-
+                    <!-- 
                     <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
                         <div class="card">
                             <h5 class="card-header">All vehicle</h5>
-        
+
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class="bg-light">
                                         <tr class="border-0">
-                                            
+
                                             <th class="border-0">VehicleName</th>
                                             <th class="border-0">VehicleModel </th>
                                             <th class="border-0">VehicleColor</th>
@@ -287,16 +287,16 @@
                                             <th class="border-0">ChassisNumber</th>
                                             <th class="border-0">EngineNumber</th>
                                             <th class="border-0">Address</th>
-        
-                                            
-        
-        
+
+
+
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let user of homeService.usercar">
-        
-                                            
+
+
                                             <td>{{user.vehicleName}} </td>
                                             <td>{{user.vehicleModel}} </td>
                                             <td>{{user.vehicleColor}}</td>
@@ -312,36 +312,165 @@
                                             <td>{{user.chassisNumber}} </td>
                                             <td>{{user.engineNumber}} </td>
                                             <td>{{user.address}} </td>
-        
-                                            
-        
-        
+
+
+
+
                                         </tr>
-        
-        
+
+
                                     </tbody>
                                 </table>
-        
+
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
+            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                <!-- <div class="card">
+                    <h5 class="card-header">All vehicle</h5>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="bg-light">
+                                <tr class="border-0">
+
+                                    <th>insuranceType</th>
+                                    <th>insuranceValues </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let Insurance of homeService.Insurance">
+
+
+                                    <td>{{Insurance.insuranceType}} </td>
+                                    <td>{{Insurance.insuranceValues}} </td>
+
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div> -->
+                <div style="position: right;">
+                    <div class=" card ">
+                        <h5 class="card-header ">All Insurance Type </h5>
+
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class="bg-light ">
+                                    <tr class="border-0 ">
+
+                                        <th>insuranceType</th>
+                                        <th>insuranceValues </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let Insurance of homeService.Insurance ">
+
+
+                                        <td>{{Insurance.insuranceType}} </td>
+                                        <td>{{Insurance.insuranceValues}} </td>
+
+
+
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card ">
+                        <h5 class="card-header ">All Licens Type</h5>
+
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class="bg-light ">
+                                    <tr class="border-0 ">
+
+                                        <th>Engine Capacity CC (MIN)</th>
+                                        <th>Engine Capacity CC (MAX)</th>
+                                        <th>Engine Type</th>
+                                        <th>Fees in JD</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let Licens of homeService.License ">
+                                        <td>{{Licens.minValue}}</td>
+                                        <td>{{Licens.maxValue}}</td>
+                                        <td>{{ Licens.engineType }}</td>
+
+
+                                        <td>{{Licens.cost}} JD</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12 " style="position: left;">
+
+            </div>
+
+
+            <!-- <table id="customers ">
+                <thead>
+                    <tr>
+                        <th>Engine Capacity CC (MIN)</th>
+                        <th>Engine Capacity CC (MAX)</th>
+                        <th>Engine Type</th>
+                        <th>Fees in JD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Licens of homeService.License ">
+                        <td>{{Licens.minValue}}</td>
+                        <td>{{Licens.maxValue}}</td>
+                        <td>{{ Licens.engineType }}</td>
+
+
+                        <td>{{Licens.cost}} JD</td>
+                    </tr>
+                </tbody>
+            </table>
+
+             <h1 style="text-align: center; "><b>Cost of Insurance</b></h1> 
+
+            <div>
+                <table id="customers ">
+                    <tr>
+                        <th>Insurance Type</th>
+                        <th>Fees in JD</th>
+                    </tr>
+                    <tr *ngFor="let Insurance of homeService.Insurance ">
+                        <td>{{Insurance.insuranceType}}</td>
+
+                        <td>{{Insurance.insuranceValues}}</td>
+                    </tr>
+
+                </table>
+            </div> -->
             <!-- footer -->
             <!-- ============================================================== -->
         </div>
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <p class="edit">Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
+        <div class="footer ">
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                        <p class="edit ">Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a (click)="GoToHome()">Home</a>
-                            <a (click)="GoToAbout()">About</a>
-                            <a (click)="GoToContact()">Contact Us</a>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                        <div class="text-md-right footer-links d-none d-sm-block ">
+                            <a (click)="GoToHome() ">Home</a>
+                            <a (click)="GoToAbout() ">About</a>
+                            <a (click)="GoToContact() ">Contact Us</a>
                         </div>
                     </div>
                 </div>
