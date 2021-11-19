@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { GetTaskJobComponent } from './get-task-job/get-task-job.component';
 import { AddMessageComponent } from './add-message/add-message.component';
 import { VehicleSystemReportBetweenComponent } from './vehicle-system-report-between/vehicle-system-report-between.component';
+import { UserContactInfoComponent } from './user-contact-info/user-contact-info.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,11 @@ const routes: Routes = [
     path:'add-message',
     component:AddMessageComponent
   },
+  {
+    path:'user-contact-info',
+    component:UserContactInfoComponent
+  },
+  { path: '', redirectTo: '/user-contact-info', pathMatch: 'full'},
   { path: '', redirectTo: '/add-message', pathMatch: 'full'},
   { path: '', redirectTo: '/get-task-job', pathMatch: 'full'},
   { path: '', redirectTo: '/profile', pathMatch: 'full'},

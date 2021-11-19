@@ -14,6 +14,7 @@ import { GetTaskJobComponent } from './get-task-job/get-task-job.component';
 import { AddMessageComponent } from './add-message/add-message.component';
 import { MessageDialogComponent } from './message-dialog/message-dialog.component';
 import { VehicleSystemReportBetweenComponent } from './vehicle-system-report-between/vehicle-system-report-between.component';
+import { UserContactInfoComponent } from './user-contact-info/user-contact-info.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { VehicleSystemReportBetweenComponent } from './vehicle-system-report-bet
     AddMessageComponent,
     MessageDialogComponent,
     VehicleSystemReportBetweenComponent,
+    UserContactInfoComponent,
     
   ],
   imports: [
