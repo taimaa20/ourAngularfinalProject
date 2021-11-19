@@ -258,10 +258,11 @@
 
                 </div>
             </div>
-            <form [formGroup]="formGroup">
-                <input type="datetime-local" matInput formControlName="DateFrom" style="font-size:large;margin-left: 14px;" placeholder="Date From">
+            <h2 class="pageheader-title" style="margin-left:40px;">Choose suitable period of time </h2>
+            <form [formGroup]="formGroup" style="margin:25px;">
+                <input type="datetime-local" matInput formControlName="dateFrom" style="font-size: large;margin-left: 14px;border-radius: 7px;color: #0023a3;width: 20rem;" placeholder="Date From">
 
-                <input type="datetime-local" matInput formControlName="DateTo" style="font-size:large;margin-left: 14px;" placeholder="Date To">
+                <input type="datetime-local" matInput formControlName="dateTo" style="font-size: large;margin-left: 14px;border-radius: 7px;color: #0023a3;width: 20rem;" placeholder="Date To">
                 <button (click)="GetData()" class="colorbtn" style="margin-right: 15px;margin-left: 10px;font-size:large;">Search</button>
             </form>
             <!-- <mat-form-field color="accent" appearance="fill">

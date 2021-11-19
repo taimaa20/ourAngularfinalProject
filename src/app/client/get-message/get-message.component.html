@@ -226,7 +226,7 @@
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
 
-                    <div class="table-responsive">
+                    <!-- <div class="table-responsive">
                         <table class="table">
                             <thead class="bg-light">
                                 <tr class="border-0">
@@ -259,9 +259,28 @@
                             </tbody>
                         </table>
                     </div>
-
+-->
+                </div>
+                <h2 class="pageheader-title" style="margin-left:45px;">Messages Inbox</h2>
+                <div class="container d-flex justify-content" *ngFor="let message of homeService.message_user">
+                    <div class="card mt-5 p-3">
+                        <div class="media"> <i class="fa fa-bell" aria-hidden="true" style="padding:25px ;"></i>
+                            <div class="media-body">
+                                <h4>Title :
+                                    <a class="mt-2 mb-0" style="color:cornsilk;">{{message.messageTitle}}</a>
+                                </h4>
+                                <h4>Message:
+                                    <a class="mt-2 mb-0" style="color:cornsilk;">{{message.messageText}}
+                                    </a>
+                                </h4>
+                                <h4>Employee Name: <a class="mt-2 mb-0" style="color:cornsilk;">{{message.senderName}}</a> </h4>
+                                <h4>Date: <a class="mt-2 mb-0" style="color:cornsilk;">{{message.messageDate}}</a></h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <!-- footer -->
             <!-- ============================================================== -->
         </div>

@@ -4,6 +4,13 @@
 <mat-dialog-content class="mat-typography">
     <form [formGroup]="formGroup">
         <mat-form-field class="example-full-width">
+            <mat-label>messageTitle</mat-label>
+            <input type="text" matInput formControlName="messageTitle" style="font-size:large;">
+            <mat-error *ngIf="formGroup.controls.messageTitle.hasError('required')">
+                messageTitle is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
 
 
 
@@ -14,13 +21,7 @@
             </mat-error>
         </mat-form-field>
 
-        <!-- <mat-form-field class="example-full-width">
-            <mat-label>messageStatus</mat-label>
-            <input type="text" matInput formControlName="messageStatus" style="font-size:large;">
-            <mat-error *ngIf="formGroup.controls.messageStatus.hasError('required')">
-                messageStatus is <strong>required</strong>
-            </mat-error>
-        </mat-form-field> -->
+
 
         <div></div>
         <mat-form-field class="example-full-width">
@@ -31,10 +32,17 @@
             </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>messageTitle</mat-label>
-            <input type="text" matInput formControlName="messageTitle" style="font-size:large;">
-            <mat-error *ngIf="formGroup.controls.messageTitle.hasError('required')">
-                messageTitle is <strong>required</strong>
+            <mat-label>user</mat-label>
+            <!-- <input  class="dropbtn" matInput formControlName="userId" style="font-size:large;"> -->
+
+            <mat-select formControlName="userId">
+                <mat-option *ngFor="let user of home.contactinfo" value="{{user.userId}}">
+
+                    {{user.fullName}}-{{user.vehicleName}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="formGroup.controls.userId.hasError('required')">
+                user is <strong>required</strong>
             </mat-error>
         </mat-form-field>
         <div></div>
@@ -48,22 +56,8 @@
 
 
 
-        <mat-form-field class="example-full-width">
-            <mat-label>userId</mat-label>
-            <!-- <input  class="dropbtn" matInput formControlName="userId" style="font-size:large;"> -->
-           
-            <mat-form-field>
-                <mat-select formControlName="userId">
-                  <mat-option  *ngFor="let user of home.contactinfo" value="{{user.userId}}">
-                    
-                    {{user.fullName}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            <mat-error *ngIf="formGroup.controls.userId.hasError('required')">
-                userId is <strong>required</strong>
-            </mat-error>
-        </mat-form-field>
+
+
 
 
     </form>

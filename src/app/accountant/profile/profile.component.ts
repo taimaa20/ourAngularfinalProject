@@ -140,7 +140,7 @@ saveItem(){
   }
   console.log(data2)
   this.home.UpdateProfile(data2);
-  //  window.location.reload();
+   window.location.reload();
 
 }
 }

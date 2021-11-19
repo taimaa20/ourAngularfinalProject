@@ -155,6 +155,8 @@ table {
     /* color: ghostwhite; */
     border-color: rgba(0, 0, 0, 0.15);
     /* border-width: 3px; */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
 }
 
 .card-header:first-child {
@@ -168,4 +170,31 @@ table {
 
 td {
     padding: 15rem;
+}
+
+.col-md-10 {
+    color: black
+}
+
+.justify-content-end {
+    color: black
+}
+
+.col-md-4 {
+    color: black
+}
+
+.col-md-8 {
+    color: black
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.table thead th,
+.table th {
+    color: #0f2133;
+    font-family: 'Circular Std Medium';
 }

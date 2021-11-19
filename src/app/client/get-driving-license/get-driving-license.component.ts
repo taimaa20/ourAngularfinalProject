@@ -122,17 +122,8 @@ export class GetDrivingLicenseComponent implements OnInit {
       public downloadAsPDF() {
         const pdfTable = this.pdfTable.nativeElement;
         var html = htmlToPdfmake(pdfTable.innerHTML);
-
-        const documentDefinition: TDocumentDefinitions = { 
-          content: html,
-          pageOrientation: 'landscape',
-          pageSize: {
-            width:1400, 
-            height: 700
-          }
-         };
-        pdfMake.createPdf(documentDefinition).download(); 
-    
+        const documentDefinition = { content: html };
+        pdfMake.createPdf(documentDefinition).download();
 
       }
 

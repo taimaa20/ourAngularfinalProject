@@ -41,7 +41,7 @@ bankcard:any=[{}];
 countcars:any=[{}];
 usercar:any=[{}];
 //admin_profile:any=[{}];
-
+systembetween:any=[{}]
 searchlicenseexpiry:any=[{}];
 message_user:any=[{}];
 reportuser:any=[{}];
@@ -418,7 +418,7 @@ VehicleSystemReportBetween(dateFromTo:any)
   this.spiner.show();
   debugger
   this.http.post('https://localhost:44373/api/Vehicle/VehicleSystemReportBetween',dateFromTo).subscribe((res:any)=>{
-    this.searchlic=res;
+    this.systembetween=res;
     this.toastr.success('VehicleSystemRepor Success');
     this.router.navigate(['admin/vehicle-system-report-between'])
     this.spiner.hide();
