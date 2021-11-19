@@ -16,7 +16,7 @@ export class TaskJobDialogComponent implements OnInit {
     
   }) 
 
-  constructor(private home:HomeService) { }
+  constructor(public home:HomeService) { }
 
   ngOnInit(): void {
   }

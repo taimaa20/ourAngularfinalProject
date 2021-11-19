@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { HomeService } from 'src/app/Service/home.service';
 import { NewCarDialogComponent } from '../new-car-dialog/new-car-dialog.component';
 import { PaymentComponent } from '../payment/payment.component';
-
+import { CardDialogComponent } from '../card-dialog/card-dialog.component';
 @Component({
   selector: 'app-add-car-licence',
   templateUrl: './add-car-licence.component.html',
@@ -125,5 +125,10 @@ this.dialog.open(NewCarDialogComponent)
   AddPayment()
   {
    this.dialog.open(PaymentComponent)
+  }
+
+  InsertCard()
+  {
+    this.dialog.open(CardDialogComponent)
   }
 }

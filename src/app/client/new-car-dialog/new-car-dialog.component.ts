@@ -44,13 +44,13 @@ export class NewCarDialogComponent implements OnInit {
     chassisNumber: new FormControl('', [Validators.required]),
     engineNumber: new FormControl('', [Validators.required]),
     address: new FormControl('', [Validators.required]),
-    vehicleImage: new FormControl('', [Validators.required]),
-    userId: new FormControl('', [Validators.required]),
+    // vehicleImage: new FormControl('', [Validators.required]),
+    // userId: new FormControl('', [Validators.required]),
     licensingId: new FormControl('', [Validators.required]),
     insuranceId: new FormControl('', [Validators.required]),
 
   })
-  constructor(private home: HomeService) { }
+  constructor(public home: HomeService) { }
 
   ngOnInit(): void {
   }
@@ -69,11 +69,14 @@ export class NewCarDialogComponent implements OnInit {
   chassisNumberdata: any;
   engineNumberdata: any;
   addressdata: any;
-  vehicleImagedata: any;
-  userIddata: any;
+  vehicleImagedata: string="image";
+ 
   licensingIddata: any;
   insuranceIddata: any;
-
+   user:any=localStorage.getItem('user');
+   user1=JSON.parse(this.user);
+          
+   userIddata=parseInt(this.user1.email)
 
   saveItem() {
     debugger
@@ -92,8 +95,8 @@ export class NewCarDialogComponent implements OnInit {
     this.chassisNumberdata = this.formGroup.value.chassisNumber;
     this.engineNumberdata = this.formGroup.value.engineNumber;
     this.addressdata = this.formGroup.value.address;
-    this.vehicleImagedata = this.formGroup.value.vehicleImage;
-    this.userIddata = this.formGroup.value.userId;
+    this.vehicleImagedata = this.vehicleImagedata;
+    this.userIddata = this.userIddata;
     this.licensingIddata = this.formGroup.value.licensingId;
     this.insuranceIddata = this.formGroup.value.insuranceId;
 
@@ -114,7 +117,7 @@ export class NewCarDialogComponent implements OnInit {
       engineNumber: this.engineNumberdata,
       address: this.addressdata,
       vehicleImage: this.vehicleImagedata,
-      userId: parseInt(this.userIddata),
+      userId: this.userIddata,
       licensingId: parseInt(this.licensingIddata),
       insuranceId: parseInt(this.insuranceIddata)
 

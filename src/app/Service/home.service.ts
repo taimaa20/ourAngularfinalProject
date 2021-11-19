@@ -49,6 +49,7 @@ driverlicense:any=[{}];
 engine_capasty:any=[{}];
 contactinfo:any=[{}];
 payment_value:any=[{}];
+card_date:any=[{}];
   constructor(private http:HttpClient,private spiner :NgxSpinnerService,private toastr:ToastrService,private router:Router) {
 
 
@@ -293,6 +294,7 @@ GetUserById(id:number)
 
         this.acc_profile=res;
         this.spiner.hide();
+        console.log(this.acc_profile);
         this.router.navigate(['accountant/profile']);
         this.toastr.success("Data return success")
       },err=>{
@@ -608,4 +610,19 @@ VehicleSystemReportBetweenAcc(dateFromTo:any)
     
     }
 
+InsertCard(data:any){
+  this.spiner.show();
+  debugger
+  this.http.post('https://localhost:44373/api/Cards',data).subscribe((res:any)=>{
+    this.card_date=res;
+    this.toastr.success('Created');
+    console.log(this.card_date);
+    this.spiner.hide();
+
+  },err=>{
+   this.spiner.hide();
+   this.toastr.error(' Not Created');
+
+  })
+}
 }

@@ -227,38 +227,38 @@
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
 
-                    <h1 class="title">Hover Me!</h1>
-
-
-                    <div class="card" *ngFor="let card of homeService.bankcard">
-                        <div class="card__front card__part">
-                            <!-- <img class="card__front-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
-                        <img class="card__front-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png"> -->
-                            <p class="card_numer">{{card.cardNumber}}</p>
-                            <div class="card__space-75">
-                                <span class="card__label">Card holder</span>
-                                <p class="card__info">{{card.cardName}}</p>
-                            </div>
-                            <div class="card__space-25">
-                                <span class="card__label">Expires</span>
-                                <p class="card__info">{{card.cardDate}}</p>
-                            </div>
-                        </div>
-
-                        <div class="card__back card__part">
-                            <div class="card__black-line"></div>
-                            <div class="card__back-content">
-                                <div class="card__secret">
-                                    <p class="card__secret--last">420</p>
+                    
+                    <div class="body">
+                        <section>
+                            <div class="mycard"  *ngFor="let card of homeService.bankcard">
+                                <div class="faceCard frontCard">
+                                    <h3 class="debit">Debit Card</h3>
+                                    <h3 class="bank">Bank Name</h3>
+                                    <img src="..\assets\img\card.jpeg" class="chip" />
+                                    <h3 class="number">{{card.cardNumber}}</h3>
+                                    <h5 class="valid"><span>Valid<br>thru</span><span>{{card.cardDate}}</span></h5>
+                                    <h5 class="cardHolder">{{card.cardName}}</h5>
                                 </div>
-                                <!-- <img class="card__back-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
-                          <img class="card__back-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
-                           -->
+                    
+                                <div class="faceCard backCard">
+                                    <div class="blackbar"></div>
+                                    <div class="ccvtext">
+                                        <h5>Autorized Signature-not valid unless signed</h5>
+                                        <div class="whiteBar"></div>
+                                        <div class="ccv">123</div>
+                                    </div>
+                                    <p class="text">
+                                        njnvlknvkjnfvlnknsllsknvlk
+                                        msmsnvmvlsmv;snlvslvslvmsvlslvnslkvmsdlvnlksdmsl
+                                        mlkvmlvsmvlksmmsdlvknds;nlksmv;sdnvlsdm;nslmds;
+                                        vmsdl;slm;ldmvksdm;dsmlvms;sdlvms;nlsdm;dsmnvlkv
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-
+                        </section>
                     </div>
-
+                    
+                    
                 </div>
             </div>
             <!-- footer -->

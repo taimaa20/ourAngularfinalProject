@@ -14,7 +14,7 @@ export class PaymentComponent implements OnInit {
   
   formGroup =new FormGroup({
     // paymentAmount: new FormControl('', [Validators.required]),
-    paymentDate:new FormControl('',[Validators.required]),
+    paymentDate:new FormControl(''),
     
    
     
@@ -48,7 +48,13 @@ export class PaymentComponent implements OnInit {
     }
     console.log(data2)
     this.home.InsertPayment(data2);
-    // window.location.reload();
+     window.location.reload();
 
+  }
+
+  cancel()
+  {
+    
+window.location.reload();
   }
 }

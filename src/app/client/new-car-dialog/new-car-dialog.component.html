@@ -25,7 +25,7 @@
                 roleId is <strong>required</strong>
             </mat-error>
         </mat-form-field> -->
-        <div></div>
+        
         <mat-form-field class="example-full-width">
             <mat-label>vehicleColor</mat-label>
             <input type="text" matInput formControlName="vehicleColor" style="font-size:large;">
@@ -33,7 +33,7 @@
                 vehicleColor is <strong>required</strong>
             </mat-error>
         </mat-form-field>
-
+        <div></div>
         <mat-form-field class="example-full-width">
             <mat-label>vehicleCategory</mat-label>
             <input type="text" matInput formControlName="vehicleCategory" style="font-size: large;">
@@ -64,7 +64,7 @@
             </mat-error>
         </mat-form-field>
 
-        <div></div>
+        
         <mat-form-field class="example-full-width">
             <mat-label>registerType</mat-label>
             <input type="text" matInput formControlName="registerType" style="font-size: large;">
@@ -73,7 +73,7 @@
             </mat-error>
         </mat-form-field>
 
-
+        <div></div>
         <mat-form-field class="example-full-width">
             <mat-label>licenseNumber</mat-label>
             <input type="text" matInput formControlName="licenseNumber" style="font-size: large;">
@@ -91,7 +91,7 @@
                 licenseExpiry is <strong>required</strong>
             </mat-error>
         </mat-form-field>
-        <div></div>
+        
         <mat-form-field class="example-full-width">
             <mat-label>engineCapacity</mat-label>
             <input type="text" matInput formControlName="engineCapacity" style="font-size: large;">
@@ -99,6 +99,7 @@
                 engineCapacity is <strong>required</strong>
             </mat-error>
         </mat-form-field>
+        <div></div>
         <mat-form-field class="example-full-width">
             <mat-label>engineType</mat-label>
             <input type="text" matInput formControlName="engineType" style="font-size: large;">
@@ -148,8 +149,8 @@
             </mat-error>
         </mat-form-field>
 
-
-        <mat-form-field class="example-full-width">
+        <div></div>
+        <!-- <mat-form-field class="example-full-width">
             <mat-label>vehicleImage</mat-label>
             <input type="text" matInput formControlName="vehicleImage" style="font-size: large;">
 
@@ -157,47 +158,45 @@
                 vehicleImage is <strong>required</strong>
             </mat-error>
 
-        </mat-form-field>
+        </mat-form-field> -->
 
-        <mat-form-field class="example-full-width">
+        <!-- <mat-form-field class="example-full-width">
             <mat-label>userId</mat-label>
             <input type="text" matInput formControlName="userId" style="font-size: large;">
             <mat-error *ngIf="formGroup.controls.userId.hasError('required')">
                 userId is <strong>required</strong>
             </mat-error>
-        </mat-form-field>
-        <div></div>
+        </mat-form-field> -->
+        
         <mat-form-field class="example-full-width">
             <mat-label>licensingId</mat-label>
-            <input type="text" matInput formControlName="licensingId" style="font-size: large;">
+            <!-- <input type="text" matInput formControlName="licensingId" style="font-size: large;"> -->
+            <mat-select formControlName="licensingId">
+                <mat-option  *ngFor="let user of home.License" value="{{user.licensingId}}">
+                  
+                  {{user.minValue}}-{{user.maxValue}}
+                </mat-option>
+              </mat-select>
             <mat-error *ngIf="formGroup.controls.licensingId.hasError('required')">
                 licensingId is <strong>required</strong>
             </mat-error>
+        
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>insuranceId</mat-label>
-            <input type="text" matInput formControlName="insuranceId" style="font-size: large;">
+            <!-- <input type="text" matInput formControlName="insuranceId" style="font-size: large;"> -->
+            <mat-select formControlName="insuranceId">
+                <mat-option  *ngFor="let user of home.Insurance" value="{{user.insuranceId}}">
+                  
+                  {{user.insuranceType}}
+                </mat-option>
+              </mat-select>
             <mat-error *ngIf="formGroup.controls.insuranceId.hasError('required')">
                 insuranceId is <strong>required</strong>
             </mat-error>
         </mat-form-field>
 
-        <!-- <mat-form-field class="example-full-width">
-                                            <mat-label>SettingId</mat-label>
-                                            <input type="number" matInput formControlName="settingId" style="font-size: large;">
-                                            <mat-error *ngIf="formGroup.controls.settingId.hasError('required')">
-                                                settingId is <strong>required</strong>
-                                            </mat-error>
-                                            </mat-form-field> -->
-
-        <!-- <mat-form-field class="example-full-width">
-                                                <mat-label>LoginId</mat-label>
-                                                <input type="text" matInput formControlName="loginId" style="font-size: medium;">
-                                                <mat-error *ngIf="formGroup.controls.loginId.hasError('required')">
-                                                    loginId is <strong>required</strong>
-                                                </mat-error>
-                                                </mat-form-field>
-         -->
+        
     </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
