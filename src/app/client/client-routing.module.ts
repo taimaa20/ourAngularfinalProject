@@ -62,6 +62,10 @@ const routes: Routes = [
   { path: '', redirectTo: '/get-driving-license', pathMatch: 'full'},
   { path: '', redirectTo: '/client', pathMatch: 'full'},
   { path: '', redirectTo: '/profile', pathMatch: 'full'},
+  {
+    path:'profile',
+    component:ProfileComponent
+  }
 ];
 
 @NgModule({

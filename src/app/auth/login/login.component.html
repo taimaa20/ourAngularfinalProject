@@ -1,60 +1,51 @@
 <div id="booking" class="section">
-    <img src="..\assets\img\kia2.jpg" style="width:100%;height: 100%;">
+    <img src="..\assets\img\kia2.jpg" style="width:100%;height: 100%; position:absolute;">
     <div class="section-center">
         <div class="container">
             <div class="row">
-                <div class="booking-form">  
-                  
-                   <form>
-                       <div class="form-group">
-                          <input class="form-control"  type="text"  matInput  [formControl]="authService.usernameControl"  placeholder="Username">
-                          <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.usernameControl.hasError('email')">Please enter a valid Username</mat-error>
-                       </div>
-  
-                       <div class="form-group">
+                <div class="booking-form">
+
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control" type="text" matInput [formControl]="authService.usernameControl" placeholder="Username">
+                            <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.usernameControl.hasError('email')">Please enter a valid Username</mat-error>
+                        </div>
+
+                        <div class="form-group">
                             <input class="form-control" type="password" matInput [formControl]="authService.passwordControl" placeholder="Password">
                             <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('minlength')">Password must be more than 10 char</mat-error>
-                       </div>
-  
-                    
-                       <label style="color:white; font-size: 15px;"><input style="width: 30px;"  type="checkbox"  checked="checked" >Remember Me</label>
-                       <br>
-                   
+                        </div>
+
+
+                        <label style="color:white; font-size: 15px;"><input style="width: 30px;"  type="checkbox"  checked="checked" >Remember Me</label>
+                        <br>
+
                         <label>
                         <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('required')&&authService.usernameControl.hasError('required')">Password and Username is required</mat-error>
                        </label>
-  
+
                         <div class="form-btn">
-                          <button id="submitForm" type="submit" class="submit-btn" [disabled]="!authService.usernameControl.valid||!authService.passwordControl.valid"  (click)="authService.submit()">Login</button>
+                            <button id="submitForm" type="submit" class="submit-btn" [disabled]="!authService.usernameControl.valid||!authService.passwordControl.valid" (click)="authService.submit()">Login</button>
                         </div>
-                       
-                         <br><br>
-  
+
+                        <br><br>
+
                         <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-btn">
-                              <button id="submitForm" type="submit" class="submit-btn" routerLink="/security/register">Register</button>
+                            <div class="col-md-6">
+                                <div class="form-btn">
+                                    <button id="submitForm" type="submit" class="submit-btn" routerLink="/security/register">Register</button>
+                                </div>
                             </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-btn">
-                              <button id="submitForm" type="submit" class="submit-btn " routerLink="">Home</button>
+                            <div class="col-md-6">
+                                <div class="form-btn">
+                                    <button id="submitForm" type="submit" class="submit-btn " routerLink="">Home</button>
+                                </div>
                             </div>
-                          </div>
-                       </div>
-  
-                   </form>
-               </div>
-           </div>
-       </div>
-   </div>
-  </div>
-  
-  
+                        </div>
 
-
-
-
-
-
-
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

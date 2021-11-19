@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/css/c3.css">
     <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/style.css">  
+    <!-- <link rel="stylesheet" href="/assets/css/style.css">
      <link rel="stylesheet" href="/assets/css/bootstrap-icons.css">  -->
     <title> Admin Dashboard </title>
 </head>
@@ -30,10 +30,10 @@
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <!-- <a class="navbar-brand" href="index.html">Concept</a> -->
                 <div class="logo">
-                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:10px;margin-left: 15px;" alt="Venue Logo">
+                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:7px;margin-left: 50px; border-radius: 15px;" alt="Venue Logo">
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -95,7 +95,7 @@
 
 
                         <li class="nav-item dropdown nav-user" style="margin-bottom: 15px;margin-left: 15px;margin-right: 15px;">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle" (click)="showProfile()"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -128,13 +128,14 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
+                                <a class="nav-link active" routerLink="/client/client"><i class="fa fa-dashboard"></i>my vehicle </a>
 
                             </li>
                             <li class="nav-item ">
 
                                 <a class="nav-link active" routerLink="/client/client"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
-                                
+
                                 <li class="nav-item">
 
                                     <a class="nav-link" (click)="DrivingLicense()"><i  class="fa fa-id-card-o" aria-hidden="true"></i>Driving License</a>
@@ -146,15 +147,15 @@
                                             <a class="nav-link" (click)="showMessage()"><i class="fa fa-commenting" aria-hidden="true" ></i>Message </a>
 
                                             <li class="nav-item">
-                                            
+
                                                 <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a>
 
                                                 <li class="nav-item">
                                                     <a class="nav-link" (click)="GetBankcardByUserId()"><i class="fa fa-credit-card-alt" aria-hidden="true" ></i>View Credit-Card</a>
                                                     <li class="nav-item">
                                                         <a class="nav-link" (click)="AddPayment()"><i class="fa fa-money" aria-hidden="true" ></i>Payment</a>
-        
-                                                <!-- <li class="nav-item">
+
+                                                        <!-- <li class="nav-item">
 
                                 <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
@@ -182,11 +183,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
                                  -->
-                                                <li class="nav-item">
+                                                        <li class="nav-item">
 
-                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                            <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
 
-                                                </li>
+                                                        </li>
                         </ul>
                     </div>
                 </nav>
@@ -221,114 +222,114 @@
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
-                    <!-- ============================================================== -->
-                    <!-- end pageheader  -->
-                    <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- end pageheader  -->
+            <!-- ============================================================== -->
 
-                   
-               
-                    <div class="container ">
-                        <div id="pdfTable" #pdfTable class="tableFixHead ">
-        
-                            <table class="styled-table  " id="excel-table ">
-                                <thead>
-        
-                                    <tr>
-                                        <td>fullName </td>
-                                       
-                                        <td>vehicleName </td>
-                                        <td>vehicleColor</td>
-                                        <td>vehicleCategory </td>
-                                        <td>useType </td>
-                                        <td>registerType </td>
-                                        <td>licenseNumber</td>
-                                        <td>licenseExpiry </td>
-                                        <td>engineCapacity </td>
-                                        <td>engineType </td>
-                                        <td>madeYear </td>
-                                        <td>licensingCenter</td>
-                                        <td>chassisNumber </td>
-                                        <td>engineNumber </td>
-                                        <td>address </td>
-                                        
-                                        <td>value </td>
 
-        
-                                    </tr>
-                                </thead>
-                                
-                
-                                
-                                
-                               
-                                
-                                <tbody>
-                                    <tr *ngFor="let user of homeService.driverlicense">
-                                        <td>{{user.fullName}}</td>
-                                    
-                                        <td>{{user.vehicleName}}</td>
-                                        <td>{{ user.vehicleColor}}</td>
-                                        <td>{{ user.vehicleCategory }}</td>
-                                        <td>{{ user.useType }}</td>
-                                        <td>{{ user.registerType }}</td>
-                                        <td>{{ user.licenseNumber}}</td>
-                                        <td>{{ user.licenseExpiry }}</td>
-                                        <td>{{ user.engineCapacity }}</td>
-                                        <td>{{ user.engineType }}</td>
-                                        <td>{{ user.madeYear }}</td>
-                                        <td>{{ user.licensingCenter}}</td>
-                                        <td>{{ user.chassisNumber }}</td>
-                                        <td>{{ user.engineNumber }}</td>
-                                        <td>{{ user.address }}</td> 
-                                        
-                                        <td>{{user.value}}</td> 
-        
-        
-                                        
-                                    </tr>
-                                </tbody>
-        
-                            </table>
-                        </div>
-        
-        
-                    </div>
-        
-        
-                    
-                 <button class="btn btn-primary edit" (click)="downloadAsPDF(); ">Export To PDF</button>
-                <button class="btn btn-primary " (click)="exportexcel(); ">Export To exl</button>
-                  </div> 
-               
+
+            <div class="container ">
+                <div id="pdfTable" #pdfTable class="tableFixHead ">
+
+                    <table class="styled-table  " id="excel-table ">
+                        <thead>
+
+                            <tr>
+                                <td>fullName </td>
+
+                                <td>vehicleName </td>
+                                <td>vehicleColor</td>
+                                <td>vehicleCategory </td>
+                                <td>useType </td>
+                                <td>registerType </td>
+                                <td>licenseNumber</td>
+                                <td>licenseExpiry </td>
+                                <td>engineCapacity </td>
+                                <td>engineType </td>
+                                <td>madeYear </td>
+                                <td>licensingCenter</td>
+                                <td>chassisNumber </td>
+                                <td>engineNumber </td>
+                                <td>address </td>
+
+                                <td>value </td>
+
+
+                            </tr>
+                        </thead>
+
+
+
+
+
+
+                        <tbody>
+                            <tr *ngFor="let user of homeService.driverlicense">
+                                <td>{{user.fullName}}</td>
+
+                                <td>{{user.vehicleName}}</td>
+                                <td>{{ user.vehicleColor}}</td>
+                                <td>{{ user.vehicleCategory }}</td>
+                                <td>{{ user.useType }}</td>
+                                <td>{{ user.registerType }}</td>
+                                <td>{{ user.licenseNumber}}</td>
+                                <td>{{ user.licenseExpiry }}</td>
+                                <td>{{ user.engineCapacity }}</td>
+                                <td>{{ user.engineType }}</td>
+                                <td>{{ user.madeYear }}</td>
+                                <td>{{ user.licensingCenter}}</td>
+                                <td>{{ user.chassisNumber }}</td>
+                                <td>{{ user.engineNumber }}</td>
+                                <td>{{ user.address }}</td>
+
+                                <td>{{user.value}}</td>
+
+
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+
             </div>
-                    
-                
-                 
-        
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <p class="edit">Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a (click)="GoToHome()">Home</a>
-                            <a (click)="GoToAbout()">About</a>
-                            <a (click)="GoToContact()">Contact Us</a>
-                        </div>
+
+
+
+            <button class="btn btn-primary edit" (click)="downloadAsPDF(); ">Export To PDF</button>
+            <button class="btn btn-primary " (click)="exportexcel(); ">Export To exl</button>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <p class="edit">Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="text-md-right footer-links d-none d-sm-block">
+                        <a (click)="GoToHome()">Home</a>
+                        <a (click)="GoToAbout()">About</a>
+                        <a (click)="GoToContact()">Contact Us</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
-    
-   
+
+
 </body>
 
 </html>
