@@ -31,7 +31,13 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>userId</mat-label>
-            <input type="text" matInput formControlName="userId" style="font-size:large;">
+            <!-- <input type="text" matInput formControlName="userId" style="font-size:large;"> -->
+            <mat-select formControlName="userId">
+                <mat-option  *ngFor="let user of home.users" value="{{user.userId}}">
+                  
+                  {{user.fullName}}
+                </mat-option>
+              </mat-select>
             <mat-error *ngIf="formGroup.controls.userId.hasError('required')">
                 userId is <strong>required</strong>
             </mat-error>

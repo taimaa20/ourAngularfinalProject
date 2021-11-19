@@ -13,7 +13,7 @@ export class AttendanceDialogComponent implements OnInit {
     AtEndDate:new FormControl('',[Validators.required]),
     
     
-    UserId:new FormControl('',[Validators.required]),
+    // UserId:new FormControl('',[Validators.required]),
     
     
   })
@@ -25,7 +25,10 @@ export class AttendanceDialogComponent implements OnInit {
   EndDate:any;
   
   Status:any;
-  Id:any;
+   user:any=localStorage.getItem('user');
+   user1=JSON.parse(this.user);
+          
+   userIddata=parseInt(this.user1.email)
   
   saveItem(){
     debugger
@@ -33,14 +36,14 @@ export class AttendanceDialogComponent implements OnInit {
     this.EndDate=this.formGroup.value.AtEndDate;
     
     this.Status=this.Status;
-    this.Id=this.formGroup.value.UserId;
+    this.userIddata=this.userIddata;
     
     const data2={
       AtStartDate:this.StartDate.toString(),
       AtEndDate:this.EndDate.toString(),
       
       
-      UserId:parseInt(this.Id),
+      UserId:this.userIddata,
       AtStatus:Boolean(this.Status),
       
     }

@@ -18,6 +18,7 @@ import { LicencingComponent } from './licencing/licencing.component';
 import { LicenseDialogComponent } from './license-dialog/license-dialog.component';
 import { ViewBankcardComponent } from './view-bankcard/view-bankcard.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CardDialogComponent } from './card-dialog/card-dialog.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { PaymentComponent } from './payment/payment.component';
           LicencingComponent,
           LicenseDialogComponent,
           ViewBankcardComponent,
-          PaymentComponent
+          PaymentComponent,
+          CardDialogComponent
   ],
   imports: [
     CommonModule,
