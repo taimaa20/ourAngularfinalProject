@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { HomeService } from 'src/app/Service/home.service';
+import { CardDialogComponent } from '../card-dialog/card-dialog.component';
+import { NewCarDialogComponent } from '../new-car-dialog/new-car-dialog.component';
 import { PaymentComponent } from '../payment/payment.component';
 
 @Component({
@@ -19,13 +22,18 @@ export class ClientComponent implements OnInit {
   Name:string="undefined";
   
   currentYear:Date|any = undefined;
-  constructor(private router:Router,public homeService : HomeService,private dialog:MatDialog)  {
+  constructor(private router:Router,public homeService : HomeService,private dialog:MatDialog, public tostr:ToastrService)  {
     this.currentYear = new Date().getFullYear();
     this.Name="MyVehicle Team"
     
     
    }
   ngOnInit(): void {
+
+    this.CountUserCar();
+    this.SearchByUser();
+    this.GetAllLicense();
+    this.GetAllInsurance();
   }
   logout()
   {
@@ -33,7 +41,20 @@ export class ClientComponent implements OnInit {
     this.router.navigate(['security/login']);
   }
  
-
+  showProfile()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetUserByIdUser(id)
+    }
+  }
   GoToAbout()
   {
     this.router.navigate(['about'])
@@ -123,4 +144,71 @@ export class ClientComponent implements OnInit {
   {
    this.dialog.open(PaymentComponent)
   }
+ 
+  InsertCar()
+  {
+   this.dialog.open(NewCarDialogComponent)
+  }
+  AddCard()
+  {
+   this.dialog.open(CardDialogComponent)
+  }
+  GoToViewCard()
+  {
+    
+    this.router.navigate(['client/view-bankcard'])
+  }
+
+  CountUserCar()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.CountUserCars(id)
+    }
+  }
+
+  SearchByUser()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.SearchByUserId(id)
+    }
+  }
+  GetAllLicense(){ this.homeService.GetAllLicense().subscribe((res:any)=>{
+    this.homeService.License=res;
+    
+   console.log(this.homeService.License)
+
+  },err=>{
+
+    console.log("err")
+  });
+
+
+
+  }
+  GetAllInsurance(){ this.homeService.GetAllInsurance().subscribe((reas:any)=>{
+    this.homeService.Insurance=reas;
+   
+   console.log("homeService.Insurance")
+
+  },err=>{
+
+    console.log("err")
+  });
+}
 }

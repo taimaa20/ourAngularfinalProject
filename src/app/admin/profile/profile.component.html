@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="/assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/css/c3.css">
     <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/style.css">
-     <link rel="stylesheet" href="/assets/css/bootstrap-icons.css">  -->
+    
     <title> Admin Dashboard </title>
 </head>
 
@@ -122,10 +121,6 @@
 
 
 
-                    <!--                     
-                    <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
-
-                    <!-- <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -150,13 +145,7 @@
                                         <button mat-menu-item (click)="GoTosearchlicenseexpiry()"><i class="fa fa-clock-o" aria-hidden="true"></i>searching licenseexpiry </button>
 
                                     </mat-menu>
-                                    <!-- 
-                                    <a class="nav-link" (click)="createInsurance()"><i class="fa fa-user-plus" aria-hidden="true"></i>Create Employee</a> -->
-
-                                    <!-- <li class="nav-item">
-
-                                        <a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart"></i>Chart</a> -->
-
+                                    
                                     <li class="nav-item ">
                                         <a class="nav-link" routerLink="/admin/report"><i class="fa fa-file-pdf-o"></i>static Reports</a>
 
@@ -166,44 +155,7 @@
                                             <li class="nav-item">
                                                 <a class="nav-link" routerLink="/admin/financial-report"><i class="fa fa-file-o" ></i>Financial Reports</a>
 
-                                                <!-- <li class="nav-item">
-                                                    <a class="nav-link" ><i class="fa fa-search" aria-hidden="true" ></i> 
-                                                        <select>
-                                                            
-                                                            <option ><a class="nav-link" ><i class="fa fa-search" aria-hidden="true"></i>Search </a></option>
-                                                            <option ><a class="nav-link" routerLink="/admin/report"><i  class="fa fa-file-pdf-o"></i>Search By Category Name</a>
-                                                            </option>
-                                                            <br>
-                                                            <option ><a class="nav-link" routerLink="/admin/chart"><i  class="fa fa-bar-chart">Search 2</i></a>
-                                                            </option>
-                                                            </select>
-
-                                                    </a> 
-     -->
-                                                <!-- <mat-form-field>
-        <mat-select class="fa fa-search" aria-hidden="true" placeholder="Search" style="color:white;font-size: 10px;">
-          
-          <mat-option>
-            <a class="nav-link" routerLink="/admin/search-by-vehicle-category"><i class="fa fa-search" aria-hidden="true" >Search By Vehicle Category</i></a>
-          </mat-option>
-          <mat-option>
-            <a class="nav-link" routerLink="/admin/searching-for-vehicles-license-expiry"><i class="fa fa-search" aria-hidden="true"  >Search 2</i></a>
-          </mat-option>
-          <mat-option>
-            <a class="nav-link" routerLink="/admin/total-month-salaries"><i  class="fa fa-search" aria-hidden="true">Total Salaries</i></a>
-          </mat-option>
-          <mat-option>
-            <a class="nav-link" routerLink="/admin/total-payment"><i  class="fa fa-search" aria-hidden="true">Total Payment</i></a>
-          </mat-option>
-          
-        </mat-select>
-      </mat-form-field> -->
-                                                <!-- <li class="nav-item">
-                                                    <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
-
-
-                                                    </a> -->
-
+                                                
 
                                                 <li class="nav-item">
                                                     <a class="nav-link" routerLink="/admin/get-attendance"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i>Get All Attendance </a>
@@ -233,7 +185,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Admin Dashboard Template </h2>
+                                <h2 class="pageheader-title">Admin Dashboard </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
@@ -250,95 +202,94 @@
                     <!-- ============================================================== -->
 
 
-                    <!-- <h1>The Name is: {{home.admin_profile.fullName}}</h1>
-                    <h1>The Age is: {{home.admin_profile.age}}</h1>
-                    <h1>The Email is : {{home.admin_profile.email}}</h1>
-                    <h1>The Phone of is : {{home.admin_profile.phoneNumber}}</h1>
-                    <h1>The Address is : {{home.admin_profile.address}}</h1> -->
-
-                    <div class="container">
-                        <div class="row gutters">
-                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <div class="account-settings">
-                                            <div class="user-profile">
-                                                <div class="user-avatar">
-                                                    <img src="assets/img/admin.jpg" alt="Maxwell Admin">
+                    
+                    <form [formGroup]="formGroup">
+                        <div class="container">
+                            <div class="row gutters">
+                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <div class="account-settings">
+                                                <div class="user-profile">
+                                                    <div class="user-avatar" style="padding-top: 25px;">
+                                                        <img src="assets/img/admin.jpg" alt="Maxwell Admin">
+                                                    </div>
+                                                    <h5 class="user-name" style="padding-top: 30px;">{{home.admin_profile.fullName}}</h5>
+                                                    <h6 class="user-email">{{home.admin_profile.email}}</h6>
                                                 </div>
-                                                <h5 class="user-name">{{home.admin_profile.fullName}}</h5>
-                                                <h6 class="user-email">{{home.admin_profile.email}}</h6>
-                                            </div>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <div class="row gutters">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                <h6 class="mb-2 text-primary">Personal Details</h6>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="fullName">Full Name</label>
-                                                    <input type="text" class="form-control" id="fullName" value="{{home.admin_profile.fullName}}" placeholder="{{home.admin_profile.fullName}}">
+
+                                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mb-2 text-primary">Personal Details</h6>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="fullName">Full Name</label>
+                                                        <input type="text" class="form-control" id="fullName" formControlName="fullName" value="{{home.admin_profile.fullName}}" placeholder="{{home.admin_profile.fullName}}">
+                                                    </div>
+                                                </div>
+
+                                                <div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+                                                    <div class="form-group ">
+                                                        <label for="phone ">Phone</label>
+                                                        <input type="text " class="form-control " id="phone " formControlName="phoneNumber" value="{{home.admin_profile.phoneNumber}}" placeholder="{{home.admin_profile.phoneNumber}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+                                                    <div class="form-group">
+                                                        <label for="website ">Age</label>
+                                                        <input type="url " class="form-control " id="website " formControlName="age" value="{{home.admin_profile.age}}" placeholder="{{home.admin_profile.age}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="eMail">Email</label>
+                                                        <input type="email" class="form-control" id="eMail" formControlName="email" value="{{home.admin_profile.email}}" placeholder="{{home.admin_profile.email}}">
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
-                                                <div class="form-group ">
-                                                    <label for="phone ">Phone</label>
-                                                    <input type="text " class="form-control " id="phone " value="{{home.admin_profile.phoneNumber}}" placeholder="{{home.admin_profile.phoneNumber}}">
+                                            <div class="row gutters ">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                    <h6 class="mt-3 mb-2 text-primary ">Address</h6>
                                                 </div>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
-                                                <div class="form-group ">
-                                                    <label for="website ">Age</label>
-                                                    <input type="url " class="form-control " id="website " value="{{home.admin_profile.age}}" placeholder="{{home.admin_profile.age}}">
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                                <div class="form-group">
-                                                    <label for="eMail">Email</label>
-                                                    <input type="email" class="form-control" id="eMail" value="{{home.admin_profile.email}}" placeholder="{{home.admin_profile.email}}">
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="row gutters ">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <h6 class="mt-3 mb-2 text-primary ">Address</h6>
-                                            </div>
-
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
-                                                <div class="form-group ">
-                                                    <label for="Street ">Address</label>
-                                                    <input type="name " class="form-control " id="Street " value="{{home.admin_profile.address}}" placeholder="{{home.admin_profile.address}}">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+                                                    <div class="form-group ">
+                                                        <label for="Street ">Address</label>
+                                                        <input type="name " class="form-control " id="Street " value="{{home.admin_profile.address}}" formControlName="address" placeholder="{{home.admin_profile.address}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+                                                    <div class="form-group ">
+                                                        <label for="zIp ">Zip Code</label>
+                                                        <input type="text " class="form-control " id="zIp " value="+962" placeholder="Zip Code ">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
-                                                <div class="form-group ">
-                                                    <label for="zIp ">Zip Code</label>
-                                                    <input type="text " class="form-control " id="zIp " value="+962" placeholder="Zip Code ">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row gutters ">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <div class="text-right ">
-                                                    <button type="button " id="submit " name="submit " class="btn btn-secondary ">Cancel</button>
-                                                    <button type="button " id="submit " name="submit " class="btn btn-primary ">Update</button>
+                                            <div class="row gutters ">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                    <div class="text-right ">
+                                                        <button type="button " id="submit " name="submit " (click)="saveItem()" class="btn colorbtn">Update</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
+
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -347,17 +298,17 @@
             <!-- ============================================================== -->
 
         </div>
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <p class="edit">Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
+        <div class="footer ">
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                        <p class="edit ">Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a (click)="GoToHome()">Home</a>
-                            <a (click)="GoToAbout()">About</a>
-                            <a (click)="GoToContact()">Contact Us</a>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                        <div class="text-md-right footer-links d-none d-sm-block ">
+                            <a (click)="GoToHome() ">Home</a>
+                            <a (click)="GoToAbout() ">About</a>
+                            <a (click)="GoToContact() ">Contact Us</a>
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,7 @@ import { TDocumentDefinitions } from 'pdfmake/interfaces';
 
 import { HomeService } from 'src/app/Service/home.service';
 import { PaymentComponent } from '../payment/payment.component';
+import { CardDialogComponent } from '../card-dialog/card-dialog.component';
 
 
 @Component({
@@ -57,7 +58,20 @@ export class GetDrivingLicenseComponent implements OnInit {
     
     this.router.navigate([''])
   }
-
+  showProfile()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetUserByIdUser(id)
+    }
+  }
   showMessage()
   {
     //I will get the user from the local storge 
@@ -109,17 +123,8 @@ export class GetDrivingLicenseComponent implements OnInit {
       public downloadAsPDF() {
         const pdfTable = this.pdfTable.nativeElement;
         var html = htmlToPdfmake(pdfTable.innerHTML);
-
-        const documentDefinition: TDocumentDefinitions = { 
-          content: html,
-          pageOrientation: 'landscape',
-          pageSize: {
-            width:1400, 
-            height: 700
-          }
-         };
-        pdfMake.createPdf(documentDefinition).download(); 
-    
+        const documentDefinition = { content: html };
+        pdfMake.createPdf(documentDefinition).download();
 
       }
 
@@ -159,6 +164,19 @@ export class GetDrivingLicenseComponent implements OnInit {
   {
    this.dialog.open(PaymentComponent)
   }
-
+ 
+  InsertCar()
+  {
+   this.dialog.open(NewCarDialogComponent)
+  }
+  AddCard()
+  {
+   this.dialog.open(CardDialogComponent)
+  }
+  GoToViewCard()
+  {
+    
+    this.router.navigate(['client/view-bankcard'])
+  }
 }
 

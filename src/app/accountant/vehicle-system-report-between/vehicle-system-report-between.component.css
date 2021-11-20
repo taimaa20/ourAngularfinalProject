@@ -40,7 +40,7 @@
     overflow-y: visible;
     overflow-x: auto;
     height: 100%;
-    width: 110rem;
+    width: 120%;
 }
 
 .tableFixHead tbody th {
@@ -110,4 +110,12 @@ table {
 
 td {
     padding: 15rem;
+}
+
+.footer {
+    color: black;
+}
+
+p {
+    color: black;
 }

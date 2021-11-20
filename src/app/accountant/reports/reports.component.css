@@ -23,7 +23,7 @@
     border-bottom: 1px solid #dddddd;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
+.styled-table tbody tr:nth-of-type(even) col {
     background-color: #f3f3f3;
 }
 
@@ -40,7 +40,7 @@
     overflow-y: visible;
     overflow-x: auto;
     height: 100%;
-    width: 110rem;
+    width: 120%;
 }
 
 .tableFixHead tbody th {
@@ -196,4 +196,12 @@ p {
 
 .edit {
     margin-left: 25rem;
+}
+
+.footer {
+    color: black;
+}
+
+p {
+    color: black;
 }

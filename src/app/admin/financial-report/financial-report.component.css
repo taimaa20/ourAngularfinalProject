@@ -40,7 +40,7 @@
     overflow-y: visible;
     overflow-x: auto;
     height: 100%;
-    width: 110rem;
+    width: 120%;
 }
 
 .tableFixHead tbody th {
@@ -196,4 +196,8 @@ p {
 
 .edit {
     margin-left: 25rem;
+}
+
+.footer {
+    color: black;
 }

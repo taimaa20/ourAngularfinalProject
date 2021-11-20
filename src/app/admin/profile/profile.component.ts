@@ -22,6 +22,7 @@ import { TaskJobDialogComponent } from '../task-job-dialog/task-job-dialog.compo
 import { LicenseDialogComponent } from '../license-dialog/license-dialog.component';
 import { InsuranceDialogComponent } from '../insurance-dialog/insurance-dialog.component';
 import { DialogComponent } from '../dialog/dialog.component';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -43,7 +44,19 @@ export class ProfileComponent implements OnInit {
     this.Name="MyVehicle Team"
      
    }
-
+   formGroup =new FormGroup({
+    
+    
+    fullName: new FormControl(''),
+   
+    gender: new FormControl(''),   
+    age: new FormControl(''),
+    email: new FormControl(''),
+    address: new FormControl(''),
+    phoneNumber: new FormControl(''),
+    
+    
+  }) 
   ngOnInit(): void {
     
     
@@ -101,18 +114,6 @@ export class ProfileComponent implements OnInit {
 this.dialog.open(DialogComponent)
   }
 
-  // Delete(){
-  //   if(this.userId){
-     
-  //     this.home.DeleteUserbyID(this.userId);
-  //     this.tostr.success('Deleted item');
-  
-  //   }
-  //   else {
-  //     this.tostr.warning('This item cannot be deleted')
-  //   }
-  //   window.location.reload();
-  // }
   InsertTaskJob()
   {
 this.dialog.open(TaskJobDialogComponent)
@@ -133,5 +134,52 @@ GoTosearchlicenseexpiry()
 {
   this.router.navigate(['admin/searching-for-vehicles-license-expiry'])
 }
+user:any=localStorage.getItem('user');
+user1=JSON.parse(this.user);
+id:number=parseInt(this.user1.email);
+roleIddata:number=1;
+namedata:any;
+image:string="image";
+genderdata:any;
+agedata:any;
+emaildata:any;
+addressdata:any;
+phonedata:any;
+settingIddata:number=1;
+loginIddata:number=1
+saveItem(){
+  debugger
+  
+  this.id=this.id,
+  this.loginIddata=this.loginIddata,
+  this.namedata=this.formGroup.value.fullName;
+  this.image=this.image;
+  this.genderdata=this.formGroup.value.gender;
+  this.agedata=this.formGroup.value.age;
+  this.emaildata=this.formGroup.value.email;
+  this.addressdata=this.formGroup.value.address;
+  this.phonedata=this.formGroup.value.phoneNumber;
+  this.settingIddata=this.settingIddata;
 
+  const data2={
+
+    
+    userId:this.id,
+    fullName:this.namedata.toString(),
+    userImage:this.image,
+    gender:Boolean(this.genderdata),
+    age: parseInt(this.agedata),
+    email: this.emaildata.toString(),
+    address: this.addressdata.toString(),
+    phoneNumber:parseInt( this.phonedata),
+    settingId:this.settingIddata,
+    loginId:this.loginIddata,
+    
+
+  }
+  console.log(data2)
+  this.home.UpdateProfile(data2);
+  //  window.location.reload();
+
+}
 }

@@ -12,6 +12,8 @@ import * as XLSX from 'xlsx';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import { PaymentComponent } from '../payment/payment.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CardDialogComponent } from '../card-dialog/card-dialog.component';
+import { NewCarDialogComponent } from '../new-car-dialog/new-car-dialog.component';
 
 @Component({
   selector: 'app-get-technecal-report',
@@ -51,7 +53,20 @@ export class GetTechnecalReportComponent implements OnInit {
   {
     this.router.navigate(['contactus'])
   }
-  
+  showProfile()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetUserByIdUser(id)
+    }
+  }
   GoToHome()
   {
     
@@ -75,6 +90,7 @@ export class GetTechnecalReportComponent implements OnInit {
 
   TechnecalReportUser()
   {
+
     //I will get the user from the local storge 
     let user:any=localStorage.getItem('user');
     user=JSON.parse(user);
@@ -83,8 +99,9 @@ export class GetTechnecalReportComponent implements OnInit {
      console.log(id)
     if(id)
     {
-       
+    
       this.homeService.TechnecalReport(id)
+      window.location.reload();
     }
 
   }
@@ -99,7 +116,7 @@ export class GetTechnecalReportComponent implements OnInit {
      console.log(id)
     if(id)
     {
-       
+     
       this.homeService.GetDrivingLicense(id)
     }
   }
@@ -109,18 +126,8 @@ export class GetTechnecalReportComponent implements OnInit {
       public downloadAsPDF() {
         const pdfTable = this.pdfTable.nativeElement;
         var html = htmlToPdfmake(pdfTable.innerHTML);
-
-        const documentDefinition: TDocumentDefinitions = { 
-          content: html,
-          pageOrientation: 'landscape',
-          pageSize: {
-            width:1400, 
-            height: 700
-          }
-         };
-        pdfMake.createPdf(documentDefinition).download(); 
-    
-
+        const documentDefinition = { content: html };
+        pdfMake.createPdf(documentDefinition).download();
       }
 
         fileName= 'ExcelSheet.xlsx';
@@ -155,7 +162,20 @@ export class GetTechnecalReportComponent implements OnInit {
         }
 
         AddPayment()
-  {
-   this.dialog.open(PaymentComponent)
-  }
+        {
+         this.dialog.open(PaymentComponent)
+        }
+        InsertCar()
+        {
+         this.dialog.open(NewCarDialogComponent)
+        }
+        AddCard()
+        {
+         this.dialog.open(CardDialogComponent)
+        }
+        GoToViewCard()
+        {
+          
+          this.router.navigate(['client/view-bankcard'])
+        }
 }

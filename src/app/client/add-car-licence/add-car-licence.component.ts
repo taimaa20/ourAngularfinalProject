@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { HomeService } from 'src/app/Service/home.service';
 import { NewCarDialogComponent } from '../new-car-dialog/new-car-dialog.component';
 import { PaymentComponent } from '../payment/payment.component';
-
+import { CardDialogComponent } from '../card-dialog/card-dialog.component';
 @Component({
   selector: 'app-add-car-licence',
   templateUrl: './add-car-licence.component.html',
@@ -40,7 +40,20 @@ export class AddCarLicenceComponent implements OnInit {
   {
     this.router.navigate(['contactus'])
   }
-  
+  showProfile()
+  {
+    //I will get the user from the local storge 
+    let user:any=localStorage.getItem('user');
+    user=JSON.parse(user);
+    
+     const id=parseInt(user.email)
+     console.log(id)
+    if(id)
+    {
+       
+      this.homeService.GetUserByIdUser(id)
+    }
+  }
   GoToHome()
   {
     
@@ -109,8 +122,26 @@ this.dialog.open(NewCarDialogComponent)
       this.homeService.GetBankcard(id)
     }
   }
+  
+
+ 
+  
   AddPayment()
   {
    this.dialog.open(PaymentComponent)
+  }
+ 
+  InsertCar()
+  {
+   this.dialog.open(NewCarDialogComponent)
+  }
+  AddCard()
+  {
+   this.dialog.open(CardDialogComponent)
+  }
+  GoToViewCard()
+  {
+    
+    this.router.navigate(['client/view-bankcard'])
   }
 }

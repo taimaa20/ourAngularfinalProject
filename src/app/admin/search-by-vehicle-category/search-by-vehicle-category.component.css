@@ -40,7 +40,7 @@
     overflow-y: visible;
     overflow-x: auto;
     height: 100%;
-    width: 110rem;
+    width: 120%;
 }
 
 .tableFixHead tbody th {
@@ -114,4 +114,12 @@ td {
 
 form {
     margin-bottom: 25px;
+}
+
+.footer {
+    color: black;
+}
+
+p {
+    color: black;
 }

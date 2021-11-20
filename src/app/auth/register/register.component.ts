@@ -10,10 +10,11 @@ import { AuthService } from 'src/app/Service/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  Role:number=3;
+  Role:number=2;
   Setting:number=1;
   gender:boolean=true;
   genderName:string="Male"
+  
   formGroup =new FormGroup({
     fullNameControl: new FormControl('', [Validators.required]),
     UserImageControl:new FormControl('',[Validators.required]),

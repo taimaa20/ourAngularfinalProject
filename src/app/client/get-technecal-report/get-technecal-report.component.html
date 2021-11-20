@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/css/c3.css">
     <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/style.css">  
+    <!-- <link rel="stylesheet" href="/assets/css/style.css">
      <link rel="stylesheet" href="/assets/css/bootstrap-icons.css">  -->
     <title> Admin Dashboard </title>
 </head>
@@ -30,10 +30,10 @@
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <!-- <a class="navbar-brand" href="index.html">Concept</a> -->
                 <div class="logo">
-                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:10px;margin-left: 15px;" alt="Venue Logo">
+                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:7px;margin-left: 50px; border-radius: 15px;" alt="Venue Logo">
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -95,7 +95,7 @@
 
 
                         <li class="nav-item dropdown nav-user" style="margin-bottom: 15px;margin-left: 15px;margin-right: 15px;">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle" (click)="showProfile()"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -119,22 +119,20 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <!--                     
-                    <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
-                    <!-- <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
+                                <a class="nav-link active" routerLink="/client/client"><i class="fa fa-dashboard"></i>my vehicle </a>
 
                             </li>
                             <li class="nav-item ">
 
                                 <a class="nav-link active" routerLink="/client/client"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
-                                
+
                                 <li class="nav-item">
 
                                     <a class="nav-link" (click)="DrivingLicense()"><i  class="fa fa-id-card-o" aria-hidden="true"></i>Driving License</a>
@@ -145,42 +143,18 @@
                                         <li class="nav-item">
                                             <a class="nav-link" (click)="showMessage()"><i class="fa fa-commenting" aria-hidden="true" ></i>Message </a>
 
-                                            <li class="nav-item">
-                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a>
-
-                                                <li class="nav-item">
-                                                    <a class="nav-link" (click)="GetBankcardByUserId()"><i class="fa fa-credit-card-alt" aria-hidden="true" ></i>View Credit-Card</a>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" (click)="AddPayment()"><i class="fa fa-money" aria-hidden="true" ></i>Payment</a>
-        
-                                                <!-- <li class="nav-item">
-
-                                <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
-
-
-                                <li class="nav-item">
-                                    <a class="nav-link" routerLink="/accountant/report"><i  class="fa fa-bar-chart"></i>Reports</a>
-
-
-                                    <li class="nav-item">
-
-                                        <a class="nav-link" routerLink="/accountant/customer-info"><i class="fa fa-male" aria-hidden="true"></i>Customers Information</a>
-                                        <li class="nav-item ">
-                                            <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
-
                                             <!-- <li class="nav-item">
+                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a> -->
+                                            <li class="nav-item">
 
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-file"></i> Pages </a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-inbox"></i>Apps </a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-columns"></i>Icons</a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
-                                 -->
+                                                <a mat-button [matMenuTriggerFor]="menu" class="nav-link" style="float: left; padding-right:18rem;"><i class="fa fa-car" aria-hidden="true"></i>New  Car Licensing Center</a>
+                                                <mat-menu #menu="matMenu">
+                                                    <button mat-menu-item (click)="InsertCar()"><i class="fa fa-thumb-tack" aria-hidden="true"></i>Insert Car Information</button>
+                                                    <button mat-menu-item (click)="AddCard()"><i class="fa fa-th-list" aria-hidden="true"></i>Add Your Credit-Card</button>
+                                                    <button mat-menu-item (click)="GetBankcardByUserId()"><i class="fa fa-th-list" aria-hidden="true"></i>check your Credit-Card</button>
+
+                                                </mat-menu>
+
                                                 <li class="nav-item">
 
                                                     <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
@@ -206,132 +180,218 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">User Dashboard Template </h2>
+                                <h2 class="pageheader-title">User Dashboard </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <!-- <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                            
-                                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
-                                         -->
+
                                         </ol>
                                     </nav>
                                 </div>
                             </div>
                         </div>
-                    </div> 
-                </div>
-            </div>
-                    <!-- ============================================================== -->
-                    <!-- end pageheader  -->
-                    <!-- ============================================================== -->
-
-                   
-               
-                    <div class="container ">
-                        <div id="pdfTable" #pdfTable class="tableFixHead ">
-        
-                            <table class="styled-table  " id="excel-table ">
-                                <thead>
-        
-                                    <tr>
-                                        <td>fullName </td>
-                                       
-                                        <td>vehicleName </td>
-                                        <td>vehicleColor</td>
-                                        <td>vehicleCategory </td>
-                                        <td>useType </td>
-                                        <td>registerType </td>
-                                        <td>licenseNumber</td>
-                                        <td>licenseExpiry </td>
-                                        <td>engineCapacity </td>
-                                        <td>engineType </td>
-                                        <td>madeYear </td>
-                                        <td>licensingCenter</td>
-                                        <td>chassisNumber </td>
-                                        <td>engineNumber </td>
-                                        <td>address </td>
-                                        <td>cost</td>
-                                        <td>insuranceType </td>
-                                        <td>insuranceValues </td>
-                                        <td>value </td>
-
-        
-                                    </tr>
-                                </thead>
-                                
-                
-                                
-                                
-                               
-                                
-                                <tbody>
-                                    <tr *ngFor="let user of homeService.reportuser">
-                                        <td>{{user.fullName}}</td>
-                                    
-                                        <td>{{user.vehicleName}}</td>
-                                        <td>{{ user.vehicleColor}}</td>
-                                        <td>{{ user.vehicleCategory }}</td>
-                                        <td>{{ user.useType }}</td>
-                                        <td>{{ user.registerType }}</td>
-                                        <td>{{ user.licenseNumber}}</td>
-                                        <td>{{ user.licenseExpiry }}</td>
-                                        <td>{{ user.engineCapacity }}</td>
-                                        <td>{{ user.engineType }}</td>
-                                        <td>{{ user.madeYear }}</td>
-                                        <td>{{ user.licensingCenter}}</td>
-                                        <td>{{ user.chassisNumber }}</td>
-                                        <td>{{ user.engineNumber }}</td>
-                                        <td>{{ user.address }}</td> 
-                                        <td>{{ user.cost}}</td>
-                                        <td>{{ user.insuranceType }}</td>
-                                        <td>{{user.insuranceValues}}</td>
-                                        <td>{{user.value}}</td> 
-        
-        
-                                        
-                                    </tr>
-                                </tbody>
-        
-                            </table>
-                        </div>
-        
-        
-                    </div>
-        
-        
-                    
-                 <button class="btn btn-primary edit" (click)="downloadAsPDF(); ">Export To PDF</button>
-                <button class="btn btn-primary " (click)="exportexcel(); ">Export To exl</button>
-                 </div>  
-               
-            </div>
-                    
-                
-                 
-        
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <p class="edit">Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a (click)="GoToHome()">Home</a>
-                            <a (click)="GoToAbout()">About</a>
-                            <a (click)="GoToContact()">Contact Us</a>
-                        </div>
                     </div>
                 </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end pageheader  -->
+            <!-- ============================================================== -->
+
+
+
+
+            <div *ngFor="let user of homeService.reportuser">
+                <div style="padding-bottom: 7px;" id="pdfTable" #pdfTable>
+                    <div class="card" style="margin-left: 1em; position:relative;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text-center lh-1 mb-2">
+                                    <h3 class="fw-bold " style="margin:15px;">Technechal Report</h3> <span class="fw-normal"></span>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h5 class="fw-bolder">EMP Code :39124</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h5 class="fw-bolder">EMP Name:{{user.fullName}}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h5 class="fw-bolder">PF No.:101523065714</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h5 class="fw-bolder">NOD:28</h5> <small class="ms-3"></small> </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h5 class="fw-bolder">ESI No.:100</h5> <small class="ms-3"></small> </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div>
+
+                                        <table class="mt-4 table table-bordered " style="position:static;">
+                                            <thead class="bg-dark text-white">
+                                                <tr>
+                                                    <th style="color: #63b1ff;" scope="col">Earnings</th>
+                                                    <th style="color: #63b1ff;" scope="col">Amount</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Name</th>
+                                                    <td>{{user.fullName}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">vehicleName</th>
+                                                    <td>{{user.vehicleName}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">vehicleColor</th>
+                                                    <td>{{user.vehicleColor}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">vehicleCategory</th>
+                                                    <td>{{user.vehicleCategory}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">useType</th>
+                                                    <td>{{user.useType}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">registerType</th>
+                                                    <td>{{user.registerType}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">licenseNumber</th>
+                                                    <td>{{user.licenseNumber}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">licenseExpiry</th>
+                                                    <td>{{user.licenseExpiry}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">engineCapacity</th>
+                                                    <td>{{user.engineCapacity}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">engineType</th>
+                                                    <td>{{user.engineType}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">madeYear</th>
+                                                    <td>{{user.madeYear}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">licensingCenter</th>
+                                                    <td>{{user.licensingCenter}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">chassisNumber</th>
+                                                    <td>{{user.chassisNumber}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">engineNumber</th>
+                                                    <td>{{user.engineNumber}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">address</th>
+                                                    <td>{{user.address}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">cost</th>
+                                                    <td>{{user.cost}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">insuranceType</th>
+                                                    <td>{{user.insuranceType}}</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">insuranceValues</th>
+                                                    <td>{{user.insuranceValues}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Total value</th>
+                                                    <td>{{user.value}}</td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <button class=" colorbtn edit" style="margin-bottom: 7px;" (click)="downloadAsPDF(); ">Export To PDF</button>
+
             </div>
         </div>
 
 
+        <!-- <button class="btn btn-primary " (click)="exportexcel(); ">Export To exl</button> -->
+    </div>
 
-    
-   
+    <!-- </div> -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <p class="edit">Copyright © {{currentYear}} Template by: <a>{{Name}}</a></p>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="text-md-right footer-links d-none d-sm-block">
+                        <a (click)="GoToHome()">Home</a>
+                        <a (click)="GoToAbout()">About</a>
+                        <a (click)="GoToContact()">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 </body>
 
 </html>

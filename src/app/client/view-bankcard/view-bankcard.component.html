@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="/assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets/css/c3.css">
     <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
-    <!-- <link rel="stylesheet" href="/assets/css/style.css">  
+    <!-- <link rel="stylesheet" href="/assets/css/style.css">
      <link rel="stylesheet" href="/assets/css/bootstrap-icons.css">  -->
     <title> Admin Dashboard </title>
 </head>
@@ -31,10 +30,10 @@
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <!-- <a class="navbar-brand" href="index.html">Concept</a> -->
                 <div class="logo">
-                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:10px;margin-left: 15px;" alt="Venue Logo">
+                    <img src="assets/img/MyVehicle -logos.jpeg" width="100" height="80" style="padding:7px;margin-left: 50px; border-radius: 15px;" alt="Venue Logo">
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -96,7 +95,7 @@
 
 
                         <li class="nav-item dropdown nav-user" style="margin-bottom: 15px;margin-left: 15px;margin-right: 15px;">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle" (click)="showProfile()"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -129,13 +128,14 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
+                                <a class="nav-link active" routerLink="/client/client"><i class="fa fa-dashboard"></i>my vehicle </a>
 
                             </li>
                             <li class="nav-item ">
 
                                 <a class="nav-link active" routerLink="/client/client"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
-                                
+
                                 <li class="nav-item">
 
                                     <a class="nav-link" (click)="DrivingLicense()"><i  class="fa fa-id-card-o" aria-hidden="true"></i>Driving License</a>
@@ -146,40 +146,19 @@
                                         <li class="nav-item">
                                             <a class="nav-link" (click)="showMessage()"><i class="fa fa-commenting" aria-hidden="true" ></i>Message </a>
 
-                                            <li class="nav-item">
-                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a>
-
-                                                <li class="nav-item">
-                                                    <a class="nav-link" (click)="GetBankcardByUserId()"><i class="fa fa-credit-card-alt" aria-hidden="true" ></i>View Credit-Card</a>
-    
-                                                <!-- <li class="nav-item">
-
-                                <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
-
-
-                                <li class="nav-item">
-                                    <a class="nav-link" routerLink="/accountant/report"><i  class="fa fa-bar-chart"></i>Reports</a>
-
-
-                                    <li class="nav-item">
-
-                                        <a class="nav-link" routerLink="/accountant/customer-info"><i class="fa fa-male" aria-hidden="true"></i>Customers Information</a>
-                                        <li class="nav-item ">
-                                            <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
-
                                             <!-- <li class="nav-item">
+                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a> -->
+                                            <li class="nav-item">
 
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-file"></i> Pages </a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-inbox"></i>Apps </a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-columns"></i>Icons</a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
-                                 -->
+                                                <a mat-button [matMenuTriggerFor]="menu" class="nav-link" style="float: left; padding-right:18rem;"><i class="fa fa-car" aria-hidden="true"></i> New Car Licensing Center</a>
+                                                <mat-menu #menu="matMenu">
+                                                    <button mat-menu-item (click)="InsertCar()"><i class="fa fa-thumb-tack" aria-hidden="true"></i>Insert Car Information</button>
+                                                    <button mat-menu-item (click)="AddCard()"><i class="fa fa-th-list" aria-hidden="true"></i>Add Your Credit-Card</button>
+                                                    <button mat-menu-item (click)="GetBankcardByUserId()"><i class="fa fa-th-list" aria-hidden="true"></i>check your Credit-Card</button>
+
+
+                                                </mat-menu>
+
                                                 <li class="nav-item">
 
                                                     <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
@@ -205,61 +184,56 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">User Dashboard Template </h2>
+                                <h2 class="pageheader-title">User Dashboard </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <!-- <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                            
-                                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
-                                         -->
+
                                         </ol>
                                     </nav>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
 
-                    
+
+
                     <!-- ============================================================== -->
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
-                    
-                    <h1 class="title">Hover Me!</h1>
 
 
-                    <div class="card" *ngFor="let card of homeService.bankcard" >
-                      <div class="card__front card__part">
-                        <!-- <img class="card__front-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
-                        <img class="card__front-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png"> -->
-                        <p class="card_numer">{{card.cardNumber}}</p>
-                        <div class="card__space-75">
-                          <span class="card__label">Card holder</span>
-                          <p class="card__info" >{{card.cardName}}</p>
+                    <div class="body">
+
+                        <div class="mycard" *ngFor="let card of homeService.bankcard">
+                            <div class="faceCard frontCard">
+                                <h3 class="debit">Debit Card</h3>
+                                <h3 class="bank">Bank Name</h3>
+                                <img src="..\assets\img\card.jpeg" class="chip" />
+                                <h3 class="number">{{card.cardNumber}}</h3>
+                                <h5 class="valid"><span>Valid<br>thru</span><span>{{card.cardDate}}</span></h5>
+                                <h5 class="cardHolder">{{card.cardName}}</h5>
+                            </div>
+
+                            <div class="faceCard backCard">
+                                <div class="blackbar"></div>
+                                <div class="ccvtext">
+                                    <h5>Autorized Signature-not valid unless signed</h5>
+                                    <div class="whiteBar"></div>
+                                    <div class="ccv">123</div>
+                                </div>
+                                <p class="text">
+                                    njnvlknvkjnfvlnknsllsknvlk msmsnvmvlsmv;snlvslvslvmsvlslvnslkvmsdlvnlksdmsl mlkvmlvsmvlksmmsdlvknds;nlksmv;sdnvlsdm;nslmds; vmsdl;slm;ldmvksdm;dsmlvms;sdlvms;nlsdm;dsmnvlkv
+                                </p>
+                            </div>
                         </div>
-                        <div class="card__space-25">
-                          <span class="card__label">Expires</span>
-                                <p class="card__info">{{card.cardDate}}</p>
-                        </div>
-                      </div>
-                      
-                      <div class="card__back card__part">
-                        <div class="card__black-line"></div>
-                        <div class="card__back-content">
-                          <div class="card__secret">
-                            <p class="card__secret--last">420</p>
-                          </div>
-                          <!-- <img class="card__back-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
-                          <img class="card__back-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
-                           -->
-                        </div>
-                      </div>
-                      
+
                     </div>
-                   
+
+
                 </div>
+                <button class=" colorbtn " (click)="AddPayment()">copmlete pament</button>
             </div>
             <!-- footer -->
             <!-- ============================================================== -->

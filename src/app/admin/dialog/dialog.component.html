@@ -18,13 +18,7 @@
             </mat-error>
         </mat-form-field>
         <div></div>
-        <!-- <mat-form-field class="example-full-width">
-                    <mat-label>RoleId</mat-label>
-                    <input  type="number" matInput formControlName="roleId" style="font-size:large;" >
-                    <mat-error *ngIf="formGroup.controls.roleId.hasError('required')">
-                        roleId is <strong>required</strong>
-                    </mat-error>
-                    </mat-form-field> -->
+        
 
         <mat-form-field class="example-full-width">
             <mat-label>Name</mat-label>
@@ -52,11 +46,7 @@
 
 
 
-            <!-- <mat-select formControlName="gender">
-                      <mat-option *ngFor="let fram of frameworks" [value]="fram">
-                      {{ fram }}
-                     </mat-option>
-                    </mat-select> -->
+           
 
             <mat-error *ngIf="formGroup.controls.gender.hasError('required')">
 
@@ -102,22 +92,7 @@
             </mat-error>
         </mat-form-field>
 
-        <!-- <mat-form-field class="example-full-width">
-                                            <mat-label>SettingId</mat-label>
-                                            <input type="number" matInput formControlName="settingId" style="font-size: large;">
-                                            <mat-error *ngIf="formGroup.controls.settingId.hasError('required')">
-                                                settingId is <strong>required</strong>
-                                            </mat-error>
-                                            </mat-form-field> -->
-
-        <!-- <mat-form-field class="example-full-width">
-                                                <mat-label>LoginId</mat-label>
-                                                <input type="text" matInput formControlName="loginId" style="font-size: medium;">
-                                                <mat-error *ngIf="formGroup.controls.loginId.hasError('required')">
-                                                    loginId is <strong>required</strong>
-                                                </mat-error>
-                                                </mat-form-field>
-         -->
+       
     </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

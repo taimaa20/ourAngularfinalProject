@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddCarLicenceComponent } from './add-car-licence/add-car-licence.component';
+import { CardDialogComponent } from './card-dialog/card-dialog.component';
 import { ClientComponent } from './client/client.component';
 import { GetDrivingLicenseComponent } from './get-driving-license/get-driving-license.component';
 import { GetMessageComponent } from './get-message/get-message.component';
 import { GetTechnecalReportComponent } from './get-technecal-report/get-technecal-report.component';
 import { LicencingComponent } from './licencing/licencing.component';
+import { NewCarDialogComponent } from './new-car-dialog/new-car-dialog.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ViewBankcardComponent } from './view-bankcard/view-bankcard.component';
@@ -62,6 +64,20 @@ const routes: Routes = [
   { path: '', redirectTo: '/get-driving-license', pathMatch: 'full'},
   { path: '', redirectTo: '/client', pathMatch: 'full'},
   { path: '', redirectTo: '/profile', pathMatch: 'full'},
+  {
+    path:'profile',
+    component:ProfileComponent
+  },
+  {
+    path:'new-car-dialog',
+    component:NewCarDialogComponent
+  }
+  ,{
+    path:'card-dialog',
+    component:CardDialogComponent
+  },
+  {path:'view-bankcard',
+component:ViewBankcardComponent}
 ];
 
 @NgModule({

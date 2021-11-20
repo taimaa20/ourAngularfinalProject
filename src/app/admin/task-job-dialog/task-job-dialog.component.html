@@ -1,5 +1,5 @@
 <h2 mat-dialog-title>
-    add task</h2>
+    Add task</h2>
 
 <mat-dialog-content class="mat-typography">
     <form [formGroup]="formGroup">
@@ -21,17 +21,17 @@
             </mat-error>
         </mat-form-field>
 
-        <!-- <mat-form-field class="example-full-width">
-                    <mat-label>RoleId</mat-label>
-                    <input  type="number" matInput formControlName="roleId" style="font-size:large;" >
-                    <mat-error *ngIf="formGroup.controls.roleId.hasError('required')">
-                        roleId is <strong>required</strong>
-                    </mat-error>
-                    </mat-form-field> -->
+        
 
         <mat-form-field class="example-full-width">
             <mat-label>userId</mat-label>
-            <input type="text" matInput formControlName="userId" style="font-size:large;">
+           
+            <mat-select formControlName="userId">
+                <mat-option *ngFor="let user of home.users" value="{{user.userId}}">
+
+                    {{user.fullName}}
+                </mat-option>
+            </mat-select>
             <mat-error *ngIf="formGroup.controls.userId.hasError('required')">
                 userId is <strong>required</strong>
             </mat-error>
