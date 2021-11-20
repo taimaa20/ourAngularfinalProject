@@ -18,11 +18,9 @@ export class AboutusComponent implements OnInit {
   }
   GetAllAbout(){ this.homeService.GetAllAbout().subscribe((reas:any)=>{
     this.homeService.About=reas;
-    this.tostr.success('Data Retrived  !!!')
    console.log("homeService.Insurance")
 
   },err=>{
-    this.tostr.error('something want worring!!')
     console.log("err")
   });
 }
