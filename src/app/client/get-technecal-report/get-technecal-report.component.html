@@ -119,9 +119,6 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <!--                     
-                    <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
-                    <!-- <a class="d-xl-none d-lg-none" (click)="Dashboard()">Dashboard</a> -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -188,10 +185,7 @@
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <!-- <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                            
-                                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
-                                         -->
+
                                         </ol>
                                     </nav>
                                 </div>
@@ -205,86 +199,6 @@
             <!-- ============================================================== -->
 
 
-            <!-- 
-            <div class="container ">
-                <div id="pdfTable" #pdfTable class="tableFixHead ">
-
-                    <table class="styled-table  " id="excel-table ">
-                        <thead>
-
-                            <tr>
-                                <td>fullName </td>
-
-                                <td>vehicleName </td>
-                                <td>vehicleColor</td>
-                                <td>vehicleCategory </td>
-                                <td>useType </td>
-                                <td>registerType </td>
-                                <td>licenseNumber</td>
-                                <td>licenseExpiry </td>
-                                <td>engineCapacity </td>
-                                <td>engineType </td>
-                                <td>madeYear </td>
-                                <td>licensingCenter</td>
-                                <td>chassisNumber </td>
-                                <td>engineNumber </td>
-                                <td>address </td>
-                                <td>cost</td>
-                                <td>insuranceType </td>
-                                <td>insuranceValues </td>
-                                <td>value </td>
-
-
-                            </tr>
-                        </thead>
-
-
-
-
-
-
-                        <tbody>
-                            <tr *ngFor="let user of homeService.reportuser">
-                                <td>{{user.fullName}}</td>
-
-                                <td>{{user.vehicleName}}</td>
-                                <td>{{ user.vehicleColor}}</td>
-                                <td>{{ user.vehicleCategory }}</td>
-                                <td>{{ user.useType }}</td>
-                                <td>{{ user.registerType }}</td>
-                                <td>{{ user.licenseNumber}}</td>
-                                <td>{{ user.licenseExpiry }}</td>
-                                <td>{{ user.engineCapacity }}</td>
-                                <td>{{ user.engineType }}</td>
-                                <td>{{ user.madeYear }}</td>
-                                <td>{{ user.licensingCenter}}</td>
-                                <td>{{ user.chassisNumber }}</td>
-                                <td>{{ user.engineNumber }}</td>
-                                <td>{{ user.address }}</td>
-                                <td>{{ user.cost}}</td>
-                                <td>{{ user.insuranceType }}</td>
-                                <td>{{user.insuranceValues}}</td>
-                                <td>{{user.value}}</td>
-
-
-
-                            </tr>
-                        </tbody>
-
-                    </table>
-                </div>
-
-
-            </div>
-
-
-
-            <button class="btn btn-primary edit" (click)="downloadAsPDF(); ">Export To PDF</button>
-            <button class="btn btn-primary " (click)="exportexcel(); ">Export To exl</button>
-        </div>
-
-    </div>
- -->
 
 
             <div *ngFor="let user of homeService.reportuser">
