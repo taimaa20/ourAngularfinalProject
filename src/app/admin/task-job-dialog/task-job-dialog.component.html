@@ -21,15 +21,16 @@
             </mat-error>
         </mat-form-field>
 
-        
+
 
         <mat-form-field class="example-full-width">
+
             <mat-label>EmployeeName</mat-label>
            
+
             <mat-select formControlName="userId">
                 <mat-option *ngFor="let user of home.users" value="{{user.userId}}">
-
-                    {{user.fullName}}
+                    {{user.userId}}-{{user.fullName}}
                 </mat-option>
             </mat-select>
             <mat-error *ngIf="formGroup.controls.userId.hasError('required')">
