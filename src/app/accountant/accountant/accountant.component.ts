@@ -54,10 +54,8 @@ export class AccountantComponent implements OnInit {
     this.homeService.GetCountPayment().subscribe((res:any)=>{
       this.homeService.paymentCount=res;
 
-      this.tostr.success('Data Retrived !!!')
     },err=>{
 
-       this.tostr.error('something want worring!!')
     });
     
 

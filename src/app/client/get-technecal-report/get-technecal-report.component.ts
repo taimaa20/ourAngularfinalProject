@@ -12,6 +12,8 @@ import * as XLSX from 'xlsx';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import { PaymentComponent } from '../payment/payment.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CardDialogComponent } from '../card-dialog/card-dialog.component';
+import { NewCarDialogComponent } from '../new-car-dialog/new-car-dialog.component';
 
 @Component({
   selector: 'app-get-technecal-report',
@@ -160,7 +162,20 @@ export class GetTechnecalReportComponent implements OnInit {
         }
 
         AddPayment()
-  {
-   this.dialog.open(PaymentComponent)
-  }
+        {
+         this.dialog.open(PaymentComponent)
+        }
+        InsertCar()
+        {
+         this.dialog.open(NewCarDialogComponent)
+        }
+        AddCard()
+        {
+         this.dialog.open(CardDialogComponent)
+        }
+        GoToViewCard()
+        {
+          
+          this.router.navigate(['client/view-bankcard'])
+        }
 }

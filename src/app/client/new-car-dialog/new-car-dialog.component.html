@@ -18,14 +18,8 @@
             </mat-error>
         </mat-form-field>
 
-        <!-- <mat-form-field class="example-full-width">
-            <mat-label>RoleId</mat-label>
-            <input type="number" matInput formControlName="roleId" style="font-size:large;">
-            <mat-error *ngIf="formGroup.controls.roleId.hasError('required')">
-                roleId is <strong>required</strong>
-            </mat-error>
-        </mat-form-field> -->
-        
+
+
         <mat-form-field class="example-full-width">
             <mat-label>vehicleColor</mat-label>
             <input type="text" matInput formControlName="vehicleColor" style="font-size:large;">
@@ -52,11 +46,7 @@
 
 
 
-            <!-- <mat-select formControlName="gender">
-                      <mat-option *ngFor="let fram of frameworks" [value]="fram">
-                      {{ fram }}
-                     </mat-option>
-                    </mat-select> -->
+
 
             <mat-error *ngIf="formGroup.controls.useType.hasError('required')">
 
@@ -64,7 +54,7 @@
             </mat-error>
         </mat-form-field>
 
-        
+
         <mat-form-field class="example-full-width">
             <mat-label>registerType</mat-label>
             <input type="text" matInput formControlName="registerType" style="font-size: large;">
@@ -91,7 +81,7 @@
                 licenseExpiry is <strong>required</strong>
             </mat-error>
         </mat-form-field>
-        
+
         <mat-form-field class="example-full-width">
             <mat-label>engineCapacity</mat-label>
             <input type="text" matInput formControlName="engineCapacity" style="font-size: large;">
@@ -150,53 +140,35 @@
         </mat-form-field>
 
         <div></div>
-        <!-- <mat-form-field class="example-full-width">
-            <mat-label>vehicleImage</mat-label>
-            <input type="text" matInput formControlName="vehicleImage" style="font-size: large;">
 
-            <mat-error *ngIf="formGroup.controls.vehicleImage.hasError('required')">
-                vehicleImage is <strong>required</strong>
-            </mat-error>
 
-        </mat-form-field> -->
-
-        <!-- <mat-form-field class="example-full-width">
-            <mat-label>userId</mat-label>
-            <input type="text" matInput formControlName="userId" style="font-size: large;">
-            <mat-error *ngIf="formGroup.controls.userId.hasError('required')">
-                userId is <strong>required</strong>
-            </mat-error>
-        </mat-form-field> -->
-        
         <mat-form-field class="example-full-width">
             <mat-label>licensingId</mat-label>
-            <!-- <input type="text" matInput formControlName="licensingId" style="font-size: large;"> -->
             <mat-select formControlName="licensingId">
-                <mat-option  *ngFor="let user of home.License" value="{{user.licensingId}}">
-                  
-                  {{user.minValue}}-{{user.maxValue}}
+                <mat-option *ngFor="let user of home.License" value="{{user.licensingId}}">
+
+                    {{user.minValue}}-{{user.maxValue}}
                 </mat-option>
-              </mat-select>
+            </mat-select>
             <mat-error *ngIf="formGroup.controls.licensingId.hasError('required')">
                 licensingId is <strong>required</strong>
             </mat-error>
-        
+
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>insuranceId</mat-label>
-            <!-- <input type="text" matInput formControlName="insuranceId" style="font-size: large;"> -->
             <mat-select formControlName="insuranceId">
-                <mat-option  *ngFor="let user of home.Insurance" value="{{user.insuranceId}}">
-                  
-                  {{user.insuranceType}}
+                <mat-option *ngFor="let user of home.Insurance" value="{{user.insuranceId}}">
+
+                    {{user.insuranceType}}
                 </mat-option>
-              </mat-select>
+            </mat-select>
             <mat-error *ngIf="formGroup.controls.insuranceId.hasError('required')">
                 insuranceId is <strong>required</strong>
             </mat-error>
         </mat-form-field>
 
-        
+
     </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

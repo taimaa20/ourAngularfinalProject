@@ -76,7 +76,7 @@
     background-color: #d9534f !important;
 }
 
-p {
+.footer {
     color: black;
 }
 
@@ -125,4 +125,12 @@ p {
 .img {
     padding: 5px;
     margin-left: 50px;
+}
+
+p {
+    color: black;
+}
+
+.footer {
+    color: black;
 }

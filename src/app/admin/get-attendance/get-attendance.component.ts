@@ -129,18 +129,7 @@ exportexcel(): void
   this.dialog.open(DialogComponent)
     }
   
-    // Delete(){
-    //   if(this.userId){
-       
-    //     this.home.DeleteUserbyID(this.userId);
-    //     this.tostr.success('Deleted item');
-    
-    //   }
-    //   else {
-    //     this.tostr.warning('This item cannot be deleted')
-    //   }
-    //   window.location.reload();
-    // }
+
     InsertTaskJob()
     {
   this.dialog.open(TaskJobDialogComponent)
