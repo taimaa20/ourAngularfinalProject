@@ -11,15 +11,15 @@ export class DialogComponent implements OnInit {
   formGroup =new FormGroup({
     username: new FormControl('', [Validators.required]),
     password:new FormControl('',[Validators.required]),
-    // roleId: new FormControl('',[Validators.required]), 
+    
     fullName: new FormControl('', [Validators.required]),
-    userImage:new FormControl('',[Validators.required]),
+   
     gender: new FormControl('', [Validators.required]),   
     age: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required,Validators.email]),
     address: new FormControl('', [Validators.required]),
     phoneNumber: new FormControl('',[Validators.required]),
-    // settingId: new FormControl('',[Validators.required]),
+    
     
   }) 
   
@@ -31,7 +31,7 @@ export class DialogComponent implements OnInit {
   passworddata:any;
   roleIddata:number=3;
   namedata:any;
-  imagedata:any;
+  imagedata:string="image";
   genderdata:any;
   agedata:any;
   emaildata:any;
@@ -44,7 +44,7 @@ export class DialogComponent implements OnInit {
     this.passworddata=this.formGroup.value.password;
     this.roleIddata=this.roleIddata,
     this.namedata=this.formGroup.value.fullName;
-    this.imagedata=this.formGroup.value.userImage;
+    this.imagedata=this.imagedata;
     this.genderdata=this.formGroup.value.gender;
     this.agedata=this.formGroup.value.age;
     this.emaildata=this.formGroup.value.email;
@@ -57,7 +57,7 @@ export class DialogComponent implements OnInit {
       password:this.passworddata.toString(),
       roleId:this.roleIddata,
       fullName:this.namedata.toString(),
-      userImage:this.imagedata.toString(),
+      userImage:this.imagedata,
       gender:Boolean(this.genderdata),
       age: parseInt(this.agedata),
       email: this.emaildata.toString(),
