@@ -33,6 +33,22 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+  GoToAbout()
+  {
+    this.router.navigate(['about'])
+  }
+
+  GoToContact()
+  {
+    this.router.navigate(['contactus'])
+  }
+  GoToHome()
+  {
+
+    this.router.navigate([''])
+  }
+ 
 
 
 }
