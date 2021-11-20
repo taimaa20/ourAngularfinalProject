@@ -21,10 +21,10 @@ export class AttendanceDialogComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  StartDate:number=1;
+  StartDate:any;
   EndDate:any;
   
-  Status:any;
+  Status:number=1;
    user:any=localStorage.getItem('user');
    user1=JSON.parse(this.user);
           
