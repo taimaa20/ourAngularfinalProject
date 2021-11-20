@@ -29,26 +29,26 @@ webPhone2:string="undefined"
   webAddress:string="undefined";
   
   
-  carddata :any =[{
-    name:"Hamza Al-Omary",
-      subText:"Developer" ,
-     imag:""
-  },
-  {
-    name:"Qussi Al-Dogham " ,
-     subText:"Developer" ,
-     imag:""
-  },
-  {
-    name:"Thraya Bani-Yaseen",
-    subText:"Developer",
-    imag:""
-  },
-  {
-    name:"Taimaa Al-Hamarneh",
-    subText:"Developer",
-    imag:""
-  }]
+  // carddata :any =[{
+  //   name:"Hamza Al-Omary",
+  //     subText:"Developer" ,
+  //    imag:""
+  // },
+  // {
+  //   name:"Qussi Al-Dogham " ,
+  //    subText:"Developer" ,
+  //    imag:""
+  // },
+  // {
+  //   name:"Thraya Bani-Yaseen",
+  //   subText:"Developer",
+  //   imag:""
+  // },
+  // {
+  //   name:"Taimaa Al-Hamarneh",
+  //   subText:"Developer",
+  //   imag:""
+  // }]
 
   
   
