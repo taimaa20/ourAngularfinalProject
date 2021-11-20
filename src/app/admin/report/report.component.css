@@ -106,7 +106,6 @@ table {
     background-color: #383030;
     font-size: 1.3em;
     padding: 10px;
-    
 }
 
 td {
@@ -197,4 +196,12 @@ p {
 
 .edit {
     margin-left: 25rem;
+}
+
+.footer {
+    color: black;
+}
+
+p {
+    color: black;
 }

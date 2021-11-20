@@ -122,13 +122,26 @@ this.dialog.open(NewCarDialogComponent)
       this.homeService.GetBankcard(id)
     }
   }
+  
+
+ 
+  
   AddPayment()
   {
    this.dialog.open(PaymentComponent)
   }
-
-  InsertCard()
+ 
+  InsertCar()
   {
-    this.dialog.open(CardDialogComponent)
+   this.dialog.open(NewCarDialogComponent)
+  }
+  AddCard()
+  {
+   this.dialog.open(CardDialogComponent)
+  }
+  GoToViewCard()
+  {
+    
+    this.router.navigate(['client/view-bankcard'])
   }
 }

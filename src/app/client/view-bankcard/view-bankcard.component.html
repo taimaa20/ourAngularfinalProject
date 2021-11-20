@@ -146,45 +146,24 @@
                                         <li class="nav-item">
                                             <a class="nav-link" (click)="showMessage()"><i class="fa fa-commenting" aria-hidden="true" ></i>Message </a>
 
+                                            <!-- <li class="nav-item">
+                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a> -->
                                             <li class="nav-item">
-                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a>
+
+                                                <a mat-button [matMenuTriggerFor]="menu" class="nav-link" style="float: left; padding-right:18rem;"><i class="fa fa-car" aria-hidden="true"></i> New Car Licensing Center</a>
+                                                <mat-menu #menu="matMenu">
+                                                    <button mat-menu-item (click)="InsertCar()"><i class="fa fa-thumb-tack" aria-hidden="true"></i>Insert Car Information</button>
+                                                    <button mat-menu-item (click)="AddCard()"><i class="fa fa-th-list" aria-hidden="true"></i>Add Your Credit-Card</button>
+                                                    <button mat-menu-item (click)="GetBankcardByUserId()"><i class="fa fa-th-list" aria-hidden="true"></i>check your Credit-Card</button>
+
+
+                                                </mat-menu>
 
                                                 <li class="nav-item">
-                                                    <a class="nav-link" (click)="GetBankcardByUserId()"><i class="fa fa-credit-card-alt" aria-hidden="true" ></i>View Credit-Card</a>
 
-                                                    <!-- <li class="nav-item">
+                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
 
-                                <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
-
-
-                                <li class="nav-item">
-                                    <a class="nav-link" routerLink="/accountant/report"><i  class="fa fa-bar-chart"></i>Reports</a>
-
-
-                                    <li class="nav-item">
-
-                                        <a class="nav-link" routerLink="/accountant/customer-info"><i class="fa fa-male" aria-hidden="true"></i>Customers Information</a>
-                                        <li class="nav-item ">
-                                            <a class="nav-link" routerLink="/accountant/employee-info"><i class="fa fa-file-o" ></i>Employees Information </a>
-
-                                            <!-- <li class="nav-item">
-
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-file"></i> Pages </a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-inbox"></i>Apps </a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-columns"></i>Icons</a>
-                                
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
-                                 -->
-                                                    <li class="nav-item">
-
-                                                        <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
-
-                                                    </li>
+                                                </li>
                         </ul>
                     </div>
                 </nav>
@@ -205,15 +184,12 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">User Dashboard Template </h2>
+                                <h2 class="pageheader-title">User Dashboard </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <!-- <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                            
-                                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
-                                         -->
+
                                         </ol>
                                     </nav>
                                 </div>
@@ -227,39 +203,37 @@
                     <!-- end pageheader  -->
                     <!-- ============================================================== -->
 
-                    
+
                     <div class="body">
-                        <section>
-                            <div class="mycard"  *ngFor="let card of homeService.bankcard">
-                                <div class="faceCard frontCard">
-                                    <h3 class="debit">Debit Card</h3>
-                                    <h3 class="bank">Bank Name</h3>
-                                    <img src="..\assets\img\card.jpeg" class="chip" />
-                                    <h3 class="number">{{card.cardNumber}}</h3>
-                                    <h5 class="valid"><span>Valid<br>thru</span><span>{{card.cardDate}}</span></h5>
-                                    <h5 class="cardHolder">{{card.cardName}}</h5>
-                                </div>
-                    
-                                <div class="faceCard backCard">
-                                    <div class="blackbar"></div>
-                                    <div class="ccvtext">
-                                        <h5>Autorized Signature-not valid unless signed</h5>
-                                        <div class="whiteBar"></div>
-                                        <div class="ccv">123</div>
-                                    </div>
-                                    <p class="text">
-                                        njnvlknvkjnfvlnknsllsknvlk
-                                        msmsnvmvlsmv;snlvslvslvmsvlslvnslkvmsdlvnlksdmsl
-                                        mlkvmlvsmvlksmmsdlvknds;nlksmv;sdnvlsdm;nslmds;
-                                        vmsdl;slm;ldmvksdm;dsmlvms;sdlvms;nlsdm;dsmnvlkv
-                                    </p>
-                                </div>
+
+                        <div class="mycard" *ngFor="let card of homeService.bankcard">
+                            <div class="faceCard frontCard">
+                                <h3 class="debit">Debit Card</h3>
+                                <h3 class="bank">Bank Name</h3>
+                                <img src="..\assets\img\card.jpeg" class="chip" />
+                                <h3 class="number">{{card.cardNumber}}</h3>
+                                <h5 class="valid"><span>Valid<br>thru</span><span>{{card.cardDate}}</span></h5>
+                                <h5 class="cardHolder">{{card.cardName}}</h5>
                             </div>
-                        </section>
+
+                            <div class="faceCard backCard">
+                                <div class="blackbar"></div>
+                                <div class="ccvtext">
+                                    <h5>Autorized Signature-not valid unless signed</h5>
+                                    <div class="whiteBar"></div>
+                                    <div class="ccv">123</div>
+                                </div>
+                                <p class="text">
+                                    njnvlknvkjnfvlnknsllsknvlk msmsnvmvlsmv;snlvslvslvmsvlslvnslkvmsdlvnlksdmsl mlkvmlvsmvlksmmsdlvknds;nlksmv;sdnvlsdm;nslmds; vmsdl;slm;ldmvksdm;dsmlvms;sdlvms;nlsdm;dsmnvlkv
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
-                    
-                    
+
+
                 </div>
+                <button class=" colorbtn " (click)="AddPayment()">copmlete pament</button>
             </div>
             <!-- footer -->
             <!-- ============================================================== -->

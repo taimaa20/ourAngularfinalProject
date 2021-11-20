@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { HomeService } from 'src/app/Service/home.service';
+import { CardDialogComponent } from '../card-dialog/card-dialog.component';
+import { NewCarDialogComponent } from '../new-car-dialog/new-car-dialog.component';
 import { PaymentComponent } from '../payment/payment.component';
 
 @Component({
@@ -142,6 +144,20 @@ export class ClientComponent implements OnInit {
   {
    this.dialog.open(PaymentComponent)
   }
+ 
+  InsertCar()
+  {
+   this.dialog.open(NewCarDialogComponent)
+  }
+  AddCard()
+  {
+   this.dialog.open(CardDialogComponent)
+  }
+  GoToViewCard()
+  {
+    
+    this.router.navigate(['client/view-bankcard'])
+  }
 
   CountUserCar()
   {
@@ -174,11 +190,11 @@ export class ClientComponent implements OnInit {
   }
   GetAllLicense(){ this.homeService.GetAllLicense().subscribe((res:any)=>{
     this.homeService.License=res;
-    this.tostr.success('Data Retrived !!!')
+    
    console.log(this.homeService.License)
 
   },err=>{
-    this.tostr.error('something want worring!!')
+
     console.log("err")
   });
 
@@ -187,11 +203,11 @@ export class ClientComponent implements OnInit {
   }
   GetAllInsurance(){ this.homeService.GetAllInsurance().subscribe((reas:any)=>{
     this.homeService.Insurance=reas;
-    this.tostr.success('Data Retrived !!!')
+   
    console.log("homeService.Insurance")
 
   },err=>{
-    this.tostr.error('something want worring!!')
+
     console.log("err")
   });
 }

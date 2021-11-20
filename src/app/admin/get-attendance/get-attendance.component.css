@@ -112,3 +112,11 @@ table {
 td {
     padding: 15rem;
 }
+
+p {
+    color: black;
+}
+
+.footer {
+    color: black;
+}

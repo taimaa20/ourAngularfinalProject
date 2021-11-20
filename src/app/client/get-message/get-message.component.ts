@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/Service/home.service';
+import { CardDialogComponent } from '../card-dialog/card-dialog.component';
+import { NewCarDialogComponent } from '../new-car-dialog/new-car-dialog.component';
 import { PaymentComponent } from '../payment/payment.component';
 
 @Component({
@@ -119,5 +121,19 @@ export class GetMessageComponent implements OnInit {
   AddPayment()
   {
    this.dialog.open(PaymentComponent)
+  }
+
+  InsertCar()
+  {
+   this.dialog.open(NewCarDialogComponent)
+  }
+  AddCard()
+  {
+   this.dialog.open(CardDialogComponent)
+  }
+  GoToViewCard()
+  {
+    
+    this.router.navigate(['client/view-bankcard'])
   }
 }

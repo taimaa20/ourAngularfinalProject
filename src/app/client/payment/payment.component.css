@@ -46,8 +46,6 @@ body {
     background-color: #fff
 }
 
-.dot {}
-
 .head {
     color: #137ff3;
     font-size: 12px
@@ -83,4 +81,21 @@ body {
     height: 60px;
     border-radius: 8px;
     font-size: 17px
+}
+
+.colorbtn {
+    background-color: #383030;
+    color: gainsboro;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-left: 15px;
+    border-radius: 7px;
+}
+
+.footer {
+    color: black;
+}
+
+p {
+    color: black;
 }

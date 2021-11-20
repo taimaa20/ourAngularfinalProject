@@ -21,11 +21,11 @@ export class HomePageComponent implements OnInit {
 
   GetAllLicense(){ this.homeService.GetAllLicense().subscribe((res:any)=>{
     this.homeService.License=res;
-    this.tostr.success('Data Retrived !!!')
+
    console.log(this.homeService.License)
 
   },err=>{
-    this.tostr.error('something want worring!!')
+   
     console.log("err")
   });
 
@@ -34,11 +34,11 @@ export class HomePageComponent implements OnInit {
   }
   GetAllInsurance(){ this.homeService.GetAllInsurance().subscribe((reas:any)=>{
     this.homeService.Insurance=reas;
-    this.tostr.success('Data Retrived !!!')
+   
    console.log("homeService.Insurance")
 
   },err=>{
-    this.tostr.error('something want worring!!')
+  
     console.log("err")
   });
 }

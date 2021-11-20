@@ -15,6 +15,7 @@ import { TDocumentDefinitions } from 'pdfmake/interfaces';
 
 import { HomeService } from 'src/app/Service/home.service';
 import { PaymentComponent } from '../payment/payment.component';
+import { CardDialogComponent } from '../card-dialog/card-dialog.component';
 
 
 @Component({
@@ -163,6 +164,19 @@ export class GetDrivingLicenseComponent implements OnInit {
   {
    this.dialog.open(PaymentComponent)
   }
-
+ 
+  InsertCar()
+  {
+   this.dialog.open(NewCarDialogComponent)
+  }
+  AddCard()
+  {
+   this.dialog.open(CardDialogComponent)
+  }
+  GoToViewCard()
+  {
+    
+    this.router.navigate(['client/view-bankcard'])
+  }
 }
 

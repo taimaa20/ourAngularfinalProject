@@ -126,3 +126,19 @@ p {
     padding: 5px;
     margin-left: 50px;
 }
+
+.colorbtn {
+    background-color: #383030;
+    color: gainsboro;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+.footer {
+    color: black;
+}
+
+p {
+    color: black;
+}

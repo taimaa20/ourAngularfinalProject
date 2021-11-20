@@ -146,15 +146,25 @@
                                         <li class="nav-item">
                                             <a class="nav-link" (click)="showMessage()"><i class="fa fa-commenting" aria-hidden="true" ></i>Message </a>
 
+                                            <!-- <li class="nav-item">
+                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a> -->
                                             <li class="nav-item">
-                                                <a class="nav-link" routerLink="/client/add-car-licence"><i class="fa fa-car" aria-hidden="true" ></i>New Car Licensing</a>
 
-                                                <li class="nav-item">
-                                                    <a class="nav-link" (click)="GetBankcardByUserId()"><i class="fa fa-credit-card-alt" aria-hidden="true" ></i>View Credit-Card</a>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" (click)="AddPayment()"><i class="fa fa-money" aria-hidden="true" ></i>Payment</a>
+                                                <a mat-button [matMenuTriggerFor]="menu" class="nav-link" style="float: left; padding-right:18rem;"><i class="fa fa-car" aria-hidden="true"></i> New Car Licensing Center</a>
+                                                <mat-menu #menu="matMenu">
+                                                    <button mat-menu-item (click)="InsertCar()"><i class="fa fa-thumb-tack" aria-hidden="true"></i>Insert Car Information</button>
+                                                    <button mat-menu-item (click)="AddCard()"><i class="fa fa-th-list" aria-hidden="true"></i>Add Your Credit-Card</button>
+                                                    <button mat-menu-item (click)="GetBankcardByUserId()"><i class="fa fa-th-list" aria-hidden="true"></i>check your Credit-Card</button>
 
-                                                        <!-- <li class="nav-item">
+
+                                                </mat-menu>
+                                                <!-- <li class="nav-item">
+                                                        <a class="nav-link" (click)="GetBankcardByUserId()"><i class="fa fa-credit-card-alt" aria-hidden="true" ></i>View Credit-Card</a>
+
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" (click)="AddPayment()"><i class="fa fa-money" aria-hidden="true" ></i>Payment</a> -->
+
+                                                <!-- <li class="nav-item">
 
                                 <a class="nav-link active" routerLink="/accountant/accountant"><i class="fa fa-fw fa-user-circle"></i>Dashboard </a>
 
@@ -182,11 +192,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" ><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
                                  -->
-                                                        <li class="nav-item">
+                                                <li class="nav-item">
 
-                                                            <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
+                                                    <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true" (click)="logout()"></i>Logout</a>
 
-                                                        </li>
+                                                </li>
                         </ul>
                     </div>
                 </nav>
@@ -207,7 +217,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">User Dashboard Template </h2>
+                                <h2 class="pageheader-title">User Dashboard </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">

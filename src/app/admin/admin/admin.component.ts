@@ -63,10 +63,10 @@ this.homeService.GetNumberOfCustomer().subscribe((res:any)=>{
   this.homeService.number_Of_Users=res;
  
   this.spiner.hide();
-  this.tostr.success('Data Retrived !!!')
+
 },err=>{
   this.spiner.hide();
-   this.tostr.error('something want worring!!')
+  
 })
 
  
@@ -80,11 +80,10 @@ this.homeService.GetNumberOfEmployee().subscribe((res:any)=>{
   this.homeService.number_Of_Employees=res;
  console.log(this.homeService.data)
   this.spiner.hide();
-  
-  this.tostr.success('Data Retrived !!!')
+
 },err=>{
   this.spiner.hide();
-  this.tostr.error('something want worring!!')
+
 });
 
 
@@ -129,10 +128,9 @@ this.homeService.GetNumberOfAllUser().subscribe((res:any)=>{
   this.homeService.card1=res;
   console.log(this.homeService.card1)
 
-  this.tostr.success('Data Retrived !!!')
+
 },err=>{
 
-  this.tostr.error('something want worring!!')
 })
 
  
