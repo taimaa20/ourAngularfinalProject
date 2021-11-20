@@ -272,3 +272,11 @@ td {
 p {
     color: black;
 }
+
+.colorbtn {
+    background-color: #383030;
+    color: gainsboro;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-left: 15px;
+}
