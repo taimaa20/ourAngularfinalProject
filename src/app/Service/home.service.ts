@@ -152,8 +152,8 @@ SearchByVehicleCategory(category:any)
    this.spiner.hide();
    this.toastr.error('Search By Vehicle Category Error');
 
-  })
-
+  }) 
+ 
 }
 //Get Total Month Salaries from api
 TotalMonthSalaries(month:any)
