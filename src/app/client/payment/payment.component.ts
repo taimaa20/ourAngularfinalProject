@@ -30,14 +30,15 @@ export class PaymentComponent implements OnInit {
    user:any=localStorage.getItem('user');
    user1=JSON.parse(this.user);
           
-   id=parseInt(this.user1.email)
-  
+   id=parseInt(this.user1.email);
+   userEmail=this.user1.nameid;
  
   saveItem(){
     debugger
     this.paydata=this.formGroup.value.paymentDate;
     this.payamount=this.payamount;
     this.id=this.id;
+    this.userEmail=this.userEmail;
     const data2={
 
       paymentDate:this.paydata.toString(),
@@ -46,8 +47,12 @@ export class PaymentComponent implements OnInit {
       
 
     }
+    const data={
+      ToEmail:this.userEmail
+    }
     console.log(data2)
     this.home.InsertPayment(data2);
+    this.home.SendEmail(data);
      window.location.reload();
 
   }

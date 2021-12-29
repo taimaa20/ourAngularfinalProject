@@ -19,20 +19,27 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  submitted = false;
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.authService.confirmPassword.value;
+  }
+  Remember()
+  {
+    let key=this.authService.usernameControl.value;
 
-  // Login(){
-  //   const usernameValue=this.usernameControl.value;
-  //   const passwordValue = this.passwordControl.value;
-  //   this.spinner.show();
-  //   setTimeout(()=>{
-  //     this.router.navigate([''])
-  //     this.spinner.hide();
-  //   },3000);
-  // }
+    localStorage.setItem(key,this.authService.passwordControl.value);
 
+    let getLocalData=localStorage.getItem(key);
+    
+  }
 
-
-
+  onchang(){
+    if (this.authService.passwordControl.value== this.authService.confirmPassword.value) {
+    this.authService.confirmPassword.setErrors(null);
+    } else{
+    this.authService.confirmPassword.setErrors({ mismatch:true});
+    } }
 
 
 

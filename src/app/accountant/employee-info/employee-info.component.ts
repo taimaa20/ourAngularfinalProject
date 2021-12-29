@@ -64,7 +64,7 @@ export class EmployeeInfoComponent implements OnInit {
      console.log(id)
     if(id)
     {
-       
+      this.home.GetSalaryByUserId(id);
       this.home.GetUserByIdAcc(id)
     }
   }
