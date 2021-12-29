@@ -125,7 +125,7 @@ this.home.VehicleSystemReport().subscribe((res:any)=>{
            console.log(id)
           if(id)
           {
-             
+            this.home.GetSalaryByUserId(id); 
             this.home.GetUserByIdAcc(id)
           }
         }

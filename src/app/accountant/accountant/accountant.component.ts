@@ -91,8 +91,9 @@ export class AccountantComponent implements OnInit {
        console.log(id)
       if(id)
       {
-         
-        this.homeService.GetUserByIdAcc(id)
+        
+  this.homeService.GetSalaryByUserId(id);
+       this.homeService.GetUserByIdAcc(id)
       }
     }
   InsertMessage()

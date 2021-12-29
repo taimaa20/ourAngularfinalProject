@@ -76,7 +76,7 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>licenseExpiry</mat-label>
-            <input type="text" matInput formControlName="licenseExpiry" style="font-size: large;">
+            <input type="datetime-local" matInput formControlName="licenseExpiry" style="font-size: large;">
             <mat-error *ngIf="formGroup.controls.licenseExpiry.hasError('required')">
                 licenseExpiry is <strong>required</strong>
             </mat-error>
@@ -84,7 +84,7 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>engineCapacity</mat-label>
-            <input type="text" matInput formControlName="engineCapacity" style="font-size: large;">
+            <input type="number" matInput formControlName="engineCapacity" style="font-size: large;">
             <mat-error *ngIf="formGroup.controls.engineCapacity.hasError('required')">
                 engineCapacity is <strong>required</strong>
             </mat-error>
@@ -101,7 +101,7 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>madeYear</mat-label>
-            <input type="text" matInput formControlName="madeYear" style="font-size: large;">
+            <input type="datetime-local" matInput formControlName="madeYear" style="font-size: large;">
 
             <mat-error *ngIf="formGroup.controls.madeYear.hasError('required')">
                 madeYear is <strong>required</strong>
@@ -145,9 +145,9 @@
         <mat-form-field class="example-full-width">
             <mat-label>Licensing</mat-label>
             <mat-select formControlName="licensingId">
-                <mat-option *ngFor="let user of home.License" value="{{user.licensingId}}">
+                <mat-option  *ngFor="let user of home.License" value="{{user.licensingId}}">
 
-                    {{user.minValue}}-{{user.maxValue}}
+                    {{user.minValue}}-{{user.maxValue}},{{user.engineType}}
                 </mat-option>
             </mat-select>
             <mat-error *ngIf="formGroup.controls.licensingId.hasError('required')">
@@ -157,8 +157,8 @@
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>Insurance</mat-label>
-            <mat-select formControlName="insuranceId">
-                <mat-option *ngFor="let user of home.Insurance" value="{{user.insuranceId}}">
+            <mat-select  formControlName="insuranceId">
+                <mat-option  *ngFor="let user of home.Insurance" value="{{user.insuranceId}}">
 
                     {{user.insuranceType}}
                 </mat-option>
@@ -167,8 +167,15 @@
                 insuranceId is <strong>required</strong>
             </mat-error>
         </mat-form-field>
-
-
+<br>
+        <mat-label for="file">vehicleImage</mat-label>
+        <br>
+        <input formControlName="file" id="file" accept="image/*" type="file" class="form-control" (change)="onFileChange($event)">
+        <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+          <div *ngIf="f.file.errors && f.file.errors.required">Image is required.</div>
+        </div>
+  
+        <img [src]="imageSrc" *ngIf="imageSrc" style="height: 150px; width:150px">
     </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

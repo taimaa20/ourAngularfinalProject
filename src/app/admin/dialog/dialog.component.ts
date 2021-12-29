@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder,Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DomSanitizer } from '@angular/platform-browser';
 import { HomeService } from 'src/app/Service/home.service';
+import { Users } from 'src/app/shared/modules/user';
+
 // import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 @Component({
   selector: 'app-dialog',
@@ -8,12 +12,13 @@ import { HomeService } from 'src/app/Service/home.service';
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
+ 
   formGroup =new FormGroup({
     username: new FormControl('', [Validators.required]),
     password:new FormControl('',[Validators.required]),
     
     fullName: new FormControl('', [Validators.required]),
-   
+    userImage: new FormControl('', [Validators.required]),  
     gender: new FormControl('', [Validators.required]),   
     age: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required,Validators.email]),
@@ -22,55 +27,86 @@ export class DialogComponent implements OnInit {
     
     
   }) 
-  
-  constructor(private home:HomeService) { }
+  myForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    file: new FormControl('', [Validators.required]),
+    fileSource: new FormControl('', [Validators.required])
+  });
+  gender:boolean=true;
+  genderName:string="Male";
 
+  
+  constructor(public home:HomeService,private sanitizer: DomSanitizer,private dialog: MatDialog) {
+   
+  }
   ngOnInit(): void {
   }
-  userNamedata:any;
-  passworddata:any;
+  
   roleIddata:number=3;
-  namedata:any;
-  imagedata:string="image";
-  genderdata:any;
-  agedata:any;
-  emaildata:any;
-  addressdata:any;
-  phonedata:any;
+  
+  
+  imageSrc: string='';
+  
   settingIddata:number=1;
-  saveItem(){
-    debugger
-    this.userNamedata=this.formGroup.value.username;
-    this.passworddata=this.formGroup.value.password;
-    this.roleIddata=this.roleIddata,
-    this.namedata=this.formGroup.value.fullName;
-    this.imagedata=this.imagedata;
-    this.genderdata=this.formGroup.value.gender;
-    this.agedata=this.formGroup.value.age;
-    this.emaildata=this.formGroup.value.email;
-    this.addressdata=this.formGroup.value.address;
-    this.phonedata=this.formGroup.value.phoneNumber;
-    this.settingIddata=this.settingIddata;
-    const data2={
-
-      username:this.userNamedata.toString(),
-      password:this.passworddata.toString(),
-      roleId:this.roleIddata,
-      fullName:this.namedata.toString(),
-      userImage:this.imagedata,
-      gender:Boolean(this.genderdata),
-      age: parseInt(this.agedata),
-      email: this.emaildata.toString(),
-      address: this.addressdata.toString(),
-      phoneNumber:parseInt( this.phonedata),
-      settingId:this.settingIddata,
-
+  
+  
+  
+  saveItem()
+  {
       
-
+        const emp: Users = this.formGroup.value;
+        emp.settingId=this.settingIddata;
+        emp.roleId=this.roleIddata;
+        emp.gender=this.gender;
+       
+console.log(emp);
+        this.home.CreateEmployee(emp);
+        // window.location.reload();
+        
+  }
+  employee: Users = new Users()
+  localUrl: any;
+  onFileChanged(event: any) {
+    const file = event.target.value
+   
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+      reader.onload = (event: any) => {
+        this.localUrl = event.target.result;
+        this.employee.userImage = this.localUrl
+        
+      }
+      reader.readAsDataURL(event.target.files[0]);
     }
-    console.log(data2)
-    this.home.CreateEmployee(data2);
-    // window.location.reload();
+  }
 
+  transform() {
+
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.localUrl);
+  }
+
+  get f() {
+    return this.myForm.controls;
+  }
+
+
+  onFileChange(event: any) {
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+
+      reader.onload = () => {
+        this.imageSrc = reader.result as string;
+        this.formGroup.controls.userImage.setValue(this.imageSrc);
+        this.myForm.patchValue({
+          fileSource: reader.result
+        });
+
+       // console.log(this.imageSrc);
+
+      };
+    }
   }
 }

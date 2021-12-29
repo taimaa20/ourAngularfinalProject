@@ -94,7 +94,7 @@
 
 
                         <li class="nav-item dropdown nav-user" style="margin-bottom: 15px;margin-left: 15px;margin-right: 15px;">
-                            <a class="nav-link nav-user-img" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/admin.jpg" alt="" class="user-avatar-md rounded-circle" (click)="showProfile()"></a>
+                            <a class="nav-link nav-user-img" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{home.acc_profile.userImage}}" alt="" class="user-avatar-md rounded-circle" (click)="showProfile()"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -213,8 +213,9 @@
 
 
 
-                                        <td>fullName </td>
+                                       
                                         <td>userImage </td>
+                                         <td>fullName </td>
                                         <td>phoneNumber </td>
                                         <td>gender</td>
                                         <td>age </td>
@@ -234,8 +235,9 @@
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let user of home.financial_report">
-                                        <td>{{ user.fullName }}</td>
-                                        <td>{{ user.userImage }}</td>
+                                       
+                                        <td><img src="{{user.userImage}}" height="100px" width="100px"> </td>
+                                         <td>{{ user.fullName }}</td>
                                         <td>{{ user.phoneNumber }}</td>
                                         <td>{{ user.gender}}</td>
                                         <td>{{ user.age }}</td>

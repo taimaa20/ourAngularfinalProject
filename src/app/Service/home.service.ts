@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +47,7 @@ engine_capasty:any=[{}];
 contactinfo:any=[{}];
 payment_value:any=[{}];
 card_date:any=[{}];
-
+acc_Salary:any=[{}];
   constructor(private http:HttpClient,private spiner :NgxSpinnerService,private toastr:ToastrService,private router:Router) {
 
 
@@ -64,10 +65,10 @@ card_date:any=[{}];
   CreateEmployee(data:any){
     this.spiner.show();
     debugger
-    this.http.post('https://localhost:44373/api/UserRegistration',data).subscribe((res:any)=>{
+    this.http.post(environment.api +'UserRegistration',data).subscribe((res:any)=>{
       this.toastr.success('Employee Created Successfully');
       this.spiner.hide();
-
+     
     },err=>{
      this.spiner.hide();
      this.toastr.error('Employee Not Created');
@@ -660,4 +661,47 @@ InsertCard(data:any){
 }
 
 
-}
+
+
+//Get Salary Statement
+GetSalaryByUserId(id:number)
+    {
+      this.spiner.show();
+
+      this.http.get('https://localhost:44373/api/Salary/GetSalaryById/'+id).subscribe((res:any)=>{
+
+        this.acc_Salary=res;
+        console.log(this.acc_Salary);
+        this.spiner.hide();
+        
+        this.router.navigate(['accountant/profile']);
+        this.toastr.success("Salary return success")
+      },err=>{
+        this.spiner.hide();
+        this.toastr.error("Data not return")
+      })
+    }
+
+    //Send Email To User
+    
+    SendEmail(ToEmail:any)
+
+    {
+      this.spiner.show();
+      debugger
+      this.http.post('https://localhost:44373/api/Email/Send',ToEmail).subscribe((res:any)=>{
+       
+    
+        this.toastr.success('Email Sent Success,Check Your Email');
+        
+        this.spiner.hide();
+    
+      },err=>{
+       this.spiner.hide();
+       this.toastr.error('Email Not Sent');
+    
+      })
+    
+    }
+
+  }
