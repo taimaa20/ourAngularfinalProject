@@ -178,4 +178,6 @@ export class GetTechnecalReportComponent implements OnInit {
           
           this.router.navigate(['client/view-bankcard'])
         }
+        
+
 }

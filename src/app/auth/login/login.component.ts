@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from "ngx-spinner";
 import { AuthService } from 'src/app/Service/auth.service';
 import { HomeService } from 'src/app/Service/home.service';
+import { GoogleLoginProvider,SocialLoginModule, SocialAuthServiceConfig,SocialAuthService} from 'angularx-social-login';  
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,8 +16,8 @@ import { HomeService } from 'src/app/Service/home.service';
 export class LoginComponent implements OnInit {
   // usernameControl = new FormControl('', [Validators.required]);
   // passwordControl = new FormControl('', [Validators.required,Validators.minLength(10)]);
-
-  constructor(private spinner: NgxSpinnerService,private router:Router, public authService :AuthService) { }
+  isLoggedin: boolean = false;
+  constructor(private spinner: NgxSpinnerService,private socialAuthService: SocialAuthService,private router:Router, public authService :AuthService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +25,10 @@ export class LoginComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() {
     return this.authService.confirmPassword.value;
+  }
+  // Initial implicite flow using OAuth2 protocol
+  loginWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
   Remember()
   {

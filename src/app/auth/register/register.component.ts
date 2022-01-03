@@ -27,8 +27,8 @@ export class RegisterComponent implements OnInit {
     address: new FormControl('', [Validators.required]),
     phoneNumber : new FormControl('',[Validators.required]),
     username :new FormControl('', [Validators.required]),
-    password : new FormControl('', [Validators.required,Validators.minLength(10)])
-
+    password : new FormControl('', [Validators.required,Validators.minLength(10)]),
+    confirmPassword: new FormControl('', [Validators.required,Validators.minLength(10)])
 
   
 })
@@ -54,7 +54,8 @@ export class RegisterComponent implements OnInit {
         
 console.log(user);
         this.authService.register(user);
-        window.location.reload();
+        // window.location.reload();
+        this.router.navigate(['/security/login'])
        
         
   }
@@ -124,7 +125,12 @@ console.log(user);
 
 
 
-
+  onchang(){
+    if (this.formGroup.controls.password.value== this.formGroup.controls.confirmPassword.value) {
+    this.formGroup.controls.confirmPassword.setErrors(null);
+    } else{
+    this.formGroup.controls.confirmPassword.setErrors({ mismatch:true});
+    } }
 
 
 
