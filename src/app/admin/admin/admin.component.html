@@ -252,7 +252,7 @@
                                 <thead class="bg-light">
                                     <tr class="border-0">
 
-                                        
+                                        <th class="border-0">Image</th>
                                         <th class="border-0">FullName</th>
                                         <th class="border-0">Gender </th>
                                         <th class="border-0">Age</th>
@@ -266,7 +266,7 @@
 
                                     <tr *ngFor="let user of homeService.users">
 
-                                       
+                                        <td><img src="{{user.userImage}}" height="100px" width="100px"> </td>
                                         <td>{{user.fullName}} </td>
                                         <td>{{user.gender}} </td>
                                         <td>{{user.age}}</td>
@@ -297,7 +297,7 @@
                         <table class="table">
                             <thead class="bg-light">
                                 <tr class="border-0">
-                                    
+                                    <th class="border-0">vehicleImage</th>
                                     <th class="border-0">VehicleId</th>
                                     <th class="border-0">VehicleName</th>
                                     <th class="border-0">VehicleModel </th>
@@ -323,7 +323,7 @@
                             <tbody>
                                 <tr *ngFor="let user of homeService.vehicle">
 
-                                    
+                                    <td><img src="{{user.vehicleImage}}" height="100px" width="100px"> </td>
                                     <td>{{user.vehicleId}} </td>
                                     <td>{{user.vehicleName}} </td>
                                     <td>{{user.vehicleModel}} </td>

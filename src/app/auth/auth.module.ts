@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { GoogleLoginProvider,SocialLoginModule, SocialAuthServiceConfig} from 'angularx-social-login';  
 
 @NgModule({
   declarations: [
@@ -18,9 +19,25 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    SharedModule
+    SharedModule,
+    SocialLoginModule
 
-
-  ]
+  ],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '1071938006741-qvc1lsc8qh38ud37pqjvb44g9ee8cum4.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }    
+  ],
 })
 export class AuthModule { }

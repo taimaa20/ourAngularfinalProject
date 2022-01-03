@@ -23,6 +23,7 @@
         <mat-form-field class="example-full-width">
             <mat-label>Name</mat-label>
             <input type="text" matInput formControlName="fullName" style="font-size:large;">
+            
             <mat-error *ngIf="formGroup.controls.fullName.hasError('required')">
                 Name is <strong>required</strong>
             </mat-error>
@@ -33,10 +34,25 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>Gender</mat-label>
-            <input matInput formControlName="gender" style="font-size: large;">
+            
+            <mat-select formControlName="gender">
+                <mat-option value="{{genderName}}" >
+                    <a (click)="gender=true;genderName='Male'">Male</a>
+                </mat-option>
+                <mat-option value="{{genderName}}" >
+                    <a (click)="gender=false;genderName='Female'">Female</a>
+                </mat-option>
+            </mat-select>
 
-
-
+            <!-- <div class="dropdown">
+                <input matInput class="dropbtn" formControlName="gender" [(ngModel)]="genderName" style="font-size: large; ">
+                
+                <div class="dropdown-content">
+                    <a (click)="gender=true;genderName='Male'">Male</a>
+                    <br>
+                    <a (click)="gender=false;genderName='Female'">Female</a>
+                </div>
+            </div> -->
 
 
 
@@ -51,7 +67,7 @@
 <div></div>
         <mat-form-field class="example-full-width">
             <mat-label>Age</mat-label>
-            <input matInput formControlName="age" style="font-size: large;">
+            <input type="number" matInput formControlName="age" style="font-size: large;">
             <mat-error *ngIf="formGroup.controls.age.hasError('required')">
                 age is <strong>required</strong>
             </mat-error>
@@ -86,7 +102,23 @@
             </mat-error>
         </mat-form-field>
 
-       
+        <!-- <mat-form-field class="example-full-width">
+            <mat-label>Image</mat-label>
+            <input type="text" matInput formControlName="userImage" style="font-size: large;">
+            <mat-error *ngIf="formGroup.controls.userImage.hasError('required')">
+                Image is <strong>required</strong>
+            </mat-error>
+        </mat-form-field> -->
+<div></div>
+
+     
+          <mat-label for="file">Image</mat-label>
+          <input formControlName="file" id="file" accept="image/*" type="file" class="form-control" (change)="onFileChange($event)">
+          <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+            <div *ngIf="f.file.errors && f.file.errors.required">Image is required.</div>
+          </div>
+    
+          <img [src]="imageSrc" *ngIf="imageSrc" style="height: 150px; width:150px">   
     </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

@@ -143,4 +143,6 @@ export class ViewBankcardComponent implements OnInit {
   {
     this.router.navigate(['client/view-bankcard'])
   }
+  
+  
 }

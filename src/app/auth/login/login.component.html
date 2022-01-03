@@ -7,25 +7,28 @@
 
                     <form>
                         <div class="form-group">
+                            
                             <input class="form-control" type="text" matInput [formControl]="authService.usernameControl" placeholder="Username">
-                            <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.usernameControl.hasError('email')">Please enter a valid Username</mat-error>
+                            <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.usernameControl.hasError('required')"> Username is <strong>required</strong></mat-error>
+                            
                         </div>
-
-                        <div class="form-group">
+                            <div class="form-group">
+                        
+                            
                             <input class="form-control" type="password" matInput [formControl]="authService.passwordControl" placeholder="Password">
+                            <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('required')"> password is <strong>required</strong></mat-error>
                             <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('minlength')">Password must be more than 10 char</mat-error>
-                        </div>
+                        
+                        
+                            </div>
 
+                            <!-- <button type="button" (click)="loginWithGoogle()" class="btn btn-success">SignIn Google</button> -->
 
-                        <label style="color:white; font-size: 15px;"><input style="width: 30px;"  type="checkbox"  checked="checked" >Remember Me</label>
-                        <br>
-
-                        <label>
-                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('required')&&authService.usernameControl.hasError('required')">Password and Username is required</mat-error>
-                       </label>
-
+                        
+                        <!-- <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('required')&&authService.usernameControl.hasError('required')">Password and Username is required</mat-error> -->
+                       
                         <div class="form-btn">
-                            <button id="submitForm" type="submit" class="submit-btn" [disabled]="!authService.usernameControl.valid||!authService.passwordControl.valid" (click)="authService.submit()">Login</button>
+                            <button id="submitForm" type="submit" class="submit-btn" [disabled]="!authService.usernameControl.valid||!authService.passwordControl.valid  " (click)="authService.submit()">Login</button>
                         </div>
 
                         <br><br>
@@ -44,7 +47,7 @@
                         </div>
 
                     </form>
-                </div>
+                
             </div>
         </div>
     </div>

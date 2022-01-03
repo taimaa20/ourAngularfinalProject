@@ -1,11 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/Service/home.service';
 import { AttendanceDialogComponent } from '../attendance-dialog/attendance-dialog.component';
 import { MessageDialogComponent } from '../message-dialog/message-dialog.component';
+declare var require: any;
 
+import * as pdfMake from "pdfmake/build/pdfmake";
+import * as pdfFonts from "pdfmake/build/vfs_fonts";
+const htmlToPdfmake = require("html-to-pdfmake");
+(pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
+import * as XLSX from 'xlsx'; 
+import { TDocumentDefinitions } from 'pdfmake/interfaces';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -64,7 +71,7 @@ export class ProfileComponent implements OnInit {
        console.log(id)
       if(id)
       {
-         
+        this.home.GetSalaryByUserId(id);
         this.home.GetUserByIdAcc(id)
       }
     }
@@ -138,9 +145,45 @@ saveItem(){
     
 
   }
-  console.log(data2)
+  
   this.home.UpdateProfile(data2);
+  
    window.location.reload();
 
 }
+@ViewChild('pdfTable')
+pdfTable!: ElementRef;
+
+public downloadAsPDF() {
+  const pdfTable = this.pdfTable.nativeElement;
+  var html = htmlToPdfmake(pdfTable.innerHTML);
+  const documentDefinition: TDocumentDefinitions = { 
+    content: html,
+    pageOrientation: 'landscape',
+    pageSize: {
+      width:1400, 
+      height: 700
+    }
+   };
+  pdfMake.createPdf(documentDefinition).download(); 
+
+}
+
+  fileName= 'ExcelSheet.xlsx';  
+
+exportexcel(): void 
+  {
+     /* table id is passed over here */   
+     let element = document.getElementById('excel-table'); 
+     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+
+     /* generate workbook and add the worksheet */
+     const wb: XLSX.WorkBook = XLSX.utils.book_new();
+     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+     /* save to file */
+     XLSX.writeFile(wb, this.fileName);
+    
+  }
+
 }
