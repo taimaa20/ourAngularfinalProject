@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="booking-form" style="margin-top: -140px;">
-                    <h5 style="text-align: center; font-size: 60px; padding-bottom: 30px;color: white; font-family: cursive;">Registeration</h5>
+                    <h5 style="text-align: center; font-size: 40px; padding-bottom: 30px;color: white; font-family: cursive;">Registeration</h5>
 
 
                     <form [formGroup]="formGroup" style="padding-left: 10px;">
@@ -115,18 +115,36 @@
 
                             </div>
 
+
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-md-11">
-                        <!-- <mat-label for="file">userImage</mat-label> -->
-        <input formControlName="file" id="file" accept="image/*" type="file" class="form-control" (change)="onFileChange($event)">
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Confirm Password</mat-label>
+                            <input  type="password" (change)="onchang()" matInput formControlName="confirmPassword" style="font-size:large;  ">
+                        <mat-error *ngIf="formGroup.controls.confirmPassword.hasError('mismatch')"> Password is not match </mat-error>
+                        
+                        <mat-error  *ngIf="formGroup.controls.confirmPassword.hasError('required')">Confirm password  is required</mat-error>
+                       
+                       <mat-error *ngIf="formGroup.controls.confirmPassword.hasError('minlength') && !formGroup.controls.confirmPassword.hasError('required') && formGroup.controls.confirmPassword.value != formGroup.controls.password.value">password and confirm password does not   <strong>match</strong></mat-error> 
+                    </mat-form-field>
+
+                </div>
+                       
+                        
+                        <div class="col-md-5">
+                            <!-- <mat-form-field class="example-full-width"> -->
+                                <mat-label>Upload Image</mat-label> 
+        <input formControlName="file"  accept="image/*" type="file" class="form-control" (change)="onFileChange($event)">
         <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
           <div *ngIf="f.file.errors && f.file.errors.required">Image is required.</div>
         </div>
+                            <!-- </mat-form-field> -->
                             </div>
                         </div>
-  
+                    <br>
+                
         <!-- <img [src]="imageSrc" *ngIf="imageSrc" style="height: 150px; width:150px"> -->
                           
                         

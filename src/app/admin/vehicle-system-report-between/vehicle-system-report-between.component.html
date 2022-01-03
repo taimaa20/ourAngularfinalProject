@@ -220,7 +220,77 @@
 
             <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
                 <div class="card tableFixHead" id="pdfTable" #pdfTable>
-                    <h5 class="card-header">System Reports</h5>
+                    <h5 class="card-header">Monthly System Reports</h5>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="styled-table" id="excel-table">
+                                <thead class="bg-light">
+                                    <tr class="border-0">
+
+                                        <th class="upleft">fullName</th>
+                                        <th>email</th>
+                                        <th>phoneNumber</th>
+                                        <th>age</th>
+                                        <th>gender</th>
+                                        <th>vehicleName</th>
+                                        <th>vehicleModel</th>
+                                        <th>vehicleColor</th>
+                                        <th>vehicleCategory</th>
+                                        <th>useType</th>
+                                        <th>registerType</th>
+                                        <th>licenseNumber</th>
+                                        <th>licenseExpiry</th>
+                                        <th>paymentDate</th>
+                                        <th class="upright">paymentAmount</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr *ngFor="let user of home.systembetween">
+                                        <td>{{ user.fullName }}</td>
+                                        <td>{{ user.email }}</td>
+                                        <td>{{ user.phoneNumber }}</td>
+                                        <td>{{ user.age}}</td>
+                                        <td>{{ user.gender }}</td>
+                                        <td>{{ user.vehicleName }}</td>
+                                        <td>{{ user.vehicleModel }}</td>
+                                        <td>{{ user.vehicleColor}}</td>
+                                        <td>{{ user.vehicleCategory }}</td>
+                                        <td>{{ user.useType }}</td>
+                                        <td>{{ user.registerType }}</td>
+                                        <td>{{ user.licenseNumber }}</td>
+                                        <td>{{ user.licenseExpiry}}</td>
+                                        <td>{{ user.paymentDate }}</td>
+                                        <td>{{ user.paymentAmount }}</td>
+
+
+
+
+                                        <!-- and so on... -->
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn colorbtn" (click)="downloadAsPDF();">Export To PDF</button>
+                <button class="btn colorbtn" (click)="exportexcel();">Export To Excel</button>
+
+
+            </div>
+            <br><br>
+            <form [formGroup]="formGroup" style="margin:25px;">
+                <input type="datetime-local" matInput formControlName="startPaymentDate" style="font-size: large;margin-left: 14px;border-radius: 7px;color: #0023a3;width: 20rem;" placeholder="Date From">
+
+                <input type="datetime-local" matInput formControlName="endPaymentDate" style="font-size: large;margin-left: 14px;border-radius: 7px;color: #0023a3;width: 20rem;" placeholder="Date To">
+                <button (click)="GetData()" class="colorbtn" style="margin-right: 15px;margin-left: 10px;font-size:large;">Search</button>
+            </form>
+
+            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                <div class="card tableFixHead" id="pdfTable" #pdfTable>
+                    <h5 class="card-header">Annual System Reports</h5>
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="styled-table" id="excel-table">
