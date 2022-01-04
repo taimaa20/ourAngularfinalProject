@@ -1,6 +1,6 @@
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { HomeService } from './home.service';
@@ -13,17 +13,23 @@ import { ToastrService } from 'ngx-toastr';
 export class AuthService {
   data:any=[{}]
   constructor(private spinner: NgxSpinnerService,private router:Router,public homeService:HomeService,private http:HttpClient,private toastr:ToastrService) { }
+  formGroup =new FormGroup({
+    
+    username :new FormControl('', [Validators.required]),
+    password : new FormControl('', [Validators.required,Validators.minLength(10)]),
+    
   
+})
   
   usernameControl = new FormControl('', [Validators.required]);
   passwordControl = new FormControl('', [Validators.required,Validators.minLength(10)]);
-  confirmPassword= new FormControl('', [Validators.required,Validators.minLength(10)]);
+  
   
   submit(){
     var responce1:any;
     var body={
-      Username:this.usernameControl.value.toString(),
-      Password:this.passwordControl.value.toString()
+      Username:this.formGroup.value.username.toString(),
+      Password:this.formGroup.value.password.toString()
     };
     const headerDict={
       'Content-Type':'application/json',

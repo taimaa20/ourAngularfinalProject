@@ -23,9 +23,7 @@ export class LoginComponent implements OnInit {
   }
   submitted = false;
   // convenience getter for easy access to form fields
-  get f() {
-    return this.authService.confirmPassword.value;
-  }
+  
   // Initial implicite flow using OAuth2 protocol
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
@@ -40,13 +38,7 @@ export class LoginComponent implements OnInit {
     
   }
 
-  onchang(){
-    if (this.authService.passwordControl.value== this.authService.confirmPassword.value) {
-    this.authService.confirmPassword.setErrors(null);
-    } else{
-    this.authService.confirmPassword.setErrors({ mismatch:true});
-    } }
-
+ 
 
 
 
