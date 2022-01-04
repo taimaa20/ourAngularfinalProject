@@ -22,12 +22,12 @@
                         
                             </div>
 
-                            <!-- <button type="button" (click)="loginWithGoogle()" class="btn btn-success">SignIn Google</button> -->
+                            <button type="button" (click)="loginWithGoogle()" class="btn btn-success">SignIn Google</button> -->
 
                         
                         <!-- <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('required')&&authService.usernameControl.hasError('required')">Password and Username is required</mat-error> -->
                        
-                        <div class="form-btn">
+                        <!-- <div class="form-btn">
                             <button id="submitForm" type="submit" class="submit-btn" [disabled]="!authService.usernameControl.valid||!authService.passwordControl.valid  " (click)="authService.submit()">Login</button>
                         </div>
 
@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div> --> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +77,7 @@
                 <span>
                     <p style="margin-top:20em;">login with social media</p>
                     <a href=" # "><i class="fa fa-facebook " aria-hidden="true "></i></a>
-                    <a href="# "><i class="fa fa-twitter " aria-hidden="true "></i> Login with Twitter</a>
+                    <a (click)="loginWithGoogle()"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a>
                     </span>
             </div>
         </div>
@@ -88,16 +88,27 @@
             <p style="margin-top: 80px; ">Don't have an account? <a routerLink="/security/register">Creat Your Account</a> it takes less than a minute</p>
             <div class="inputs " style="margin: 10px; ">
                 <form>
+                    
                     <div class="form-group">
-                        <input class="form-control" type="text" matInput [formControl]="authService.usernameControl" placeholder="Username">
+                        <mat-form-field class="example-full-width">
+                            <mat-label style="font-size: large; ">Username</mat-label>
+                        <input  type="text" matInput [formControl]="authService.usernameControl" >
 
-                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.usernameControl.hasError('email')">Please enter a valid Username</mat-error>
+                        <mat-error style="color: rgb(255, 6, 6); font-size: 12px;" *ngIf="authService.usernameControl.hasError('required')">Username is <strong>required</strong></mat-error>
+                        </mat-form-field>
                     </div>
                     <br>
                     <div class="form-group">
-                        <input class="form-control" type="password" matInput [formControl]="authService.passwordControl" placeholder="Password">
-                        <mat-error style="color: rgb(255, 6, 6); font-size: 14px;" *ngIf="authService.passwordControl.hasError('minlength')">Password must be more than 10 char</mat-error>
+                        <mat-form-field class="example-full-width">
+                            <mat-label style="font-size: large; ">Password</mat-label>
+                        <input  type="password" matInput [formControl]="authService.passwordControl">
+                        <mat-error style="color: rgb(255, 6, 6); font-size: 12px;" *ngIf="authService.passwordControl.hasError('required')"> Password is <strong>required</strong></mat-error>
+                        <mat-error style="color: rgb(255, 6, 6); font-size: 12px;" *ngIf="authService.passwordControl.hasError('minlength')">Password must be more than 10 char</mat-error>
+                        
+                        </mat-form-field>
                     </div>
+                    <br>
+                    
                 </form>
             </div>
 
@@ -105,9 +116,10 @@
 
             <div class="remember-me--forget-password">
                 <!-- Angular -->
-
-                <label style="color:rgb(41, 35, 35); font-size: 15px;"><input style="width: 30px;"  type="checkbox"  checked="checked" >Remember Me</label>
+                <mat-checkbox (click)="Remember()" class="example-margin" style="color:rgb(41, 35, 35); font-size: 15px;">Remember me!</mat-checkbox>
+                <!-- <label style="color:rgb(41, 35, 35); font-size: 15px;"> <mat-checkbox (click)="Remember()" class="example-margin">Remember me!</mat-checkbox></label> -->
                 <br>
+                <br><br><br>
 
 
 
@@ -116,10 +128,24 @@
             </div>
 
             <br>
+            <!-- <div class="form-btn" style="margin-left: 50px;">
+                <button id="submitForm" type="submit" class="submit-btn" style="margin-left: 50px;"  routerLink="">Home</button>
+            </div>
             <div class="form-btn">
                 <button id="submitForm" type="submit" class="submit-btn" [disabled]="!authService.usernameControl.valid||!authService.passwordControl.valid" (click)="authService.submit()">Login</button>
+            </div> -->
+            <div class="row">
+                <div class="col-md-6" style="float: right;margin-left: -20%;">
+                    <div class="form-btn">
+                        <button id="submitForm" type="submit" class="submit-btn" [disabled]="!authService.usernameControl.valid||!authService.passwordControl.valid" (click)="authService.submit()">Login</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-btn">
+                        <button id="submitForm" type="submit" class="submit-btn " routerLink="">Home</button>
+                    </div>
+                </div>
             </div>
-
         </div>
 
     </div>
